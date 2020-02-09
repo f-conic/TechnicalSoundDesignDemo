@@ -17,7 +17,7 @@
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
-/TechnicalSoundDesignDemo/TSD_UnityProject/.vs/
+TSD_UnityProject/.vs/
 
 # Visual Code cache directory
 /.vscode/
