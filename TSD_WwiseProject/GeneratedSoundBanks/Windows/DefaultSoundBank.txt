@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	713469781	Play_Kit014Break014			\Default Work Unit\Play_Kit014Break014	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	68168911	Kit014Break014	G:\08_Wwise\TSD_WwiseProject\.cache\Windows\SFX\Kit014Break014_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Kit014Break014		464344
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8290D5A5-C4FE-422F-8815-86C871947E66}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{8290D5A5-C4FE-422F-8815-86C871947E66}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Kit014Break014" ID="{3B9C298C-1209-4310-BFE9-619164191B19}">
+					<ChildrenList>
+						<Action Name="" ID="{2219090D-3D31-4D0A-A2B0-AABCC8700E89}" ShortID="151797102">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Kit014Break014" ID="{143921E9-9693-4085-80D8-D3301FD73B3D}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
