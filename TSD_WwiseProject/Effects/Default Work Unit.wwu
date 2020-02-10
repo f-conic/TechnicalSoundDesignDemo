@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}" SchemaVersion="94">
+	<Effects>
+		<WorkUnit Name="Default Work Unit" ID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_Wwise_Reflect" ID="{885C4CA4-C32F-4897-92CA-6B424AF71F90}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
+					<PropertyList>
+						<Property Name="CenterPerc" Type="Real32" Value="1"/>
+					</PropertyList>
+					<PluginData>
+	<ReflectData>
+		<CurveList Version="4">
+			<CurveInfo Name="Diffraction Attenuation">
+				<Curve Name="" ID="{8351C663-69A8-4B55-BBBB-E6D856F7E78A}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="3"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>20</XPos>
+							<YPos>0</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>100</XPos>
+							<YPos>-3</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Diffraction HPF">
+				<Curve Name="" ID="{86D798CA-A86A-499D-90FC-2883C91D717B}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="5"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>20</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>100</XPos>
+							<YPos>20</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Diffraction LPF">
+				<Curve Name="" ID="{8DFFBAFF-352B-4B01-9BEA-C46B99BE7F05}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="5"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>20000</YPos>
+							<Flags>5</Flags>
+							<SegmentShape>Log3</SegmentShape>
+						</Point>
+						<Point>
+							<XPos>8.33333333333333</XPos>
+							<YPos>1000</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>100</XPos>
+							<YPos>100</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Distance Attenuation (Emitter vs. Listener)">
+				<Curve Name="" ID="{1B554437-6DA6-4982-9B58-401E94581BC3}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="3"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>1000</XPos>
+							<YPos>0</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Distance Attenuation (Image Source vs. Listener)">
+				<Curve Name="" ID="{7AA45246-C938-43D9-AA52-E5344796A955}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="3"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>150</XPos>
+							<YPos>-6</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>300</XPos>
+							<YPos>-12</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>600</XPos>
+							<YPos>-18</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>1000</XPos>
+							<YPos>-200</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Distance High-pass Filter (Image Source vs. Listener)">
+				<Curve Name="" ID="{FCF1665C-34B6-44B0-B822-D2D1C7A2F705}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="5"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>20</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>1000</XPos>
+							<YPos>20</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Distance Low-pass Filter (Image Source vs. Listener)">
+				<Curve Name="" ID="{712B68CD-1692-449A-81D3-5C1234BB87C3}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="5"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>20000</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>1000</XPos>
+							<YPos>20</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+			<CurveInfo Name="Distance Spread (Image Source vs. Listener)">
+				<Curve Name="" ID="{9A3A7695-A5E9-4F84-A3D8-445DF0778BC1}">
+					<PropertyList>
+						<Property Name="Flags" Type="int32" Value="1"/>
+					</PropertyList>
+					<PointList>
+						<Point>
+							<XPos>0</XPos>
+							<YPos>0</YPos>
+							<Flags>5</Flags>
+						</Point>
+						<Point>
+							<XPos>1000</XPos>
+							<YPos>0</YPos>
+							<Flags>37</Flags>
+						</Point>
+					</PointList>
+				</Curve>
+			</CurveInfo>
+		</CurveList>
+	</ReflectData>
+</PluginData>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
+	</Effects>
+</WwiseDocument>

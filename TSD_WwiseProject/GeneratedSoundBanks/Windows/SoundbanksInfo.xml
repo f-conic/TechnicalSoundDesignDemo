@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>G:\08_Wwise\TSD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>G:\08_Wwise\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>G:\08_Wwise\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>G:\08_Wwise\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1675065207" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\DefaultSoundBank</ObjectPath>
+			<ShortName>DefaultSoundBank</ShortName>
+			<Path>DefaultSoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="80.000000" DurationType="Infinite"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="68168911" Language="SFX">
+					<ShortName>Kit014Break014.wav</ShortName>
+					<Path>SFX\Kit014Break014_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
