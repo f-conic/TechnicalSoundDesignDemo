@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586203306894396958
+    m_lastTime: -8586203270702132397
     List:
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -229,7 +229,7 @@ MonoBehaviour:
       - ElementName: Play_Kit014Break014
         ObjectType: 3
       Path: Default Work Unit\Play_Kit014Break014
-      maxAttenuation: 100
+      maxAttenuation: 80
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -262,8 +262,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Virtual Acoustics
-  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures
-  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures/Textures
+  - /TSD_WwiseProject/Auxiliary Busses
+  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit
+  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit/Master Audio Bus
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 [UnityEngine.AddComponentMenu("Wwise/AkSpatialAudioEmitter")]
 [UnityEngine.RequireComponent(typeof(AkGameObj))]
@@ -58,7 +60,9 @@ public class AkSpatialAudioEmitter : AkSpatialAudioBase
 		emitterSettings.diffractionMaxPathLength = diffractionMaxPathLength;
 
 		if (AkSoundEngine.RegisterEmitter(gameObject, emitterSettings) == AKRESULT.AK_Success)
+		{
 			SetGameObjectInRoom();
+		}
 	}
 
 	private void OnDisable()

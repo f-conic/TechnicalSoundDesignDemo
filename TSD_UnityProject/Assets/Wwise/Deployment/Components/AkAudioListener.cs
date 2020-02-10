@@ -60,6 +60,7 @@ public class AkAudioListener : UnityEngine.MonoBehaviour
 			akGameObj.Register();
 
 		akGameObjectID = AkSoundEngine.GetAkGameObjectID(gameObject);
+		AkSoundEngine.RegisterGameObj(gameObject);
 	}
 
 	private void OnEnable()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class FreeLookCamera : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class FreeLookCamera : MonoBehaviour
 	private Vector3 pivotEulers;
 	private Quaternion pivotTargetRot;
 	private Quaternion transformTargetRot;
-
+	private MouseLook mouseLook;
 	public Transform cameraTransform;
 	private Transform pivot;
 
