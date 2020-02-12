@@ -34,8 +34,10 @@
 								<Position Name="" ID="{1B6E7429-74A1-4952-BF86-4FC6B8061EDC}"/>
 							</PositioningInfo>
 						</AuxBus>
-						<Bus Name="Master" ID="{01DF3A00-7276-433D-9F53-4F8FE877B2F5}"/>
 						<AuxBus Name="Room01" ID="{5608D391-9047-40FF-9BBC-F084FF2220EE}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>

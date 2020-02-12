@@ -181,6 +181,90 @@
 						<ActiveSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="Hand Mortar Small Close" ID="{74F863A4-62B6-4777-A828-388A572B3DE1}" ShortID="609391094">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
+								<Attenuation Name="New Attenuation (Custom)" ID="{061A1FE0-1CBA-4553-8DDA-0FDB275EA93B}" ShortID="1019417098">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="20"/>
+									</PropertyList>
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{C30EA7DE-AA4F-4965-B6E8-EDB22EAC0508}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>20</XPos>
+															<YPos>-45.24902</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" ShortID="858623284">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.927950592180365"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.830271582477169"/>
+								<Property Name="TrimEnd" Type="Real64" Value="3.80948137842467"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Hand Mortar Small Close.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
