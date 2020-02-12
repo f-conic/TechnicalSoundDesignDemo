@@ -14,6 +14,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Discussion" ID="{1F42A623-8DB5-4E6D-A50B-89040AC830C3}">
+					<ChildrenList>
+						<Action Name="" ID="{C888A0A6-5223-4A15-936A-BD53CD5E9DA9}" ShortID="721748617">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

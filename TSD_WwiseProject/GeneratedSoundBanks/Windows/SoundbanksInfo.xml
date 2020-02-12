@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>G:\08_Wwise\TSD_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>G:\08_Wwise\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>G:\08_Wwise\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>G:\08_Wwise\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,12 +21,17 @@
 			<ShortName>DefaultSoundBank</ShortName>
 			<Path>DefaultSoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="80.000000" DurationType="Infinite"/>
+				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
+				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="20.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="68168911" Language="SFX">
 					<ShortName>Kit014Break014.wav</ShortName>
 					<Path>SFX\Kit014Break014_D79FB2B7.wem</Path>
+				</File>
+				<File Id="102691801" Language="SFX">
+					<ShortName>Discussion.wav</ShortName>
+					<Path>SFX\Discussion_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

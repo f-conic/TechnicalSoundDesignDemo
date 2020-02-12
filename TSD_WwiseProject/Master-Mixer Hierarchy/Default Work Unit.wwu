@@ -12,7 +12,6 @@
 					<ChildrenList>
 						<AuxBus Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="BusChannelConfig" Type="int32">
 									<ValueList>
 										<Value>16641</Value>
@@ -23,6 +22,9 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EarlyReflectionAttenuation" ID="{92B67E49-58B2-4FEB-B1AB-C19464827085}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+								</Reference>
 								<Reference Name="Effect0" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
 									<ObjectRef Name="New_Wwise_Reflect" ID="{885C4CA4-C32F-4897-92CA-6B424AF71F90}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
 								</Reference>
@@ -31,6 +33,14 @@
 								<Panner Name="" ID="{F3CC2F4B-7877-403A-AA3E-C41829AAD725}"/>
 								<Position Name="" ID="{1B6E7429-74A1-4952-BF86-4FC6B8061EDC}"/>
 							</PositioningInfo>
+						</AuxBus>
+						<Bus Name="Master" ID="{01DF3A00-7276-433D-9F53-4F8FE877B2F5}"/>
+						<AuxBus Name="Room01" ID="{5608D391-9047-40FF-9BBC-F084FF2220EE}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
 						</AuxBus>
 					</ChildrenList>
 				</Bus>

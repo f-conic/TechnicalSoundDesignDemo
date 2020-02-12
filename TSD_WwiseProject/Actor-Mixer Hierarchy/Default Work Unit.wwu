@@ -7,14 +7,31 @@
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
 							<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
 								<Attenuation Name="New Attenuation (Custom)" ID="{5EEA1A89-A502-4932-9E7F-3DF2F6ED077A}" ShortID="461634576">
 									<PropertyList>
-										<Property Name="RadiusMax" Type="Real64" Value="80"/>
+										<Property Name="ConeInnerAngle" Type="int32" Value="125"/>
+										<Property Name="ConeOuterAngle" Type="int32" Value="230"/>
+										<Property Name="ConeUse" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="RadiusMax" Type="Real64" Value="20"/>
 									</PropertyList>
 									<CurveUsageInfoList>
 										<VolumeDryUsage>
@@ -28,9 +45,16 @@
 															<XPos>0</XPos>
 															<YPos>0</YPos>
 															<Flags>5</Flags>
+															<SegmentShape>Exp1</SegmentShape>
 														</Point>
 														<Point>
-															<XPos>80</XPos>
+															<XPos>9.93730270270271</XPos>
+															<YPos>-7.63275</YPos>
+															<Flags>0</Flags>
+															<SegmentShape>Log1</SegmentShape>
+														</Point>
+														<Point>
+															<XPos>20</XPos>
 															<YPos>-45.24902</YPos>
 															<Flags>37</Flags>
 														</Point>
@@ -72,12 +96,89 @@
 							<Language>SFX</Language>
 							<AudioFile>Kit014Break014.wav</AudioFile>
 						</AudioFileSource>
+						<AudioFileSource Name="Discussion" ID="{CA37E942-16A4-42EE-B56E-761718609340}" ShortID="532335442">
+							<Language>SFX</Language>
+							<AudioFile>Discussion.wav</AudioFile>
+						</AudioFileSource>
 					</ChildrenList>
 					<PositioningInfo>
 						<Position Name="" ID="{9AAC274D-0BE3-4A1C-8603-BDEC769FE1D3}"/>
 					</PositioningInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" ShortID="466059799">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
+								<Attenuation Name="New Attenuation (Custom)" ID="{5FD871C7-DBFB-4A14-8831-C3A5B5C61E82}" ShortID="1066233423">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="20"/>
+									</PropertyList>
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{FB290F9C-D410-4C54-9C9B-B3EDFA8A1DE0}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>20</XPos>
+															<YPos>-45.24902</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" ShortID="102691801">
+							<Language>SFX</Language>
+							<AudioFile>Discussion.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
