@@ -25,6 +25,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Grenade_Explosion" ID="{A6631681-88A3-460C-9FA1-42DF83967F49}">
+					<ChildrenList>
+						<Action Name="" ID="{08819B18-BC6B-417B-A876-907718BE2365}" ShortID="703326416">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Hand Mortar Small Close" ID="{74F863A4-62B6-4777-A828-388A572B3DE1}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -1,8 +1,10 @@
 Event	ID	Name			Wwise Object Path	Notes
 	713469781	Play_Kit014Break014			\Default Work Unit\Play_Kit014Break014	
 	1444333482	Play_Discussion			\Default Work Unit\Play_Discussion	
+	2974935085	Grenade_Explosion			\Default Work Unit\Grenade_Explosion	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	68168911	Kit014Break014	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Kit014Break014_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Kit014Break014		464344
-	102691801	Discussion	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Discussion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Discussion		79907742
+	68168911	Kit014Break014	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Kit014Break014_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Kit014Break014		464344
+	102691801	Discussion	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Discussion_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Discussion		79907742
+	858623284	Hand Mortar Small Close	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Hand Mortar Small Close_B34AD179.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hand Mortar Small Close		572072
 

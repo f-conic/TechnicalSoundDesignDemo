@@ -39,6 +39,10 @@ public class AkSoundEngineController
 #endif
 			ms_Instance = null;
 		}
+		else if (ms_Instance == null && AkSoundEngine.IsInitialized())
+		{
+			ms_Instance = this;
+		}
 	}
 
 	public static string GetDecodedBankFolder()
