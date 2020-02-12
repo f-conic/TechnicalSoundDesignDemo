@@ -16,7 +16,13 @@ MonoBehaviour:
   - Windows
   PlatformSettingsList:
   - {fileID: 11400000, guid: af9b13a384d7a714287249aadafa0cea, type: 2}
-  InvalidReferencePlatforms: []
+  InvalidReferencePlatforms:
+  - Android
+  - iOS
+  - Linux
+  - PS4
+  - Switch
+  - XboxOne
   UserSettings:
     m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)

@@ -43,10 +43,20 @@ public class AkSpatialAudioEmitter : AkSpatialAudioBase
 	[UnityEngine.Tooltip("The maximum length that a diffracted sound can travel.")]
 	/// The maximum length that a diffracted sound can travel. Should be no longer (and possibly shorter for less CPU usage) than the maximum attenuation of the sound emitter.
 	public uint diffractionMaxPathLength = 0;
+	ulong gameObjectId;
 
-	private void OnEnable()
+	private void Start()
+	{
+		AkSoundEngine.RegisterGameObj(gameObject);
+		//gameObjectId = AkSoundEngine.GetAkGameObjectID(gameObject);
+		//AkSoundEngine.PostEvent("Play_Kit014Break014", gameObject);
+	}
+
+	private void Awake()
 	{
 		var emitterSettings = new AkEmitterSettings();
+
+		AkSoundEngine.RegisterEmitter(gameObject, emitterSettings);
 
 		emitterSettings.reflectAuxBusID = reflectAuxBus.Id;
 		emitterSettings.reflectionMaxPathLength = reflectionMaxPathLength;
@@ -59,14 +69,17 @@ public class AkSpatialAudioEmitter : AkSpatialAudioBase
 		emitterSettings.diffractionMaxPaths = diffractionMaxPaths;
 		emitterSettings.diffractionMaxPathLength = diffractionMaxPathLength;
 
-		if (AkSoundEngine.RegisterEmitter(gameObject, emitterSettings) == AKRESULT.AK_Success)
-		{
-			SetGameObjectInRoom();
-		}
+
+	}
+
+	private void OnEnable()
+	{
+		SetGameObjectInRoom();
 	}
 
 	private void OnDisable()
 	{
+		AkSoundEngine.UnregisterGameObj(gameObject);
 		AkSoundEngine.UnregisterEmitter(gameObject);
 	}
 

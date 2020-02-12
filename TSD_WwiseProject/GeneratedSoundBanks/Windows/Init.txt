@@ -16,6 +16,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	4056684167	Master			\Default Work Unit\Master Audio Bus\Master	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	1819748220	ER			\Default Work Unit\Master Audio Bus\ER	

@@ -71,10 +71,11 @@
 						</AcousticTexture>
 						<AcousticTexture Name="Concrete" ID="{5CF81C00-2896-4AE0-AF7C-3080BDABA682}">
 							<PropertyList>
-								<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
-								<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
-								<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
-								<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+								<Property Name="AbsorptionHigh" Type="Real32" Value="19"/>
+								<Property Name="AbsorptionLow" Type="Real32" Value="13"/>
+								<Property Name="AbsorptionMidHigh" Type="Real32" Value="11"/>
+								<Property Name="AbsorptionMidLow" Type="Real32" Value="9"/>
+								<Property Name="AbsorptionOffset" Type="Real32" Value="11"/>
 							</PropertyList>
 						</AcousticTexture>
 						<AcousticTexture Name="Fabric" ID="{8381D532-DB6E-4EED-A7A3-BC7B0A0B8BA8}">

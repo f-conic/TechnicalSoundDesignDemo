@@ -5,7 +5,8 @@
 			<ChildrenList>
 				<Effect Name="New_Wwise_Reflect" ID="{885C4CA4-C32F-4897-92CA-6B424AF71F90}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
 					<PropertyList>
-						<Property Name="CenterPerc" Type="Real32" Value="1"/>
+						<Property Name="CenterPerc" Type="Real32" Value="0"/>
+						<Property Name="MaxDistance" Type="Real32" Value="100"/>
 					</PropertyList>
 					<PluginData>
 	<ReflectData>
@@ -86,11 +87,21 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>0</YPos>
+							<YPos>-48.97413</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>1000</XPos>
+							<XPos>7.9772</XPos>
+							<YPos>-3.70457</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>20.79772</XPos>
+							<YPos>-0.67415</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>100</XPos>
 							<YPos>0</YPos>
 							<Flags>37</Flags>
 						</Point>
@@ -109,22 +120,22 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>150</XPos>
-							<YPos>-6</YPos>
+							<XPos>6.39363</XPos>
+							<YPos>-6.5243</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>300</XPos>
-							<YPos>-12</YPos>
+							<XPos>15.91148</XPos>
+							<YPos>-14.42724</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>600</XPos>
-							<YPos>-18</YPos>
+							<XPos>27.63533</XPos>
+							<YPos>-20.66114</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>1000</XPos>
+							<XPos>100</XPos>
 							<YPos>-200</YPos>
 							<Flags>37</Flags>
 						</Point>
@@ -143,8 +154,8 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>1000</XPos>
-							<YPos>20</YPos>
+							<XPos>100</XPos>
+							<YPos>20000</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -162,7 +173,7 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>1000</XPos>
+							<XPos>100</XPos>
 							<YPos>20</YPos>
 							<Flags>37</Flags>
 						</Point>
@@ -177,12 +188,12 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>0</YPos>
+							<YPos>50</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>1000</XPos>
-							<YPos>0</YPos>
+							<XPos>100</XPos>
+							<YPos>50</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>

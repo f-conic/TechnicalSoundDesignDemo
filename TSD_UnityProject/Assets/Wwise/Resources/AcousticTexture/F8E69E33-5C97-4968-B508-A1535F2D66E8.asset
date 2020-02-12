@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247a3e76e54d21a49a9f7bc3b01b22d5, type: 3}
+  m_Name: F8E69E33-5C97-4968-B508-A1535F2D66E8
+  m_EditorClassIdentifier: 
+  objectName: Curtains
+  id: 2928161104
+  guid: F8E69E33-5C97-4968-B508-A1535F2D66E8

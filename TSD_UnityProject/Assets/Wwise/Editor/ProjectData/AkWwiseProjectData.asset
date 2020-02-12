@@ -17,13 +17,13 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 244b65672e59b4489111c04a26c3e412
     GuidInternal: 
-    m_lastTime: -8586203329011878025
+    m_lastTime: -8586201094185410180
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
     ParentPhysicalPath: 
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8586203329721436174
+    m_lastTime: -8586200961552873604
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586203270702132397
+    m_lastTime: -8586200796162650637
     List:
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -197,12 +197,23 @@ MonoBehaviour:
       - ElementName: ER
         ObjectType: 1
       Path: Default Work Unit\Master Audio Bus\ER
+    - name: Room01
+      guid: 91d308564790ff409bbcf084ff2220ee
+      id: 348022313
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Room01
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Room01
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ba903315152c14479b3774af2ebe7f91
     GuidInternal: 
-    m_lastTime: -8586203319476187348
+    m_lastTime: -8586201094185440102
     List:
     - name: DefaultSoundBank
       guid: 657cac6351f47742a950aa8f7ce5babe
@@ -218,8 +229,20 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586203319476307291
+    m_lastTime: -8586200802734570755
     List:
+    - name: Play_Discussion
+      guid: 23a6421fb58d6d4ea50b89040ac830c3
+      id: 1444333482
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Discussion
+        ObjectType: 3
+      Path: Default Work Unit\Play_Discussion
+      maxAttenuation: 20
+      maxDuration: 905.9827
+      minDuration: 905.9827
     - name: Play_Kit014Break014
       guid: 8c299c3b09121043bfe9619164191b19
       id: 713469781
@@ -229,7 +252,7 @@ MonoBehaviour:
       - ElementName: Play_Kit014Break014
         ObjectType: 3
       Path: Default Work Unit\Play_Kit014Break014
-      maxAttenuation: 80
+      maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -237,33 +260,32 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586203329011747997
+    m_lastTime: -8586201094185479995
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: e8c818db4a993940844db8aa714c5caa
     GuidInternal: 
-    m_lastTime: -8586203329011580688
+    m_lastTime: -8586201094185440102
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 24c4b447a58db14ba4f91ce583b21be8
     GuidInternal: 
-    m_lastTime: -8586203329011838018
+    m_lastTime: -8586201094185440102
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: a0060f2313d2464c865b07ca6dcc16ef
     GuidInternal: 
-    m_lastTime: -8586203329012388139
+    m_lastTime: -8586201094185410180
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Auxiliary Busses
-  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit
-  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit/Master Audio Bus
+  - /TSD_WwiseProject/Events
+  - /TSD_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
