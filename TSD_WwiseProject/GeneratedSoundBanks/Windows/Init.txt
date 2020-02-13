@@ -1,3 +1,13 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3521844023	Incidental_Switch_Group			\Default Work Unit\Incidental_Switch_Group	
+
+Switch	ID	Name	Switch Group			Notes
+	366150593	Switch_01	Incidental_Switch_Group			
+	366150594	Switch_02	Incidental_Switch_Group			
+	366150595	Switch_03	Incidental_Switch_Group			
+	366150596	Switch_04	Incidental_Switch_Group			
+	366150597	Switch_05	Incidental_Switch_Group			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	

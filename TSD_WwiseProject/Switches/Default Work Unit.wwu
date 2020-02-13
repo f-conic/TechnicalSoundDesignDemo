@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}" SchemaVersion="94">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
+						<Switch Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
+						<Switch Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
+						<Switch Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
+						<Switch Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_Incidental" ID="{190B8174-9BD1-4BBC-BBF1-0D682F1501B5}"/>
+						<Curve Name="" ID="{BDFDC583-C78E-4856-8D49-3D17A609496C}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>2</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>3</XPos>
+									<YPos>4</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>4</XPos>
+									<YPos>5</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>5</XPos>
+									<YPos>0</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>
