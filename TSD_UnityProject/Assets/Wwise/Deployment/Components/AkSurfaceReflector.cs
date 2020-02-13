@@ -102,7 +102,6 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 								triangle.surface = (ushort)0;
 							}
 						}
-
 						AkSoundEngine.SetGeometry(GetAkGeometrySetID(meshFilter), triangleArray, (uint)triangleArray.Count(), vertexArray, (uint)vertexArray.Count(), surfaceArray, (uint)surfaceArray.Count(), roomID, enableDiffraction, enableDiffractionOnBoundaryEdges);
 					}
 				}
@@ -153,6 +152,21 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 			roomID = AssociatedRoom.GetID();
 
 		AddGeometrySet(AcousticTexture, MeshFilter, roomID, EnableDiffraction, EnableDiffractionOnBoundaryEdges);
+	}
+
+	void Update()
+	{
+		if (AkSoundEngine.IsInitialized())
+		{
+			ulong roomID = AkRoom.INVALID_ROOM_ID;
+			if (AssociatedRoom != null)
+				roomID = AssociatedRoom.GetID();
+
+			if (MeshFilter != null)
+			{
+				AddGeometrySet(AcousticTexture, MeshFilter, roomID, EnableDiffraction, EnableDiffractionOnBoundaryEdges);
+			}
+		}
 	}
 
 	private void OnDisable()
