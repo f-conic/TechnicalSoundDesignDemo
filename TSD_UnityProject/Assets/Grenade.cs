@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-	public float radius;
+	public float SphereOverlapRadius;
+	public float ExplosionForce = 1000f;
+	public float ExplosionRadius = 1000f;
+	public LayerMask Layer;
+	private bool isExploding;
 
 	private void Awake()
 	{
@@ -12,25 +16,42 @@ public class Grenade : MonoBehaviour
 		AkSoundEngine.SetObjectPosition(gameObject, transform);
 	}
 
-	private void CheckIncidental(Vector3 center, float radius)
+	private Collider[] CheckIncidental(Vector3 center, float radius)
 	{
-		Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+		Collider[] hitColliders = Physics.OverlapSphere(center, radius, Layer.value);
 
-		int i = 0;
-
-		while (i < hitColliders.Length)
-		{
-			hitColliders[i].SendMessage("AddDamage");
-			i++;
-		}
+		return hitColliders;
 	}
 
 	private void LateUpdate()
 	{
 		if (Input.GetKeyDown(KeyCode.G))
-		{		
+		{
+			isExploding = true;
 			AkSoundEngine.PostEvent("Grenade_Explosion", gameObject);
-			CheckIncidental(gameObject.transform.position, radius);
+			var incidentalObjects = CheckIncidental(transform.position, SphereOverlapRadius);
+
+			foreach (var i in incidentalObjects)
+			{
+				var rb = i.GetComponent<Rigidbody>();
+
+				if (rb != null)
+				{
+					AkSoundEngine.RegisterGameObj(i.gameObject);
+					AkSoundEngine.PostEvent("Play_Incidental", i.gameObject);
+					rb.AddExplosionForce(ExplosionForce, Vector3.forward, ExplosionRadius);
+					isExploding = false;
+				}
+			}
+		}
+	}
+
+	private void OnDrawGizmos()
+	{
+		if (isExploding)
+		{
+			Gizmos.color = Color.cyan;
+			Gizmos.DrawWireSphere(transform.position, SphereOverlapRadius);
 		}
 	}
 }

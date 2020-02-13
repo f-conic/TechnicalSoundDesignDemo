@@ -265,6 +265,177 @@
 						<ActiveSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<SwitchContainer Name="Incidentals" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" ShortID="444020363">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="77"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}" ShortID="848570435">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" ShortID="621160400">
+									<Language>SFX</Language>
+									<AudioFile>incidental_generic_01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}" ShortID="942504018">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" ShortID="820830402">
+									<Language>SFX</Language>
+									<AudioFile>incidental_generic_02.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}" ShortID="479966419">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" ShortID="591728996">
+									<Language>SFX</Language>
+									<AudioFile>incidental_generic_03.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}" ShortID="196683254">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" ShortID="657504781">
+									<Language>SFX</Language>
+									<AudioFile>incidental_generic_04.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}" ShortID="751592815">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" ShortID="92003061">
+									<Language>SFX</Language>
+									<AudioFile>incidental_generic_05.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
+								<ItemList>
+									<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
+								<ItemList>
+									<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
+								<ItemList>
+									<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
+								<ItemList>
+									<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
+								<ItemList>
+									<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

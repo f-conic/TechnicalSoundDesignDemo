@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -23,6 +23,7 @@
 			<IncludedEvents>
 				<Event Id="2974935085" Name="Grenade_Explosion" ObjectPath="\Events\Default Work Unit\Grenade_Explosion" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="2.979210" DurationMax="2.979210"/>
 				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
+				<Event Id="2369597903" Name="Play_Incidental" ObjectPath="\Events\Default Work Unit\Play_Incidental" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.071208" DurationMax="1.953375"/>
 				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="20.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -30,13 +31,33 @@
 					<ShortName>Kit014Break014.wav</ShortName>
 					<Path>SFX\Kit014Break014_D79FB2B7.wem</Path>
 				</File>
+				<File Id="92003061" Language="SFX">
+					<ShortName>incidental_generic_05.wav</ShortName>
+					<Path>SFX\incidental_generic_05_10C4C929.wem</Path>
+				</File>
 				<File Id="102691801" Language="SFX">
 					<ShortName>Discussion.wav</ShortName>
 					<Path>SFX\Discussion_10C4C929.wem</Path>
 				</File>
+				<File Id="591728996" Language="SFX">
+					<ShortName>incidental_generic_03.wav</ShortName>
+					<Path>SFX\incidental_generic_03_10C4C929.wem</Path>
+				</File>
+				<File Id="621160400" Language="SFX">
+					<ShortName>incidental_generic_01.wav</ShortName>
+					<Path>SFX\incidental_generic_01_10C4C929.wem</Path>
+				</File>
+				<File Id="657504781" Language="SFX">
+					<ShortName>incidental_generic_04.wav</ShortName>
+					<Path>SFX\incidental_generic_04_10C4C929.wem</Path>
+				</File>
+				<File Id="820830402" Language="SFX">
+					<ShortName>incidental_generic_02.wav</ShortName>
+					<Path>SFX\incidental_generic_02_10C4C929.wem</Path>
+				</File>
 				<File Id="858623284" Language="SFX">
 					<ShortName>Hand Mortar Small Close.wav</ShortName>
-					<Path>SFX\Hand Mortar Small Close_B34AD179.wem</Path>
+					<Path>SFX\Hand Mortar Small Close_54EEDA16.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

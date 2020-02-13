@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586200695738106324
+    m_lastTime: -8586200228445242408
     List:
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -229,8 +229,20 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586200703887559541
+    m_lastTime: -8586200069496604520
     List:
+    - name: Grenade_Explosion
+      guid: 811663a6a3880c469fa142df83967f49
+      id: 2974935085
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Grenade_Explosion
+        ObjectType: 3
+      Path: Default Work Unit\Grenade_Explosion
+      maxAttenuation: 20
+      maxDuration: 2.97921
+      minDuration: 2.97921
     - name: Play_Discussion
       guid: 23a6421fb58d6d4ea50b89040ac830c3
       id: 1444333482
@@ -243,6 +255,18 @@ MonoBehaviour:
       maxAttenuation: 20
       maxDuration: 905.9827
       minDuration: 905.9827
+    - name: Play_Incidental
+      guid: 381096fad23ce54da2ca53fab8749442
+      id: 2369597903
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Incidental
+        ObjectType: 3
+      Path: Default Work Unit\Play_Incidental
+      maxAttenuation: 100
+      maxDuration: 1.953375
+      minDuration: 1.071208
     - name: Play_Kit014Break014
       guid: 8c299c3b09121043bfe9619164191b19
       id: 713469781
@@ -260,8 +284,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586201094185479995
-    List: []
+    m_lastTime: -8586200085433500579
+    List:
+    - name: RTPC_Incidental
+      guid: 74810b19d19bbc4bbbf10d682f1501b5
+      id: 1113248574
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Incidental
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Incidental
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -274,8 +307,51 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 24c4b447a58db14ba4f91ce583b21be8
     GuidInternal: 
-    m_lastTime: -8586201094185440102
-    List: []
+    m_lastTime: -8586200085433550171
+    List:
+    - name: Incidental_Switch_Group
+      guid: 7f95aa530c6336499a17f8610f594ca9
+      id: 3521844023
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Incidental_Switch_Group
+        ObjectType: 11
+      Path: Default Work Unit\Incidental_Switch_Group
+      values:
+      - name: Switch_01
+        guid: 7d4c5d52b3e4cf49bfa6ccd32aa009f4
+        id: 366150593
+        PathAndIcons:
+        - ElementName: Switch_01
+          ObjectType: 10
+      - name: Switch_02
+        guid: 6fe97acbd6057741a5482b410631663c
+        id: 366150594
+        PathAndIcons:
+        - ElementName: Switch_02
+          ObjectType: 10
+      - name: Switch_03
+        guid: 5216fc3a6a6de244b4cbbe9bb3eb2866
+        id: 366150595
+        PathAndIcons:
+        - ElementName: Switch_03
+          ObjectType: 10
+      - name: Switch_04
+        guid: 3bfdcfae53fa874f96764993276e5329
+        id: 366150596
+        PathAndIcons:
+        - ElementName: Switch_04
+          ObjectType: 10
+      - name: Switch_05
+        guid: 66785b6b4bf0f0429948be7ee26c6b72
+        id: 366150597
+        PathAndIcons:
+        - ElementName: Switch_05
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 

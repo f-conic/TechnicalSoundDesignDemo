@@ -36,6 +36,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Incidental" ID="{FA961038-3CD2-4DE5-A2CA-53FAB8749442}">
+					<ChildrenList>
+						<Action Name="" ID="{AA07FD47-8C64-4599-80E9-EEB54D5E0698}" ShortID="718913697">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Incidentals" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
