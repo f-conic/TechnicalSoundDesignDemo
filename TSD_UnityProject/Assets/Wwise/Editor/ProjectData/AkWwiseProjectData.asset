@@ -241,8 +241,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Grenade_Explosion
       maxAttenuation: 20
-      maxDuration: 2.97921
-      minDuration: 2.97921
+      maxDuration: 2.825498
+      minDuration: 2.825498
     - name: Play_Discussion
       guid: 23a6421fb58d6d4ea50b89040ac830c3
       id: 1444333482
@@ -284,7 +284,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586200085433500579
+    m_lastTime: -8586199322902740311
     List:
     - name: RTPC_Incidental
       guid: 74810b19d19bbc4bbbf10d682f1501b5
@@ -295,6 +295,15 @@ MonoBehaviour:
       - ElementName: RTPC_Incidental
         ObjectType: 13
       Path: Default Work Unit\RTPC_Incidental
+    - name: RTPC_Incidental_Delay
+      guid: cba9821898fea44fae98770d7477eecd
+      id: 957932202
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Incidental_Delay
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Incidental_Delay
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -361,7 +370,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Events
-  - /TSD_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

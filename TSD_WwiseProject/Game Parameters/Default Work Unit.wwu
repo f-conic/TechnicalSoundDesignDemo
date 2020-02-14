@@ -9,6 +9,12 @@
 						<Property Name="Max" Type="Real64" Value="5"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

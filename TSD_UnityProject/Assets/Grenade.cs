@@ -23,7 +23,7 @@ public class Grenade : MonoBehaviour
 		return hitColliders;
 	}
 
-	private void LateUpdate()
+	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.G))
 		{
@@ -38,8 +38,12 @@ public class Grenade : MonoBehaviour
 				if (rb != null)
 				{
 					AkSoundEngine.RegisterGameObj(i.gameObject);
-					AkSoundEngine.PostEvent("Play_Incidental", i.gameObject);
+					AkSoundEngine.SetRTPCValue("RTPC_Incidental_Delay", GetTimeDifference(i.gameObject), i.gameObject);
+
 					rb.AddExplosionForce(ExplosionForce, Vector3.forward, ExplosionRadius);
+
+					AkSoundEngine.PostEvent("Play_Incidental", i.gameObject);
+
 					isExploding = false;
 				}
 			}
@@ -53,5 +57,17 @@ public class Grenade : MonoBehaviour
 			Gizmos.color = Color.cyan;
 			Gizmos.DrawWireSphere(transform.position, SphereOverlapRadius);
 		}
+	}
+
+	private float GetTimeDifference(GameObject incidentalObject)
+	{
+		// We can calculate the time it takes for the sound to reach the object by
+		// using the formula t = d/s where we assume that s is a constant of 345m/s. 
+		// Note that this isn't completely accurate as the sync will be dependent on the main thread. Ie. FPS.
+		
+		float distance = Vector3.Distance(incidentalObject.transform.position, gameObject.transform.position);
+		float time = distance / 345;
+
+		return time;
 	}
 }

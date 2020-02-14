@@ -252,9 +252,9 @@
 					<ChildrenList>
 						<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" ShortID="858623284">
 							<PropertyList>
-								<Property Name="LoopBegin" Type="Real64" Value="0.927950592180365"/>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.014875379807481"/>
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.830271582477169"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.983983840487806"/>
 								<Property Name="TrimEnd" Type="Real64" Value="3.80948137842467"/>
 							</PropertyList>
 							<Language>SFX</Language>
@@ -268,6 +268,34 @@
 				<SwitchContainer Name="Incidentals" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" ShortID="444020363">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="InitialDelay" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{1ECA6487-63D0-4669-86D8-8D6B9C74A816}" ShortID="103660936">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{8EC06B35-0362-4BDF-AD21-6A836BE6A424}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="1"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>0</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>1</XPos>
+												<YPos>1</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
 						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="77"/>
 					</PropertyList>
 					<ReferenceList>
