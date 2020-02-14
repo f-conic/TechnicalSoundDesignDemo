@@ -15,6 +15,7 @@ Switch	ID	Name	Switch Group			Notes
 	366150597	Switch_05	Incidental_Switch_Group			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	957932202	RTPC_Incidental_Delay			\Default Work Unit\RTPC_Incidental_Delay	
 	1113248574	RTPC_Incidental			\Default Work Unit\RTPC_Incidental	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -25,5 +26,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	621160400	incidental_generic_01	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Incidentals\incidental_generic_01		114024
 	657504781	incidental_generic_04	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Incidentals\incidental_generic_04		148980
 	820830402	incidental_generic_02	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Incidentals\incidental_generic_02		102900
-	858623284	Hand Mortar Small Close	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Hand Mortar Small Close_54EEDA16.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hand Mortar Small Close		572072
+	858623284	Hand Mortar Small Close	H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Hand Mortar Small Close_7C71F5E5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Hand Mortar Small Close		542560
 
