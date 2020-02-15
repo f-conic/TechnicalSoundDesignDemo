@@ -6,6 +6,7 @@
 				<MixingSession Name="MixerSession" ID="{62A0F237-3D62-4FFF-AE37-8CF71FAB5EC3}">
 					<ObjectList>
 						<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+						<ObjectRef Name="Incidentals" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
 					</ObjectList>
 				</MixingSession>
 			</ChildrenList>

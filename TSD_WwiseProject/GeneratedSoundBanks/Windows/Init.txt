@@ -1,12 +1,22 @@
 Switch Group	ID	Name			Wwise Object Path	Notes
+	189681303	SG_Explosion			\Default Work Unit\SG_Explosion	
 	3521844023	Incidental_Switch_Group			\Default Work Unit\Incidental_Switch_Group	
 
 Switch	ID	Name	Switch Group			Notes
+	1133794587	Near	SG_Explosion			
+	1182670505	Mid	SG_Explosion			
+	1183803292	Far	SG_Explosion			
 	366150593	Switch_01	Incidental_Switch_Group			
 	366150594	Switch_02	Incidental_Switch_Group			
 	366150595	Switch_03	Incidental_Switch_Group			
 	366150596	Switch_04	Incidental_Switch_Group			
 	366150597	Switch_05	Incidental_Switch_Group			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1133794587	Near			\Default Work Unit\Near	
+
+State	ID	Name	State Group			Notes
+	0	None	Near			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
@@ -30,10 +40,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	348022313	Room01			\Default Work Unit\Master Audio Bus\Room01	
 	1819748220	ER			\Default Work Unit\Master Audio Bus\ER	
+	3161908922	Main			\Default Work Unit\Master Audio Bus\Main	
 
 Effect plug-ins	ID	Name	Type				Notes
+	602546716	Room_Large	Wwise RoomVerb			
 	850534041	New_Wwise_Reflect	Wwise Reflect			
-	1990128658	Room_Medium	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

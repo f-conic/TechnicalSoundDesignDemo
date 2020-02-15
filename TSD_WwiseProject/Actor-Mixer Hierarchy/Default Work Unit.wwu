@@ -3,87 +3,11 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Kit014Break014" ID="{143921E9-9693-4085-80D8-D3301FD73B3D}" ShortID="89964159">
+				<ActorMixer Name="World" ID="{74E09CA6-CE20-4A90-BD9F-6F723DF04C09}" ShortID="851231781">
 					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-						</Property>
 						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
-						<Reference Name="Attenuation">
-							<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
-								<Attenuation Name="New Attenuation (Custom)" ID="{5EEA1A89-A502-4932-9E7F-3DF2F6ED077A}" ShortID="461634576">
-									<PropertyList>
-										<Property Name="ConeInnerAngle" Type="int32" Value="125"/>
-										<Property Name="ConeOuterAngle" Type="int32" Value="230"/>
-										<Property Name="ConeUse" Type="bool">
-											<ValueList>
-												<Value>True</Value>
-											</ValueList>
-										</Property>
-										<Property Name="RadiusMax" Type="Real64" Value="20"/>
-									</PropertyList>
-									<CurveUsageInfoList>
-										<VolumeDryUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="VolumeDry" ID="{FA58A39C-A89E-409E-AE02-BBD256A4BE03}">
-													<PropertyList>
-														<Property Name="Flags" Type="int32" Value="3"/>
-													</PropertyList>
-													<PointList>
-														<Point>
-															<XPos>0</XPos>
-															<YPos>0</YPos>
-															<Flags>5</Flags>
-															<SegmentShape>Exp1</SegmentShape>
-														</Point>
-														<Point>
-															<XPos>9.93730270270271</XPos>
-															<YPos>-7.63275</YPos>
-															<Flags>0</Flags>
-															<SegmentShape>Log1</SegmentShape>
-														</Point>
-														<Point>
-															<XPos>20</XPos>
-															<YPos>-45.24902</YPos>
-															<Flags>37</Flags>
-														</Point>
-													</PointList>
-												</Curve>
-											</CurveUsageInfo>
-										</VolumeDryUsage>
-										<VolumeWetGameUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetGameUsage>
-										<VolumeWetUserUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetUserUsage>
-										<LowPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</LowPassFilterUsage>
-										<HighPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</HighPassFilterUsage>
-										<SpreadUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</SpreadUsage>
-										<FocusUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</FocusUsage>
-									</CurveUsageInfoList>
-								</Attenuation>
-							</Custom>
-						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
 						</Reference>
@@ -92,231 +16,105 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" ShortID="68168911">
-							<Language>SFX</Language>
-							<AudioFile>Kit014Break014.wav</AudioFile>
-						</AudioFileSource>
-						<AudioFileSource Name="Discussion" ID="{CA37E942-16A4-42EE-B56E-761718609340}" ShortID="532335442">
-							<Language>SFX</Language>
-							<AudioFile>Discussion.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<PositioningInfo>
-						<Position Name="" ID="{9AAC274D-0BE3-4A1C-8603-BDEC769FE1D3}"/>
-					</PositioningInfo>
-					<ActiveSourceList>
-						<ActiveSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" ShortID="466059799">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
-								<Attenuation Name="New Attenuation (Custom)" ID="{5FD871C7-DBFB-4A14-8831-C3A5B5C61E82}" ShortID="1066233423">
-									<PropertyList>
-										<Property Name="RadiusMax" Type="Real64" Value="20"/>
-									</PropertyList>
-									<CurveUsageInfoList>
-										<VolumeDryUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="VolumeDry" ID="{FB290F9C-D410-4C54-9C9B-B3EDFA8A1DE0}">
-													<PropertyList>
-														<Property Name="Flags" Type="int32" Value="3"/>
-													</PropertyList>
-													<PointList>
-														<Point>
-															<XPos>0</XPos>
-															<YPos>0</YPos>
-															<Flags>5</Flags>
-														</Point>
-														<Point>
-															<XPos>20</XPos>
-															<YPos>-45.24902</YPos>
-															<Flags>37</Flags>
-														</Point>
-													</PointList>
-												</Curve>
-											</CurveUsageInfo>
-										</VolumeDryUsage>
-										<VolumeWetGameUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetGameUsage>
-										<VolumeWetUserUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetUserUsage>
-										<LowPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</LowPassFilterUsage>
-										<HighPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</HighPassFilterUsage>
-										<SpreadUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</SpreadUsage>
-										<FocusUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</FocusUsage>
-									</CurveUsageInfoList>
-								</Attenuation>
-							</Custom>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" ShortID="102691801">
-							<Language>SFX</Language>
-							<AudioFile>Discussion.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Hand Mortar Small Close" ID="{74F863A4-62B6-4777-A828-388A572B3DE1}" ShortID="609391094">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-7</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
-								<Attenuation Name="New Attenuation (Custom)" ID="{061A1FE0-1CBA-4553-8DDA-0FDB275EA93B}" ShortID="1019417098">
-									<PropertyList>
-										<Property Name="RadiusMax" Type="Real64" Value="20"/>
-									</PropertyList>
-									<CurveUsageInfoList>
-										<VolumeDryUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="VolumeDry" ID="{C30EA7DE-AA4F-4965-B6E8-EDB22EAC0508}">
-													<PropertyList>
-														<Property Name="Flags" Type="int32" Value="3"/>
-													</PropertyList>
-													<PointList>
-														<Point>
-															<XPos>0</XPos>
-															<YPos>0</YPos>
-															<Flags>5</Flags>
-														</Point>
-														<Point>
-															<XPos>20</XPos>
-															<YPos>-45.24902</YPos>
-															<Flags>37</Flags>
-														</Point>
-													</PointList>
-												</Curve>
-											</CurveUsageInfo>
-										</VolumeDryUsage>
-										<VolumeWetGameUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetGameUsage>
-										<VolumeWetUserUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-										</VolumeWetUserUsage>
-										<LowPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</LowPassFilterUsage>
-										<HighPassFilterUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</HighPassFilterUsage>
-										<SpreadUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</SpreadUsage>
-										<FocusUsage>
-											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-										</FocusUsage>
-									</CurveUsageInfoList>
-								</Attenuation>
-							</Custom>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" ShortID="858623284">
-							<PropertyList>
-								<Property Name="FadeInDuration" Type="Real64" Value="0.014875379807481"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.983983840487806"/>
-								<Property Name="TrimEnd" Type="Real64" Value="3.80948137842467"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Hand Mortar Small Close.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<SwitchContainer Name="Incidentals" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" ShortID="444020363">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="2"/>
-						<Property Name="InitialDelay" Type="Real64">
-							<RTPCList>
-								<RTPC Name="" ID="{1ECA6487-63D0-4669-86D8-8D6B9C74A816}" ShortID="103660936">
+						<BlendContainer Name="Outdoor" ID="{9FAEEDB7-FE1A-466A-9F8F-C3794062BC2C}" ShortID="361805585">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SwitchContainer Name="Near" ID="{818CCEBC-8C92-40FF-A8A1-CED3B8D1FC1A}" ShortID="925705259">
 									<ReferenceList>
-										<Reference Name="ControlInput">
-											<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 										</Reference>
 									</ReferenceList>
-									<Curve Name="" ID="{8EC06B35-0362-4BDF-AD21-6A836BE6A424}">
-										<PropertyList>
-											<Property Name="Flags" Type="int32" Value="1"/>
-										</PropertyList>
-										<PointList>
-											<Point>
-												<XPos>0</XPos>
-												<YPos>0</YPos>
-												<Flags>5</Flags>
-											</Point>
-											<Point>
-												<XPos>1</XPos>
-												<YPos>1</YPos>
-												<Flags>37</Flags>
-											</Point>
-										</PointList>
-									</Curve>
-								</RTPC>
-							</RTPCList>
-						</Property>
-						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="77"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-						</Reference>
-						<Reference Name="DefaultSwitchOrState">
-							<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-						</Reference>
-						<Reference Name="SwitchGroupOrStateGroup">
-							<ObjectRef Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}" ShortID="848570435">
+									<GroupingInfo/>
+								</SwitchContainer>
+							</ChildrenList>
+							<BlendTrackList>
+								<BlendTrack Name="Main" ID="{E8EBB1B4-D427-4938-A866-A1E7DC1E7803}" ShortID="166863753">
+									<PropertyList>
+										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="LayerCrossFadeControlInput">
+											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+										</Reference>
+									</ReferenceList>
+								</BlendTrack>
+								<BlendTrack Name="Debris" ID="{E2F821F1-A455-4DD4-BF0E-304E5D597507}" ShortID="423153269">
+									<PropertyList>
+										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<RTPCList>
+												<RTPC Name="" ID="{B3E61E43-1682-46E9-B2E7-BE7E868974C7}" ShortID="786288676">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{413DAA59-E939-44DD-B9F4-E71BC024F572}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>47.85479</XPos>
+																<YPos>-200</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-200</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="LayerCrossFadeControlInput">
+											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+										</Reference>
+									</ReferenceList>
+								</BlendTrack>
+								<BlendTrack Name="FX" ID="{08A9CA09-AB0B-47AA-8D8C-0958D87B6857}" ShortID="912655839">
+									<PropertyList>
+										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="LayerCrossFadeControlInput">
+											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+										</Reference>
+									</ReferenceList>
+								</BlendTrack>
+								<BlendTrack Name="Tail" ID="{BAA4B5EC-D4B9-471B-85BC-528417A041D8}" ShortID="374626645">
+									<PropertyList>
+										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="LayerCrossFadeControlInput">
+											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+										</Reference>
+									</ReferenceList>
+								</BlendTrack>
+							</BlendTrackList>
+						</BlendContainer>
+						<SwitchContainer Name="Grenade_Explosion" ID="{5289B99C-9B80-4CC1-8FB0-76813A34168B}" ShortID="356578839">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
@@ -326,17 +124,294 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" ShortID="621160400">
-									<Language>SFX</Language>
-									<AudioFile>incidental_generic_01.wav</AudioFile>
-								</AudioFileSource>
+								<BlendContainer Name="Indoor" ID="{692266C4-9F9E-41AF-B422-E0C2DE6693E7}" ShortID="465559693">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+								</BlendContainer>
 							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}" ShortID="942504018">
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Indoor" ID="{692266C4-9F9E-41AF-B422-E0C2DE6693E7}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<SwitchContainer Name="Incidentals" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" ShortID="444020363">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="InitialDelay" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{1ECA6487-63D0-4669-86D8-8D6B9C74A816}" ShortID="103660936">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{8EC06B35-0362-4BDF-AD21-6A836BE6A424}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>1</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}" ShortID="848570435">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" ShortID="621160400">
+											<Language>SFX</Language>
+											<AudioFile>incidental_generic_01.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}" ShortID="942504018">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" ShortID="820830402">
+											<Language>SFX</Language>
+											<AudioFile>incidental_generic_02.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}" ShortID="479966419">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" ShortID="591728996">
+											<Language>SFX</Language>
+											<AudioFile>incidental_generic_03.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}" ShortID="196683254">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" ShortID="657504781">
+											<Language>SFX</Language>
+											<AudioFile>incidental_generic_04.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}" ShortID="751592815">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" ShortID="92003061">
+											<Language>SFX</Language>
+											<AudioFile>incidental_generic_05.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
+										<ItemList>
+											<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
+										<ItemList>
+											<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
+										<ItemList>
+											<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
+										<ItemList>
+											<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
+										<ItemList>
+											<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+						<Sound Name="Hand Mortar Small Close" ID="{74F863A4-62B6-4777-A828-388A572B3DE1}" ShortID="609391094">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
+										<Attenuation Name="New Attenuation (Custom)" ID="{061A1FE0-1CBA-4553-8DDA-0FDB275EA93B}" ShortID="1019417098">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="20"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{C30EA7DE-AA4F-4965-B6E8-EDB22EAC0508}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>20</XPos>
+																	<YPos>-45.24902</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
 								</Reference>
@@ -345,17 +420,77 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" ShortID="820830402">
+								<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" ShortID="858623284">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.014875379807481"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.983983840487806"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.80948137842467"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>incidental_generic_02.wav</AudioFile>
+									<AudioFile>Hand Mortar Small Close.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" Platform="Linked"/>
+								<ActiveSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}" ShortID="479966419">
+						<Sound Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" ShortID="466059799">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
+										<Attenuation Name="New Attenuation (Custom)" ID="{5FD871C7-DBFB-4A14-8831-C3A5B5C61E82}" ShortID="1066233423">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="20"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{FB290F9C-D410-4C54-9C9B-B3EDFA8A1DE0}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>20</XPos>
+																	<YPos>-45.24902</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
 								</Reference>
@@ -364,17 +499,96 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" ShortID="591728996">
+								<AudioFileSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" ShortID="102691801">
 									<Language>SFX</Language>
-									<AudioFile>incidental_generic_03.wav</AudioFile>
+									<AudioFile>Discussion.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" Platform="Linked"/>
+								<ActiveSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}" ShortID="196683254">
+						<Sound Name="Kit014Break014" ID="{143921E9-9693-4085-80D8-D3301FD73B3D}" ShortID="89964159">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
+										<Attenuation Name="New Attenuation (Custom)" ID="{5EEA1A89-A502-4932-9E7F-3DF2F6ED077A}" ShortID="461634576">
+											<PropertyList>
+												<Property Name="ConeInnerAngle" Type="int32" Value="125"/>
+												<Property Name="ConeOuterAngle" Type="int32" Value="230"/>
+												<Property Name="ConeUse" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="RadiusMax" Type="Real64" Value="20"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{FA58A39C-A89E-409E-AE02-BBD256A4BE03}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																	<SegmentShape>Exp1</SegmentShape>
+																</Point>
+																<Point>
+																	<XPos>9.93730270270271</XPos>
+																	<YPos>-7.63275</YPos>
+																	<Flags>0</Flags>
+																	<SegmentShape>Log1</SegmentShape>
+																</Point>
+																<Point>
+																	<XPos>20</XPos>
+																	<YPos>-45.24902</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
 								</Reference>
@@ -383,87 +597,614 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" ShortID="657504781">
+								<AudioFileSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" ShortID="68168911">
 									<Language>SFX</Language>
-									<AudioFile>incidental_generic_04.wav</AudioFile>
+									<AudioFile>Kit014Break014.wav</AudioFile>
+								</AudioFileSource>
+								<AudioFileSource Name="Discussion" ID="{CA37E942-16A4-42EE-B56E-761718609340}" ShortID="532335442">
+									<Language>SFX</Language>
+									<AudioFile>Discussion.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{9AAC274D-0BE3-4A1C-8603-BDEC769FE1D3}"/>
+							</PositioningInfo>
 							<ActiveSourceList>
-								<ActiveSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" Platform="Linked"/>
+								<ActiveSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}" ShortID="751592815">
+						<SwitchContainer Name="Explosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" ShortID="8737914">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="58"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="ATT_Explosion" ID="{9883593F-3809-4B56-9B1B-56BDC203F7F8}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Near" ID="{F6009571-7E15-446B-958B-5F29BDA4D350}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="SG_Explosion" ID="{FD6D450D-23A5-4D2C-8BBD-E66E34BE1C36}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" ShortID="92003061">
-									<Language>SFX</Language>
-									<AudioFile>incidental_generic_05.wav</AudioFile>
-								</AudioFileSource>
+								<RandomSequenceContainer Name="Main_Far" ID="{E2D30EAA-CD32-4151-A93A-52EEDC0C2245}" ShortID="12835188">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_far_main_01" ID="{BE928151-9146-44D8-81DF-FF5787A50BF0}" ShortID="300325385">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_far_main_01" ID="{DB2A6471-D044-49C7-89C0-81C459D84735}" ShortID="287003259">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_far_main_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_far_main_01" ID="{DB2A6471-D044-49C7-89C0-81C459D84735}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Tail_Far" ID="{06BB0BC0-7593-4291-BD16-0BB6B2743919}" ShortID="632581211">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_far_tail_01" ID="{CE655ABA-E318-4E5F-847C-F84F15AFF0CC}" ShortID="657627855">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_far_tail_01" ID="{29A36962-3AA6-4131-AC81-A59408093EFE}" ShortID="928291044">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_far_tail_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_far_tail_01" ID="{29A36962-3AA6-4131-AC81-A59408093EFE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Main_Mid" ID="{B006B568-13D4-44A1-9C9A-04A20C8A9C5C}" ShortID="656799433">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_mid_main_01" ID="{76DE0EC8-3C33-46B9-8C2E-DD3DDA4F910D}" ShortID="394269448">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_mid_main_01" ID="{4811B3E3-B312-42C2-8DCB-CB45C3EF4E3B}" ShortID="133659364">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_mid_main_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_mid_main_01" ID="{4811B3E3-B312-42C2-8DCB-CB45C3EF4E3B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Tail_Mid" ID="{A053DA87-E4C3-49A5-877D-A0521D80FE4F}" ShortID="911145389">
+									<PropertyList>
+										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_mid_tail_01" ID="{1083BE4F-BE2D-48DF-AE48-9BFD1FD8DEE9}" ShortID="1000790597">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_mid_tail_01" ID="{BBA788FB-3001-4CC1-883E-485F2950CAE1}" ShortID="248592523">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_mid_tail_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_mid_tail_01" ID="{BBA788FB-3001-4CC1-883E-485F2950CAE1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Debris_Mid" ID="{01F0A673-45D0-4AB2-ADCB-99DF7B095B8B}" ShortID="824016531">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_mid_debris_01" ID="{820B157A-78F2-48DF-AFB9-31A48F03D80A}" ShortID="270621080">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_mid_debris_01" ID="{DE341DF1-C5A6-4962-9E17-1D59301E6E01}" ShortID="199993520">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_mid_debris_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_mid_debris_01" ID="{DE341DF1-C5A6-4962-9E17-1D59301E6E01}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Main" ID="{3BE3A386-AF72-426C-B021-9A737852AFA3}" ShortID="437945274">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="Lowpass" Type="int16">
+											<RTPCList>
+												<RTPC Name="" ID="{32A94EFE-DA70-4603-A149-B0CFBD5D8B1C}" ShortID="875153810">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Explosion_Close_Distance" ID="{D0B3DCDC-D7D7-4F4B-8B45-62D3AA0C0FCB}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{4F00F8D3-0C7D-4D29-AFF1-A46E7B3132D0}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>21</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="58"/>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_Explosion" ID="{9883593F-3809-4B56-9B1B-56BDC203F7F8}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_close_main_01" ID="{D3E2BF66-EB1E-4707-BDCF-F333BD0A52C1}" ShortID="455018082">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_main_01" ID="{B95E400C-C450-4E5C-AD4D-8003E62836C6}" ShortID="766010581">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_main_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_main_01" ID="{B95E400C-C450-4E5C-AD4D-8003E62836C6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="grenade_explosion_outdoor_close_main_02-001" ID="{19E7D474-197A-4606-ABD6-9827AEBB3A12}" ShortID="452085009">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_main_02-001" ID="{1554AFCF-A9D1-460B-B706-CC1A002CA90F}" ShortID="237141208">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_main_02-001.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_main_02-001" ID="{1554AFCF-A9D1-460B-B706-CC1A002CA90F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="grenade_explosion_outdoor_close_main_03" ID="{F2E1E771-7218-4A3C-8465-10DF118995FD}" ShortID="253093132">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_main_03" ID="{A87BBC28-B851-4188-81FF-A2C089178B5C}" ShortID="1041255031">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_main_03.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_main_03" ID="{A87BBC28-B851-4188-81FF-A2C089178B5C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Tail" ID="{E03C09A5-5692-4BF8-90B5-78E902D4CAC6}" ShortID="884478552">
+									<PropertyList>
+										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_Explosion" ID="{9883593F-3809-4B56-9B1B-56BDC203F7F8}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_close_tail_01" ID="{8C72B521-39B6-4C0A-BA0A-0C0513372900}" ShortID="572772975">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_01" ID="{96FA1C9E-08C8-4EAF-80DC-0E23722C5D8A}" ShortID="626671817">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_tail_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_tail_01" ID="{96FA1C9E-08C8-4EAF-80DC-0E23722C5D8A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="grenade_explosion_outdoor_close_tail_02" ID="{F318BE75-BF9B-493E-9C26-A7EF2EFCB8FA}" ShortID="217803731">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_02" ID="{B8927177-321C-4330-A029-129395950772}" ShortID="1008827774">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_tail_02.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_tail_02" ID="{B8927177-321C-4330-A029-129395950772}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="grenade_explosion_outdoor_close_tail_03" ID="{CF775632-200C-4E15-B7A4-7191318BF9B2}" ShortID="292048072">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_03" ID="{509162D5-D3D3-4DE7-BE60-DE3C6B3E9C63}" ShortID="1017057852">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_tail_03.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_tail_03" ID="{509162D5-D3D3-4DE7-BE60-DE3C6B3E9C63}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="FX" ID="{3922C704-C793-4473-98C7-3342C8397D64}" ShortID="402846186">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="0"/>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_Explosion" ID="{9883593F-3809-4B56-9B1B-56BDC203F7F8}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_tinnitus_01" ID="{8A4D103B-0E09-4566-A232-AD03D89C2AC4}" ShortID="603001355">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_tinnitus_01" ID="{75F999E3-CE94-46DE-B96A-5306164E82C6}" ShortID="513441474">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_tinnitus_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_tinnitus_01" ID="{75F999E3-CE94-46DE-B96A-5306164E82C6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Debris" ID="{9A5F46C4-86A6-4F4C-8AC2-B31464DE5A4E}" ShortID="237905784">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="Lowpass" Type="int16">
+											<RTPCList>
+												<RTPC Name="" ID="{8FD54A8E-4060-457F-AF7A-FA4EAB0341E6}" ShortID="155016665">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Explosion_Close_Distance" ID="{D0B3DCDC-D7D7-4F4B-8B45-62D3AA0C0FCB}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{13E1FD89-DB3D-4446-BF0A-EA074831A700}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>39</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="83"/>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_Explosion" ID="{9883593F-3809-4B56-9B1B-56BDC203F7F8}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="grenade_explosion_outdoor_close_debris_01" ID="{88E11C74-8809-4DAF-8026-500ADADED5DC}" ShortID="89583209">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_01" ID="{16C40DD9-1615-4AB8-A239-83A05C748B39}" ShortID="276802975">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_debris_01.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_debris_01" ID="{16C40DD9-1615-4AB8-A239-83A05C748B39}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="grenade_explosion_outdoor_close_debris_02" ID="{C85E3FD7-C474-4907-8DEE-A5DCA24BCD79}" ShortID="411764882">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_02" ID="{19D30779-BEE2-4D0F-8C5C-023D32434EA2}" ShortID="575368629">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_debris_02.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_debris_02" ID="{19D30779-BEE2-4D0F-8C5C-023D32434EA2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="grenade_explosion_outdoor_close_debris_03" ID="{211E0C72-FECE-4505-A72E-16945A66987B}" ShortID="728759291">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_03" ID="{74CD0783-2CF5-4758-9C94-AE2E49C27ABC}" ShortID="1003542365">
+													<Language>SFX</Language>
+													<AudioFile>grenade_explosion_outdoor_close_debris_03.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="grenade_explosion_outdoor_close_debris_03" ID="{74CD0783-2CF5-4758-9C94-AE2E49C27ABC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="FX" ID="{3922C704-C793-4473-98C7-3342C8397D64}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Main_Mid" ID="{B006B568-13D4-44A1-9C9A-04A20C8A9C5C}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Debris_Mid" ID="{01F0A673-45D0-4AB2-ADCB-99DF7B095B8B}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Main" ID="{3BE3A386-AF72-426C-B021-9A737852AFA3}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Tail_Mid" ID="{A053DA87-E4C3-49A5-877D-A0521D80FE4F}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Tail" ID="{E03C09A5-5692-4BF8-90B5-78E902D4CAC6}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Main_Far" ID="{E2D30EAA-CD32-4151-A93A-52EEDC0C2245}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Tail_Far" ID="{06BB0BC0-7593-4291-BD16-0BB6B2743919}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Debris" ID="{9A5F46C4-86A6-4F4C-8AC2-B31464DE5A4E}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Far" ID="{DB62DD6D-5FC6-4543-A461-86532BA18103}"/>
+										<ItemList>
+											<ItemRef Name="Main_Far" ID="{E2D30EAA-CD32-4151-A93A-52EEDC0C2245}"/>
+											<ItemRef Name="Tail_Far" ID="{06BB0BC0-7593-4291-BD16-0BB6B2743919}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Near" ID="{F6009571-7E15-446B-958B-5F29BDA4D350}"/>
+										<ItemList>
+											<ItemRef Name="Main" ID="{3BE3A386-AF72-426C-B021-9A737852AFA3}"/>
+											<ItemRef Name="Tail" ID="{E03C09A5-5692-4BF8-90B5-78E902D4CAC6}"/>
+											<ItemRef Name="Debris" ID="{9A5F46C4-86A6-4F4C-8AC2-B31464DE5A4E}"/>
+											<ItemRef Name="FX" ID="{3922C704-C793-4473-98C7-3342C8397D64}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Mid" ID="{C7B9E4B4-A484-4D9C-ABDB-E6BBFD09411E}"/>
+										<ItemList>
+											<ItemRef Name="Main_Mid" ID="{B006B568-13D4-44A1-9C9A-04A20C8A9C5C}"/>
+											<ItemRef Name="Tail_Mid" ID="{A053DA87-E4C3-49A5-877D-A0521D80FE4F}"/>
+											<ItemRef Name="Debris_Mid" ID="{01F0A673-45D0-4AB2-ADCB-99DF7B095B8B}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
-					<GroupingInfo>
-						<GroupingBehaviorList>
-							<GroupingBehavior>
-								<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
-							</GroupingBehavior>
-							<GroupingBehavior>
-								<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
-							</GroupingBehavior>
-							<GroupingBehavior>
-								<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
-							</GroupingBehavior>
-							<GroupingBehavior>
-								<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
-							</GroupingBehavior>
-							<GroupingBehavior>
-								<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
-							</GroupingBehavior>
-						</GroupingBehaviorList>
-						<GroupingList>
-							<Grouping>
-								<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
-								<ItemList>
-									<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
-								</ItemList>
-							</Grouping>
-							<Grouping>
-								<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
-								<ItemList>
-									<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
-								</ItemList>
-							</Grouping>
-							<Grouping>
-								<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
-								<ItemList>
-									<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
-								</ItemList>
-							</Grouping>
-							<Grouping>
-								<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
-								<ItemList>
-									<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
-								</ItemList>
-							</Grouping>
-							<Grouping>
-								<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
-								<ItemList>
-									<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
-								</ItemList>
-							</Grouping>
-						</GroupingList>
-					</GroupingInfo>
-				</SwitchContainer>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

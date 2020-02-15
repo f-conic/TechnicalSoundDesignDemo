@@ -27,33 +27,78 @@
 									<Flags>5</Flags>
 								</Point>
 								<Point>
-									<XPos>1</XPos>
+									<XPos>0.2</XPos>
 									<YPos>2</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>2</XPos>
+									<XPos>0.4</XPos>
 									<YPos>3</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>3</XPos>
+									<XPos>0.6</XPos>
 									<YPos>4</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>4</XPos>
+									<XPos>0.8</XPos>
 									<YPos>5</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>5</XPos>
+									<XPos>1</XPos>
 									<YPos>0</YPos>
 									<Flags>37</Flags>
 								</Point>
 							</PointList>
 						</Curve>
 					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="SG_Explosion" ID="{FD6D450D-23A5-4D2C-8BBD-E66E34BE1C36}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Near" ID="{F6009571-7E15-446B-958B-5F29BDA4D350}"/>
+						<Switch Name="Far" ID="{DB62DD6D-5FC6-4543-A461-86532BA18103}"/>
+						<Switch Name="Mid" ID="{C7B9E4B4-A484-4D9C-ABDB-E6BBFD09411E}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}"/>
+						<Curve Name="" ID="{00AD6663-534F-4A29-870D-6011484F4A02}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>20</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>49.83108</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>0</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="TEst" ID="{9EC9F875-0DD4-4AF0-B223-990B8C57FAD3}">
+					<ChildrenList>
+						<Switch Name="Test32" ID="{0902AC09-AF71-4302-A704-3EE8B3688689}"/>
+					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
