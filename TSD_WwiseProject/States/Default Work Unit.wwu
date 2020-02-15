@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{DB18C8E8-994A-4039-844D-B8AA714C5CAA}" SchemaVersion="94">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{DB18C8E8-994A-4039-844D-B8AA714C5CAA}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{DB18C8E8-994A-4039-844D-B8AA714C5CAA}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Near" ID="{E47352AC-7BC3-4D45-93C0-6858D6AC7537}">
+					<ChildrenList>
+						<State Name="None" ID="{76D18584-2639-42DC-8C18-541F44016926}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

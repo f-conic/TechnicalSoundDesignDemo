@@ -229,20 +229,20 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586200069496604520
+    m_lastTime: -8586198368730601764
     List:
-    - name: Grenade_Explosion
-      guid: 811663a6a3880c469fa142df83967f49
+    - name: grenade_explosion
+      guid: 6353da03e0b8b844958f367d2b8938d5
       id: 2974935085
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Grenade_Explosion
+      - ElementName: grenade_explosion
         ObjectType: 3
-      Path: Default Work Unit\Grenade_Explosion
-      maxAttenuation: 20
-      maxDuration: 2.825498
-      minDuration: 2.825498
+      Path: Default Work Unit\grenade_explosion
+      maxAttenuation: 35
+      maxDuration: 9.107959
+      minDuration: 1.0365
     - name: Play_Discussion
       guid: 23a6421fb58d6d4ea50b89040ac830c3
       id: 1444333482
@@ -284,8 +284,26 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586199322902740311
+    m_lastTime: -8586198369321156175
     List:
+    - name: RTPC_Explosion_Distance
+      guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
+      id: 202778478
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Explosion_Distance
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Explosion_Distance
+    - name: RTPC_Grenade_Explosion_Distance
+      guid: b0554b1a90aa004c8193b0fc1488ec66
+      id: 3326687027
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Grenade_Explosion_Distance
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Grenade_Explosion_Distance
     - name: RTPC_Incidental
       guid: 74810b19d19bbc4bbbf10d682f1501b5
       id: 1113248574
@@ -316,7 +334,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 24c4b447a58db14ba4f91ce583b21be8
     GuidInternal: 
-    m_lastTime: -8586200085433550171
+    m_lastTime: -8586198355537994318
     List:
     - name: Incidental_Switch_Group
       guid: 7f95aa530c6336499a17f8610f594ca9
@@ -357,6 +375,31 @@ MonoBehaviour:
         id: 366150597
         PathAndIcons:
         - ElementName: Switch_05
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: SG_Explosion
+      guid: 0d456dfda5232c4d8bbde66e34be1c36
+      id: 189681303
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SG_Explosion
+        ObjectType: 11
+      Path: Default Work Unit\SG_Explosion
+      values:
+      - name: Far
+        guid: 6ddd62dbc65f4345a46186532ba18103
+        id: 1183803292
+        PathAndIcons:
+        - ElementName: Far
+          ObjectType: 10
+      - name: Near
+        guid: 719500f6157e6b44958b5f29bda4d350
+        id: 1133794587
+        PathAndIcons:
+        - ElementName: Near
           ObjectType: 10
       ValueGuids: []
       ValueIcons: []
