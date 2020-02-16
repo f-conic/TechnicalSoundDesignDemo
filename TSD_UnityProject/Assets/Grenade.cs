@@ -41,11 +41,16 @@ public class Grenade : MonoBehaviour
 
 	private void PlayIncidental(float force, Collider i)
 	{
-		AkSoundEngine.RegisterGameObj(i.gameObject);
-		AkSoundEngine.SetRTPCValue("RTPC_Incidental_Delay", GetIncidentalDifference(i.gameObject).Item1, i.gameObject);
-		AkSoundEngine.SetRTPCValue("RTPC_Incidental", 1.0f - (force / SphereOverlapRadius), i.gameObject);
+		var incidentalEventRef = (IncidentalAudio)i.gameObject.GetComponent(typeof(IncidentalAudio));
 
-		AkSoundEngine.PostEvent("Play_Incidental", i.gameObject);
+		if (incidentalEventRef != null)
+		{
+			AkSoundEngine.RegisterGameObj(i.gameObject);
+			AkSoundEngine.SetRTPCValue("RTPC_Incidental_Delay", GetIncidentalDifference(i.gameObject).Item1, i.gameObject);
+			AkSoundEngine.SetRTPCValue("RTPC_Incidental", 1.0f - (force / SphereOverlapRadius), i.gameObject);
+
+			AkSoundEngine.PostEvent(incidentalEventRef.EventName, i.gameObject);
+		}
 	}
 
 	private float GetBlastForce(Collider i)
