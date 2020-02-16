@@ -3,9 +3,9 @@
 	<Attenuations>
 		<WorkUnit Name="Default Work Unit" ID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}" PersistMode="Standalone">
 			<ChildrenList>
-				<Attenuation Name="New Attenuation" ID="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}" ShortID="80807251">
+				<Attenuation Name="ATT_Explosion_Debris_Mid" ID="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}" ShortID="80807251">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="20"/>
+						<Property Name="RadiusMax" Type="Real64" Value="70"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -21,8 +21,33 @@
 											<Flags>5</Flags>
 										</Point>
 										<Point>
-											<XPos>20</XPos>
-											<YPos>-45.24902</YPos>
+											<XPos>19.24171</XPos>
+											<YPos>-0</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>27.8673</XPos>
+											<YPos>-0</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>30.7425</XPos>
+											<YPos>-5.34038</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>36.05055</XPos>
+											<YPos>-15.91838</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>47.21959</XPos>
+											<YPos>-23.82466</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>70</XPos>
+											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
 									</PointList>
@@ -152,7 +177,7 @@
 									<PointList>
 										<Point>
 											<XPos>0</XPos>
-											<YPos>0</YPos>
+											<YPos>-0</YPos>
 											<Flags>5</Flags>
 										</Point>
 										<Point>
@@ -190,6 +215,72 @@
 									</PointList>
 								</Curve>
 							</CurveUsageInfo>
+						</LowPassFilterUsage>
+						<HighPassFilterUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+						</HighPassFilterUsage>
+						<SpreadUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+						</SpreadUsage>
+						<FocusUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+						</FocusUsage>
+					</CurveUsageInfoList>
+				</Attenuation>
+				<Attenuation Name="ATT_Explosion_Debris_Close" ID="{EFEF8FEF-63D4-4F2D-9F7E-1124DCDC6B8A}" ShortID="332760178">
+					<PropertyList>
+						<Property Name="RadiusMax" Type="Real64" Value="30"/>
+					</PropertyList>
+					<CurveUsageInfoList>
+						<VolumeDryUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+								<Curve Name="VolumeDry" ID="{F023A1D2-4DB5-4512-A1EC-4526F9A242E6}">
+									<PropertyList>
+										<Property Name="Flags" Type="int32" Value="3"/>
+									</PropertyList>
+									<PointList>
+										<Point>
+											<XPos>0</XPos>
+											<YPos>0</YPos>
+											<Flags>5</Flags>
+										</Point>
+										<Point>
+											<XPos>5.87678</XPos>
+											<YPos>-0</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>12.36967</XPos>
+											<YPos>-5.23855</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>17.1564</XPos>
+											<YPos>-12.21501</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>21.46918</XPos>
+											<YPos>-20.2908</YPos>
+											<Flags>0</Flags>
+										</Point>
+										<Point>
+											<XPos>30</XPos>
+											<YPos>-200</YPos>
+											<Flags>37</Flags>
+										</Point>
+									</PointList>
+								</Curve>
+							</CurveUsageInfo>
+						</VolumeDryUsage>
+						<VolumeWetGameUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+						</VolumeWetGameUsage>
+						<VolumeWetUserUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+						</VolumeWetUserUsage>
+						<LowPassFilterUsage>
+							<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
 						</LowPassFilterUsage>
 						<HighPassFilterUsage>
 							<CurveUsageInfo Platform="Linked" CurveToUse="None"/>

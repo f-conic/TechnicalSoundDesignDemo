@@ -15,7 +15,11 @@
 						<Property Name="Max" Type="Real64" Value="1"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}"/>
+				<GameParameter Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
 				<GameParameter Name="RTPC_Explosion_Close_Distance" ID="{D0B3DCDC-D7D7-4F4B-8B45-62D3AA0C0FCB}">
 					<PropertyList>
 						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>

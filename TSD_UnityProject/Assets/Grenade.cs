@@ -15,7 +15,7 @@ public class Grenade : MonoBehaviour
 
 		return hitColliders;
 	}
-
+	
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.G))
