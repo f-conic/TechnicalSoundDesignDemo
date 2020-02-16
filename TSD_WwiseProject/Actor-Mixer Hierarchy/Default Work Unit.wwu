@@ -115,12 +115,18 @@
 							</BlendTrackList>
 						</BlendContainer>
 						<SwitchContainer Name="Grenade_Explosion" ID="{5289B99C-9B80-4CC1-8FB0-76813A34168B}" ShortID="356578839">
+							<PropertyList>
+								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="ReflectionsAuxSend">
+									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -680,6 +686,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="ReflectionsAuxSend">
+									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="SwitchGroupOrStateGroup">
 									<ObjectRef Name="SG_Explosion" ID="{FD6D450D-23A5-4D2C-8BBD-E66E34BE1C36}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>

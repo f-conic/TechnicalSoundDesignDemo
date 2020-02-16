@@ -8,8 +8,7 @@ public class TestTrigger : MonoBehaviour
 
     void Start()
     {
-	    AkSoundEngine.RegisterGameObj(gameObject);
-	    DialogEvent.Post(gameObject);
+	    AkSoundEngine.PostEvent("Play_Discussion", gameObject);
     }
 
     // Update is called once per frame
