@@ -21,7 +21,7 @@ under the Apache License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 OR CONDITIONS OF ANY KIND, either express or implied. See the Apache License for
 the specific language governing permissions and limitations under the License.
 
-  Version: v2019.1.7  Build: 7135
+  Version: v2019.2.0  Build: 7216
   Copyright (c) 2006-2020 Audiokinetic Inc.
 *******************************************************************************/
 
@@ -41,22 +41,22 @@ the specific language governing permissions and limitations under the License.
 #define AK_WWISESDK_VERSION_MAJOR				2019
 
 /// Wwise SDK minor version
-#define AK_WWISESDK_VERSION_MINOR				1
+#define AK_WWISESDK_VERSION_MINOR				2
 
 /// Wwise SDK sub-minor version
-#define AK_WWISESDK_VERSION_SUBMINOR			7
+#define AK_WWISESDK_VERSION_SUBMINOR			0
 
 /// Wwise SDK build number
-#define AK_WWISESDK_VERSION_BUILD				7135
+#define AK_WWISESDK_VERSION_BUILD				7216
 
 /// Wwise SDK build date (year)
 #define AK_WWISESDK_BUILD_YEAR					2020
 
 /// Wwise SDK build date (month)
-#define AK_WWISESDK_BUILD_MONTH					1
+#define AK_WWISESDK_BUILD_MONTH					2
 
 /// Wwise SDK build date (day)
-#define AK_WWISESDK_BUILD_DAY					29
+#define AK_WWISESDK_BUILD_DAY					10
 
 //@}
 
@@ -88,13 +88,13 @@ the specific language governing permissions and limitations under the License.
 											AK_WWISESDK_VERSION_NICKNAME_POSTFIX
 
 /// Wwise SDK branch
-#define AK_WWISESDK_BRANCH					"wwise_v2019.1"
+#define AK_WWISESDK_BRANCH					"wwise_v2019.2"
 
 /// @name Wwise SDK Copyright Notice
 
 //@{
 	/// Wwise SDK copyright notice
-	#define AK_WWISESDK_COPYRIGHT 				"\xA9 2006-2020. Audiokinetic Inc. All rights reserved."
+	#define AK_WWISESDK_COPYRIGHT 				"(C) 2006-2020. Audiokinetic Inc. All rights reserved."
 	/// Wwise SDK copyright notice
 	#define AK_WWISESDK_COPYRIGHT_CONSOLE 		"(C) 2006-2020. Audiokinetic Inc. All rights reserved."
 //@}

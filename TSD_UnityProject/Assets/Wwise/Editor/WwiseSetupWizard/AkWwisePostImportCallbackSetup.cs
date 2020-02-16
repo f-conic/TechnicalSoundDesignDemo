@@ -15,6 +15,16 @@ public class AkWwisePostImportCallbackSetup
 			return;
 
 		UnityEditor.EditorApplication.delayCall += CheckMigrationStatus;
+
+		AkUtilities.GetEventDurations = (uint eventID, ref float maximum, ref float minimum) =>
+		{
+			var eventInfo = AkWwiseProjectInfo.GetData().GetEventInfo(eventID);
+			if (eventInfo != null)
+			{
+				minimum = eventInfo.minDuration;
+				maximum = eventInfo.maxDuration;
+			}
+		};
 	}
 
 	private static void CheckMigrationStatus()
@@ -23,7 +33,6 @@ public class AkWwisePostImportCallbackSetup
 		{
 			int migrationStart;
 			bool returnToLauncher;
-
 			if (IsMigrationPending(out migrationStart, out returnToLauncher))
 			{
 				m_scheduledMigrationStart = migrationStart;
@@ -105,8 +114,7 @@ public class AkWwisePostImportCallbackSetup
 	private static void RefreshCallback()
 	{
 		PostImportFunction();
-		if (System.IO.File.Exists(System.IO.Path.Combine(UnityEngine.Application.dataPath,
-			WwiseSettings.WwiseSettingsFilename)))
+		if (WwiseSettings.Exists)
 		{
 			AkPluginActivator.Update();
 			AkPluginActivator.ActivatePluginsForEditor();
@@ -127,14 +135,7 @@ public class AkWwisePostImportCallbackSetup
 
 		try
 		{
-			if (System.IO.File.Exists(UnityEngine.Application.dataPath + System.IO.Path.DirectorySeparatorChar +
-			                          WwiseSettings.WwiseSettingsFilename))
-			{
-				WwiseSetupWizard.Settings = WwiseSettings.LoadSettings();
-				AkWwiseProjectInfo.GetData();
-			}
-
-			if (!string.IsNullOrEmpty(WwiseSetupWizard.Settings.WwiseProjectPath))
+			if (!string.IsNullOrEmpty(AkWwiseEditorSettings.Instance.WwiseProjectPath))
 			{
 				AkWwisePicker.PopulateTreeview();
 				if (AkWwiseProjectInfo.GetData().autoPopulateEnabled)
@@ -167,7 +168,7 @@ public class AkWwisePostImportCallbackSetup
 			return;
 		}
 
-		var settings = WwiseSettings.LoadSettings();
+		var settings = AkWwiseEditorSettings.Instance;
 		if (!settings.CreatedPicker)
 		{
 			// Delete all the ghost tabs (Failed to load).
@@ -184,10 +185,10 @@ public class AkWwisePostImportCallbackSetup
 						{
 							window.Close();
 						}
-						catch (System.Exception)
+						catch
 						{
-							// Do nothing here, this shoudn't cause any problem, however there has been
-							// occurences of Unity crashing on a null reference inside that method.
+							// Do nothing here, this shouldn't cause any problem, however there has been
+							// occurrences of Unity crashing on a null reference inside that method.
 						}
 					}
 				}
@@ -206,7 +207,7 @@ public class AkWwisePostImportCallbackSetup
 					AkWwiseWWUBuilder.StartWWUWatcher();
 
 				settings.CreatedPicker = true;
-				WwiseSettings.SaveSettings(settings);
+				settings.SaveSettings();
 			}
 		}
 
@@ -263,34 +264,37 @@ public class AkWwisePostImportCallbackSetup
 	// Called when changes are made to the scene and when a new scene is created.
 	public static void CheckWwiseGlobalExistance()
 	{
-		var settings = WwiseSettings.LoadSettings();
 		var activeSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-		if (string.IsNullOrEmpty(s_CurrentScene) || !s_CurrentScene.Equals(activeSceneName))
+		if (!string.IsNullOrEmpty(s_CurrentScene) && s_CurrentScene.Equals(activeSceneName))
+			return;
+
+		var settings = AkWwiseEditorSettings.Instance;
+
+		// Look for a game object which has the initializer component
+		var AkInitializers = UnityEngine.Object.FindObjectsOfType<AkInitializer>();
+		if (AkInitializers.Length == 0)
 		{
-			// Look for a game object which has the initializer component
-			var AkInitializers = UnityEngine.Object.FindObjectsOfType<AkInitializer>();
-			if (AkInitializers.Length == 0)
+			if (settings.CreateWwiseGlobal)
 			{
-				if (settings.CreateWwiseGlobal)
-				{
-					//No Wwise object in this scene, create one so that the sound engine is initialized and terminated properly even if the scenes are loaded
-					//in the wrong order.
-					var objWwise = new UnityEngine.GameObject("WwiseGlobal");
+				//No Wwise object in this scene, create one so that the sound engine is initialized and terminated properly even if the scenes are loaded
+				//in the wrong order.
+				var objWwise = new UnityEngine.GameObject("WwiseGlobal");
 
-					//Attach initializer and terminator components
-					UnityEditor.Undo.AddComponent<AkInitializer>(objWwise);
-				}
+				//Attach initializer and terminator components
+				UnityEditor.Undo.AddComponent<AkInitializer>(objWwise);
 			}
-			else if (settings.CreateWwiseGlobal == false && AkInitializers[0].gameObject.name == "WwiseGlobal")
-					UnityEditor.Undo.DestroyObjectImmediate(AkInitializers[0].gameObject);
-
-			if (settings.CreateWwiseListener)
-			{
-				AkUtilities.AddAkAudioListenerToMainCamera(true);
-			}
-
-			s_CurrentScene = activeSceneName;
 		}
+		else if (settings.CreateWwiseGlobal == false && AkInitializers[0].gameObject.name == "WwiseGlobal")
+		{
+			UnityEditor.Undo.DestroyObjectImmediate(AkInitializers[0].gameObject);
+		}
+
+		if (settings.CreateWwiseListener)
+		{
+			AkUtilities.AddAkAudioListenerToMainCamera(true);
+		}
+
+		s_CurrentScene = activeSceneName;
 	}
 }
 

@@ -75,6 +75,8 @@ public class AkPlaylistArray : global::System.IDisposable {
     return ret;
   }
 
+  public bool IsGrowingAllowed() { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_IsGrowingAllowed(swigCPtr); }
+
   public AKRESULT Reserve(uint in_ulReserve) { return (AKRESULT)AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_Reserve(swigCPtr, in_ulReserve); }
 
   public uint Reserved() { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_Reserved(swigCPtr); }
@@ -133,9 +135,9 @@ public class AkPlaylistArray : global::System.IDisposable {
     return ret;
   }
 
-  public bool GrowArray(uint in_uGrowBy) { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_GrowArray__SWIG_0(swigCPtr, in_uGrowBy); }
+  public bool GrowArray() { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_GrowArray__SWIG_0(swigCPtr); }
 
-  public bool GrowArray() { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_GrowArray__SWIG_1(swigCPtr); }
+  public bool GrowArray(uint in_uGrowBy) { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_GrowArray__SWIG_1(swigCPtr, in_uGrowBy); }
 
   public bool Resize(uint in_uiSize) { return AkSoundEnginePINVOKE.CSharp_AkPlaylistArray_Resize(swigCPtr, in_uiSize); }
 

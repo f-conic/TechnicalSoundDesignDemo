@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}" SchemaVersion="94">
+<WwiseDocument Type="WorkUnit" ID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}" SchemaVersion="97">
 	<Attenuations>
 		<WorkUnit Name="Default Work Unit" ID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}" PersistMode="Standalone">
 			<ChildrenList>
@@ -152,7 +152,7 @@
 									<PointList>
 										<Point>
 											<XPos>0</XPos>
-											<YPos>-0</YPos>
+											<YPos>0</YPos>
 											<Flags>5</Flags>
 										</Point>
 										<Point>

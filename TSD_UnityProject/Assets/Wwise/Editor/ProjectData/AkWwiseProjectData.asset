@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: 244b65672e59b4489111c04a26c3e412
     GuidInternal: 
-    m_lastTime: -8586201094185410180
+    m_lastTime: -8586198057573939124
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
-    ParentPhysicalPath: 
+    ParentPath: Factory Reflect Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8586200703883928810
+    m_lastTime: -8586198057574079164
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -135,6 +135,17 @@ MonoBehaviour:
       - ElementName: Mountain
         ObjectType: 15
       Path: Factory Reflect Acoustic Textures\Textures\Mountain
+    - name: Textures
+      guid: a3121e7828e3df4a8bba5fb89c74031d
+      id: 1276632493
+      PathAndIcons:
+      - ElementName: Factory Reflect Acoustic Textures
+        ObjectType: 12
+      - ElementName: Textures
+        ObjectType: 4
+      - ElementName: Textures
+        ObjectType: 15
+      Path: Factory Reflect Acoustic Textures\Textures\Textures
     - name: Tile
       guid: c4da82a82a13b747ba9db9907ba29cc0
       id: 2637588553
@@ -181,10 +192,10 @@ MonoBehaviour:
       Path: Factory Reflect Acoustic Textures\Textures\Wood_Deep
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586200228445242408
+    m_lastTime: -8586198038674958544
     List:
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -197,6 +208,26 @@ MonoBehaviour:
       - ElementName: ER
         ObjectType: 1
       Path: Default Work Unit\Master Audio Bus\ER
+    - name: Main
+      guid: 7eaec343dc79e147bd18f135ee8fe3ab
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Main
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Main
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
     - name: Room01
       guid: 91d308564790ff409bbcf084ff2220ee
       id: 348022313
@@ -210,10 +241,10 @@ MonoBehaviour:
       Path: Default Work Unit\Master Audio Bus\Room01
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: ba903315152c14479b3774af2ebe7f91
     GuidInternal: 
-    m_lastTime: -8586201094185440102
+    m_lastTime: -8586198057573929130
     List:
     - name: DefaultSoundBank
       guid: 657cac6351f47742a950aa8f7ce5babe
@@ -226,10 +257,10 @@ MonoBehaviour:
       Path: Default Work Unit\DefaultSoundBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586198368730601764
+    m_lastTime: -8586198057573358999
     List:
     - name: grenade_explosion
       guid: 6353da03e0b8b844958f367d2b8938d5
@@ -240,7 +271,7 @@ MonoBehaviour:
       - ElementName: grenade_explosion
         ObjectType: 3
       Path: Default Work Unit\grenade_explosion
-      maxAttenuation: 35
+      maxAttenuation: 0
       maxDuration: 9.107959
       minDuration: 1.0365
     - name: Play_Discussion
@@ -281,20 +312,20 @@ MonoBehaviour:
       minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586198369321156175
+    m_lastTime: -8586198057573769082
     List:
-    - name: RTPC_Explosion_Distance
+    - name: RTPC_Explosion_Close_Distance
       guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
-      id: 202778478
+      id: 1781674381
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: RTPC_Explosion_Distance
+      - ElementName: RTPC_Explosion_Close_Distance
         ObjectType: 13
-      Path: Default Work Unit\RTPC_Explosion_Distance
+      Path: Default Work Unit\RTPC_Explosion_Close_Distance
     - name: RTPC_Grenade_Explosion_Distance
       guid: b0554b1a90aa004c8193b0fc1488ec66
       id: 3326687027
@@ -324,17 +355,36 @@ MonoBehaviour:
       Path: Default Work Unit\RTPC_Incidental_Delay
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: e8c818db4a993940844db8aa714c5caa
     GuidInternal: 
-    m_lastTime: -8586201094185440102
-    List: []
+    m_lastTime: -8586198057573879116
+    List:
+    - name: Near
+      guid: ac5273e4c37b454d93c06858d6ac7537
+      id: 1133794587
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Near
+        ObjectType: 9
+      Path: Default Work Unit\Near
+      values:
+      - name: None
+        guid: 8485d1763926dc428c18541f44016926
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: 24c4b447a58db14ba4f91ce583b21be8
     GuidInternal: 
-    m_lastTime: -8586198355537994318
+    m_lastTime: -8586198057582711103
     List:
     - name: Incidental_Switch_Group
       guid: 7f95aa530c6336499a17f8610f594ca9
@@ -395,6 +445,12 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: Far
           ObjectType: 10
+      - name: Mid
+        guid: b4e4b9c784a49c4dabdbe6bbfd09411e
+        id: 1182670505
+        PathAndIcons:
+        - ElementName: Mid
+          ObjectType: 10
       - name: Near
         guid: 719500f6157e6b44958b5f29bda4d350
         id: 1133794587
@@ -404,14 +460,36 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: TEst
+      guid: 75f8c99ed40df04ab223990b8c57fad3
+      id: 3157003241
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TEst
+        ObjectType: 11
+      Path: Default Work Unit\TEst
+      values:
+      - name: Test32
+        guid: 09ac020971af0243a7043ee8b3688689
+        id: 110113626
+        PathAndIcons:
+        - ElementName: Test32
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
-    ParentPhysicalPath: 
+    ParentPath: Default Work Unit
     guid: a0060f2313d2464c865b07ca6dcc16ef
     GuidInternal: 
-    m_lastTime: -8586201094185410180
+    m_lastTime: -8586198057573749086
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
+  - /TSD_WwiseProject/Virtual Acoustics
+  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures
+  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures/Textures
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

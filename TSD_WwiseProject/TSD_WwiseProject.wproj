@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="Project" SchemaVersion="94" WwiseVersion="v2019.1.7" WwiseBuild="7135">
+<WwiseDocument Type="Project" SchemaVersion="97" WwiseVersion="v2019.2.0" WwiseBuild="7216">
 	<ProjectInfo>
 		<Project Name="TSD_WwiseProject" ID="{A7F32F35-3C67-42F7-86D4-1FD4C315954C}">
 			<Platforms>
@@ -19,7 +19,7 @@
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
 					</ValueList>
 				</Property>
 				<Property Name="GlobalVoiceInstancesLimit" Type="int16">
@@ -31,7 +31,7 @@
 				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True"/>
 				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True"/>
 				<Property Name="SoundBankGenerateMaxAttenuationInfo" Type="bool" Value="True"/>
-				<Property Name="SoundBankHeaderFilePath" Type="string" Value="../../04_Unity/00_Repos/TechnicalSoundDesignDemo/TSD_UnityProject/Assets/StreamingAssets/Audio/GeneratedSoundBanks"/>
+				<Property Name="SoundBankHeaderFilePath" Type="string" Value="..\..\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_UnityProject\Assets\StreamingAssets\Audio\GeneratedSoundBanks"/>
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
 						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
@@ -214,6 +214,11 @@
 						<Property Name="EnableAttenuation" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
 							</ValueList>
 						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
@@ -441,6 +446,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -514,6 +524,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -663,6 +678,11 @@
 				</SharedPropertyList>
 				<SharedPropertyList ClassName="Project" PluginType="0" CompanyID="1" PluginID="3">
 					<PropertyList>
+						<Property Name="AlwaysSaveMediaIDsFile" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="AutoDetectFFTWindowSize" Type="int16">
 							<ValueList>
 								<Value>512</Value>
@@ -776,6 +796,11 @@
 						<Property Name="MaxMessagesPerMessageId" Type="Uint32">
 							<ValueList>
 								<Value>100</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MediaIDsInSingleFile" Type="bool">
+							<ValueList>
+								<Value>False</Value>
 							</ValueList>
 						</Property>
 						<Property Name="OverrideColor" Type="bool">
@@ -940,6 +965,11 @@
 						<Property Name="QualityFactor" Type="Real32">
 							<ValueList>
 								<Value>4</Value>
+							</ValueList>
+						</Property>
+						<Property Name="RenderLineAlgo" Type="int32">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="ReservoirBiasFactor" Type="Real32">
@@ -1207,6 +1237,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -1392,6 +1427,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -1460,6 +1500,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -1629,6 +1674,11 @@
 						<Property Name="EnableAttenuation" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
 							</ValueList>
 						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
@@ -1831,6 +1881,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -1954,6 +2009,11 @@
 						<Property Name="RandomOrSequence" Type="int16">
 							<ValueList>
 								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -2159,6 +2219,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -2349,6 +2414,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -2417,6 +2487,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -2543,12 +2618,12 @@
 				</SharedPropertyList>
 				<SharedPropertyList ClassName="Path" PluginType="0" CompanyID="1" PluginID="11">
 					<PropertyList>
-						<Property Name="AppendOffset" Type="int32">
+						<Property Name="AppendOffset" Type="Uint32">
 							<ValueList>
 								<Value>1000</Value>
 							</ValueList>
 						</Property>
-						<Property Name="Duration" Type="int32">
+						<Property Name="Duration" Type="Uint32">
 							<ValueList>
 								<Value>5000</Value>
 							</ValueList>
@@ -2809,6 +2884,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="GameAuxSendHPF" Type="int16">
 							<ValueList>
 								<Value>0</Value>
@@ -2942,6 +3022,11 @@
 						<Property Name="RecoveryTime" Type="Real64">
 							<ValueList>
 								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="SpeakerPanning" Type="int16">
@@ -3233,6 +3318,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -3393,6 +3483,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -3461,6 +3556,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -3647,6 +3747,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -3807,6 +3912,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -3875,6 +3985,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -4049,6 +4164,11 @@
 						<Property Name="EnableAttenuation" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
 							</ValueList>
 						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
@@ -4241,6 +4361,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -4309,6 +4434,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -4782,6 +4912,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -4937,6 +5072,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -5005,6 +5145,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -5196,6 +5341,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="EnableLoudnessNormalization" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -5356,6 +5506,11 @@
 								<Value>False</Value>
 							</ValueList>
 						</Property>
+						<Property Name="OverrideEarlyReflections" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideEffect" Type="bool">
 							<ValueList>
 								<Value>False</Value>
@@ -5424,6 +5579,11 @@
 						<Property Name="PriorityDistanceOffset" Type="int16">
 							<ValueList>
 								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
+							<ValueList>
+								<Value>0</Value>
 							</ValueList>
 						</Property>
 						<Property Name="RenderEffect0" Type="bool">
@@ -6315,6 +6475,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="EnableDiffraction" Type="bool">
+							<ValueList>
+								<Value>False</Value>
+							</ValueList>
+						</Property>
 						<Property Name="GameAuxSendHPF" Type="int16">
 							<ValueList>
 								<Value>0</Value>
@@ -6376,6 +6541,11 @@
 							</ValueList>
 						</Property>
 						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>0</Value>
+							</ValueList>
+						</Property>
+						<Property Name="ReflectionsVolume" Type="Real64">
 							<ValueList>
 								<Value>0</Value>
 							</ValueList>
@@ -6477,11 +6647,6 @@
 						<Property Name="EndTrimOffset" Type="Real64">
 							<ValueList>
 								<Value>0</Value>
-							</ValueList>
-						</Property>
-						<Property Name="MidiFileName" Type="string">
-							<ValueList>
-								<Value></Value>
 							</ValueList>
 						</Property>
 						<Property Name="OverrideColor" Type="bool">
@@ -9121,10 +9286,11 @@
 										<XPos>0</XPos>
 										<YPos>0</YPos>
 										<Flags>5</Flags>
+										<SegmentShape>Log2</SegmentShape>
 									</Point>
 									<Point>
 										<XPos>100</XPos>
-										<YPos>-200</YPos>
+										<YPos>-8.65404</YPos>
 										<Flags>37</Flags>
 									</Point>
 								</PointList>

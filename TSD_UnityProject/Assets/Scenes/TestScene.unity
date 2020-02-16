@@ -248,13 +248,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d56514f1791a14c8cdd8ff085aebc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcousticTexture:
-    idInternal: 0
+  Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  AcousticTextures:
+  - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  OcclusionValues:
+  - 1
   EnableDiffraction: 1
   EnableDiffractionOnBoundaryEdges: 0
   AssociatedRoom: {fileID: 0}
+  AcousticTextureInternal:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!65 &136154381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -365,7 +372,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!1 &223507071
@@ -480,7 +486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &421765779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +507,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!54 &421765780
@@ -740,7 +745,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!136 &442233451
@@ -879,9 +883,10 @@ GameObject:
   - component: {fileID: 672361206}
   - component: {fileID: 672361205}
   - component: {fileID: 672361204}
+  - component: {fileID: 672361201}
   - component: {fileID: 672361203}
   - component: {fileID: 672361202}
-  - component: {fileID: 672361201}
+  - component: {fileID: 672361208}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -914,6 +919,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 672361200}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0202cba5246374094f8008204ca229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a95e49887535bdf4e9e8f7d2abea8355,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  LargeModePositions: []
+  multiPositionArray: []
+--- !u!114 &672361203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672361200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf47d6f84114fd7428ad9221825268cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -925,42 +964,8 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &672361203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672361200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc1178e2a24ef344b5e241ec1f59a16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a95e49887535bdf4e9e8f7d2abea8355,
-      type: 2}
-  reflectAuxBus:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 882b2cfc1e0705b408f3bb1b545564e9,
-      type: 2}
-  reflectionMaxPathLength: 10000
-  reflectionsAuxBusGain: 1
-  reflectionsOrder: 2
-  roomReverbAuxBusGain: 1
-  diffractionMaxEdges: 8
-  diffractionMaxPaths: 8
-  diffractionMaxPathLength: 10000
-  drawFirstOrderReflections: 1
-  drawSecondOrderReflections: 1
-  drawHigherOrderReflections: 0
-  drawDiffractionPaths: 1
 --- !u!135 &672361204
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1029,12 +1034,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672361200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.1, y: 1.95, z: 5.29}
+  m_LocalPosition: {x: 3.06, y: 1.95, z: 16.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672361208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672361200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbe2ce156ce3134da1eeeed3e2f89d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawFirstOrderReflections: 1
+  drawSecondOrderReflections: 1
+  drawHigherOrderReflections: 0
+  drawDiffractionPaths: 1
 --- !u!1 &689573885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1073554962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1317,7 +1338,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!1 &1132062272
@@ -1391,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0186213819e72b4ba140b36fd83b693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
+  triggerList: f7e1664c
   useOtherObject: 0
   data:
     idInternal: 0
@@ -1424,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1439405477
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1535,7 +1555,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!1 &1523242544
@@ -1553,7 +1572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1523242545
 Transform:
   m_ObjectHideFlags: 0
@@ -1635,13 +1654,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d56514f1791a14c8cdd8ff085aebc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcousticTexture:
-    idInternal: 0
+  Mesh: {fileID: 0}
+  AcousticTextures:
+  - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  OcclusionValues:
+  - 1
   EnableDiffraction: 0
   EnableDiffractionOnBoundaryEdges: 0
   AssociatedRoom: {fileID: 1679860445}
+  AcousticTextureInternal:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!33 &1679860447
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1713,7 +1739,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!1 &1703366872
@@ -1734,7 +1759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1703366873
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1885,7 +1910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1735744731
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1922,7 +1947,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!114 &1735744733
@@ -1937,13 +1961,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d56514f1791a14c8cdd8ff085aebc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcousticTexture:
-    idInternal: 0
+  Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  AcousticTextures:
+  - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 238d3e74826ea1b4397c291685a121e9,
+      type: 2}
+  OcclusionValues:
+  - 1
   EnableDiffraction: 1
   EnableDiffractionOnBoundaryEdges: 0
   AssociatedRoom: {fileID: 0}
+  AcousticTextureInternal:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!65 &1735744734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2012,7 +2044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735744730}
   m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 7.87, z: 3.42}
+  m_LocalPosition: {x: 0, y: 7.87, z: 3.61}
   m_LocalScale: {x: 12.2, y: 7.7406, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2037,7 +2069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1907103921
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2231,18 +2263,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089640625}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8d56514f1791a14c8cdd8ff085aebc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcousticTexture:
-    idInternal: 0
+  Mesh: {fileID: 0}
+  AcousticTextures:
+  - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  OcclusionValues:
+  - 1
   EnableDiffraction: 0
   EnableDiffractionOnBoundaryEdges: 0
   AssociatedRoom: {fileID: 0}
+  AcousticTextureInternal:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &2134213287
 GameObject:
   m_ObjectHideFlags: 0

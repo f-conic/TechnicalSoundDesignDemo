@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}" SchemaVersion="94">
+<WwiseDocument Type="WorkUnit" ID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}" SchemaVersion="97">
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}" PersistMode="Standalone">
 			<ChildrenList>
@@ -213,9 +213,12 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" ShortID="621160400">
+										<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}">
 											<Language>SFX</Language>
 											<AudioFile>incidental_generic_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="621160400"/>
+											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
@@ -232,9 +235,12 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" ShortID="820830402">
+										<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}">
 											<Language>SFX</Language>
 											<AudioFile>incidental_generic_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="820830402"/>
+											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
@@ -251,9 +257,12 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" ShortID="591728996">
+										<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}">
 											<Language>SFX</Language>
 											<AudioFile>incidental_generic_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="591728996"/>
+											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
@@ -270,9 +279,12 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" ShortID="657504781">
+										<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}">
 											<Language>SFX</Language>
 											<AudioFile>incidental_generic_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="657504781"/>
+											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
@@ -289,9 +301,12 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" ShortID="92003061">
+										<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}">
 											<Language>SFX</Language>
 											<AudioFile>incidental_generic_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="92003061"/>
+											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
@@ -420,7 +435,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" ShortID="858623284">
+								<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}">
 									<PropertyList>
 										<Property Name="FadeInDuration" Type="Real64" Value="0.014875379807481"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
@@ -429,6 +444,9 @@
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Hand Mortar Small Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="858623284"/>
+									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
@@ -438,6 +456,9 @@
 						<Sound Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" ShortID="466059799">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -445,7 +466,7 @@
 									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
 										<Attenuation Name="New Attenuation (Custom)" ID="{5FD871C7-DBFB-4A14-8831-C3A5B5C61E82}" ShortID="1066233423">
 											<PropertyList>
-												<Property Name="RadiusMax" Type="Real64" Value="20"/>
+												<Property Name="RadiusMax" Type="Real64" Value="40"/>
 											</PropertyList>
 											<CurveUsageInfoList>
 												<VolumeDryUsage>
@@ -461,7 +482,7 @@
 																	<Flags>5</Flags>
 																</Point>
 																<Point>
-																	<XPos>20</XPos>
+																	<XPos>40</XPos>
 																	<YPos>-45.24902</YPos>
 																	<Flags>37</Flags>
 																</Point>
@@ -497,11 +518,17 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
+								<Reference Name="ReflectionsAuxSend">
+									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}" ShortID="102691801">
+								<AudioFileSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}">
 									<Language>SFX</Language>
 									<AudioFile>Discussion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="102691801"/>
+									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
@@ -597,13 +624,19 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" ShortID="68168911">
+								<AudioFileSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}">
 									<Language>SFX</Language>
 									<AudioFile>Kit014Break014.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="68168911"/>
+									</MediaIDList>
 								</AudioFileSource>
-								<AudioFileSource Name="Discussion" ID="{CA37E942-16A4-42EE-B56E-761718609340}" ShortID="532335442">
+								<AudioFileSource Name="Discussion" ID="{CA37E942-16A4-42EE-B56E-761718609340}">
 									<Language>SFX</Language>
 									<AudioFile>Discussion.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="532335442"/>
+									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<PositioningInfo>
@@ -657,9 +690,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_far_main_01" ID="{DB2A6471-D044-49C7-89C0-81C459D84735}" ShortID="287003259">
+												<AudioFileSource Name="grenade_explosion_outdoor_far_main_01" ID="{DB2A6471-D044-49C7-89C0-81C459D84735}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_far_main_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="287003259"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -688,9 +724,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_far_tail_01" ID="{29A36962-3AA6-4131-AC81-A59408093EFE}" ShortID="928291044">
+												<AudioFileSource Name="grenade_explosion_outdoor_far_tail_01" ID="{29A36962-3AA6-4131-AC81-A59408093EFE}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_far_tail_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="928291044"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -719,9 +758,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_mid_main_01" ID="{4811B3E3-B312-42C2-8DCB-CB45C3EF4E3B}" ShortID="133659364">
+												<AudioFileSource Name="grenade_explosion_outdoor_mid_main_01" ID="{4811B3E3-B312-42C2-8DCB-CB45C3EF4E3B}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_mid_main_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="133659364"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -754,9 +796,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_mid_tail_01" ID="{BBA788FB-3001-4CC1-883E-485F2950CAE1}" ShortID="248592523">
+												<AudioFileSource Name="grenade_explosion_outdoor_mid_tail_01" ID="{BBA788FB-3001-4CC1-883E-485F2950CAE1}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_mid_tail_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="248592523"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -785,9 +830,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_mid_debris_01" ID="{DE341DF1-C5A6-4962-9E17-1D59301E6E01}" ShortID="199993520">
+												<AudioFileSource Name="grenade_explosion_outdoor_mid_debris_01" ID="{DE341DF1-C5A6-4962-9E17-1D59301E6E01}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_mid_debris_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="199993520"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -857,9 +905,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_main_01" ID="{B95E400C-C450-4E5C-AD4D-8003E62836C6}" ShortID="766010581">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_main_01" ID="{B95E400C-C450-4E5C-AD4D-8003E62836C6}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_main_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="766010581"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -876,9 +927,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_main_02-001" ID="{1554AFCF-A9D1-460B-B706-CC1A002CA90F}" ShortID="237141208">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_main_02-001" ID="{1554AFCF-A9D1-460B-B706-CC1A002CA90F}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_main_02-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237141208"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -895,9 +949,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_main_03" ID="{A87BBC28-B851-4188-81FF-A2C089178B5C}" ShortID="1041255031">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_main_03" ID="{A87BBC28-B851-4188-81FF-A2C089178B5C}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_main_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1041255031"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -939,9 +996,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_01" ID="{96FA1C9E-08C8-4EAF-80DC-0E23722C5D8A}" ShortID="626671817">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_01" ID="{96FA1C9E-08C8-4EAF-80DC-0E23722C5D8A}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_tail_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="626671817"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -958,9 +1018,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_02" ID="{B8927177-321C-4330-A029-129395950772}" ShortID="1008827774">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_02" ID="{B8927177-321C-4330-A029-129395950772}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_tail_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1008827774"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -977,9 +1040,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_03" ID="{509162D5-D3D3-4DE7-BE60-DE3C6B3E9C63}" ShortID="1017057852">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_tail_03" ID="{509162D5-D3D3-4DE7-BE60-DE3C6B3E9C63}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_tail_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1017057852"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -1022,9 +1088,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_tinnitus_01" ID="{75F999E3-CE94-46DE-B96A-5306164E82C6}" ShortID="513441474">
+												<AudioFileSource Name="grenade_explosion_tinnitus_01" ID="{75F999E3-CE94-46DE-B96A-5306164E82C6}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_tinnitus_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="513441474"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -1095,9 +1164,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_01" ID="{16C40DD9-1615-4AB8-A239-83A05C748B39}" ShortID="276802975">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_01" ID="{16C40DD9-1615-4AB8-A239-83A05C748B39}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_debris_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="276802975"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -1114,9 +1186,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_02" ID="{19D30779-BEE2-4D0F-8C5C-023D32434EA2}" ShortID="575368629">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_02" ID="{19D30779-BEE2-4D0F-8C5C-023D32434EA2}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_debris_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="575368629"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
@@ -1133,9 +1208,12 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_03" ID="{74CD0783-2CF5-4758-9C94-AE2E49C27ABC}" ShortID="1003542365">
+												<AudioFileSource Name="grenade_explosion_outdoor_close_debris_03" ID="{74CD0783-2CF5-4758-9C94-AE2E49C27ABC}">
 													<Language>SFX</Language>
 													<AudioFile>grenade_explosion_outdoor_close_debris_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1003542365"/>
+													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>

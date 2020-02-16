@@ -10,43 +10,54 @@ public class AkWwiseXMLWatcher
 	private static readonly AkWwiseXMLWatcher instance = new AkWwiseXMLWatcher();
 	public static AkWwiseXMLWatcher Instance { get { return instance; } }
 
-	private readonly string SoundBankFolder;
-	private readonly System.IO.FileSystemWatcher XmlWatcher;
-
-	private bool fireEvent = false;
+	private System.IO.FileSystemWatcher XmlWatcher;
+	private bool ExceptionOccurred;
+	private bool fireEvent;
 
 	public event System.Action XMLUpdated;
-
 	public System.Func<bool> PopulateXML;
 
 	private AkWwiseXMLWatcher()
 	{
-		XmlWatcher = new System.IO.FileSystemWatcher();
-		SoundBankFolder = AkBasePathGetter.GetSoundbankBasePath();
+		XmlWatcher = new System.IO.FileSystemWatcher{ Filter = "*.xml", IncludeSubdirectories = true, };
 
 		try
 		{
-			XmlWatcher.Path = SoundBankFolder;
-			XmlWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
-
 			// Event handlers that are watching for specific event
 			XmlWatcher.Created += RaisePopulateFlag;
 			XmlWatcher.Changed += RaisePopulateFlag;
 
-			XmlWatcher.Filter = "*.xml";
-			XmlWatcher.IncludeSubdirectories = true;
+			XmlWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
 			XmlWatcher.EnableRaisingEvents = true;
+			XmlWatcher.Path = AkBasePathGetter.GetPlatformBasePath();
 		}
-		catch (System.Exception)
+		catch
 		{
-			// Deliberately left empty
+			ExceptionOccurred = true;
 		}
 
-		UnityEditor.EditorApplication.update += onEditorUpdate;
+		UnityEditor.EditorApplication.update += OnEditorUpdate;
 	}
 
-	void onEditorUpdate()
+	private void OnEditorUpdate()
 	{
+		var logWarnings = AkBasePathGetter.LogWarnings;
+		AkBasePathGetter.LogWarnings = false;
+		var path = AkBasePathGetter.GetPlatformBasePath();
+		AkBasePathGetter.LogWarnings = logWarnings;
+
+		try
+		{
+			if (ExceptionOccurred || path != XmlWatcher.Path)
+				XmlWatcher.Path = path;
+
+			ExceptionOccurred = false;
+		}
+		catch
+		{
+			ExceptionOccurred = true;
+		}
+
 		if (!fireEvent)
 			return;
 
@@ -67,7 +78,6 @@ public class AkWwiseXMLWatcher
 
 	private void RaisePopulateFlag(object sender, System.IO.FileSystemEventArgs e)
 	{
-		// Signal the main thread it's time to populate (cannot run populate somewhere else than on main thread)
 		fireEvent = true;
 	}
 }

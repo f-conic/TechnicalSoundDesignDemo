@@ -1,6 +1,3 @@
-using System.Diagnostics;
-using UnityEngine;
-
 #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 //////////////////////////////////////////////////////////////////////
 //
@@ -33,8 +30,8 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 	private UnityEngine.Collider m_Collider;
 
 	private AkGameObjEnvironmentData m_envData;
-	[UnityEngine.SerializeField]
-	public AkGameObjPositionData m_posData;
+
+	private AkGameObjPositionData m_posData;
 
 	/// When not set to null, the position will be offset relative to the Game Object position by the Position Offset
 	public AkGameObjPositionOffsetData m_positionOffsetData;
@@ -49,7 +46,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 		get { return m_listeners.ListenerList; }
 	}
 
-	public bool isRegistered = false;
+	private bool isRegistered = false;
 
 	internal void AddListener(AkAudioListener listener)
 	{

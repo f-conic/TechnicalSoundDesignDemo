@@ -72,8 +72,7 @@ public class AkGameObjListenerList : AkAudioListener.BaseListenerList
 
 	public void RemoveFromInitialListenerList(AkAudioListener listener)
 	{
-		if (initialListenerList.Contains(listener))
-			initialListenerList.Remove(listener);
+		initialListenerList.Remove(listener);
 	}
 #endif
 }

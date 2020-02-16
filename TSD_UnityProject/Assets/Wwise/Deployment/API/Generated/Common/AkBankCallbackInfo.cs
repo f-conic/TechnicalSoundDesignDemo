@@ -54,9 +54,6 @@ public class AkBankCallbackInfo : global::System.IDisposable {
   public AKRESULT loadResult { get { return (AKRESULT)AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_loadResult_get(swigCPtr); } 
   }
 
-  public int memPoolId { get { return AkSoundEnginePINVOKE.CSharp_AkBankCallbackInfo_memPoolId_get(swigCPtr); } 
-  }
-
   public AkBankCallbackInfo() : this(AkSoundEnginePINVOKE.CSharp_new_AkBankCallbackInfo(), true) {
   }
 

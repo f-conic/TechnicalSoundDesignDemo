@@ -207,13 +207,7 @@ public class AkPluginActivator
 			case UnityEditor.BuildTarget.StandaloneLinux64:
 				return "Linux";
 
-#if UNITY_2017_3_OR_NEWER
 			case UnityEditor.BuildTarget.StandaloneOSX:
-#else
-			case UnityEditor.BuildTarget.StandaloneOSXIntel:
-			case UnityEditor.BuildTarget.StandaloneOSXIntel64:
-			case UnityEditor.BuildTarget.StandaloneOSXUniversal:
-#endif
 				return "Mac";
 
 			case (UnityEditor.BuildTarget)39: // UnityEditor.BuildTarget.Lumin
@@ -221,11 +215,6 @@ public class AkPluginActivator
 
 			case UnityEditor.BuildTarget.PS4:
 				return "PS4";
-
-#if !UNITY_2018_3_OR_NEWER
-			case UnityEditor.BuildTarget.PSP2:
-				return "Vita";
-#endif
 
 			case UnityEditor.BuildTarget.StandaloneWindows:
 			case UnityEditor.BuildTarget.StandaloneWindows64:
@@ -237,10 +226,8 @@ public class AkPluginActivator
 			case UnityEditor.BuildTarget.XboxOne:
 				return "XboxOne";
 
-#if UNITY_5_6_OR_NEWER
 			case UnityEditor.BuildTarget.Switch:
 				return "Switch";
-#endif
 
 #if UNITY_2019_3_OR_NEWER
 			case UnityEditor.BuildTarget.Stadia:
@@ -334,7 +321,6 @@ public class AkPluginActivator
 		var isMac = platformName == "Mac";
 		var isX86 = architecture == "x86";
 		var isX64 = architecture == "x86_64";
-		var macPlatformData = isMac ? "AnyCPU" : "None";
 
 #if !UNITY_2019_2_OR_NEWER
 		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneLinux, "CPU", isLinux && isX86 ? "x86" : "None");
@@ -343,14 +329,7 @@ public class AkPluginActivator
 		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneLinux64, "CPU", isLinux && isX64 ? "x86_64" : "None");
 		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneWindows, "CPU", isWindows && isX86 ? "AnyCPU" : "None");
 		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneWindows64, "CPU", isWindows && isX64 ? "AnyCPU" : "None");
-
-#if UNITY_2017_3_OR_NEWER
-		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneOSX, "CPU", macPlatformData);
-#else
-		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneOSXIntel, "CPU", macPlatformData);
-		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneOSXIntel64, "CPU", macPlatformData);
-		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneOSXUniversal, "CPU", macPlatformData);
-#endif
+		pluginImporter.SetPlatformData(UnityEditor.BuildTarget.StandaloneOSX, "CPU", isMac ? "AnyCPU" : "None");
 	}
 
 	public static void ActivatePluginsForDeployment(UnityEditor.BuildTarget target, bool Activate)
@@ -712,8 +691,8 @@ public class AkPluginActivator
 		//Gather all GeneratedSoundBanks folder from the project
 		var allPaths = AkUtilities.GetAllBankPaths();
 		var bNeedRefresh = false;
-		var projectPath = System.IO.Path.GetDirectoryName(AkUtilities.GetFullPath(UnityEngine.Application.dataPath,
-			WwiseSettings.LoadSettings().WwiseProjectPath));
+		var projectPath = AkWwiseEditorSettings.WwiseProjectAbsolutePath;
+		var baseSoundBankPath = AkBasePathGetter.GetFullSoundBankPathEditor();
 
 		AkWwiseInitializationSettings.UpdatePlatforms();
 
@@ -737,8 +716,7 @@ public class AkPluginActivator
 					if (!System.IO.File.Exists(pluginFile))
 					{
 						//Try in StreamingAssets too.
-						pluginFile = System.IO.Path.Combine(System.IO.Path.Combine(AkBasePathGetter.GetFullSoundBankPath(), customPF),
-							"PluginInfo.xml");
+						pluginFile = System.IO.Path.Combine(System.IO.Path.Combine(baseSoundBankPath, customPF), "PluginInfo.xml");
 						if (!System.IO.File.Exists(pluginFile))
 							continue;
 					}

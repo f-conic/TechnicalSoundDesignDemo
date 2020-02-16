@@ -48,16 +48,7 @@ public class AkInitSettings : global::System.IDisposable {
   public uint uMaxNumPaths { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uMaxNumPaths_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uMaxNumPaths_get(swigCPtr); } 
   }
 
-  public uint uDefaultPoolSize { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uDefaultPoolSize_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uDefaultPoolSize_get(swigCPtr); } 
-  }
-
-  public float fDefaultPoolRatioThreshold { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_fDefaultPoolRatioThreshold_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_fDefaultPoolRatioThreshold_get(swigCPtr); } 
-  }
-
   public uint uCommandQueueSize { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uCommandQueueSize_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uCommandQueueSize_get(swigCPtr); } 
-  }
-
-  public int uPrepareEventMemoryPoolID { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uPrepareEventMemoryPoolID_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uPrepareEventMemoryPoolID_get(swigCPtr); } 
   }
 
   public bool bEnableGameSyncPreparation { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_bEnableGameSyncPreparation_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_bEnableGameSyncPreparation_get(swigCPtr); } 
@@ -67,9 +58,6 @@ public class AkInitSettings : global::System.IDisposable {
   }
 
   public uint uNumSamplesPerFrame { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uNumSamplesPerFrame_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uNumSamplesPerFrame_get(swigCPtr); } 
-  }
-
-  public uint uMonitorPoolSize { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uMonitorPoolSize_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uMonitorPoolSize_get(swigCPtr); } 
   }
 
   public uint uMonitorQueuePoolSize { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uMonitorQueuePoolSize_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uMonitorQueuePoolSize_get(swigCPtr); } 
@@ -98,13 +86,13 @@ public class AkInitSettings : global::System.IDisposable {
   public AkFloorPlane eFloorPlane { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_eFloorPlane_set(swigCPtr, (int)value); }  get { return (AkFloorPlane)AkSoundEnginePINVOKE.CSharp_AkInitSettings_eFloorPlane_get(swigCPtr); } 
   }
 
+  public uint uBankReadBufferSize { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_uBankReadBufferSize_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_uBankReadBufferSize_get(swigCPtr); } 
+  }
+
   public float fDebugOutOfRangeLimit { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_fDebugOutOfRangeLimit_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_fDebugOutOfRangeLimit_get(swigCPtr); } 
   }
 
   public bool bDebugOutOfRangeCheckEnabled { set { AkSoundEnginePINVOKE.CSharp_AkInitSettings_bDebugOutOfRangeCheckEnabled_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkInitSettings_bDebugOutOfRangeCheckEnabled_get(swigCPtr); } 
-  }
-
-  public AkInitSettings() : this(AkSoundEnginePINVOKE.CSharp_new_AkInitSettings(), true) {
   }
 
 }

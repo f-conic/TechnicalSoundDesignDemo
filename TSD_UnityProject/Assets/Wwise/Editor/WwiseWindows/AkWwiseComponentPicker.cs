@@ -141,7 +141,7 @@ public class AkWwiseComponentPicker : UnityEditor.EditorWindow
 
 			s_componentPicker.m_treeView.AssignDefaults();
 			s_componentPicker.m_treeView.SetRootItem(
-				System.IO.Path.GetFileNameWithoutExtension(WwiseSetupWizard.Settings.WwiseProjectPath), WwiseObjectType.Project);
+				System.IO.Path.GetFileNameWithoutExtension(AkWwiseEditorSettings.Instance.WwiseProjectPath), WwiseObjectType.Project);
 
 			//Populate the tree with the correct type
 			switch (objectType)

@@ -29,15 +29,12 @@ public class AkWwiseXMLBuilder
 			var filename = System.IO.Path.Combine(FullSoundbankPath, "SoundbanksInfo.xml");
 			if (!System.IO.File.Exists(filename))
 			{
-				FullSoundbankPath = System.IO.Path.Combine(UnityEngine.Application.streamingAssetsPath,
-					WwiseSetupWizard.Settings.SoundbankPath);
+				FullSoundbankPath = System.IO.Path.Combine(UnityEngine.Application.streamingAssetsPath, AkWwiseEditorSettings.Instance.SoundbankPath);
 
 				if (!System.IO.Directory.Exists(FullSoundbankPath))
 					return false;
 
-				var foundFiles =
-					System.IO.Directory.GetFiles(FullSoundbankPath, "SoundbanksInfo.xml", System.IO.SearchOption.AllDirectories);
-
+				var foundFiles = System.IO.Directory.GetFiles(FullSoundbankPath, "SoundbanksInfo.xml", System.IO.SearchOption.AllDirectories);
 				if (foundFiles.Length == 0)
 					return false;
 

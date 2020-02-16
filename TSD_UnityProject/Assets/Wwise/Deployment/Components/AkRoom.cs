@@ -3,13 +3,19 @@
 [UnityEngine.RequireComponent(typeof(UnityEngine.Collider))]
 [UnityEngine.DisallowMultipleComponent]
 /// @brief An AkRoom is an enclosed environment that can only communicate to the outside/other rooms with AkRoomPortals
-/// @details 
+/// @details The AkRoom component uses its required Collider component to determine when AkRoomAwareObjects enter and exit the room using the OnTriggerEnter and OnTriggerExit callbacks.
 public class AkRoom : AkTriggerHandler
 {
 	public static ulong INVALID_ROOM_ID = unchecked((ulong)-1.0f);
 
-	private static int RoomCount;
+	public static ulong GetAkRoomID(AkRoom room)
+	{
+		return room == null ? INVALID_ROOM_ID : room.GetID();
+	}
 
+	public static int RoomCount { get; private set; }
+
+	#region Fields
 	[UnityEngine.Tooltip("Higher number has a higher priority")]
 	/// In cases where a game object is in an area with two rooms, the higher priority room will be chosen for AK::SpatialAudio::SetGameObjectInRoom()
 	/// The higher the priority number, the higher the priority of a room.
@@ -34,9 +40,41 @@ public class AkRoom : AkTriggerHandler
 	/// Send level for sounds that are posted on the room game object; adds reverb to ambience and room tones. Valid range: (0.f-1.f). A value of 0 disables the aux send.
 	public float roomToneAuxSend = 0;
 
-	public static bool IsSpatialAudioEnabled
+	/// This is the list of AkRoomAwareObjects that have entered this AkRoom
+	private System.Collections.Generic.List<AkRoomAwareObject> roomAwareObjectsEntered = new System.Collections.Generic.List<AkRoomAwareObject>();
+
+	/// This is the list of AkRoomAwareObjects that have entered this AkRoom while it was inactive or disabled.
+	private System.Collections.Generic.List<AkRoomAwareObject> roomAwareObjectsDetectedWhileDisabled = new System.Collections.Generic.List<AkRoomAwareObject>();
+
+	#endregion
+
+	public bool TryEnter(AkRoomAwareObject roomAwareObject)
 	{
-		get { return AkSpatialAudioListener.TheSpatialAudioListener != null && RoomCount > 0; }
+		if (roomAwareObject)
+		{
+			if (isActiveAndEnabled)
+			{
+				if(!roomAwareObjectsEntered.Contains(roomAwareObject))
+					roomAwareObjectsEntered.Add(roomAwareObject);
+				return true;
+			}
+			else
+			{
+				if (!roomAwareObjectsDetectedWhileDisabled.Contains(roomAwareObject))
+					roomAwareObjectsDetectedWhileDisabled.Add(roomAwareObject);
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public void Exit(AkRoomAwareObject roomAwareObject)
+	{
+		if (roomAwareObject)
+		{
+			roomAwareObjectsEntered.Remove(roomAwareObject);
+			roomAwareObjectsDetectedWhileDisabled.Remove(roomAwareObject);
+		}
 	}
 
 	/// Access the room's ID
@@ -47,38 +85,43 @@ public class AkRoom : AkTriggerHandler
 
 	private void OnEnable()
 	{
-		var roomParams = new AkRoomParams();
+		var roomParams = new AkRoomParams
+		{
+			Up = transform.up,
+			Front = transform.forward,
 
-		roomParams.Up.X = transform.up.x;
-		roomParams.Up.Y = transform.up.y;
-		roomParams.Up.Z = transform.up.z;
+			ReverbAuxBus = reverbAuxBus.Id,
+			ReverbLevel = reverbLevel,
+			WallOcclusion = wallOcclusion,
 
-		roomParams.Front.X = transform.forward.x;
-		roomParams.Front.Y = transform.forward.y;
-		roomParams.Front.Z = transform.forward.z;
-
-		roomParams.ReverbAuxBus = reverbAuxBus.Id;
-		roomParams.ReverbLevel = reverbLevel;
-		roomParams.WallOcclusion = wallOcclusion;
-
-		roomParams.RoomGameObj_AuxSendLevelToSelf = roomToneAuxSend;
-		roomParams.RoomGameObj_KeepRegistered = roomToneEvent.IsValid() ? true : false;
+			RoomGameObj_AuxSendLevelToSelf = roomToneAuxSend,
+			RoomGameObj_KeepRegistered = roomToneEvent.IsValid(),
+		};
 
 		RoomCount++;
 		AkSoundEngine.SetRoom(GetID(), roomParams, name);
 
 		/// In case a room is disabled and re-enabled. 
-		AkRoomPortalManager.RegisterRoomUpdate(this);
-	}
+		AkRoomManager.RegisterRoomUpdate(this);
 
-	public override void HandleEvent(UnityEngine.GameObject in_gameObject)
-	{
-		roomToneEvent.Post(gameObject);
+		// if objects entered the room while disabled, enter them now
+		for (var i = 0; i < roomAwareObjectsDetectedWhileDisabled.Count; ++i)
+			AkRoomAwareManager.ObjectEnteredRoom(roomAwareObjectsDetectedWhileDisabled[i], this);
+
+		roomAwareObjectsDetectedWhileDisabled.Clear();
 	}
 
 	private void OnDisable()
 	{
-		AkRoomPortalManager.RegisterRoomUpdate(this);
+		for (var i = 0; i < roomAwareObjectsEntered.Count; ++i)
+		{
+			roomAwareObjectsEntered[i].ExitedRoom(this);
+			AkRoomAwareManager.RegisterRoomAwareObjectForUpdate(roomAwareObjectsEntered[i]);
+			roomAwareObjectsDetectedWhileDisabled.Add(roomAwareObjectsEntered[i]);
+		}
+		roomAwareObjectsEntered.Clear();
+
+		AkRoomManager.RegisterRoomUpdate(this);
 
 		RoomCount--;
 		AkSoundEngine.RemoveRoom(GetID());
@@ -86,22 +129,18 @@ public class AkRoom : AkTriggerHandler
 
 	private void OnTriggerEnter(UnityEngine.Collider in_other)
 	{
-		var spatialAudioObjects = in_other.GetComponentsInChildren<AkSpatialAudioBase>();
-		for (var i = 0; i < spatialAudioObjects.Length; i++)
-		{
-			if (spatialAudioObjects[i].enabled)
-				spatialAudioObjects[i].EnteredRoom(this);
-		}
+		AkRoomAwareManager.ObjectEnteredRoom(in_other, this);
 	}
 
 	private void OnTriggerExit(UnityEngine.Collider in_other)
 	{
-		var spatialAudioObjects = in_other.GetComponentsInChildren<AkSpatialAudioBase>();
-		for (var i = 0; i < spatialAudioObjects.Length; i++)
-		{
-			if (spatialAudioObjects[i].enabled)
-				spatialAudioObjects[i].ExitedRoom(this);
-		}
+		AkRoomAwareManager.ObjectExitedRoom(in_other, this);
+	}
+
+	public override void HandleEvent(UnityEngine.GameObject in_gameObject)
+	{
+		if (roomToneEvent.IsValid())
+			AkSoundEngine.PostEventOnRoom(roomToneEvent.Id, GetID());
 	}
 
 	public class PriorityList
@@ -109,21 +148,27 @@ public class AkRoom : AkTriggerHandler
 		private static readonly CompareByPriority s_compareByPriority = new CompareByPriority();
 
 		/// Contains all active rooms sorted by priority.
-		public System.Collections.Generic.List<AkRoom> rooms = new System.Collections.Generic.List<AkRoom>();
+		private System.Collections.Generic.List<AkRoom> rooms = new System.Collections.Generic.List<AkRoom>();
 
-		public ulong GetHighestPriorityRoomID()
+		public ulong GetHighestPriorityActiveAndEnabledRoomID()
 		{
-			var room = GetHighestPriorityRoom();
+			var room = GetHighestPriorityActiveAndEnabledRoom();
 			return room == null ? INVALID_ROOM_ID : room.GetID();
 		}
-
-		public AkRoom GetHighestPriorityRoom()
+		public AkRoom GetHighestPriorityActiveAndEnabledRoom()
 		{
-			if (rooms.Count == 0)
-				return null;
+			for (int i = 0; i < rooms.Count; i++)
+			{
+				if (rooms[i].isActiveAndEnabled)
+					return rooms[i];
+			}
 
-			return rooms[0];
+			return null;
 		}
+
+		public int Count => rooms.Count;
+
+		public void Clear() => rooms.Clear();
 
 		public void Add(AkRoom room)
 		{
@@ -139,15 +184,17 @@ public class AkRoom : AkTriggerHandler
 
 		public bool Contains(AkRoom room)
 		{
-			return BinarySearch(room) >= 0;
+			return room && rooms.Contains(room);
 		}
 
 		public int BinarySearch(AkRoom room)
 		{
-			if (room)
-				return rooms.BinarySearch(room, s_compareByPriority);
-			else
-				return -1;
+			return room ? rooms.BinarySearch(room, s_compareByPriority) : -1;
+		}
+
+		public AkRoom this[int index]
+		{
+			get { return rooms[index]; }
 		}
 
 		private class CompareByPriority : System.Collections.Generic.IComparer<AkRoom>
@@ -155,7 +202,6 @@ public class AkRoom : AkTriggerHandler
 			public virtual int Compare(AkRoom a, AkRoom b)
 			{
 				var result = a.priority.CompareTo(b.priority);
-
 				if (result == 0 && a != b)
 					return 1;
 

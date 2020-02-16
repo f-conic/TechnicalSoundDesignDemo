@@ -53,7 +53,7 @@ public class AkRoomInspector : UnityEditor.Editor
 			UnityEditor.EditorGUILayout.PropertyField(roomToneAuxSend);
 		}
 
-		AkGameObjectInspector.RigidbodyCheck(m_AkRoom.gameObject);
+		AkRoomAwareObjectInspector.RigidbodyCheck(m_AkRoom.gameObject);
 
 		serializedObject.ApplyModifiedProperties();
 	}

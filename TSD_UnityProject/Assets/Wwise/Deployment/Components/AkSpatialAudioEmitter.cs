@@ -1,258 +1,214 @@
-using System.Diagnostics;
-
 #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
-[UnityEngine.AddComponentMenu("Wwise/AkSpatialAudioEmitter")]
-[UnityEngine.RequireComponent(typeof(AkGameObj))]
-///@brief Add this script on the GameObject which represents an emitter that uses the Spatial Audio API.
-public class AkSpatialAudioEmitter : AkSpatialAudioBase
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
+///@brief (DEPRECATED) This script is deprecated as of 2019.2. Early reflections, Diffraction and Room Reverb can all be enabled per sound in the Sound Property Editor of the Authoring.
+/// @details Some functionalities were moved to different components. See the AkEarlyReflections and AkSpatialAudioDebugDraw components for more details.
+public class AkSpatialAudioEmitter : UnityEngine.MonoBehaviour
 {
 	[UnityEngine.Header("Early Reflections")]
-	[UnityEngine.Tooltip("The Auxiliary Bus with a Reflect plug-in Effect applied.")]
-	/// The Auxiliary Bus with a Reflect plug-in Effect applied.
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, the early reflections auxiliary bus can be set per sound, in the Authoring tool, or per game object, with the AkEarlyReflections component.")]
+	/// (DEPRECATED) As of 2019.2, the early reflections auxiliary bus can be set per sound, in the Authoring tool, or per game object, with the AkEarlyReflections component.
 	public AK.Wwise.AuxBus reflectAuxBus = new AK.Wwise.AuxBus();
-
-	[UnityEngine.Tooltip("A heuristic to stop the computation of reflections. Should be no longer (and possibly shorter for less CPU usage) than the maximum attenuation of the sound emitter.")]
-	/// A heuristic to stop the computation of reflections. Should be no longer (and possibly shorter for less CPU usage) than the maximum attenuation of the sound emitter.
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, the Reflection Max Path Length is set by the sound's Attenuation Max Distance value in the Authoring tool.")]
+	/// (DEPRECATED) As of 2019.2, the Reflection Max Path Length is set by the sound's Attenuation Max Distance value in the Authoring tool.
 	public float reflectionMaxPathLength = 1000;
-
 	[UnityEngine.Range(0, 1)]
-	[UnityEngine.Tooltip("The gain [0, 1] applied to the reflect auxiliary bus.")]
-	/// The gain [0, 1] applied to the reflect auxiliary bus.
-	public float reflectionsAuxBusGain = 1;
-
-	[UnityEngine.Range(1, 4)]
-	[UnityEngine.Tooltip("The maximum number of reflections that will be processed for a sound path before it reaches the listener.")]
-	/// The maximum number of reflections that will be processed for a sound path before it reaches the listener.
-	/// Reflection processing grows exponentially with the order of reflections, so this number should be kept low. Valid range: 1-4.
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, the early reflections send volume can be set per sound, in the Authoring tool, or for all sunds playing on a game object, with the AkEarlyReflections component.")]
+	/// (DEPRECATED) As of 2019.2, the early reflections send volume can be set per sound, in the Authoring tool, or for all sunds playing on a game object, with the AkEarlyReflections component.
+	public float reflectionsAuxBusGain = 1;	
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, the Reflection Order is set in the Spatial Audio Initialization Settings.")]
+	/// (DEPRECATED) As of 2019.2, the Reflection Order is set in the Spatial Audio Initialization Settings.
 	public uint reflectionsOrder = 1;
 
-	[UnityEngine.Header("Rooms")] [UnityEngine.Range(0, 1)]
-	[UnityEngine.Tooltip("Send gain (0.f-1.f) that is applied when sending to the aux bus associated with the room that the emitter is in.")]
-	/// Send gain (0.f-1.f) that is applied when sending to the aux bus associated with the room that the emitter is in.
+	[UnityEngine.Header("Rooms")]
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, the Room Reverb Aux Bus Gain is set by the Game-Defined Auxiliary Sends Volume in the Sound Property Editor in the Authoring tool.")]
+	/// (DEPRECATED) As of 2019.2, the Room Reverb Aux Bus Gain is set by the Game-Defined Auxiliary Sends Volume in the Sound Property Editor in the Authoring tool.
 	public float roomReverbAuxBusGain = 1;
 
 	[UnityEngine.Header("Geometric Diffraction")]
-	[UnityEngine.Tooltip("The maximum number of edges that the sound can diffract around between the emitter and the listener.")]
-	/// The maximum number of edges that the sound can diffract around between the emitter and the listener.
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool.")]
+	/// (DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool.
 	public uint diffractionMaxEdges = 0;
-
-	[UnityEngine.Tooltip("The maximum number of paths to the listener that the sound can take around obstacles.")]
-	/// The maximum number of paths to the listener that the sound can take around obstacles.
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool.")]
+	/// (DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool.
 	public uint diffractionMaxPaths = 0;
-
-	[UnityEngine.Tooltip("The maximum length that a diffracted sound can travel.")]
-	/// The maximum length that a diffracted sound can travel. Should be no longer (and possibly shorter for less CPU usage) than the maximum attenuation of the sound emitter.
+	[UnityEngine.Tooltip("(DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool.")]
+	/// (DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool.
 	public uint diffractionMaxPathLength = 0;
-	ulong gameObjectId;
-
-	private void Start()
-	{
-		AkSoundEngine.RegisterGameObj(gameObject);
-		//gameObjectId = AkSoundEngine.GetAkGameObjectID(gameObject);
-		//AkSoundEngine.PostEvent("Play_Kit014Break014", gameObject);
-	}
-
-	private void Awake()
-	{
-		var emitterSettings = new AkEmitterSettings();
-
-		AkSoundEngine.RegisterEmitter(gameObject, emitterSettings);
-
-		emitterSettings.reflectAuxBusID = reflectAuxBus.Id;
-		emitterSettings.reflectionMaxPathLength = reflectionMaxPathLength;
-		emitterSettings.reflectionsAuxBusGain = reflectionsAuxBusGain;
-		emitterSettings.reflectionsOrder = reflectionsOrder;
-		emitterSettings.reflectorFilterMask = unchecked((uint)-1);
-		emitterSettings.roomReverbAuxBusGain = roomReverbAuxBusGain;
-		emitterSettings.useImageSources = 0;
-		emitterSettings.diffractionMaxEdges = diffractionMaxEdges;
-		emitterSettings.diffractionMaxPaths = diffractionMaxPaths;
-		emitterSettings.diffractionMaxPathLength = diffractionMaxPathLength;
-
-
-	}
-
-	private void OnEnable()
-	{
-		SetGameObjectInRoom();
-	}
-
-	private void OnDisable()
-	{
-		AkSoundEngine.UnregisterGameObj(gameObject);
-		AkSoundEngine.UnregisterEmitter(gameObject);
-	}
 
 #if UNITY_EDITOR
 	[UnityEngine.Header("Debug Draw")]
 
-	/// This allows you to visualize first order reflection sound paths.
+	[UnityEngine.Tooltip("(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.")]
+	/// (DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.
 	public bool drawFirstOrderReflections = false;
-
-	/// This allows you to visualize second order reflection sound paths.
+	[UnityEngine.Tooltip("(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.")]
+	/// (DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.
 	public bool drawSecondOrderReflections = false;
-
-	/// This allows you to visualize third or higher order reflection sound paths.
+	[UnityEngine.Tooltip("(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.")]
+	/// (DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.
 	public bool drawHigherOrderReflections = false;
-
-	/// This allows you to visualize geometric diffraction sound paths between an obstructed emitter and the listener.
+	[UnityEngine.Tooltip("(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.")]
+	/// (DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component.
 	public bool drawDiffractionPaths = false;
 
-	private void OnDrawGizmos()
+	[UnityEditor.CustomEditor(typeof(AkSpatialAudioEmitter))]
+	[UnityEditor.CanEditMultipleObjects]
+	private class Editor : UnityEditor.Editor
 	{
-		if (!UnityEngine.Application.isPlaying || !AkSoundEngine.IsInitialized())
-			return;
+		private UnityEditor.SerializedProperty reflectAuxBus;
+		private UnityEditor.SerializedProperty reflectionMaxPathLength;
+		private UnityEditor.SerializedProperty reflectionsAuxBusGain;
+		private UnityEditor.SerializedProperty reflectionsOrder;
 
-		if (debugDrawData == null)
-			debugDrawData = new DebugDrawData();
+		private UnityEditor.SerializedProperty roomReverbAuxBusGain;
 
-		if (drawFirstOrderReflections || drawSecondOrderReflections || drawHigherOrderReflections)
-			debugDrawData.DebugDrawEarlyReflections(gameObject, drawFirstOrderReflections, drawSecondOrderReflections, drawHigherOrderReflections);
+		private UnityEditor.SerializedProperty diffractionMaxEdges;
+		private UnityEditor.SerializedProperty diffractionMaxPaths;
+		private UnityEditor.SerializedProperty diffractionMaxPathLength;
 
-		if (drawDiffractionPaths)
-			debugDrawData.DebugDrawDiffraction(gameObject);
-	}
+		private UnityEditor.SerializedProperty drawFirstOrderReflections;
+		private UnityEditor.SerializedProperty drawSecondOrderReflections;
+		private UnityEditor.SerializedProperty drawHigherOrderReflections;
+		private UnityEditor.SerializedProperty drawDiffractionPaths;
 
-	private class DebugDrawData
-	{
-		// Constants
-		private const uint kMaxIndirectPaths = 64;
-		private readonly UnityEngine.Color32 colorLightYellow = new UnityEngine.Color32(255, 255, 121, 255);
-		private readonly UnityEngine.Color32 colorDarkYellow = new UnityEngine.Color32(164, 164, 0, 255);
-		private readonly UnityEngine.Color32 colorLightOrange = new UnityEngine.Color32(255, 202, 79, 255);
-		private readonly UnityEngine.Color32 colorDarkOrange = new UnityEngine.Color32(164, 115, 0, 255);
-		private readonly UnityEngine.Color32 colorLightRed = new UnityEngine.Color32(252, 177, 162, 255);
-		private readonly UnityEngine.Color32 colorDarkRed = new UnityEngine.Color32(169, 62, 39, 255);
-		private readonly UnityEngine.Color32 colorLightGrey = new UnityEngine.Color32(75, 75, 75, 255);
-		private readonly UnityEngine.Color32 colorGreen = new UnityEngine.Color32(38, 113, 88, 255);
-		private const float radiusSphere = 0.25f;
-
-		// Calculated path info
-		private readonly AkReflectionPathInfoArray indirectPathInfoArray = new AkReflectionPathInfoArray((int)kMaxIndirectPaths);
-		private readonly AkDiffractionPathInfoArray diffractionPathInfoArray = new AkDiffractionPathInfoArray((int)AkDiffractionPathInfo.kMaxNodes);
-		private readonly AkPathParams pathsParams = new AkPathParams();
-
-		public void DebugDrawEarlyReflections(UnityEngine.GameObject gameObject, bool firstOrder, bool secondOrder, bool higherOrder)
+		public void OnEnable()
 		{
-			if (AkSoundEngine.QueryIndirectPaths(gameObject, pathsParams, indirectPathInfoArray, (uint)indirectPathInfoArray.Count()) != AKRESULT.AK_Success)
-				return;
+			reflectAuxBus = serializedObject.FindProperty("reflectAuxBus");
+			reflectionMaxPathLength = serializedObject.FindProperty("reflectionMaxPathLength");
+			reflectionsAuxBusGain = serializedObject.FindProperty("reflectionsAuxBusGain");
+			reflectionsOrder = serializedObject.FindProperty("reflectionsOrder");
 
-			for (var idxPath = (int)pathsParams.numValidPaths - 1; idxPath >= 0; --idxPath)
+			roomReverbAuxBusGain = serializedObject.FindProperty("roomReverbAuxBusGain");
+
+			diffractionMaxEdges = serializedObject.FindProperty("diffractionMaxEdges");
+			diffractionMaxPaths = serializedObject.FindProperty("diffractionMaxPaths");
+			diffractionMaxPathLength = serializedObject.FindProperty("diffractionMaxPathLength");
+
+			drawFirstOrderReflections = serializedObject.FindProperty("drawFirstOrderReflections");
+			drawSecondOrderReflections = serializedObject.FindProperty("drawSecondOrderReflections");
+			drawHigherOrderReflections = serializedObject.FindProperty("drawHigherOrderReflections");
+			drawDiffractionPaths = serializedObject.FindProperty("drawDiffractionPaths");
+		}
+
+		public override void OnInspectorGUI()
+		{
+			serializedObject.Update();
+
+			var wasEnabled = UnityEngine.GUI.enabled;
+			UnityEngine.GUI.enabled = false;
+
+			UnityEditor.EditorGUILayout.PropertyField(reflectAuxBus, new UnityEngine.GUIContent("Reflect Aux Bus", "(DEPRECATED) As of 2019.2, the early reflections auxiliary bus can be set per sound, in the Authoring tool, or per game object, with the AkEarlyReflections component."));
+			UnityEditor.EditorGUILayout.PropertyField(reflectionMaxPathLength, new UnityEngine.GUIContent("Reflection Max Path Length", "(DEPRECATED) As of 2019.2, the Reflection Max Path Length is set by the sound's Attenuation Max Distance value in the Authoring tool."));
+			UnityEditor.EditorGUILayout.PropertyField(reflectionsAuxBusGain, new UnityEngine.GUIContent("Reflections Aux Bus Gain", "(DEPRECATED) As of 2019.2, the early reflections send volume can be set per sound, in the Authoring tool, or for all sunds playing on a game object, with the AkEarlyReflections component."));
+			UnityEditor.EditorGUILayout.PropertyField(reflectionsOrder, new UnityEngine.GUIContent("Reflections Order", "(DEPRECATED) As of 2019.2, the Reflection Order is set in the Spatial Audio Initialization Settings."));
+
+			UnityEditor.EditorGUILayout.PropertyField(roomReverbAuxBusGain, new UnityEngine.GUIContent("Room Reverb Aux Bus Gain", "(DEPRECATED) As of 2019.2, the Room Reverb Aux Bus Gain is set by the Game-Defined Auxiliary Sends Volume in the Sound Property Editor in the Authoring tool."));
+
+			UnityEditor.EditorGUILayout.PropertyField(diffractionMaxEdges, new UnityEngine.GUIContent("Diffraction Max Edges", "(DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool."));
+			UnityEditor.EditorGUILayout.PropertyField(diffractionMaxPaths, new UnityEngine.GUIContent("Diffraction Max Paths", "(DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool."));
+			UnityEditor.EditorGUILayout.PropertyField(diffractionMaxPathLength, new UnityEngine.GUIContent("Diffraction Max Path Length", "(DEPRECATED) As of 2019.2, diffraction is enabled in the Sound Property Editor in the Authoring tool."));
+
+			UnityEditor.EditorGUILayout.PropertyField(drawFirstOrderReflections, new UnityEngine.GUIContent("Draw First Order Reflections", "(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component."));
+			UnityEditor.EditorGUILayout.PropertyField(drawSecondOrderReflections, new UnityEngine.GUIContent("Draw Second Order Reflections", "(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component."));
+			UnityEditor.EditorGUILayout.PropertyField(drawHigherOrderReflections, new UnityEngine.GUIContent("Draw Higher Order Reflections", "(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component."));
+			UnityEditor.EditorGUILayout.PropertyField(drawDiffractionPaths, new UnityEngine.GUIContent("Draw Diffraction Paths", "(DEPRECATED) Spatial Audio Debug Drawing were moved to the new AkSpatialAudioDebugDraw component."));
+
+			UnityEngine.GUI.enabled = wasEnabled;
+
+			// button to add AkEarlyReflections
+			bool bShowButton = false;
+			foreach (var obj in targets)
 			{
-				var path = indirectPathInfoArray[idxPath];
-				var order = path.numReflections;
+				AkSpatialAudioEmitter spatialAudioEmitter = obj as AkSpatialAudioEmitter;
+				if (spatialAudioEmitter.gameObject.GetComponent<AkEarlyReflections>() == null)
+					bShowButton = true;
+			}
 
-				var colorLight = colorLightRed;
-				var colorDark = colorDarkRed;
+			if (bShowButton)
+			{
+				UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
 
-				if (order == 1)
+				using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 				{
-					if (!firstOrder)
-						continue;
+					UnityEditor.EditorGUILayout.HelpBox(
+						"If you want to keep setting Early Reflections per game object, consider adding an AkEarlyReflections component.",
+						UnityEditor.MessageType.Warning);
 
-					colorLight = colorLightYellow;
-					colorDark = colorDarkYellow;
-				}
-				else if (order == 2)
-				{
-					if (!secondOrder)
-						continue;
-
-					colorLight = colorLightOrange;
-					colorDark = colorDarkOrange;
-				}
-				else if (order > 2 && !higherOrder)
-					continue;
-
-				var emitterPos = ConvertVector(pathsParams.emitterPos);
-				var listenerPt = ConvertVector(pathsParams.listenerPos);
-
-				for (var idxSeg = (int)path.numPathPoints - 1; idxSeg >= 0; --idxSeg)
-				{
-					var pt = ConvertVector(path.GetPathPoint((uint)idxSeg));
-
-					UnityEngine.Debug.DrawLine(listenerPt, pt, path.isOccluded ? colorLightGrey : colorLight);
-
-					UnityEngine.Gizmos.color = path.isOccluded ? colorLightGrey : colorLight;
-					UnityEngine.Gizmos.DrawWireSphere(pt, radiusSphere / 2 / order);
-
-					if (!path.isOccluded)
+					if (UnityEngine.GUILayout.Button("Add AkEarlyReflections"))
 					{
-						var surface = path.GetAcousticSurface((uint)idxSeg);
-						DrawLabelInFrontOfCam(pt, surface.strName, 100000, colorDark);
+						foreach (var obj in targets)
+						{
+							AkSpatialAudioEmitter spatialAudioEmitter = obj as AkSpatialAudioEmitter;
+							if (spatialAudioEmitter.gameObject.GetComponent<AkEarlyReflections>() == null)
+							{
+								var er = UnityEditor.Undo.AddComponent<AkEarlyReflections>(spatialAudioEmitter.gameObject);
+								er.reflectionsAuxBus.ObjectReference = spatialAudioEmitter.reflectAuxBus.ObjectReference;
+								er.reflectionsVolume = spatialAudioEmitter.reflectionsAuxBusGain;
+							}
+						}
 					}
-
-					float dfrnAmount = path.GetDiffraction((uint)idxSeg);
-					if (dfrnAmount > 0)
-					{
-						string dfrnAmountStr = dfrnAmount.ToString("0.#%");
-						DrawLabelInFrontOfCam(pt, dfrnAmountStr, 100000, colorDark);
-					}
-
-					listenerPt = pt;
-				}
-
-				if (!path.isOccluded)
-				{
-					// Finally the last path segment towards the emitter.
-					UnityEngine.Debug.DrawLine(listenerPt, emitterPos, path.isOccluded ? colorLightGrey : colorLight);
 				}
 			}
-		}
 
-		public void DebugDrawDiffraction(UnityEngine.GameObject gameObject)
-		{
-			if (AkSoundEngine.QueryDiffractionPaths(gameObject, pathsParams, diffractionPathInfoArray, (uint)diffractionPathInfoArray.Count()) != AKRESULT.AK_Success)
-				return;
-
-			for (var idxPath = (int)pathsParams.numValidPaths - 1; idxPath >= 0; --idxPath)
+			// button to add AkSpatialAudioDebugDraw
+			bShowButton = false;
+			foreach (var obj in targets)
 			{
-				var path = diffractionPathInfoArray[idxPath];
-				if (path.nodeCount <= 0)
-					continue;
-
-				var emitterPos = ConvertVector(pathsParams.emitterPos);
-				var prevPt = ConvertVector(pathsParams.listenerPos);
-
-				for (var idxSeg = 0; idxSeg < (int)path.nodeCount; ++idxSeg)
-				{
-					var pt = ConvertVector(path.GetNodes((uint)idxSeg));
-					UnityEngine.Debug.DrawLine(prevPt, pt, colorGreen);
-
-					float angle = path.GetAngles((uint)idxSeg) / UnityEngine.Mathf.PI;
-					if (angle > 0)
-					{
-						string angleStr = angle.ToString("0.#%");
-						DrawLabelInFrontOfCam(pt, angleStr, 100000, colorGreen);
-					}
-
-					prevPt = pt;
-				}
-
-				UnityEngine.Debug.DrawLine(prevPt, emitterPos, colorGreen);
+				AkSpatialAudioEmitter spatialAudioEmitter = obj as AkSpatialAudioEmitter;
+				if (spatialAudioEmitter.gameObject.GetComponent<AkSpatialAudioDebugDraw>() == null)
+					bShowButton = true;
 			}
+
+			if (bShowButton)
+			{
+				UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
+
+				using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
+				{
+					UnityEditor.EditorGUILayout.HelpBox(
+						"For debugging purposes, early reflection and diffraction paths can be shown in the scene with the AkSpatialAudioDebugDraw component.",
+						UnityEditor.MessageType.Warning);
+
+					if (UnityEngine.GUILayout.Button("Add AkSpatialAudioDebugDraw"))
+					{
+						foreach (var obj in targets)
+						{
+							AkSpatialAudioEmitter spatialAudioEmitter = obj as AkSpatialAudioEmitter;
+							if (spatialAudioEmitter.gameObject.GetComponent<AkSpatialAudioDebugDraw>() == null)
+							{
+								var dd = UnityEditor.Undo.AddComponent<AkSpatialAudioDebugDraw>(spatialAudioEmitter.gameObject);
+								dd.drawFirstOrderReflections = spatialAudioEmitter.drawFirstOrderReflections;
+								dd.drawSecondOrderReflections = spatialAudioEmitter.drawSecondOrderReflections;
+								dd.drawHigherOrderReflections = spatialAudioEmitter.drawHigherOrderReflections;
+								dd.drawDiffractionPaths = spatialAudioEmitter.drawDiffractionPaths;
+							}
+						}
+					}
+				}
+			}
+
+			serializedObject.ApplyModifiedProperties();
 		}
 	}
 
-	private static DebugDrawData debugDrawData = null;
+	#region WwiseMigration
+	private static System.Collections.Generic.List<AkSpatialAudioEmitter> emitterComponents = 
+		new System.Collections.Generic.List<AkSpatialAudioEmitter>();
 
-	private static UnityEngine.Vector3 ConvertVector(AkVector vec)
+	public void Migrate18()
 	{
-		return new UnityEngine.Vector3(vec.X, vec.Y, vec.Z);
+		emitterComponents.Add(this);
 	}
 
-	private static void DrawLabelInFrontOfCam(UnityEngine.Vector3 position, string name, float distance, UnityEngine.Color c)
+	public static void PostMigration18()
 	{
-		var style = new UnityEngine.GUIStyle();
-		var oncam = UnityEngine.Camera.current.WorldToScreenPoint(position);
-
-		if (oncam.x >= 0 && oncam.x <= UnityEngine.Camera.current.pixelWidth && oncam.y >= 0 &&
-			oncam.y <= UnityEngine.Camera.current.pixelHeight && oncam.z > 0 && oncam.z < distance)
+		foreach (AkSpatialAudioEmitter emitter in emitterComponents)
 		{
-			style.normal.textColor = c;
-			UnityEditor.Handles.Label(position, name, style);
+			UnityEditor.Undo.AddComponent<AkRoomAwareObject>(emitter.gameObject);
 		}
+		emitterComponents.Clear();
 	}
+	#endregion
 #endif
 }
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

@@ -17,11 +17,7 @@ public class AkSoundEngineController
 	private AkSoundEngineController()
 	{
 #if UNITY_EDITOR
-#if UNITY_2017_2_OR_NEWER
 		UnityEditor.EditorApplication.pauseStateChanged += OnPauseStateChanged;
-#else
-		UnityEditor.EditorApplication.playmodeStateChanged += OnEditorPlaymodeStateChanged;
-#endif
 #endif
 	}
 
@@ -30,37 +26,11 @@ public class AkSoundEngineController
 		if (ms_Instance == this)
 		{
 #if UNITY_EDITOR
-#if UNITY_2017_2_OR_NEWER
 			UnityEditor.EditorApplication.pauseStateChanged -= OnPauseStateChanged;
-#else
-			UnityEditor.EditorApplication.playmodeStateChanged -= OnEditorPlaymodeStateChanged;
-#endif
 			UnityEditor.EditorApplication.update -= LateUpdate;
 #endif
 			ms_Instance = null;
 		}
-		else if (ms_Instance == null && AkSoundEngine.IsInitialized())
-		{
-			ms_Instance = this;
-		}
-	}
-
-	public static string GetDecodedBankFolder()
-	{
-		return "DecodedBanks";
-	}
-
-	public static string GetDecodedBankFullPath()
-	{
-#if UNITY_SWITCH && !UNITY_EDITOR
-		// Calling Application.persistentDataPath crashes Switch
-		return null;
-#elif (UNITY_ANDROID || PLATFORM_LUMIN || UNITY_IOS) && !UNITY_EDITOR
-		// This is for platforms that only have a specific file location for persistent data.
-		return System.IO.Path.Combine(UnityEngine.Application.persistentDataPath, GetDecodedBankFolder());
-#else
-		return System.IO.Path.Combine(AkBasePathGetter.GetPlatformBasePath(), GetDecodedBankFolder());
-#endif
 	}
 
 	public void LateUpdate()
@@ -71,7 +41,8 @@ public class AkSoundEngineController
 #endif
 
 		//Execute callbacks that occurred in last frame (not the current update)
-		AkRoomPortalManager.UpdatePortals();
+		AkRoomManager.Update();
+		AkRoomAwareManager.UpdateRoomAwareObjects();
 		AkCallbackManager.PostCallbacks();
 		AkBankManager.DoUnloadBanks();
 		AkSoundEngine.RenderAudio();
@@ -79,6 +50,15 @@ public class AkSoundEngineController
 
 	public void Init(AkInitializer akInitializer)
 	{
+		// Only initialize the room mamanger during play.
+		bool initRoomManager = true;
+#if UNITY_EDITOR
+		if (!UnityEditor.EditorApplication.isPlaying)
+			initRoomManager = false;
+#endif
+		if (initRoomManager)
+			AkRoomManager.Init();
+
 		if (akInitializer == null)
 		{
 			UnityEngine.Debug.LogError("WwiseUnity: AkInitializer must not be null. Sound engine will not be initialized.");
@@ -93,8 +73,7 @@ public class AkSoundEngineController
 		}
 
 		var arguments = System.Environment.GetCommandLineArgs();
-		if (System.Array.IndexOf(arguments, "-nographics") >= 0 &&
-			System.Array.IndexOf(arguments, "-wwiseEnableWithNoGraphics") < 0)
+		if (System.Array.IndexOf(arguments, "-nographics") >= 0 && System.Array.IndexOf(arguments, "-wwiseEnableWithNoGraphics") < 0)
 			return;
 
 		var isInitialized = false;
@@ -167,6 +146,7 @@ public class AkSoundEngineController
 #endif
 
 		AkWwiseInitializationSettings.TerminateSoundEngine();
+		AkRoomManager.Terminate();
 	}
 
 	// In the Editor, the sound needs to keep playing when switching windows (remote debugging in Wwise, for example).
@@ -195,7 +175,6 @@ public class AkSoundEngineController
 	public bool IsSoundEngineLoaded { get; set; }
 
 	// Enable/Disable the audio when pressing play/pause in the editor.
-#if UNITY_2017_2_OR_NEWER
 	private void OnPauseStateChanged(UnityEditor.PauseState pauseState)
 	{
 		if (UnityEngine.Application.isPlaying)
@@ -203,12 +182,6 @@ public class AkSoundEngineController
 			ActivateAudio(pauseState != UnityEditor.PauseState.Paused);
 		}
 	}
-#else
-	private void OnEditorPlaymodeStateChanged()
-	{
-		ActivateAudio(!UnityEditor.EditorApplication.isPaused);
-	}
-#endif
 #endif
 
 #if UNITY_EDITOR || !UNITY_IOS
@@ -227,7 +200,7 @@ public class AkSoundEngineController
 #endif
 
 #if UNITY_EDITOR
-	#region Editor Listener
+#region Editor Listener
 	private UnityEngine.GameObject editorListenerGameObject;
 
 	private bool IsPlayingOrIsNotInitialized
@@ -295,9 +268,9 @@ public class AkSoundEngineController
 		editorListenerForward = sceneViewTransform.forward;
 		editorListenerUp = sceneViewTransform.up;
 	}
-	#endregion
+#endregion
 
-	#region Initialize only once
+#region Initialize only once
 	private AkInitializer TheAkInitializer = null;
 
 	/// <summary>
@@ -320,7 +293,7 @@ public class AkSoundEngineController
 	{
 		TheAkInitializer = null;
 	}
-	#endregion
+#endregion
 #endif // UNITY_EDITOR
 }
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

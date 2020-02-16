@@ -1,22 +1,6 @@
 ﻿#if UNITY_EDITOR
-
-[UnityEditor.InitializeOnLoad]
 public class WwiseSetupWizard
 {
-	public static WwiseSettings Settings;
-
-	static WwiseSetupWizard()
-	{
-		try
-		{
-			Settings = WwiseSettings.LoadSettings();
-		}
-		catch (System.Exception e)
-		{
-			UnityEngine.Debug.LogError("WwiseUnity: Failed to load the settings, exception caught: " + e);
-		}
-	}
-
 	public static void RunModify()
 	{
 		try
@@ -433,7 +417,7 @@ public class WwiseSetupWizard
 		var loadedScenePath = activeScene.path;
 		
 		if (!string.IsNullOrEmpty(loadedScenePath))
-			AkBasePathGetter.FixSlashes(ref loadedScenePath, '\\', '/', false);
+			AkUtilities.FixSlashes(ref loadedScenePath, '\\', '/', false);
 
 		UnityEditor.SceneManagement.EditorSceneManager.NewScene(UnityEditor.SceneManagement.NewSceneSetup.DefaultGameObjects);
 
@@ -441,6 +425,13 @@ public class WwiseSetupWizard
 		ScriptableObjectGuids = UnityEditor.AssetDatabase.FindAssets("t:ScriptableObject", new[] { "Assets" });
 
 		AkUtilities.BeginMigration(migrateStart);
+
+		if (AkUtilities.IsMigrationRequired(AkUtilities.MigrationStep.NewScriptableObjectFolder_v2019_2_0))
+		{
+			var oldScriptableObjectPath = System.IO.Path.Combine(System.IO.Path.Combine("Assets", "Wwise"), "Resources");
+			AkUtilities.MoveFolder(oldScriptableObjectPath, AkWwiseEditorSettings.WwiseScriptableObjectRelativePath);
+		}
+
 		AkWwiseProjectInfo.GetData().Migrate();
 		AkWwiseWWUBuilder.UpdateWwiseObjectReferenceData();
 
@@ -466,7 +457,7 @@ public class WwiseSetupWizard
 		{
 			System.IO.File.Delete(UnityEngine.Application.dataPath + "/../.WwiseLauncherLockFile");
 		}
-		catch (System.Exception)
+		catch
 		{
 			// Ignore if not present.
 		}
@@ -493,8 +484,8 @@ public class WwiseSetupWizard
 
 		AkPluginActivator.DeactivateAllPlugins();
 
-		// 0. Make sure the soundbank directory exists
-		var sbPath = AkUtilities.GetFullPath(UnityEngine.Application.streamingAssetsPath, Settings.SoundbankPath);
+		// 0. Make sure the SoundBank directory exists
+		var sbPath = AkUtilities.GetFullPath(UnityEngine.Application.streamingAssetsPath, AkWwiseEditorSettings.Instance.SoundbankPath);
 		if (!System.IO.Directory.Exists(sbPath))
 			System.IO.Directory.CreateDirectory(sbPath);
 
@@ -510,7 +501,7 @@ public class WwiseSetupWizard
 		CreateWwiseGlobalObject();
 
 		// 5. Disable the built-in audio listener, and add AkAudioListener component to camera
-		if (WwiseSettings.LoadSettings().CreateWwiseListener)
+		if (AkWwiseEditorSettings.Instance.CreateWwiseListener)
 		{
 			AkUtilities.AddAkAudioListenerToMainCamera();
 		}
@@ -530,7 +521,7 @@ public class WwiseSetupWizard
 		AkXboxOneUtils.EnableXboxOneNetworkSockets();
 	}
 
-	// Create a Wwise Global object containing the initializer and terminator scripts. Set the soundbank path of the initializer script.
+	// Create a Wwise Global object containing the initializer and terminator scripts. Set the SoundBank path of the initializer script.
 	// This game object will live for the whole project; there is no need to instanciate one per scene.
 	private static void CreateWwiseGlobalObject()
 	{
@@ -568,16 +559,16 @@ public class WwiseSetupWizard
 		return true;
 	}
 
-	// Modify the .wproj file to set needed soundbank settings
+	// Modify the .wproj file to set needed SoundBank settings
 	private static bool SetSoundbankSettings()
 	{
-		if (string.IsNullOrEmpty(Settings.WwiseProjectPath))
+		var settings = AkWwiseEditorSettings.Instance;
+		if (string.IsNullOrEmpty(settings.WwiseProjectPath))
 			return true;
 
 		var r = new System.Text.RegularExpressions.Regex("_WwiseIntegrationTemp.*?([/\\\\])");
-		var SoundbankPath = AkUtilities.GetFullPath(r.Replace(UnityEngine.Application.streamingAssetsPath, "$1"),
-			Settings.SoundbankPath);
-		var WprojPath = AkUtilities.GetFullPath(UnityEngine.Application.dataPath, Settings.WwiseProjectPath);
+		var SoundbankPath = AkUtilities.GetFullPath(r.Replace(UnityEngine.Application.streamingAssetsPath, "$1"), settings.SoundbankPath);
+		var WprojPath = AkUtilities.GetFullPath(UnityEngine.Application.dataPath, settings.WwiseProjectPath);
 #if UNITY_EDITOR_OSX
 		SoundbankPath = "Z:" + SoundbankPath;
 #endif

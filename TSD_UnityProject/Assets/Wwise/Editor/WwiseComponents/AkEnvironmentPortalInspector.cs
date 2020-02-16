@@ -8,8 +8,11 @@
 [UnityEditor.CustomEditor(typeof(AkEnvironmentPortal))]
 public class AkEnvironmentPortalInspector : UnityEditor.Editor
 {
-	private readonly int[] m_selectedIndex = new int[2];
+	private readonly int[] m_selectedIndex = new int[AkEnvironmentPortal.MAX_ENVIRONMENTS_PER_PORTAL];
 	private AkEnvironmentPortal m_envPortal;
+	private UnityEditor.SerializedProperty m_environments;
+	private UnityEditor.SerializedProperty m_axis;
+	private UnityEditor.SerializedProperty m_envList;
 
 	[UnityEditor.MenuItem("GameObject/Wwise/Environment Portal", false, 1)]
 	public static void CreatePortal()
@@ -25,38 +28,54 @@ public class AkEnvironmentPortalInspector : UnityEditor.Editor
 	private void OnEnable()
 	{
 		m_envPortal = target as AkEnvironmentPortal;
+		m_environments = serializedObject.FindProperty("environments");
+		m_axis = serializedObject.FindProperty("axis");
+		m_envList = serializedObject.FindProperty("envList");
+
 		FindOverlappingEnvironments();
-		for (var i = 0; i < 2; i++)
+		for (var i = 0; i < AkEnvironmentPortal.MAX_ENVIRONMENTS_PER_PORTAL; i++)
 		{
-			var index = m_envPortal.envList[i].list.IndexOf(m_envPortal.environments[i]);
-			m_selectedIndex[i] = index == -1 ? 0 : index;
+			m_selectedIndex[i] = 0;
+
+			var list = m_envList.GetArrayElementAtIndex(i).FindPropertyRelative("list");
+			for (var j = 0; j < list.arraySize; ++j)
+			{
+				if (list.GetArrayElementAtIndex(j).objectReferenceValue == m_environments.GetArrayElementAtIndex(i).objectReferenceValue)
+				{
+					m_selectedIndex[i] = j;
+					break;
+				}
+			}
 		}
 	}
 
 	public override void OnInspectorGUI()
 	{
+		serializedObject.Update();
+
 		using (new UnityEngine.GUILayout.VerticalScope("box"))
 		{
-			for (var i = 0; i < 2; i++)
+			for (var i = 0; i < AkEnvironmentPortal.MAX_ENVIRONMENTS_PER_PORTAL; i++)
 			{
-				var labels = new string[m_envPortal.envList[i].list.Count];
+				var list = m_envList.GetArrayElementAtIndex(i).FindPropertyRelative("list");
+				var labels = new string[list.arraySize];
 
-				for (var j = 0; j < labels.Length; j++)
+				for (var j = 0; j < list.arraySize; j++)
 				{
-					if (m_envPortal.envList[i].list[j] != null)
+					var environment = list.GetArrayElementAtIndex(j).objectReferenceValue as AkEnvironment;
+					if (environment != null)
 					{
-						labels[j] = j + 1 + ". " + GetEnvironmentName(m_envPortal.envList[i].list[j]) + " (" +
-						            m_envPortal.envList[i].list[j].name + ")";
+						labels[j] = j + 1 + ". " + GetEnvironmentName(environment) + " (" + environment.name + ")";
 					}
 					else
-						m_envPortal.envList[i].list.RemoveAt(j);
+					{
+						list.DeleteArrayElementAtIndex(j);
+					}
 				}
 
-				m_selectedIndex[i] = UnityEditor.EditorGUILayout.Popup("Environment #" + (i + 1), m_selectedIndex[i], labels);
-
-				m_envPortal.environments[i] = m_selectedIndex[i] < 0 || m_selectedIndex[i] >= m_envPortal.envList[i].list.Count
-					? null
-					: m_envPortal.envList[i].list[m_selectedIndex[i]];
+				var index = UnityEditor.EditorGUILayout.Popup("Environment #" + (i + 1), m_selectedIndex[i], labels);
+				m_environments.GetArrayElementAtIndex(i).objectReferenceValue = index < 0 || index >= list.arraySize ? null : list.GetArrayElementAtIndex(index).objectReferenceValue;
+				m_selectedIndex[i] = index;
 			}
 		}
 
@@ -64,30 +83,32 @@ public class AkEnvironmentPortalInspector : UnityEditor.Editor
 
 		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 		{
-			string[] axisLabels = { "X", "Y", "Z" };
+			var axisLabels = new[]{ "X", "Y", "Z" };
+			var axes = new[] { UnityEngine.Vector3.right, UnityEngine.Vector3.up, UnityEngine.Vector3.forward };
 
 			var index = 0;
 			for (var i = 0; i < 3; i++)
 			{
-				if (m_envPortal.axis[i] == 1)
+				if (m_axis.vector3Value == axes[i])
 				{
 					index = i;
 					break;
 				}
 			}
 
-			index = UnityEditor.EditorGUILayout.Popup("Axis", index, axisLabels);
+			var newIndex = UnityEditor.EditorGUILayout.Popup("Axis", index, axisLabels);
+			m_axis.vector3Value = axes[newIndex];
 
-			if (m_envPortal.axis[index] != 1)
+			if (index != newIndex)
 			{
-				m_envPortal.axis.Set(0, 0, 0);
-				m_envPortal.envList = new[] { new AkEnvironmentPortal.EnvListWrapper(), new AkEnvironmentPortal.EnvListWrapper() };
-				m_envPortal.axis[index] = 1;
+				for (var i = 0; i < AkEnvironmentPortal.MAX_ENVIRONMENTS_PER_PORTAL; i++)
+					m_envList.GetArrayElementAtIndex(i).FindPropertyRelative("list").ClearArray();
 
-				//We move and replace the game object to trigger the OnTriggerStay function
 				FindOverlappingEnvironments();
 			}
 		}
+
+		serializedObject.ApplyModifiedProperties();
 
 		AkGameObjectInspector.RigidbodyCheck(m_envPortal.gameObject);
 	}
@@ -119,20 +140,54 @@ public class AkEnvironmentPortalInspector : UnityEditor.Editor
 			{
 				//if index == 0 => the environment is on the negative side of the portal(opposite to the direction of the chosen axis)
 				//if index == 1 => the environment is on the positive side of the portal(same direction as the chosen axis) 
-				var index = UnityEngine.Vector3.Dot(m_envPortal.transform.rotation * m_envPortal.axis,
-					            environment.transform.position - m_envPortal.transform.position) >= 0
-					? 1
-					: 0;
-				if (!m_envPortal.envList[index].list.Contains(environment))
+				var index = UnityEngine.Vector3.Dot(m_envPortal.transform.rotation * m_axis.vector3Value,
+					            environment.transform.position - m_envPortal.transform.position) >= 0 ? 1 : 0;
+
+				var list = m_envList.GetArrayElementAtIndex(index).FindPropertyRelative("list");
+
+				var isFound = false;
+				var count = list.arraySize;
+
+				for (var j = 0; j < count; j++)
 				{
-					m_envPortal.envList[index].list.Add(environment);
-					m_envPortal.envList[++index % 2].list.Remove(environment);
+					if (list.GetArrayElementAtIndex(j).objectReferenceValue == environment)
+					{
+						isFound = true;
+						break;
+					}
+				}
+
+				if (!isFound)
+				{
+					list.InsertArrayElementAtIndex(count);
+					list.GetArrayElementAtIndex(count).objectReferenceValue = environment;
+
+					var otherList = m_envList.GetArrayElementAtIndex(++index % AkEnvironmentPortal.MAX_ENVIRONMENTS_PER_PORTAL).FindPropertyRelative("list");
+
+					for (var j = 0; j < otherList.arraySize; j++)
+					{
+						if (otherList.GetArrayElementAtIndex(j).objectReferenceValue == environment)
+						{
+							otherList.DeleteArrayElementAtIndex(j);
+							break;
+						}
+					}
 				}
 			}
 			else
 			{
-				for (var i = 0; i < 2; i++)
-					m_envPortal.envList[i].list.Remove(environment);
+				for (var i = 0; i < AkEnvironmentPortal.MAX_ENVIRONMENTS_PER_PORTAL; i++)
+				{
+					var list = m_envList.GetArrayElementAtIndex(i).FindPropertyRelative("list");
+					for (var j = 0; j < list.arraySize; j++)
+					{
+						if (list.GetArrayElementAtIndex(j).objectReferenceValue == environment)
+						{
+							list.DeleteArrayElementAtIndex(j);
+							break;
+						}
+					}
+				}
 			}
 		}
 	}

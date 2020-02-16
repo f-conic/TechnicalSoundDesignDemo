@@ -252,7 +252,7 @@ public class AkAmbient : AkEvent
 			var largeModePositionElementProperty = largeModePositionsProperty.GetArrayElementAtIndex(point);
 			if (largeModePositionElementProperty != null)
 			{
-				UnityEngine.GameObject newPoint = new UnityEngine.GameObject("AkAmbientPoint" + point.ToString());
+				var newPoint = new UnityEngine.GameObject("AkAmbientPoint" + point.ToString());
 				newPoint.AddComponent<AkAmbientLargeModePositioner>();
 				newPoint.transform.SetParent(transform);
 				newPoint.transform.position = transform.TransformPoint(elementProperty.vector3Value);

@@ -7,11 +7,12 @@
 
 [UnityEngine.AddComponentMenu("Wwise/AkSpatialAudioListener")]
 [UnityEngine.RequireComponent(typeof(AkAudioListener))]
+[UnityEngine.RequireComponent(typeof(AkRoomAwareObject))]
 [UnityEngine.DisallowMultipleComponent]
 ///@brief Add this script on the game object that represent a listener.  This is normally added to the Camera object or the Player object, but can be added to any game object when implementing 3D busses.  \c isDefaultListener determines whether the game object will be considered a default listener - a listener that automatically listens to all game objects that do not have listeners attached to their AkGameObjListenerList's.
 /// \sa
 /// - <a href="https://www.audiokinetic.com/library/edge/?source=SDK&id=soundengine__listeners.html" target="_blank">Integrating Listeners</a> (Note: This is described in the Wwise SDK documentation.)
-public class AkSpatialAudioListener : AkSpatialAudioBase
+public class AkSpatialAudioListener : UnityEngine.MonoBehaviour
 {
 	private static AkSpatialAudioListener s_SpatialAudioListener;
 	private static readonly SpatialAudioListenerList spatialAudioListeners = new SpatialAudioListenerList();
@@ -90,10 +91,9 @@ public class AkSpatialAudioListener : AkSpatialAudioBase
 			if (listener == null)
 				return false;
 
-			if (!listenerList.Contains(listener))
+			if (!listenerList.Remove(listener))
 				return false;
 
-			listenerList.Remove(listener);
 			Refresh();
 			return true;
 		}
@@ -107,8 +107,7 @@ public class AkSpatialAudioListener : AkSpatialAudioBase
 
 				s_SpatialAudioListener = ListenerList[0];
 
-				if (AkSoundEngine.RegisterSpatialAudioListener(s_SpatialAudioListener.gameObject) == AKRESULT.AK_Success)
-					s_SpatialAudioListener.SetGameObjectInRoom();
+				AkSoundEngine.RegisterSpatialAudioListener(s_SpatialAudioListener.gameObject);
 			}
 			else if (ListenerList.Count == 0 && s_SpatialAudioListener != null)
 			{

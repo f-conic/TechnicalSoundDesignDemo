@@ -1,11 +1,11 @@
 #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 
-#if UNITY_2017_1_OR_NEWER
 //--------------------------------------------------------------------------------------------
 // The representation of the Timeline Clip
 //--------------------------------------------------------------------------------------------
 
 [System.Serializable]
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 public class AkRTPCPlayable : UnityEngine.Playables.PlayableAsset, UnityEngine.Timeline.ITimelineClipAsset
 {
 	public bool overrideTrackObject = false;
@@ -23,22 +23,15 @@ public class AkRTPCPlayable : UnityEngine.Playables.PlayableAsset, UnityEngine.T
 		get { return UnityEngine.Timeline.ClipCaps.Looping & UnityEngine.Timeline.ClipCaps.Extrapolation & UnityEngine.Timeline.ClipCaps.Blending; }
 	}
 
-	public override UnityEngine.Playables.Playable CreatePlayable(UnityEngine.Playables.PlayableGraph graph,
-		UnityEngine.GameObject go)
+	public override UnityEngine.Playables.Playable CreatePlayable(UnityEngine.Playables.PlayableGraph graph, UnityEngine.GameObject go)
 	{
 		var playable = UnityEngine.Playables.ScriptPlayable<AkRTPCPlayableBehaviour>.Create(graph, template);
 		var b = playable.GetBehaviour();
-		InitializeBehavior(graph, ref b, go);
-		return playable;
-	}
-
-	public void InitializeBehavior(UnityEngine.Playables.PlayableGraph graph, ref AkRTPCPlayableBehaviour b,
-		UnityEngine.GameObject owner)
-	{
 		b.overrideTrackObject = overrideTrackObject;
 		b.setRTPCGlobally = setRTPCGlobally;
-		b.rtpcObject = overrideTrackObject ? RTPCObject.Resolve(graph.GetResolver()) : owner;
+		b.rtpcObject = overrideTrackObject ? RTPCObject.Resolve(graph.GetResolver()) : go;
 		b.parameter = Parameter;
+		return playable;
 	}
 }
 
@@ -48,6 +41,7 @@ public class AkRTPCPlayable : UnityEngine.Playables.PlayableAsset, UnityEngine.T
 //--------------------------------------------------------------------------------------------
 
 [System.Serializable]
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 public class AkRTPCPlayableBehaviour : UnityEngine.Playables.PlayableBehaviour
 {
 	[UnityEngine.SerializeField]
@@ -85,7 +79,5 @@ public class AkRTPCPlayableBehaviour : UnityEngine.Playables.PlayableBehaviour
 		base.ProcessFrame(playable, info, playerData);
 	}
 }
-
-#endif //UNITY_2017_1_OR_NEWER
 
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

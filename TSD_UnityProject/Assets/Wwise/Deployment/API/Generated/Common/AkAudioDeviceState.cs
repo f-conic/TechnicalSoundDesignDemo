@@ -11,6 +11,7 @@
 
 
 public enum AkAudioDeviceState {
+  AkDeviceState_Unknown = 0,
   AkDeviceState_Active = 1 << 0,
   AkDeviceState_Disabled = 1 << 1,
   AkDeviceState_NotPresent = 1 << 2,

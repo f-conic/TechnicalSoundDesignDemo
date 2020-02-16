@@ -1,88 +1,25 @@
-#if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
+#if !(UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 #if UNITY_EDITOR
-[System.Serializable]
-public class WwiseSettings
+public enum AkWwiseMenuOrder
 {
-	public const string WwiseSettingsFilename = "WwiseSettings.xml";
+	ConvertIDs = 200
+}
 
-	private static WwiseSettings s_Instance;
-	public bool CopySoundBanksAsPreBuildStep = true;
-	public bool CreatedPicker = false;
-	public bool CreateWwiseGlobal = true;
-	public bool CreateWwiseListener = true;
-	public bool GenerateSoundBanksAsPreBuildStep = false;
-	public bool ShowMissingRigidBodyWarning = true;
-	public string SoundbankPath;
-	public string WwiseInstallationPathMac;
-	public string WwiseInstallationPathWindows;
-	public string WwiseProjectPath;
+public enum AkWwiseWindowOrder
+{
+	WwiseSettings = 305,
+	WwiseInitializationSettings = 306,
+	WwisePicker = 2300
+}
 
-	// Save the WwiseSettings structure to a serialized XML file
-	public static void SaveSettings(WwiseSettings Settings)
-	{
-		try
-		{
-			var xmlDoc = new System.Xml.XmlDocument();
-			var xmlSerializer = new System.Xml.Serialization.XmlSerializer(Settings.GetType());
-			using (var xmlStream = new System.IO.MemoryStream())
-			{
-				var streamWriter = new System.IO.StreamWriter(xmlStream, System.Text.Encoding.UTF8);
-				xmlSerializer.Serialize(streamWriter, Settings);
-				xmlStream.Position = 0;
-				xmlDoc.Load(xmlStream);
-				xmlDoc.Save(System.IO.Path.Combine(UnityEngine.Application.dataPath, WwiseSettingsFilename));
-			}
-		}
-		catch
-		{
-		}
-	}
-
-	// Load the WwiseSettings structure from a serialized XML file
-	public static WwiseSettings LoadSettings(bool ForceLoad = false)
-	{
-		if (s_Instance != null && !ForceLoad)
-			return s_Instance;
-
-		var Settings = new WwiseSettings();
-		try
-		{
-			if (System.IO.File.Exists(System.IO.Path.Combine(UnityEngine.Application.dataPath, WwiseSettingsFilename)))
-			{
-				var xmlSerializer = new System.Xml.Serialization.XmlSerializer(Settings.GetType());
-				var xmlFileStream = new System.IO.FileStream(UnityEngine.Application.dataPath + "/" + WwiseSettingsFilename,
-					System.IO.FileMode.Open, System.IO.FileAccess.Read);
-				Settings = (WwiseSettings) xmlSerializer.Deserialize(xmlFileStream);
-				xmlFileStream.Close();
-			}
-			else
-			{
-				var projectDir = System.IO.Path.GetDirectoryName(UnityEngine.Application.dataPath);
-				var foundWwiseProjects = System.IO.Directory.GetFiles(projectDir, "*.wproj", System.IO.SearchOption.AllDirectories);
-
-				if (foundWwiseProjects.Length == 0)
-					Settings.WwiseProjectPath = "";
-				else
-				{
-					Settings.WwiseProjectPath =
-						AkUtilities.MakeRelativePath(UnityEngine.Application.dataPath, foundWwiseProjects[0]);
-				}
-
-				Settings.SoundbankPath = AkBasePathGetter.DefaultBasePath;
-			}
-
-			s_Instance = Settings;
-		}
-		catch
-		{
-		}
-
-		return Settings;
-	}
+public enum AkWwiseHelpOrder
+{
+	WwiseHelpOrder = 200
 }
 
 public partial class AkUtilities
 {
+	#region Migration
 	/// <summary>
 	/// These values represent the maximum value of the "Unity Integration Version" number in the Version.txt file that will migrated.
 	/// For example, in Wwise v2019.1.0, "Unity Integration Version" is 18 which means that all migrations up until this version are required.
@@ -96,6 +33,7 @@ public partial class AkUtilities
 		WwiseTypes_v2018_1_6 = 16,
 		AkEventCallback_v2018_1_6 = 16,
 		AkAmbient_v2019_1_0 = 17,
+		NewScriptableObjectFolder_v2019_2_0 = 18,
 		/// <summary>
 		/// The value that is currently in the Version.txt file.
 		/// </summary>
@@ -104,31 +42,35 @@ public partial class AkUtilities
 
 	public static bool IsMigrationRequired(MigrationStep step)
 	{
-		return migrationStartIndex <= (int)step;
+		return MigrationStartIndex <= (int)step;
 	}
 
 	public static bool IsMigrating
 	{
-		get { return migrationStartIndex < MigrationStopIndex; }
+		get { return MigrationStartIndex < MigrationStopIndex; }
 	}
 
 	public static void BeginMigration(int startIndex)
 	{
 		if (startIndex < MigrationStopIndex)
-			migrationStartIndex = startIndex;
+			MigrationStartIndex = startIndex;
 	}
 
 	public static void EndMigration()
 	{
-		migrationStartIndex = MigrationStopIndex;
+		MigrationStartIndex = MigrationStopIndex;
 	}
 
-	public static int MigrationStartIndex { get { return migrationStartIndex; } }
 	public const int MigrationStopIndex = (int)MigrationStep.Current;
 
-	private static int migrationStartIndex = MigrationStopIndex;
+	public static int MigrationStartIndex
+	{
+		private set { migrationStartIndex = value; }
+		get { return migrationStartIndex; }
+	}
 
-	public static bool IsWwiseProjectAvailable { set; get; }
+	private static int migrationStartIndex = MigrationStopIndex;
+	#endregion
 
 	private const string DragAndDropId = "AkDragDropId";
 
@@ -145,6 +87,8 @@ public partial class AkUtilities
 
 	private static readonly System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>>
 		s_BaseToCustomPF = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>>();
+
+	public static bool IsWwiseProjectAvailable { set; get; }
 
 	public static bool IsSoundbankGenerationAvailable()
 	{
@@ -169,7 +113,7 @@ public partial class AkUtilities
 		// Waiting for the process to exit directly in the UI thread. Similar cases are working that way too.
 
 		// TODO: Is it better to provide a timeout avoid any issues of forever blocking the UI thread? If so, what is
-		// a relevant timeout value for soundbank generation?
+		// a relevant timeout value for SoundBank generation?
 		process.WaitForExit();
 		process.Close();
 
@@ -180,7 +124,7 @@ public partial class AkUtilities
 	{
 		string result = null;
 
-		var settings = WwiseSettings.LoadSettings();
+		var settings = AkWwiseEditorSettings.Instance;
 
 #if UNITY_EDITOR_WIN
 		if (!string.IsNullOrEmpty(settings.WwiseInstallationPathWindows))
@@ -205,9 +149,7 @@ public partial class AkUtilities
 	// that is configured in the UnityWwise integration.
 	public static void GenerateSoundbanks(System.Collections.Generic.List<string> platforms = null)
 	{
-		var Settings = WwiseSettings.LoadSettings();
-		var wwiseProjectFullPath = GetFullPath(UnityEngine.Application.dataPath, Settings.WwiseProjectPath);
-
+		var wwiseProjectFullPath = AkWwiseEditorSettings.WwiseProjectAbsolutePath;
 		if (IsSoundbankOverrideEnabled(wwiseProjectFullPath))
 		{
 			UnityEngine.Debug.LogWarning(
@@ -215,7 +157,6 @@ public partial class AkUtilities
 		}
 
 		var wwiseCli = GetWwiseCLI();
-
 		if (wwiseCli == null)
 		{
 			UnityEngine.Debug.LogError("Couldn't locate WwiseCLI, unable to generate SoundBanks.");
@@ -247,30 +188,23 @@ public partial class AkUtilities
 		arguments += " -GenerateSoundBanks";
 
 		var output = ExecuteCommandLine(command, arguments);
-
-		var success = output.Contains("Process completed successfully.");
-		var warning = output.Contains("Process completed with warning");
-
-		var message = "WwiseUnity: SoundBanks generation " +
-					  (success ? "successful" : (warning ? "has warning(s)" : "error")) + ":\n" + output;
-
-		if (success)
+		if (output.Contains("Process completed successfully."))
 		{
-			UnityEngine.Debug.Log(message);
+			UnityEngine.Debug.LogFormat("WwiseUnity: SoundBanks generation successful:\n{0}", output);
 		}
-		else if (warning)
+		else if (output.Contains("Process completed with warning"))
 		{
-			UnityEngine.Debug.LogWarning(message);
+			UnityEngine.Debug.LogWarningFormat("WwiseUnity: SoundBanks generation has warning(s):\n{0}", output);
 		}
 		else
 		{
-			UnityEngine.Debug.LogError(message);
+			UnityEngine.Debug.LogErrorFormat("WwiseUnity: SoundBanks generation error:\n{0}", output);
 		}
 
 		UnityEditor.AssetDatabase.Refresh();
 	}
 
-	/// Reads the user settings (not the project settings) to check if there is an override currently defined for the soundbank generation folders.
+	/// Reads the user settings (not the project settings) to check if there is an override currently defined for the SoundBank generation folders.
 	public static bool IsSoundbankOverrideEnabled(string wwiseProjectPath)
 	{
 		var userConfigFile = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(wwiseProjectPath),
@@ -296,11 +230,12 @@ public partial class AkUtilities
 
 	public static System.Collections.Generic.IDictionary<string, string> GetAllBankPaths()
 	{
-		var Settings = WwiseSettings.LoadSettings();
-		var WwiseProjectFullPath = GetFullPath(UnityEngine.Application.dataPath, Settings.WwiseProjectPath);
-		UpdateSoundbanksDestinationFolders(WwiseProjectFullPath);
+		UpdateSoundbanksDestinationFolders(AkWwiseEditorSettings.WwiseProjectAbsolutePath);
 		return s_ProjectBankPaths;
 	}
+
+	public delegate void GetEventDurationsFunc(uint eventID, ref float maximum, ref float minimum);
+	public static GetEventDurationsFunc GetEventDurations = (uint eventID, ref float maximum, ref float minimum) => { maximum = minimum = -1.0f; };
 
 	private static void UpdateSoundbanksDestinationFolders(string WwiseProjectPath)
 	{
@@ -339,24 +274,23 @@ public partial class AkUtilities
 				customList.Add(node.GetAttribute("Name", ""));
 			}
 
-			// Navigate the wproj file (XML format) to where generated soundbank paths are stored
+			// Navigate the wproj file (XML format) to where generated SoundBank paths are stored
 			var it = Navigator.Select("//Property[@Name='SoundBankPaths']/ValueList/Value");
 			foreach (System.Xml.XPath.XPathNavigator node in it)
 			{
 				var path = node.Value;
-				AkBasePathGetter.FixSlashes(ref path);
+				FixSlashes(ref path);
 				var pf = node.GetAttribute("Platform", "");
 				s_ProjectBankPaths[pf] = path;
 			}
 		}
 		catch (System.Exception ex)
 		{
-			// Error happened, return empty string
-			UnityEngine.Debug.LogError("Wwise: Error while reading project " + WwiseProjectPath + ".  Exception: " + ex.Message);
+			UnityEngine.Debug.LogError("WwiseUnity: Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
 		}
 	}
 
-	// Parses the .wproj to find out where soundbanks are generated for the given path.
+	// Parses the .wproj to find out where SoundBanks are generated for the given path.
 	public static string GetWwiseSoundBankDestinationFolder(string Platform, string WwiseProjectPath)
 	{
 		try
@@ -370,7 +304,7 @@ public partial class AkUtilities
 		}
 	}
 
-	// Set soundbank-related bool settings in the wproj file.
+	// Set SoundBank-related bool settings in the wproj file.
 	public static bool EnableBoolSoundbankSettingInWproj(string SettingName, string WwiseProjectPath)
 	{
 		try
@@ -378,8 +312,7 @@ public partial class AkUtilities
 			if (WwiseProjectPath.Length == 0)
 				return true;
 
-			var doc = new System.Xml.XmlDocument();
-			doc.PreserveWhitespace = true;
+			var doc = new System.Xml.XmlDocument { PreserveWhitespace = true };
 			doc.Load(WwiseProjectPath);
 			var Navigator = doc.CreateNavigator();
 
@@ -438,8 +371,7 @@ public partial class AkUtilities
 			if (WwiseProjectPath.Length == 0)
 				return true;
 
-			var doc = new System.Xml.XmlDocument();
-			doc.PreserveWhitespace = true;
+			var doc = new System.Xml.XmlDocument { PreserveWhitespace = true };
 			doc.Load(WwiseProjectPath);
 			var Navigator = doc.CreateNavigator();
 
@@ -524,75 +456,107 @@ public partial class AkUtilities
 		return tmpString.Replace(wrongSeparatorChar, System.IO.Path.DirectorySeparatorChar);
 	}
 
-
 	public static bool DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
 	{
-		// Get the subdirectories for the specified directory.
 		var dir = new System.IO.DirectoryInfo(sourceDirName);
-
 		if (!dir.Exists)
 		{
 			UnityEngine.Debug.LogError("WwiseUnity: Source directory doesn't exist");
 			return false;
 		}
 
-		var dirs = dir.GetDirectories();
-
-		// If the destination directory doesn't exist, create it. 
 		if (!System.IO.Directory.Exists(destDirName))
 			System.IO.Directory.CreateDirectory(destDirName);
 
-		// Get the files in the directory and copy them to the new location.
 		var files = dir.GetFiles();
 		foreach (var file in files)
 		{
-			var temppath = System.IO.Path.Combine(destDirName, file.Name);
-			file.CopyTo(temppath, true);
+			var destFilePath = System.IO.Path.Combine(destDirName, file.Name);
+			if (System.IO.File.Exists(destFilePath))
+				UnityEngine.Debug.LogWarningFormat("WwiseUnity: Destination file path will be overwritten: {0}", destFilePath);
+
+			file.CopyTo(destFilePath, true);
 		}
 
-		// If copying subdirectories, copy them and their contents to new location. 
-		if (copySubDirs)
+		if (!copySubDirs)
+			return true;
+
+		var dirs = dir.GetDirectories();
+		foreach (var subdir in dirs)
 		{
-			foreach (var subdir in dirs)
-			{
-				var temppath = System.IO.Path.Combine(destDirName, subdir.Name);
-				DirectoryCopy(subdir.FullName, temppath, copySubDirs);
-			}
+			var destSubDirName = System.IO.Path.Combine(destDirName, subdir.Name);
+			DirectoryCopy(subdir.FullName, destSubDirName, copySubDirs);
 		}
 
 		return true;
 	}
 
-	public static byte[] GetByteArrayProperty(UnityEditor.SerializedProperty property)
+	public static bool CreateFolder(string folderToCreate)
 	{
-		if (!property.isArray || property.arraySize == 0)
-			return null;
+		var created = false;
 
-		var byteArray = new byte[property.arraySize];
+		var folder = string.Empty;
+		var folders = folderToCreate.Split(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
+		for (int i = 0; i < folders.Length; ++i)
+		{
+			var parentFolder = folder;
+			folder = string.IsNullOrEmpty(parentFolder) ? folders[i] : System.IO.Path.Combine(parentFolder, folders[i]);
 
-		for (var i = 0; i < byteArray.Length; i++)
-			byteArray[i] = (byte)property.GetArrayElementAtIndex(i).intValue;
+			if (UnityEditor.AssetDatabase.IsValidFolder(folder))
+			{
+				continue;
+			}
 
-		return byteArray;
+			var error = UnityEditor.AssetDatabase.CreateFolder(parentFolder, folders[i]);
+			if (string.IsNullOrEmpty(error))
+			{
+				created = true;
+				continue;
+			}
+
+			return false;
+		}
+
+		if (created)
+			UnityEditor.AssetDatabase.SaveAssets();
+
+		return true;
 	}
 
-	public static void SetByteArrayProperty(UnityEditor.SerializedProperty property, byte[] byteArray)
+	/// <summary>
+	/// Renames or moves a folder using UnityEditor.Database API.
+	/// </summary>
+	/// <param name="oldPath"></param>
+	/// <param name="newPath"></param>
+	/// <returns>Returns true if the operation was successful.</returns>
+	public static bool MoveFolder(string oldPath, string newPath)
 	{
-		if (!property.isArray)
-			return;
+		oldPath = oldPath.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
+		newPath = newPath.Replace(System.IO.Path.AltDirectorySeparatorChar, System.IO.Path.DirectorySeparatorChar);
+		if (oldPath.Equals(newPath, System.StringComparison.OrdinalIgnoreCase))
+			return false;
 
-		var iterator = property.Copy();
-
-		iterator.arraySize = byteArray.Length;
-
-		while (iterator.name != "data")
-			iterator.Next(true);
-
-		for (var i = 0; i < byteArray.Length; i++)
+		var error = string.Empty;
+		var newParentFolder = System.IO.Path.GetDirectoryName(newPath);
+		if (System.IO.Path.GetDirectoryName(oldPath) == newParentFolder)
 		{
-			iterator.intValue = byteArray[i];
-			iterator.Next(true);
+			error = UnityEditor.AssetDatabase.RenameAsset(oldPath, newPath.Substring(newParentFolder.Length + 1));
+			if (string.IsNullOrEmpty(error))
+				return true;
+
+			UnityEngine.Debug.LogErrorFormat("WwiseUnity: Error while attempting to rename folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
+			return false;
 		}
+
+		if (!CreateFolder(newParentFolder))
+			return false;
+
+		error = UnityEditor.AssetDatabase.MoveAsset(oldPath, newPath);
+		if (string.IsNullOrEmpty(error))
+			return true;
+
+		UnityEngine.Debug.LogWarningFormat("WwiseUnity: Error while attempting to move folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
+		return false;
 	}
 
 	///This function returns the absolute position and the width and height of the last drawn GuiLayout(or EditorGuiLayout) element in the inspector window.
@@ -687,8 +651,7 @@ public partial class AkUtilities
 
 		if (logWarning)
 		{
-			UnityEngine.Debug.LogWarning(
-				"Automatically added AkAudioListener to Main Camera. Go to \"Edit > Wwise Settings...\" to disable this functionality.");
+			UnityEngine.Debug.LogWarning("Automatically added AkAudioListener to Main Camera. Go to \"Edit > Wwise Settings...\" to disable this functionality.");
 		}
 	}
 
@@ -769,6 +732,29 @@ public partial class AkUtilities
 
 public partial class AkUtilities
 {
+	public static void FixSlashes(ref string path, char separatorChar, char badChar, bool addTrailingSlash)
+	{
+		if (string.IsNullOrEmpty(path))
+			return;
+
+		path = path.Trim().Replace(badChar, separatorChar).TrimStart('\\');
+
+		// Append a trailing slash to play nicely with Wwise
+		if (addTrailingSlash && !path.EndsWith(separatorChar.ToString()))
+			path += separatorChar;
+	}
+
+	public static void FixSlashes(ref string path)
+	{
+#if UNITY_WSA
+		var separatorChar = '\\';
+#else
+		var separatorChar = System.IO.Path.DirectorySeparatorChar;
+#endif // UNITY_WSA
+		var badChar = separatorChar == '\\' ? '/' : '\\';
+		FixSlashes(ref path, separatorChar, badChar, true);
+	}
+
 	/// <summary>
 	///     This is based on FNVHash as used by the DataManager
 	///     to assign short IDs to objects. Be sure to keep them both in sync

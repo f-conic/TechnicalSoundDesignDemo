@@ -39,9 +39,6 @@ public class AkUnityEventHandlerInspector
 			m_triggerTypeIDs = new uint[m_triggerTypes.Count];
 			m_triggerTypes.Keys.CopyTo(m_triggerTypeIDs, 0);
 		}
-
-		//apply the modifications made to the mask property
-		in_serializedObject.ApplyModifiedProperties();
 	}
 
 	public void OnGUI()
@@ -52,7 +49,6 @@ public class AkUnityEventHandlerInspector
 		{
 			var currentTriggers = GetCurrentTriggers();
 			var oldMask = BuildCurrentMaskValue(currentTriggers);
-
 			var newMask = UnityEditor.EditorGUILayout.MaskField(m_label, oldMask, m_triggerTypeNames);
 
 			if (oldMask != newMask)
@@ -94,7 +90,7 @@ public class AkUnityEventHandlerInspector
 	{
 		var newList = new System.Collections.Generic.List<uint>();
 		for (var i = 0; i < m_triggerList.arraySize; i++)
-			newList.Add((uint) m_triggerList.GetArrayElementAtIndex(i).intValue);
+			newList.Add((uint)m_triggerList.GetArrayElementAtIndex(i).intValue);
 
 		return newList;
 	}

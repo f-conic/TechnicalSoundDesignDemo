@@ -48,12 +48,6 @@ public class AkSpatialAudioInitSettings : global::System.IDisposable {
   public AkSpatialAudioInitSettings() : this(AkSoundEnginePINVOKE.CSharp_new_AkSpatialAudioInitSettings(), true) {
   }
 
-  public int uPoolID { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolID_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolID_get(swigCPtr); } 
-  }
-
-  public uint uPoolSize { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolSize_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uPoolSize_get(swigCPtr); } 
-  }
-
   public uint uMaxSoundPropagationDepth { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxSoundPropagationDepth_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxSoundPropagationDepth_get(swigCPtr); } 
   }
 
@@ -67,6 +61,24 @@ public class AkSpatialAudioInitSettings : global::System.IDisposable {
   }
 
   public float fMovementThreshold { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fMovementThreshold_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fMovementThreshold_get(swigCPtr); } 
+  }
+
+  public uint uNumberOfPrimaryRays { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uNumberOfPrimaryRays_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uNumberOfPrimaryRays_get(swigCPtr); } 
+  }
+
+  public uint uMaxReflectionOrder { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxReflectionOrder_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_uMaxReflectionOrder_get(swigCPtr); } 
+  }
+
+  public float fMaxPathLength { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fMaxPathLength_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_fMaxPathLength_get(swigCPtr); } 
+  }
+
+  public bool bEnableDiffractionOnReflection { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_bEnableDiffractionOnReflection_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_bEnableDiffractionOnReflection_get(swigCPtr); } 
+  }
+
+  public bool bEnableDirectPathDiffraction { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_bEnableDirectPathDiffraction_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_bEnableDirectPathDiffraction_get(swigCPtr); } 
+  }
+
+  public bool bEnableTransmission { set { AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_bEnableTransmission_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkSpatialAudioInitSettings_bEnableTransmission_get(swigCPtr); } 
   }
 
 }

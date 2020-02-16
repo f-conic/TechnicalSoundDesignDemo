@@ -10,12 +10,10 @@
 public class AkRoomPortalInspector : UnityEditor.Editor
 {
 	private UnityEditor.SerializedProperty initialState;
+	private UnityEditor.SerializedProperty rooms;
 
 	private readonly AkUnityEventHandlerInspector m_ClosePortalEventHandlerInspector = new AkUnityEventHandlerInspector();
 	private readonly AkUnityEventHandlerInspector m_OpenPortalEventHandlerInspector = new AkUnityEventHandlerInspector();
-
-	private readonly int[] m_selectedIndex = new int[2];
-	private readonly AkRoom.PriorityList[] roomList = { new AkRoom.PriorityList(), new AkRoom.PriorityList() };
 
 	private AkRoomPortal m_roomPortal;
 
@@ -33,18 +31,12 @@ public class AkRoomPortalInspector : UnityEditor.Editor
 	private void OnEnable()
 	{
 		initialState = serializedObject.FindProperty("initialState");
+		rooms = serializedObject.FindProperty("rooms");
 
 		m_OpenPortalEventHandlerInspector.Init(serializedObject, "triggerList", "Open On: ", false);
 		m_ClosePortalEventHandlerInspector.Init(serializedObject, "closePortalTriggerList", "Close On: ", false);
 
 		m_roomPortal = target as AkRoomPortal;
-
-		m_roomPortal.FindOverlappingRooms(roomList);
-		for (var i = 0; i < 2; i++)
-		{
-			var index = roomList[i].BinarySearch(m_roomPortal.GetRoom(i));
-			m_selectedIndex[i] = index == -1 ? 0 : index;
-		}
 	}
 
 	public override void OnInspectorGUI()
@@ -58,31 +50,38 @@ public class AkRoomPortalInspector : UnityEditor.Editor
 			m_ClosePortalEventHandlerInspector.OnGUI();
 		}
 
-		m_roomPortal.FindOverlappingRooms(roomList);
+		m_roomPortal.UpdateRooms();
 
-		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
-		{
-			var labels = new string[2] { "Back", "Front" };
+		var labels = new[] { "Back Room", "Front Room" };
+		var tooltips = new[] { "The highest priority, active and enabled AkRoom component overlapping the back surface of this AkRoomPortal.",
+			"The highest priority, active and enabled AkRoom component overlapping the front surface of this AkRoomPortal." };
 
-			for (var i = 0; i < 2; i++)
-			{
-				var roomListCount = roomList[i].rooms.Count;
-				var roomLabels = new string[roomListCount];
+		var wasEnabled = UnityEngine.GUI.enabled;
+		UnityEngine.GUI.enabled = false;
 
-				for (var j = 0; j < roomListCount; j++)
-					roomLabels[j] = j + 1 + ". " + roomList[i].rooms[j].name;
+		for (var i = 0; i < AkRoomPortal.MAX_ROOMS_PER_PORTAL; i++)
+			UnityEditor.EditorGUILayout.PropertyField(rooms.GetArrayElementAtIndex(i), new UnityEngine.GUIContent(labels[i], tooltips[i]), true);
 
-				m_selectedIndex[i] = UnityEditor.EditorGUILayout.Popup(labels[i] + " Room",
-					UnityEngine.Mathf.Clamp(m_selectedIndex[i], 0, roomListCount - 1), roomLabels);
+		UnityEngine.GUI.enabled = wasEnabled;
 
-				m_roomPortal.SetRoom(i, 
-					m_selectedIndex[i] < 0 || m_selectedIndex[i] >= roomListCount
-					? null
-					: roomList[i].rooms[m_selectedIndex[i]]);
-			}
-		}
+		RoomCheck(m_roomPortal);
 
 		serializedObject.ApplyModifiedProperties();
+	}
+
+	public static void RoomCheck(AkRoomPortal portal)
+	{
+		if (AkWwiseEditorSettings.Instance.ShowSpatialAudioWarningMsg)
+		{
+			if (!portal.IsValid)
+			{
+				UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
+
+				UnityEditor.EditorGUILayout.HelpBox(
+					"Front and back rooms are identical. The AkRoomPortal will not be sent to Spatial Audio.",
+					UnityEditor.MessageType.Warning);
+			}
+		}
 	}
 }
 #endif

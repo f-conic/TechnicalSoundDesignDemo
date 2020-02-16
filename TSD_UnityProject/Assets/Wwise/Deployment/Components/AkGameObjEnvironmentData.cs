@@ -103,7 +103,7 @@ public class AkGameObjEnvironmentData
 
 		bool isSendingZero = auxSendValues.Count() == 0;
 		if (!hasSentZero || !isSendingZero)
-			AkSoundEngine.SetEmitterAuxSendValues(gameObject, auxSendValues, (uint) auxSendValues.Count());
+			auxSendValues.SetValues(gameObject);
 
 		hasSentZero = isSendingZero;
 		lastPosition = position;
