@@ -33,6 +33,8 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 	/// Optional room with which this surface reflector is associated. It is recommended to associate geometry with a particular room if the geometry is fully contained within the room and the room does not share any geometry with any other rooms. Doing so reduces the search space for ray casting performed by reflection and diffraction calculations.
 	public AkRoom AssociatedRoom = null;
 
+	private UnityEngine.Vector3 oldPosition;
+
 	private ulong GetID()
 	{
 		return (ulong)GetInstanceID();
@@ -179,7 +181,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 		if (Mesh == null)
 		{
-			UnityEngine.Debug.LogFormat("SetGeometry({0}): No mesh found!", gameObject.name);
+			//UnityEngine.Debug.LogFormat("SetGeometry({0}): No mesh found!", gameObject.name);
 			return;
 		}
 
@@ -203,6 +205,15 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 	{
 		RemoveGeometry();
 		SetGeometry();
+	}
+
+	private void LateUpdate()
+	{
+		if (transform != null && transform.position != oldPosition)
+		{
+			SetGeometry();
+			oldPosition = transform.position;
+		}
 	}
 
 	/// <summary>
