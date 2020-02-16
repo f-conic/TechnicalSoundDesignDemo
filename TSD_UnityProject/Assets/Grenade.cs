@@ -9,12 +9,6 @@ public class Grenade : MonoBehaviour
 	public LayerMask Layer;
 	private bool isExploding;
 
-	private void Awake()
-	{
-		//AkSoundEngine.RegisterEmitter(gameObject, new AkEmitterSettings());
-		//AkSoundEngine.SetObjectPosition(gameObject, transform);
-	}
-
 	private Collider[] CheckIncidental(Vector3 center, float radius)
 	{
 		Collider[] hitColliders = Physics.OverlapSphere(center, radius, Layer.value);
