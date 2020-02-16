@@ -260,7 +260,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586198057573358999
+    m_lastTime: -8586197226303063885
     List:
     - name: grenade_explosion
       guid: 6353da03e0b8b844958f367d2b8938d5
@@ -274,6 +274,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 9.107959
       minDuration: 1.0365
+    - name: Incidental_Glass
+      guid: 381096fad23ce54da2ca53fab8749442
+      id: 976947025
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Incidental_Glass
+        ObjectType: 3
+      Path: Default Work Unit\Incidental_Glass
+      maxAttenuation: 100
+      maxDuration: 1.953375
+      minDuration: 1.071208
+    - name: Incidental_Metal
+      guid: 14d7276536ee0c4aab479db933e9c58d
+      id: 2717289804
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Incidental_Metal
+        ObjectType: 3
+      Path: Default Work Unit\Incidental_Metal
+      maxAttenuation: 100
+      maxDuration: 11.558437
+      minDuration: 7.143667
     - name: Play_Discussion
       guid: 23a6421fb58d6d4ea50b89040ac830c3
       id: 1444333482
@@ -286,18 +310,6 @@ MonoBehaviour:
       maxAttenuation: 60
       maxDuration: 905.9827
       minDuration: 905.9827
-    - name: Play_Incidental
-      guid: 381096fad23ce54da2ca53fab8749442
-      id: 2369597903
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_Incidental
-        ObjectType: 3
-      Path: Default Work Unit\Play_Incidental
-      maxAttenuation: 100
-      maxDuration: 1.953375
-      minDuration: 1.071208
     - name: Play_Kit014Break014
       guid: 8c299c3b09121043bfe9619164191b19
       id: 713469781
@@ -307,7 +319,7 @@ MonoBehaviour:
       - ElementName: Play_Kit014Break014
         ObjectType: 3
       Path: Default Work Unit\Play_Kit014Break014
-      maxAttenuation: 20
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -315,7 +327,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586198057573769082
+    m_lastTime: -8586197339194451769
     List:
     - name: RTPC_Explosion_Close_Distance
       guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
@@ -358,7 +370,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: e8c818db4a993940844db8aa714c5caa
     GuidInternal: 
-    m_lastTime: -8586197374482694880
+    m_lastTime: -8586197363049900154
     List:
     - name: CeilingState
       guid: f83eb48bdf4cda4098a2bf98fc345044
