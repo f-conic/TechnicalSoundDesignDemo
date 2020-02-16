@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586198038674958544
+    m_lastTime: -8586197567563945839
     List:
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -283,7 +283,7 @@ MonoBehaviour:
       - ElementName: Play_Discussion
         ObjectType: 3
       Path: Default Work Unit\Play_Discussion
-      maxAttenuation: 20
+      maxAttenuation: 40
       maxDuration: 905.9827
       minDuration: 905.9827
     - name: Play_Incidental

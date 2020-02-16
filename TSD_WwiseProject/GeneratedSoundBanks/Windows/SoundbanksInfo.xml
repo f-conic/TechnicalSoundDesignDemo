@@ -27,7 +27,7 @@
 			<Path>DefaultSoundBank.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2974935085" Name="grenade_explosion" ObjectPath="\Events\Default Work Unit\grenade_explosion" DurationType="OneShot" DurationMin="1.036500" DurationMax="9.107959"/>
-				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
+				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" MaxAttenuation="40.000000" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
 				<Event Id="2369597903" Name="Play_Incidental" ObjectPath="\Events\Default Work Unit\Play_Incidental" DurationType="OneShot" DurationMin="1.071208" DurationMax="1.953375"/>
 				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" DurationType="Infinite"/>
 			</IncludedEvents>
