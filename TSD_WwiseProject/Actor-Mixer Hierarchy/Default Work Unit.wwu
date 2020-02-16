@@ -185,6 +185,7 @@
 										<Value>20</Value>
 									</ValueList>
 								</Property>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
@@ -696,6 +697,12 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Main_Far" ID="{E2D30EAA-CD32-4151-A93A-52EEDC0C2245}" ShortID="12835188">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="60"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
@@ -730,6 +737,10 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Tail_Far" ID="{06BB0BC0-7593-4291-BD16-0BB6B2743919}" ShortID="632581211">
+									<PropertyList>
+										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
@@ -764,6 +775,12 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Main_Mid" ID="{B006B568-13D4-44A1-9C9A-04A20C8A9C5C}" ShortID="656799433">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="73"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
@@ -836,7 +853,13 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Debris_Mid" ID="{01F0A673-45D0-4AB2-ADCB-99DF7B095B8B}" ShortID="824016531">
+									<PropertyList>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATT_Explosion_Debris_Mid" ID="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
 										</Reference>
@@ -901,7 +924,7 @@
 											</RTPCList>
 										</Property>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
-										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="58"/>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="45"/>
 										<Property Name="Weight" Type="Real64">
 											<ValueList>
 												<Value>100</Value>
@@ -1085,6 +1108,11 @@
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-96</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Weight" Type="Real64">
 											<ValueList>
 												<Value>100</Value>
@@ -1135,7 +1163,7 @@
 												<RTPC Name="" ID="{8FD54A8E-4060-457F-AF7A-FA4EAB0341E6}" ShortID="155016665">
 													<ReferenceList>
 														<Reference Name="ControlInput">
-															<ObjectRef Name="RTPC_Explosion_Close_Distance" ID="{D0B3DCDC-D7D7-4F4B-8B45-62D3AA0C0FCB}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+															<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
 														</Reference>
 													</ReferenceList>
 													<Curve Name="" ID="{13E1FD89-DB3D-4446-BF0A-EA074831A700}">
@@ -1145,12 +1173,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>0</YPos>
+																<YPos>-1</YPos>
 																<Flags>5</Flags>
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>39</YPos>
+																<YPos>-100</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1161,6 +1189,39 @@
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="83"/>
+										<Property Name="Volume" Type="Real64">
+											<RTPCList>
+												<RTPC Name="" ID="{F4D2E1FF-D413-4F3C-B10D-136C7E3C5E45}" ShortID="93214797">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{604B68AE-9244-4270-A604-38308DE4F5C9}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>19.60184</XPos>
+																<YPos>-200</YPos>
+																<Flags>0</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-200</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
 										<Property Name="Weight" Type="Real64">
 											<ValueList>
 												<Value>100</Value>
@@ -1169,7 +1230,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Attenuation">
-											<ObjectRef Name="ATT_Explosion" ID="{9883593F-3809-4B56-9B1B-56BDC203F7F8}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+											<ObjectRef Name="ATT_Explosion_Debris_Close" ID="{EFEF8FEF-63D4-4F2D-9F7E-1124DCDC6B8A}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
 										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
