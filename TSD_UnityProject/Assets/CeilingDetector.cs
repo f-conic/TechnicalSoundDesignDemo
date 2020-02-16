@@ -5,9 +5,9 @@ using UnityEngine;
 public class CeilingDetector : MonoBehaviour
 {
 	private RaycastHit hit;
-	private int lastGameObjectId;
+	private bool isActive;
 
-	private void LateUpdate()
+	private void Update()
 	{
 		// There's probably a better way of doing this.
 		if (Camera.main != null)
@@ -17,44 +17,16 @@ public class CeilingDetector : MonoBehaviour
 
 		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 100f))
 		{
-			var gameObjectId = hit.transform.gameObject.GetInstanceID();
-			if (lastGameObjectId != gameObjectId)
+			if (!isActive)
 			{
-				if (hit.transform.GetComponent<BoxCollider>() == null)
-				{
-					CreateCollider(hit);
-				}
-
-				lastGameObjectId = gameObjectId;
+				AkSoundEngine.SetState("CeilingState", "Active");
+				isActive = true;
 			}
 		}
-	}
-
-	private void CreateCollider(RaycastHit hitObject)
-	{
-		var room = new GameObject("Room");
-		room.gameObject.transform.SetParent(hitObject.transform, false);
-		
-		var roomCollider = room.AddComponent<BoxCollider>();
-		var distanceToFloor = GetDistanceToFloor(hitObject);
-
-		roomCollider.size = new Vector3(1f, 1f, distanceToFloor);
-		roomCollider.center = new Vector3(0f, 0f, hitObject.transform.position.y - distanceToFloor/2f);
-
-		Debug.Log("<color=green>Found ceiling! Creating room.</color>");
-	}
-
-	private float GetDistanceToFloor(RaycastHit ceiling)
-	{
-		// This is fine, we only do it once.
-		var floor = GameObject.FindWithTag("Floor");
-
-		if (floor != null)
+		else
 		{
-			var distance = Vector3.Distance(floor.transform.position, ceiling.transform.position);
-			return distance;
+			AkSoundEngine.SetState("CeilingState", "Inactive");
+			isActive = false;
 		}
-
-		return 0f;
 	}
 }

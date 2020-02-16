@@ -1257,19 +1257,52 @@
 								<Effect Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
 										<Property Name="DecayTime" Type="Real32" Value="1.1"/>
-										<Property Name="Density" Type="Real32" Value="100"/>
-										<Property Name="Diffusion" Type="Real32" Value="46"/>
+										<Property Name="Density" Type="Real32" Value="88"/>
+										<Property Name="Diffusion" Type="Real32" Value="35"/>
 										<Property Name="ERLevel" Type="Real32" Value="-23"/>
+										<Property Name="ERPattern" Type="int32" Value="22"/>
 										<Property Name="Filter1Freq" Type="Real32" Value="590"/>
 										<Property Name="Filter3Freq" Type="Real32" Value="8440"/>
 										<Property Name="Filter3Gain" Type="Real32" Value="-4.5"/>
-										<Property Name="HFDamping" Type="Real32" Value="2.7"/>
+										<Property Name="HFDamping" Type="Real32" Value="7.4"/>
+										<Property Name="PreDelay" Type="Real32" Value="0"/>
 										<Property Name="Quality" Type="int32" Value="12"/>
 										<Property Name="ReverbLevel" Type="Real32" Value="-22"/>
-										<Property Name="RoomShape" Type="Real32" Value="55"/>
+										<Property Name="RoomShape" Type="Real32" Value="80"/>
 										<Property Name="RoomSize" Type="Real32" Value="15"/>
-										<Property Name="StereoWidth" Type="Real32" Value="115"/>
+										<Property Name="StereoWidth" Type="Real32" Value="86"/>
 									</PropertyList>
+									<StateInfo>
+										<StatePropertyList>
+											<Property Name="DryLevel"/>
+											<Property Name="ReverbLevel"/>
+										</StatePropertyList>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="CeilingState" ID="{8BB43EF8-4CDF-40DA-98A2-BF98FC345044}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Active" ID="{E0213BBD-857A-4543-A230-E435F6DA778D}"/>
+												<CustomState Name="" ID="{3FA07FA7-3DEB-469F-9744-2D297A409178}" ShortID="527799216">
+													<PropertyList>
+														<Property Name="DryLevel" Type="Real32" Value="96"/>
+														<Property Name="ReverbLevel" Type="Real32" Value="-3"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Inactive" ID="{7ABDBEF3-4BD7-4A7E-9B9D-753CF4F26CA9}"/>
+												<CustomState Name="" ID="{D9552716-98A0-41BC-82C7-C5E15506FED8}" ShortID="628272998">
+													<PropertyList>
+														<Property Name="DryLevel" Type="Real32" Value="96"/>
+														<Property Name="ReverbLevel" Type="Real32" Value="-96"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 								</Effect>
 								<Effect Name="Room_Small" ID="{577F1466-A63B-47F7-98BD-C56E433F8B5D}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<PropertyList>
