@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -10,6 +11,7 @@ public class FreeLookCamera : MonoBehaviour
 	private Vector2 _mouseAbsolute;
 	private Vector2 _smoothMouse;
 	private Transform cameraTransform;
+	private bool applicationState;
 
 	public Vector2 clampInDegrees = new Vector2(360, 180);
 	public bool lockCursor;
@@ -21,12 +23,23 @@ public class FreeLookCamera : MonoBehaviour
 	{
 		// Set target direction to the camera's initial orientation.
 		targetDirection = transform.rotation.eulerAngles;
+		Cursor.visible = false;
 	}
 
 	void Update()
 	{
-		HandleKeyboardMovement();
-		Rotate();
+		if (!Cursor.visible && Application.isFocused)
+		{
+			// Save temporary application state when losing focus.
+			applicationState = true;
+
+			HandleKeyboardMovement();
+			Rotate();		
+		}
+		else if (applicationState != Application.isFocused)
+		{
+			Cursor.visible = false;
+		}
 	}
 
 	void Rotate()
