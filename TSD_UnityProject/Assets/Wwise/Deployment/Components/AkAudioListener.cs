@@ -60,7 +60,6 @@ public class AkAudioListener : UnityEngine.MonoBehaviour
 			akGameObj.Register();
 
 		akGameObjectID = AkSoundEngine.GetAkGameObjectID(gameObject);
-		AkSoundEngine.RegisterGameObj(gameObject);
 	}
 
 	private void OnEnable()
@@ -134,10 +133,9 @@ public class AkAudioListener : UnityEngine.MonoBehaviour
 				return false;
 
 			var gameObjectId = listener.GetAkGameObjectID();
-			if (!listenerIdList.Contains(gameObjectId))
+			if (!listenerIdList.Remove(gameObjectId))
 				return false;
 
-			listenerIdList.Remove(gameObjectId);
 			listenerList.Remove(listener);
 			return true;
 		}

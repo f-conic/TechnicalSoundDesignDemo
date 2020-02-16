@@ -36,26 +36,30 @@ public class AkEventInspector : AkBaseInspector
 		AkEditorEventPlayer.RefreshGUI -= Repaint;
 	}
 
-	public override void OnChildInspectorGUI()
+	private void DisplayActionOnEvent()
 	{
-		m_UnityEventHandlerInspector.OnGUI();
+		if (useCallbacks.boolValue)
+			return;
 
 		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
-
 		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 		{
 			UnityEditor.EditorGUILayout.PropertyField(enableActionOnEvent, new UnityEngine.GUIContent("Action On Event: "));
+			if (!enableActionOnEvent.boolValue)
+				return;
 
-			if (enableActionOnEvent.boolValue)
-			{
-				UnityEditor.EditorGUILayout.PropertyField(actionOnEventType, new UnityEngine.GUIContent("Action On EventType: "));
-				UnityEditor.EditorGUILayout.PropertyField(curveInterpolation, new UnityEngine.GUIContent("Curve Interpolation: "));
-				UnityEditor.EditorGUILayout.Slider(transitionDuration, 0.0f, 60.0f, new UnityEngine.GUIContent("Fade Time (secs): "));
-			}
+			UnityEditor.EditorGUILayout.PropertyField(actionOnEventType, new UnityEngine.GUIContent("Action On EventType: "));
+			UnityEditor.EditorGUILayout.PropertyField(curveInterpolation, new UnityEngine.GUIContent("Curve Interpolation: "));
+			UnityEditor.EditorGUILayout.Slider(transitionDuration, 0.0f, 60.0f, new UnityEngine.GUIContent("Fade Time (secs): "));
 		}
+	}
+
+	private void DisplayCallbackInformation()
+	{
+		if (enableActionOnEvent.boolValue)
+			return;
 
 		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
-
 		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 		{
 			UnityEditor.EditorGUILayout.PropertyField(useCallbacks, new UnityEngine.GUIContent("Use Callback: "));
@@ -119,7 +123,16 @@ public class AkEventInspector : AkBaseInspector
 							callbackData.arraySize = 0;
 			}
 		}
+	}
 
+	public override void OnChildInspectorGUI()
+	{
+		m_UnityEventHandlerInspector.OnGUI();
+
+		DisplayActionOnEvent();
+		DisplayCallbackInformation();
+
+		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
 		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 		{
 			if (targets.Length == 1)

@@ -16,19 +16,11 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 
 	public AkWwiseTreeView()
 	{
-#if UNITY_2017_2_OR_NEWER
 		UnityEditor.EditorApplication.playModeStateChanged += (UnityEditor.PlayModeStateChange playMode) =>
 		{
 			if (playMode == UnityEditor.PlayModeStateChange.ExitingEditMode)
 				SaveExpansionStatus();
 		};
-#else
-		UnityEditor.EditorApplication.playmodeStateChanged += () =>
-		{
-			if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode && !UnityEditor.EditorApplication.isPlaying)
-				SaveExpansionStatus();
-		};
-#endif
 	}
 
 	public class AkTreeInfo
@@ -54,7 +46,6 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 		var parentItem = item;
 
 		var path = "/" + RootItem.Header + "/" + item.Header;
-
 		for (var i = 0; i < AkInfo.PathAndIcons.Count; i++)
 		{
 			var PathElem = AkInfo.PathAndIcons[i];
@@ -72,7 +63,9 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 				else
 				{
 					var isDraggable = !(PathElem.ObjectType == WwiseObjectType.StateGroup ||
-					                    PathElem.ObjectType == WwiseObjectType.SwitchGroup);
+										PathElem.ObjectType == WwiseObjectType.SwitchGroup ||
+										PathElem.ObjectType == WwiseObjectType.Folder ||
+										PathElem.ObjectType == WwiseObjectType.Bus);
 					childItem = parentItem.AddItem(PathElem.ElementName, isDraggable, GetExpansionStatus(path),
 						new AkTreeInfo(AkInfo.Guid, PathElem.ObjectType));
 				}
@@ -118,7 +111,7 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 		{
 			akInfoWwu.Add(new AkWwiseProjectData.AkInfoWorkUnit());
 			akInfoWwu[i].PhysicalPath = Events[i].PhysicalPath;
-			akInfoWwu[i].ParentPhysicalPath = Events[i].ParentPhysicalPath;
+			akInfoWwu[i].ParentPath = Events[i].ParentPath;
 			akInfoWwu[i].Guid = Events[i].Guid;
 			akInfoWwu[i].List = Events[i].List.ConvertAll(x => (AkWwiseProjectData.AkInformation) x);
 		}
@@ -394,7 +387,7 @@ public class AkWwiseTreeView : AK.Wwise.TreeView.TreeViewControl
 		{
 			var saveWordWrap = UnityEngine.GUI.skin.label.wordWrap;
 			UnityEngine.GUI.skin.label.wordWrap = true;
-			UnityEngine.GUILayout.Label(string.Format("Wwise Project not found at path:\n{0}\n\nWwise Picker will not be usable.", AkUtilities.GetFullPath(UnityEngine.Application.dataPath, WwiseSetupWizard.Settings.WwiseProjectPath)), UnityEngine.GUILayout.ExpandHeight(true));
+			UnityEngine.GUILayout.Label(string.Format("Wwise Project not found at path:\n{0}\n\nWwise Picker will not be usable.", AkUtilities.GetFullPath(UnityEngine.Application.dataPath, AkWwiseEditorSettings.Instance.WwiseProjectPath)), UnityEngine.GUILayout.ExpandHeight(true));
 			UnityEngine.GUI.skin.label.wordWrap = saveWordWrap;
 		}
 	}

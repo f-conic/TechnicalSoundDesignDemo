@@ -1,4 +1,4 @@
-﻿#if UNITY_2017_1_OR_NEWER
+﻿[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 [UnityEditor.CustomEditor(typeof(AkRTPCTrack))]
 public class AkRTPCTrackInspector : UnityEditor.Editor
 {
@@ -23,5 +23,3 @@ public class AkRTPCTrackInspector : UnityEditor.Editor
 		serializedObject.ApplyModifiedProperties();
 	}
 }
-
-#endif //UNITY_2017_1_OR_NEWER

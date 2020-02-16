@@ -48,15 +48,10 @@ public class AkImageSourceParams : global::System.IDisposable {
   public AkImageSourceParams() : this(AkSoundEnginePINVOKE.CSharp_new_AkImageSourceParams__SWIG_0(), true) {
   }
 
-  public AkImageSourceParams(AkVector in_sourcePosition, float in_fDistanceScalingFactor, float in_fLevel) : this(AkSoundEnginePINVOKE.CSharp_new_AkImageSourceParams__SWIG_1(AkVector.getCPtr(in_sourcePosition), in_fDistanceScalingFactor, in_fLevel), true) {
+  public AkImageSourceParams(UnityEngine.Vector3 in_sourcePosition, float in_fDistanceScalingFactor, float in_fLevel) : this(AkSoundEnginePINVOKE.CSharp_new_AkImageSourceParams__SWIG_1(in_sourcePosition, in_fDistanceScalingFactor, in_fLevel), true) {
   }
 
-  public AkVector sourcePosition { set { AkSoundEnginePINVOKE.CSharp_AkImageSourceParams_sourcePosition_set(swigCPtr, AkVector.getCPtr(value)); } 
-    get {
-      global::System.IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkImageSourceParams_sourcePosition_get(swigCPtr);
-      AkVector ret = (cPtr == global::System.IntPtr.Zero) ? null : new AkVector(cPtr, false);
-      return ret;
-    } 
+  public UnityEngine.Vector3 sourcePosition { set { AkSoundEnginePINVOKE.CSharp_AkImageSourceParams_sourcePosition_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkImageSourceParams_sourcePosition_get(swigCPtr); } 
   }
 
   public float fDistanceScalingFactor { set { AkSoundEnginePINVOKE.CSharp_AkImageSourceParams_fDistanceScalingFactor_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkImageSourceParams_fDistanceScalingFactor_get(swigCPtr); } 

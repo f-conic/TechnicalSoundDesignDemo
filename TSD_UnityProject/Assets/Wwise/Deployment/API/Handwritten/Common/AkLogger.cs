@@ -26,10 +26,7 @@ public class AkLogger
 		}
 	}
 
-	public static AkLogger Instance
-	{
-		get { return ms_Instance; }
-	}
+	public static AkLogger Instance { get { return ms_Instance; } }
 
 	~AkLogger()
 	{
@@ -49,22 +46,22 @@ public class AkLogger
 	[AOT.MonoPInvokeCallback(typeof(ErrorLoggerInteropDelegate))]
 	public static void WwiseInternalLogError(string message)
 	{
-		UnityEngine.Debug.LogError("Wwise: " + message);
+		UnityEngine.Debug.LogErrorFormat("Wwise: {0}", message);
 	}
 
 	public static void Message(string message)
 	{
-		UnityEngine.Debug.Log("WwiseUnity: " + message);
+		UnityEngine.Debug.LogFormat("WwiseUnity: {0}", message);
 	}
 
 	public static void Warning(string message)
 	{
-		UnityEngine.Debug.LogWarning("WwiseUnity: " + message);
+		UnityEngine.Debug.LogWarningFormat("WwiseUnity: {0}", message);
 	}
 
 	public static void Error(string message)
 	{
-		UnityEngine.Debug.LogError("WwiseUnity: " + message);
+		UnityEngine.Debug.LogErrorFormat("WwiseUnity: {0}", message);
 	}
 }
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

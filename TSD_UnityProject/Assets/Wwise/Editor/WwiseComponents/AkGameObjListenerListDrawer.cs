@@ -5,7 +5,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-//[UnityEditor.CustomPropertyDrawer(typeof(AkGameObjListenerList))]
+[UnityEditor.CustomPropertyDrawer(typeof(AkGameObjListenerList))]
 internal class AkGameObjListenerListDrawer : UnityEditor.PropertyDrawer
 {
 	private const int listenerSpacerWidth = 4;

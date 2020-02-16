@@ -1,23 +1,4 @@
 #if UNITY_EDITOR
-
-
-// This sets the order in which the menus appear.
-public enum AkWwiseMenuOrder
-{
-	ConvertIDs = 200
-}
-
-public enum AkWwiseWindowOrder
-{
-	WwiseSettings = 305,
-	WwisePicker = 2300
-}
-
-public enum AkWwiseHelpOrder
-{
-	WwiseHelpOrder = 200
-}
-
 public class AkUnityAssetsInstaller
 {
 	public string[] m_arches = { };

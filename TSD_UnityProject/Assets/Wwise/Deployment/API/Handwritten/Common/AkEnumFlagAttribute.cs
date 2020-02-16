@@ -16,12 +16,7 @@ public class AkEnumFlagAttribute : UnityEngine.PropertyAttribute
 		{
 			UnityEditor.EditorGUI.BeginProperty(position, label, property);
 			var flagAttribute = (AkEnumFlagAttribute)attribute;
-
-#if UNITY_2017_3_OR_NEWER
 			property.longValue = UnityEditor.EditorGUI.EnumFlagsField(position, new UnityEngine.GUIContent(label.text, AkUtilities.GetTooltip(property)), (System.Enum)System.Enum.ToObject(flagAttribute.Type, property.longValue)).GetHashCode();
-#else
-			property.longValue = UnityEditor.EditorGUI.EnumMaskField(position, label, (System.Enum)System.Enum.ToObject(flagAttribute.Type, property.longValue)).GetHashCode();
-#endif
 			UnityEditor.EditorGUI.EndProperty();
 		}
 	}

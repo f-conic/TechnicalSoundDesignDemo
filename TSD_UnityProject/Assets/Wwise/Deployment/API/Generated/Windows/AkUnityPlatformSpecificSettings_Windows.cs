@@ -45,8 +45,5 @@ public class AkUnityPlatformSpecificSettings : global::System.IDisposable {
     }
   }
 
-  public AkUnityPlatformSpecificSettings() : this(AkSoundEnginePINVOKE.CSharp_new_AkUnityPlatformSpecificSettings(), true) {
-  }
-
 }
 #endif // #if (UNITY_STANDALONE_WIN && !UNITY_EDITOR) || UNITY_EDITOR_WIN

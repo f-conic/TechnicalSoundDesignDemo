@@ -1,0 +1,9 @@
+{"scriptExecutionOrder":{
+	"AkInitializer":-100,
+	"AkBank":-75,
+	"AkAudioListener":-50,
+	"AkGameObj":-25,
+	"AkState":-20,
+	"AkSwitch":-10,
+	"AkTerminator":100
+}}

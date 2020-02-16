@@ -54,7 +54,7 @@ public class AkDeviceSettings : global::System.IDisposable {
   public uint uIOMemoryAlignment { set { AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_uIOMemoryAlignment_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_uIOMemoryAlignment_get(swigCPtr); } 
   }
 
-  public int ePoolAttributes { set { AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_ePoolAttributes_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_ePoolAttributes_get(swigCPtr); } 
+  public uint ePoolAttributes { set { AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_ePoolAttributes_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_ePoolAttributes_get(swigCPtr); } 
   }
 
   public uint uGranularity { set { AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_uGranularity_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_uGranularity_get(swigCPtr); } 
@@ -81,9 +81,6 @@ public class AkDeviceSettings : global::System.IDisposable {
   }
 
   public uint uMaxCachePinnedBytes { set { AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_uMaxCachePinnedBytes_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkDeviceSettings_uMaxCachePinnedBytes_get(swigCPtr); } 
-  }
-
-  public AkDeviceSettings() : this(AkSoundEnginePINVOKE.CSharp_new_AkDeviceSettings(), true) {
   }
 
 }

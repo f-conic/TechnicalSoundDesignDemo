@@ -1,11 +1,11 @@
 #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 
-#if UNITY_2017_1_OR_NEWER
 [UnityEngine.Timeline.TrackColor(0.32f, 0.13f, 0.13f)]
 // Specifies the type of Playable Asset this track manages
 [UnityEngine.Timeline.TrackClipType(typeof(AkRTPCPlayable))]
 // Use if the track requires a binding to a scene object or asset
 [UnityEngine.Timeline.TrackBindingType(typeof(UnityEngine.GameObject))]
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 public class AkRTPCTrack : UnityEngine.Timeline.TrackAsset
 {
 	public AK.Wwise.RTPC Parameter;
@@ -40,7 +40,5 @@ public class AkRTPCTrack : UnityEngine.Timeline.TrackAsset
 		}
 	}
 }
-
-#endif //UNITY_2017_1_OR_NEWER
 
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

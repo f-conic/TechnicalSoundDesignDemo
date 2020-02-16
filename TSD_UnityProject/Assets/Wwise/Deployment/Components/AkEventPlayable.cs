@@ -5,14 +5,12 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if UNITY_2017_1_OR_NEWER
-
 /// @brief A playable asset containing a Wwise event that can be placed within a \ref AkEventTrack in a timeline.
 /// @details Use this class to play Wwise events from a timeline and synchronise them to the animation. Events will be emitted from the GameObject that is bound to the AkEventTrack. Use the overrideTrackEmitterObject option to choose a different GameObject from which to emit the Wwise event. 
 /// \sa
 /// - \ref AkEventTrack
 /// - \ref AkEventPlayableBehavior
-//[System.Serializable]
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 public class AkEventPlayable : UnityEngine.Playables.PlayableAsset, UnityEngine.Timeline.ITimelineClipAsset
 {
 	public AK.Wwise.Event akEvent = new AK.Wwise.Event();
@@ -80,5 +78,4 @@ public class AkEventPlayable : UnityEngine.Playables.PlayableAsset, UnityEngine.
 	}
 }
 
-#endif //UNITY_2017_1_OR_NEWER
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

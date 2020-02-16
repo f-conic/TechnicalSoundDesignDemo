@@ -345,7 +345,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!114 &21797637
@@ -5219,8 +5218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
+  clampInDegrees: {x: 360, y: 180}
   lockCursor: 1
-  cameraTransform: {fileID: 0}
+  sensitivity: {x: 2, y: 2}
+  smoothing: {x: 3, y: 3}
+  targetDirection: {x: 0, y: 0}
 --- !u!114 &782192320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5255,7 +5257,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!114 &782192322
@@ -10323,14 +10324,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d56514f1791a14c8cdd8ff085aebc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AcousticTexture:
+  Mesh: {fileID: 0}
+  AcousticTextures:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  OcclusionValues:
+  - 1
+  EnableDiffraction: 0
+  EnableDiffractionOnBoundaryEdges: 0
+  AssociatedRoom: {fileID: 0}
+  AcousticTextureInternal:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 827b65640c1143f48b349f81ddee2a40,
       type: 2}
-  EnableDiffraction: 0
-  EnableDiffractionOnBoundaryEdges: 0
-  AssociatedRoom: {fileID: 0}
 --- !u!114 &1421034252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10351,7 +10359,6 @@ MonoBehaviour:
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
-  isRegistered: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
 --- !u!1 &1428220593
@@ -16241,8 +16248,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c05207a85f4cd3548b90f396bc01ab8f,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0

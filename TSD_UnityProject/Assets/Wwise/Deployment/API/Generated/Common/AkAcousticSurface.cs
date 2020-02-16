@@ -51,7 +51,7 @@ public class AkAcousticSurface : global::System.IDisposable {
   public uint textureID { set { AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_textureID_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_textureID_get(swigCPtr); } 
   }
 
-  public uint reflectorChannelMask { set { AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_reflectorChannelMask_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_reflectorChannelMask_get(swigCPtr); } 
+  public float occlusion { set { AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_occlusion_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_occlusion_get(swigCPtr); } 
   }
 
   public string strName { set { AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_strName_set(swigCPtr, value); }  get { return AkSoundEngine.StringFromIntPtrString(AkSoundEnginePINVOKE.CSharp_AkAcousticSurface_strName_get(swigCPtr)); } 

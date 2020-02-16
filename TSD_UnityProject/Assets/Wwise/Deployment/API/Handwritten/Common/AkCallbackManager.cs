@@ -26,8 +26,7 @@ public static class AkCallbackManager
 	/// <summary>
 	/// Bank callback called upon bank load and unload and when errors occur.
 	/// </summary>
-	public delegate void BankCallback(uint in_bankID, System.IntPtr in_InMemoryBankPtr, AKRESULT in_eLoadResult,
-		uint in_memPoolId, object in_Cookie);
+	public delegate void BankCallback(uint in_bankID, System.IntPtr in_InMemoryBankPtr, AKRESULT in_eLoadResult, object in_Cookie);
 
 	private static bool IsLoggingEnabled { get; set; }
 
@@ -348,8 +347,7 @@ public static class AkCallbackManager
 							if (bankPkg != null && bankPkg.m_Callback != null)
 							{
 								AkBankCallbackInfo.setCPtr(pData);
-								bankPkg.m_Callback(AkBankCallbackInfo.bankID, AkBankCallbackInfo.inMemoryBankPtr, AkBankCallbackInfo.loadResult,
-									(uint) AkBankCallbackInfo.memPoolId, bankPkg.m_Cookie);
+								bankPkg.m_Callback(AkBankCallbackInfo.bankID, AkBankCallbackInfo.inMemoryBankPtr, AkBankCallbackInfo.loadResult, bankPkg.m_Cookie);
 							}
 						}
 						break;

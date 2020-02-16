@@ -48,20 +48,10 @@ public class AkRoomParams : global::System.IDisposable {
   public AkRoomParams() : this(AkSoundEnginePINVOKE.CSharp_new_AkRoomParams(), true) {
   }
 
-  public AkVector Up { set { AkSoundEnginePINVOKE.CSharp_AkRoomParams_Up_set(swigCPtr, AkVector.getCPtr(value)); } 
-    get {
-      global::System.IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkRoomParams_Up_get(swigCPtr);
-      AkVector ret = (cPtr == global::System.IntPtr.Zero) ? null : new AkVector(cPtr, false);
-      return ret;
-    } 
+  public UnityEngine.Vector3 Up { set { AkSoundEnginePINVOKE.CSharp_AkRoomParams_Up_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkRoomParams_Up_get(swigCPtr); } 
   }
 
-  public AkVector Front { set { AkSoundEnginePINVOKE.CSharp_AkRoomParams_Front_set(swigCPtr, AkVector.getCPtr(value)); } 
-    get {
-      global::System.IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkRoomParams_Front_get(swigCPtr);
-      AkVector ret = (cPtr == global::System.IntPtr.Zero) ? null : new AkVector(cPtr, false);
-      return ret;
-    } 
+  public UnityEngine.Vector3 Front { set { AkSoundEnginePINVOKE.CSharp_AkRoomParams_Front_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkRoomParams_Front_get(swigCPtr); } 
   }
 
   public uint ReverbAuxBus { set { AkSoundEnginePINVOKE.CSharp_AkRoomParams_ReverbAuxBus_set(swigCPtr, value); }  get { return AkSoundEnginePINVOKE.CSharp_AkRoomParams_ReverbAuxBus_get(swigCPtr); } 

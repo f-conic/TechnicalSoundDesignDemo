@@ -133,14 +133,14 @@ public class AkGameObjectInspector : UnityEditor.Editor
 
 	public static void RigidbodyCheck(UnityEngine.GameObject gameObject)
 	{
-		if (WwiseSetupWizard.Settings.ShowMissingRigidBodyWarning && gameObject.GetComponent<UnityEngine.Rigidbody>() == null)
+		if (AkWwiseEditorSettings.Instance.ShowMissingRigidBodyWarning && gameObject.GetComponent<UnityEngine.Rigidbody>() == null)
 		{
 			UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
 
 			using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 			{
 				UnityEditor.EditorGUILayout.HelpBox(
-					"Interactions between AkGameObj and AkEnvironment or AkRoom require a Rigidbody component on the object or the environment/room.",
+					"Interactions between AkGameObj and AkEnvironment require a Rigidbody component on the object or the environment.",
 					UnityEditor.MessageType.Warning);
 
 				if (UnityEngine.GUILayout.Button("Add Rigidbody"))

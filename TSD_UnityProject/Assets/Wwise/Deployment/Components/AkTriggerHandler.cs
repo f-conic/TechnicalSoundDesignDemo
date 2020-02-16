@@ -82,9 +82,9 @@ public abstract class AkTriggerHandler : UnityEngine.MonoBehaviour
 				if (triggerName == "Awake" || triggerName == "Start" || triggerName == "Destroy")
 					continue;
 
-				var trigger = (AkTriggerBase) GetComponent(System.Type.GetType(triggerName));
+				var trigger = (AkTriggerBase)GetComponent(System.Type.GetType(triggerName));
 				if (trigger == null)
-					trigger = (AkTriggerBase) gameObject.AddComponent(System.Type.GetType(triggerName));
+					trigger = (AkTriggerBase)gameObject.AddComponent(System.Type.GetType(triggerName));
 
 				trigger.triggerDelegate += in_delegate;
 			}

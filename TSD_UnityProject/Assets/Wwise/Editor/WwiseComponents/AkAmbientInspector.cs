@@ -84,21 +84,14 @@ public class AkAmbientInspector : AkEventInspector
 			var multiPositionType = (MultiPositionTypeLabel)multiPositionTypeProperty.intValue;
 			if (multiPositionType == MultiPositionTypeLabel.Large_Mode || multiPositionType == MultiPositionTypeLabel.MultiPosition_Mode)
 			{
-				var allTargetsAreStatic = true;
-
 				foreach (AkAmbient ambient in targets)
 				{
 					if (!ambient.gameObject.isStatic)
 					{
-						allTargetsAreStatic = false;
+						UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
+						UnityEditor.EditorGUILayout.HelpBox(string.Format("Position Type <{0}> requires an AkGameObj that does not move. Consider setting the associated GameObject to static.", multiPositionType), UnityEditor.MessageType.Warning);
 						break;
 					}
-				}
-
-				if (!allTargetsAreStatic)
-				{
-					UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
-					UnityEditor.EditorGUILayout.HelpBox(string.Format("Position Type <{0}> requires an AkGameObj that does not move. Consider setting the associated GameObject to static.", multiPositionType), UnityEditor.MessageType.Warning);
 				}
 			}
 
@@ -285,15 +278,9 @@ public class AkAmbientInspector : AkEventInspector
 	{
 		UnityEditor.Handles.color = SPHERE_COLOR;
 
-		if (UnityEngine.Vector3.SqrMagnitude(
-				UnityEditor.SceneView.lastActiveSceneView.camera.transform.position - in_position) > in_radius * in_radius)
+		if ((UnityEditor.SceneView.lastActiveSceneView.camera.transform.position - in_position).sqrMagnitude > in_radius * in_radius)
 		{
-#if UNITY_5_6_OR_NEWER
-			UnityEditor.Handles.SphereHandleCap(0, in_position, UnityEngine.Quaternion.identity, in_radius * 2.0f,
-				UnityEngine.EventType.Repaint);
-#else
-			UnityEditor.Handles.SphereCap(0, in_position, UnityEngine.Quaternion.identity, in_radius * 2.0f);
-#endif
+			UnityEditor.Handles.SphereHandleCap(0, in_position, UnityEngine.Quaternion.identity, in_radius * 2.0f, UnityEngine.EventType.Repaint);
 		}
 		else
 		{
@@ -307,8 +294,7 @@ public class AkAmbientInspector : AkEventInspector
 		var f = 1.0f / in_nbDiscs;
 		for (var i = 0; i < in_nbDiscs; i++)
 		{
-			UnityEditor.Handles.DrawWireDisc(in_position, UnityEngine.Vector3.Slerp(in_startNormal, in_endNormal, f * i),
-				in_radius);
+			UnityEditor.Handles.DrawWireDisc(in_position, UnityEngine.Vector3.Slerp(in_startNormal, in_endNormal, f * i), in_radius);
 		}
 	}
 

@@ -19,6 +19,10 @@ namespace AK.Wwise
 		{
 			get { return IsValid() ? ObjectReference.Id : AkSoundEngine.AK_INVALID_UNIQUE_ID; }
 		}
+		public static uint InvalidId
+		{
+			get { return AkSoundEngine.AK_INVALID_UNIQUE_ID; }
+		}
 
 		public virtual bool IsValid()
 		{

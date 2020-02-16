@@ -13,12 +13,17 @@ public class AkWaapiClient
 	/// <returns>Connection success</returns>
 	public static bool Connect(string Uri, uint Port)
 	{
-		if (!IsConnected)
+		try
 		{
+			if (AkWaapiClient_PINVOKE.IsConnected())
+				return true;
+
 			return AkWaapiClient_PINVOKE.Connect(Uri, Port);
 		}
-
-		return true;
+		catch
+		{
+			return false;
+		}
 	}
 
 	/// <summary>
@@ -26,7 +31,17 @@ public class AkWaapiClient
 	/// </summary>
 	public static bool IsConnected
 	{
-		get { return AkWaapiClient_PINVOKE.IsConnected(); }
+		get
+		{
+			try
+			{
+				return AkWaapiClient_PINVOKE.IsConnected();
+			}
+			catch
+			{
+				return false;
+			}
+		}
 	}
 
 	/// <summary>
@@ -41,7 +56,11 @@ public class AkWaapiClient
 		}
 
 		WaapiEventCallbacks.Clear();
-		AkWaapiClient_PINVOKE.Disconnect();
+		try
+		{
+			AkWaapiClient_PINVOKE.Disconnect();
+		}
+		catch {}
 	}
 
 	/// <summary>
@@ -55,14 +74,23 @@ public class AkWaapiClient
 	/// <returns>Subscription success</returns>
 	public static bool Subscribe(string Uri, string Options, WaapiEventCallback Callback, out ulong SubscriptionID, out string Result)
 	{
-		int ResultLength;
-		bool res = AkWaapiClient_PINVOKE.Subscribe(Uri, Options, out SubscriptionID, out ResultLength);
-		if (res)
+		try
 		{
-			WaapiEventCallbacks.Add(SubscriptionID, Callback);
+			int ResultLength;
+			bool res = AkWaapiClient_PINVOKE.Subscribe(Uri, Options, out SubscriptionID, out ResultLength);
+			if (res)
+			{
+				WaapiEventCallbacks.Add(SubscriptionID, Callback);
+			}
+			res &= GetLastString(ResultLength, out Result);
+			return res;
 		}
-		res &= GetLastString(ResultLength, out Result);
-		return res;
+		catch
+		{
+			SubscriptionID = 0;
+			Result = string.Empty;
+			return false;
+		}
 	}
 
 	/// <summary>
@@ -77,22 +105,39 @@ public class AkWaapiClient
 	/// <returns>Subscription success</returns>
 	public static bool Subscribe(string Uri, string Options, WaapiEventCallback Callback, int TimeoutMs, out ulong SubscriptionID, out string Result)
 	{
-		int ResultLength;
-		bool res = AkWaapiClient_PINVOKE.Subscribe(Uri, Options, out SubscriptionID, TimeoutMs, out ResultLength);
-		if (res)
+		try
 		{
-			WaapiEventCallbacks.Add(SubscriptionID, Callback);
+			int ResultLength;
+			bool res = AkWaapiClient_PINVOKE.Subscribe(Uri, Options, out SubscriptionID, TimeoutMs, out ResultLength);
+			if (res)
+			{
+				WaapiEventCallbacks.Add(SubscriptionID, Callback);
+			}
+			res &= GetLastString(ResultLength, out Result);
+			return res;
 		}
-		res &= GetLastString(ResultLength, out Result);
-		return res;
+		catch
+		{
+			SubscriptionID = 0;
+			Result = string.Empty;
+			return false;
+		}
 	}
 
 	private static bool UnsubscribeInternal(ulong SubscriptionID, int TimeoutMs, out string Result)
 	{
-		int ResultLength;
-		bool res = AkWaapiClient_PINVOKE.Unsubscribe(SubscriptionID, TimeoutMs, out ResultLength);
-		res &= GetLastString(ResultLength, out Result);
-		return res;
+		try
+		{
+			int ResultLength;
+			bool res = AkWaapiClient_PINVOKE.Unsubscribe(SubscriptionID, TimeoutMs, out ResultLength);
+			res &= GetLastString(ResultLength, out Result);
+			return res;
+		}
+		catch
+		{
+			Result = string.Empty;
+			return false;
+		}
 	}
 
 	/// <summary>
@@ -138,10 +183,18 @@ public class AkWaapiClient
 	/// <returns>Call success</returns>
 	public static bool Call(string Uri, string Args, string Options, out string Result)
 	{
-		int ResultLength;
-		bool res = AkWaapiClient_PINVOKE.Call(Uri, Args, Options, out ResultLength);
-		res &= GetLastString(ResultLength, out Result);
-		return res;
+		try
+		{
+			int ResultLength;
+			bool res = AkWaapiClient_PINVOKE.Call(Uri, Args, Options, out ResultLength);
+			res &= GetLastString(ResultLength, out Result);
+			return res;
+		}
+		catch
+		{
+			Result = string.Empty;
+			return false;
+		}
 	}
 
 	/// <summary>
@@ -155,12 +208,19 @@ public class AkWaapiClient
 	/// <returns>Call success</returns>
 	public static bool Call(string Uri, string Args, string Options, int TimeoutMs, out string Result)
 	{
-		int ResultLength;
-		bool res = AkWaapiClient_PINVOKE.Call(Uri, Args, Options, TimeoutMs, out ResultLength);
-		res &= GetLastString(ResultLength, out Result);
-		return res;
+		try
+		{
+			int ResultLength;
+			bool res = AkWaapiClient_PINVOKE.Call(Uri, Args, Options, TimeoutMs, out ResultLength);
+			res &= GetLastString(ResultLength, out Result);
+			return res;
+		}
+		catch
+		{
+			Result = string.Empty;
+			return false;
+		}
 	}
-
 	#endregion
 
 	#region Callback Management
@@ -206,8 +266,12 @@ public class AkWaapiClient
 
 	static AkWaapiClient()
 	{
-		UnityEditor.EditorApplication.update += ProcessCallbacks;
-		AkWaapiClient_PINVOKE.SetWampEventCallback(InternalWampEventCallback);
+		try
+		{
+			AkWaapiClient_PINVOKE.SetWampEventCallback(InternalWampEventCallback);
+			UnityEditor.EditorApplication.update += ProcessCallbacks;
+		}
+		catch { }
 	}
 
 	~AkWaapiClient()
@@ -217,7 +281,7 @@ public class AkWaapiClient
 
 	private static bool GetLastString(int StringLength, out string Result)
 	{
-		System.Text.StringBuilder ResultBuilder = new System.Text.StringBuilder(StringLength);
+		var ResultBuilder = new System.Text.StringBuilder(StringLength);
 		bool res = AkWaapiClient_PINVOKE.GetLastString(ResultBuilder, ResultBuilder.Capacity);
 		Result = ResultBuilder.ToString();
 		return res;

@@ -68,7 +68,14 @@ public partial class AkBasePathGetter
 
 public partial class AkBasePathGetter
 {
-	public static string DefaultBasePath = System.IO.Path.Combine("Audio", "GeneratedSoundBanks");
+	public static readonly string DefaultBasePath = System.IO.Path.Combine("Audio", "GeneratedSoundBanks");
+
+	private static bool LogWarnings_Internal = true;
+	public static bool LogWarnings
+	{
+		get { return LogWarnings_Internal; }
+		set { LogWarnings_Internal = value; }
+	}
 
 	/// <summary>
 	///     Returns the absolute path to the platform specific sound banks.
@@ -82,25 +89,10 @@ public partial class AkBasePathGetter
 		var platformBasePathEditor = GetPlatformBasePathEditor(platformName);
 		if (!string.IsNullOrEmpty(platformBasePathEditor))
 			return platformBasePathEditor;
-#endif
 
-		// Combine base path with platform sub-folder
-		var platformBasePath = System.IO.Path.Combine(GetFullSoundBankPath(), platformName);
-		FixSlashes(ref platformBasePath);
-		return platformBasePath;
-	}
-
-	/// <summary>
-	///     Returns the absolute path to the folder above the platform specific sound banks sub-folders.
-	/// </summary>
-	/// <returns>The absolute sound bank base path.</returns>
-	public static string GetFullSoundBankPath()
-	{
-		// Get full path of base path
-		string fullBasePath = string.Empty;
-
-#if UNITY_EDITOR
-		fullBasePath = WwiseSettings.LoadSettings().SoundbankPath;
+		var fullBasePath = AkWwiseEditorSettings.Instance.SoundbankPath;
+#else
+		var fullBasePath = string.Empty;
 #endif
 
 		if (string.IsNullOrEmpty(fullBasePath))
@@ -115,17 +107,54 @@ public partial class AkBasePathGetter
 			fullBasePath = fullBasePath.Substring(1);
 #endif
 
-		FixSlashes(ref fullBasePath);
-		return fullBasePath;
+		// Combine base path with platform sub-folder
+		var platformBasePath = System.IO.Path.Combine(fullBasePath, platformName);
+		AkUtilities.FixSlashes(ref platformBasePath);
+		return platformBasePath;
 	}
 
 #if UNITY_EDITOR
+	public static bool GetSoundBankPaths(string platformName, out string sourcePlatformBasePath, out string destinationPlatformBasePath)
+	{
+		sourcePlatformBasePath = GetPlatformBasePathEditor(platformName);
+		if (string.IsNullOrEmpty(sourcePlatformBasePath))
+		{
+			if (LogWarnings)
+				UnityEngine.Debug.LogErrorFormat("WwiseUnity: Could not find source folder for <{0}> platform. Did you remember to generate your banks?", platformName);
+
+			destinationPlatformBasePath = string.Empty;
+			return false;
+		}
+
+		destinationPlatformBasePath = System.IO.Path.Combine(GetFullSoundBankPathEditor(), platformName);
+		if (string.IsNullOrEmpty(destinationPlatformBasePath))
+		{
+			if (LogWarnings)
+				UnityEngine.Debug.LogErrorFormat("WwiseUnity: Could not find destination folder for <{0}> platform", platformName);
+
+			return false;
+		}
+
+		return true;
+	}
+
+	/// <summary>
+	///     Returns the absolute path to the folder above the platform specific sound banks sub-folders.
+	/// </summary>
+	/// <returns>The absolute sound bank base path.</returns>
+	public static string GetFullSoundBankPathEditor()
+	{
+		string fullBasePath = System.IO.Path.Combine(UnityEngine.Application.streamingAssetsPath, AkWwiseEditorSettings.Instance.SoundbankPath);
+		AkUtilities.FixSlashes(ref fullBasePath);
+		return fullBasePath;
+	}
+
 	/// <summary>
 	///     Determines the platform base path for use within the Editor.
 	/// </summary>
 	/// <param name="platformName">The platform name.</param>
 	/// <returns>The full path to the sound banks for use within the Editor.</returns>
-	public static string GetPlatformBasePathEditor(string platformName)
+	private static string GetPlatformBasePathEditor(string platformName)
 	{
 		var Settings = WwiseSettings.LoadSettings();
 		var WwiseProjectFullPath = AkUtilities.GetFullPath(UnityEngine.Application.dataPath, Settings.WwiseProjectPath);
@@ -146,83 +175,105 @@ public partial class AkBasePathGetter
 
 		if (string.IsNullOrEmpty(SoundBankDest))
 		{
-			UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder within the Wwise project could not be found.");
+			if (LogWarnings)
+				UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder within the Wwise project could not be found.");
+
+			return null;
+		}
+
+		try
+		{
+			// Verify if there are banks in there
+			var di = new System.IO.DirectoryInfo(SoundBankDest);
+			var foundBanks = di.GetFiles("*.bnk", System.IO.SearchOption.AllDirectories);
+			if (foundBanks.Length == 0)
+			{
+				return null;
+			}
+
+			if (!SoundBankDest.Contains(platformName))
+			{
+				if (LogWarnings)
+					UnityEngine.Debug.LogWarning("WwiseUnity: The platform SoundBank subfolder does not match your platform name. You will need to create a custom platform name getter for your game. See section \"Using Wwise Custom Platforms in Unity\" of the Wwise Unity integration documentation for more information");
+			}
+
+			return SoundBankDest;
+		}
+		catch
+		{
+			return null;
+		}
+	}
+#endif
+
+	public static void EvaluateGamePaths()
+	{
+#if UNITY_SWITCH && !UNITY_EDITOR
+		// Calling Application.persistentDataPath crashes Switch
+		string tempPersistentDataPath = null;
+#else
+		string tempPersistentDataPath = UnityEngine.Application.persistentDataPath;
+#endif
+
+		PersistentDataPath = tempPersistentDataPath;
+
+		var persistentDataSubfolder = AkWwiseInitializationSettings.ActivePlatformSettings.SoundBankPersistentDataPath;
+
+		string tempSoundBankBasePath = null;
+		if (!string.IsNullOrEmpty(tempPersistentDataPath) && !string.IsNullOrEmpty(persistentDataSubfolder))
+		{
+			tempSoundBankBasePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(tempPersistentDataPath, persistentDataSubfolder));
+			if (LogWarnings)
+				UnityEngine.Debug.LogFormat("WwiseUnity: Using persistentDataPath. SoundBanks base path set to <{0}>.", tempSoundBankBasePath);
 		}
 		else
 		{
-			try
+			tempSoundBankBasePath = GetPlatformBasePath();
+
+#if !UNITY_EDITOR && (UNITY_ANDROID || PLATFORM_LUMIN)
+			// Can't use File.Exists on Android, assume banks are there
+			var InitBnkFound = true;
+#else
+			var InitBnkFound = System.IO.File.Exists(System.IO.Path.Combine(tempSoundBankBasePath, "Init.bnk"));
+#endif
+
+			if (string.IsNullOrEmpty(tempSoundBankBasePath) || !InitBnkFound)
 			{
-				// Verify if there are banks in there
-				var di = new System.IO.DirectoryInfo(SoundBankDest);
-				var foundBanks = di.GetFiles("*.bnk", System.IO.SearchOption.AllDirectories);
-				if (foundBanks.Length == 0)
-					SoundBankDest = string.Empty;
-				else if (!SoundBankDest.Contains(platformName))
+				if (LogWarnings)
 				{
-					UnityEngine.Debug.LogWarning(
-						"WwiseUnity: The platform SoundBank subfolder does not match your platform name. You will need to create a custom platform name getter for your game. See section \"Using Wwise Custom Platforms in Unity\" of the Wwise Unity integration documentation for more information");
+#if UNITY_EDITOR
+					var format = "WwiseUnity: Could not locate the SoundBanks in {0}. Did you make sure to generate them?";
+#else
+					var format = "WwiseUnity: Could not locate the SoundBanks in {0}. Did you make sure to copy them to the StreamingAssets folder?";
+#endif
+					UnityEngine.Debug.LogErrorFormat(format, tempSoundBankBasePath);
 				}
 			}
-			catch
-			{
-				SoundBankDest = string.Empty;
-			}
 		}
 
-		return SoundBankDest;
-	}
-#endif
+		SoundBankBasePath = tempSoundBankBasePath;
 
-	public static void FixSlashes(ref string path, char separatorChar, char badChar, bool addTrailingSlash)
-	{
-		if (string.IsNullOrEmpty(path))
-			return;
+		string tempDecodedBankFullPath = null;
 
-		path = path.Trim().Replace(badChar, separatorChar).TrimStart('\\');
-
-		// Append a trailing slash to play nicely with Wwise
-		if (addTrailingSlash && !path.EndsWith(separatorChar.ToString()))
-			path += separatorChar;
-	}
-
-	public static void FixSlashes(ref string path)
-	{
-#if UNITY_WSA
-		var separatorChar = '\\';
+#if !UNITY_SWITCH || UNITY_EDITOR
+#if (UNITY_ANDROID || PLATFORM_LUMIN || UNITY_IOS) && !UNITY_EDITOR
+		// This is for platforms that only have a specific file location for persistent data.
+		tempDecodedBankFullPath = System.IO.Path.Combine(tempPersistentDataPath, DecodedBankFolder);
 #else
-		var separatorChar = System.IO.Path.DirectorySeparatorChar;
-#endif // UNITY_WSA
-		var badChar = separatorChar == '\\' ? '/' : '\\';
-		FixSlashes(ref path, separatorChar, badChar, true);
-	}
-
-	/// <summary>
-	///     Returns the absolute path to the platform specific sound banks, and logs an error if the Init bank cannot be found.
-	/// </summary>
-	/// <returns>The absolute path to the platform specific sound banks.</returns>
-	public static string GetSoundbankBasePath()
-	{
-		var basePathToSet = GetPlatformBasePath();
-		var InitBnkFound = true;
-#if UNITY_EDITOR || !(UNITY_ANDROID || PLATFORM_LUMIN)// Can't use File.Exists on Android, assume banks are there
-		var InitBankPath = System.IO.Path.Combine(basePathToSet, "Init.bnk");
-		if (!System.IO.File.Exists(InitBankPath))
-			InitBnkFound = false;
+		tempDecodedBankFullPath = System.IO.Path.Combine(tempSoundBankBasePath, DecodedBankFolder);
+#endif
 #endif
 
-		if (basePathToSet == string.Empty || InitBnkFound == false)
-		{
-			UnityEngine.Debug.Log("WwiseUnity: Looking for SoundBanks in " + basePathToSet);
-
-#if UNITY_EDITOR
-			UnityEngine.Debug.LogError("WwiseUnity: Could not locate the SoundBanks. Did you make sure to generate them?");
-#else
-			UnityEngine.Debug.LogError("WwiseUnity: Could not locate the SoundBanks. Did you make sure to copy them to the StreamingAssets folder?");
-#endif
-		}
-
-		return basePathToSet;
+		DecodedBankFullPath = tempDecodedBankFullPath;
 	}
+
+	public static string SoundBankBasePath { get; private set; }
+
+	public static string PersistentDataPath { get; private set; }
+
+	private const string DecodedBankFolder = "DecodedBanks";
+
+	public static string DecodedBankFullPath { get; private set; }
 }
 
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

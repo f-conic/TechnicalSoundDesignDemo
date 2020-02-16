@@ -51,9 +51,9 @@ public class AkCallbackSerializer : global::System.IDisposable {
 
   public static global::System.IntPtr Lock() { return AkSoundEnginePINVOKE.CSharp_AkCallbackSerializer_Lock(); }
 
-  public static void SetLocalOutput(uint in_uErrorLevel) { AkSoundEnginePINVOKE.CSharp_AkCallbackSerializer_SetLocalOutput(in_uErrorLevel); }
-
   public static void Unlock() { AkSoundEnginePINVOKE.CSharp_AkCallbackSerializer_Unlock(); }
+
+  public static void SetLocalOutput(uint in_uErrorLevel) { AkSoundEnginePINVOKE.CSharp_AkCallbackSerializer_SetLocalOutput(in_uErrorLevel); }
 
   public static AKRESULT AudioSourceChangeCallbackFunc(bool in_bOtherAudioPlaying, object in_pCookie) { return (AKRESULT)AkSoundEnginePINVOKE.CSharp_AkCallbackSerializer_AudioSourceChangeCallbackFunc(in_bOtherAudioPlaying, in_pCookie != null ? (global::System.IntPtr)in_pCookie.GetHashCode() : global::System.IntPtr.Zero); }
 

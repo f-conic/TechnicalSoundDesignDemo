@@ -1,7 +1,5 @@
 #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.
 
-#if UNITY_2017_1_OR_NEWER
-
 //////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2017 Audiokinetic Inc. / All Rights Reserved
@@ -11,6 +9,7 @@
 [UnityEngine.Timeline.TrackColor(0.855f, 0.8623f, 0.870f)]
 [UnityEngine.Timeline.TrackClipType(typeof(AkEventPlayable))]
 [UnityEngine.Timeline.TrackBindingType(typeof(UnityEngine.GameObject))]
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 /// @brief A track within timeline that holds \ref AkEventPlayable clips. 
 /// @details AkEventTracks are bound to a specific GameObject, which is the default emitter for all of the \ref AkEventPlayable clips. There is an option to override this in /ref AkEventPlayable.
 /// \sa
@@ -34,5 +33,4 @@ public class AkEventTrack : UnityEngine.Timeline.TrackAsset
 	}
 }
 
-#endif //UNITY_2017_1_OR_NEWER
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

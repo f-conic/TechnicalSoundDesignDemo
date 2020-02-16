@@ -11,8 +11,8 @@ public class Grenade : MonoBehaviour
 
 	private void Awake()
 	{
-		AkSoundEngine.RegisterEmitter(gameObject, new AkEmitterSettings());
-		AkSoundEngine.SetObjectPosition(gameObject, transform);
+		//AkSoundEngine.RegisterEmitter(gameObject, new AkEmitterSettings());
+		//AkSoundEngine.SetObjectPosition(gameObject, transform);
 	}
 
 	private Collider[] CheckIncidental(Vector3 center, float radius)

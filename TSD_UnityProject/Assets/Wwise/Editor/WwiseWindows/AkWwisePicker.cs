@@ -48,17 +48,7 @@ public class AkWwisePicker : UnityEditor.EditorWindow
 				}
 				else
 				{
-					string errorMessage;
-
-#if UNITY_EDITOR_WIN
-					errorMessage =
-						"Access to Wwise is required to generate the SoundBanks. Please select the Wwise Windows Installation Path from the Edit > Wwise Settings... menu.";
-#elif UNITY_EDITOR_OSX
-					errorMessage =
-						"Access to Wwise is required to generate the SoundBanks. Please select the Wwise Application from the Edit > Wwise Settings... menu.";
-#endif
-
-					UnityEngine.Debug.LogError(errorMessage);
+					UnityEngine.Debug.LogError("Access to Wwise is required to generate the SoundBanks. Please go to Edit > Project Settings... and set the Wwise Application Path found in the Wwise Editor view.");
 				}
 			}
 		}
@@ -69,13 +59,12 @@ public class AkWwisePicker : UnityEditor.EditorWindow
 
 		if (UnityEngine.GUI.changed && AkUtilities.IsWwiseProjectAvailable)
 			UnityEditor.EditorUtility.SetDirty(AkWwiseProjectInfo.GetData());
-		// TODO: RTP Parameters List
 	}
 
 	public static void PopulateTreeview()
 	{
 		treeView.AssignDefaults();
-		treeView.SetRootItem(System.IO.Path.GetFileNameWithoutExtension(WwiseSetupWizard.Settings.WwiseProjectPath), WwiseObjectType.Project);
+		treeView.SetRootItem(System.IO.Path.GetFileNameWithoutExtension(AkWwiseEditorSettings.Instance.WwiseProjectPath), WwiseObjectType.Project);
 		treeView.PopulateItem(treeView.RootItem, "Events", AkWwiseProjectInfo.GetData().EventWwu);
 		treeView.PopulateItem(treeView.RootItem, "Switches", AkWwiseProjectInfo.GetData().SwitchWwu);
 		treeView.PopulateItem(treeView.RootItem, "States", AkWwiseProjectInfo.GetData().StateWwu);

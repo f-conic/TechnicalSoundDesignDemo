@@ -61,6 +61,8 @@ public abstract class AkObstructionOcclusion : UnityEngine.MonoBehaviour
 
 		for (var i = 0; i < listenersToRemove.Count; ++i)
 			ObstructionOcclusionValues.Remove(listenersToRemove[i]);
+
+		listenersToRemove.Clear();
 	}
 
 	private void CastRays()

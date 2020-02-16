@@ -44,7 +44,7 @@ public class AkMemBankLoader : UnityEngine.MonoBehaviour
 	/// Load a SoundBank from WWW object
 	public void LoadNonLocalizedBank(string in_bankFilename)
 	{
-		var bankPath = "file://" + System.IO.Path.Combine(AkBasePathGetter.GetPlatformBasePath(), in_bankFilename);
+		var bankPath = "file://" + System.IO.Path.Combine(AkBasePathGetter.SoundBankBasePath, in_bankFilename);
 		DoLoadBank(bankPath);
 	}
 
@@ -52,7 +52,7 @@ public class AkMemBankLoader : UnityEngine.MonoBehaviour
 	public void LoadLocalizedBank(string in_bankFilename)
 	{
 		var bankPath = "file://" + System.IO.Path.Combine(
-			               System.IO.Path.Combine(AkBasePathGetter.GetPlatformBasePath(), AkSoundEngine.GetCurrentLanguage()),
+			               System.IO.Path.Combine(AkBasePathGetter.SoundBankBasePath, AkSoundEngine.GetCurrentLanguage()),
 			               in_bankFilename);
 		DoLoadBank(bankPath);
 	}
@@ -113,7 +113,7 @@ public class AkMemBankLoader : UnityEngine.MonoBehaviour
         uint uInMemoryBankSize = AllocateAlignedBuffer(ms_www.bytes);
 #endif
 
-        var result = AkSoundEngine.LoadBank(ms_pInMemoryBankPtr, uInMemoryBankSize, out ms_bankID);
+        var result = AkSoundEngine.LoadBankMemoryView(ms_pInMemoryBankPtr, uInMemoryBankSize, out ms_bankID);
 		if (result != AKRESULT.AK_Success)
 			UnityEngine.Debug.LogError("WwiseUnity: AkMemBankLoader: bank loading failed with result " + result);
 	}

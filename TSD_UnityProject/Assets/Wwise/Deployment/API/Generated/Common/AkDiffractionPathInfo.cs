@@ -67,11 +67,7 @@ public class AkDiffractionPathInfo : global::System.IDisposable {
 
   public static int GetSizeOf() { return AkSoundEnginePINVOKE.CSharp_AkDiffractionPathInfo_GetSizeOf(); }
 
-  public AkVector GetNodes(uint idx) {
-    global::System.IntPtr cPtr = AkSoundEnginePINVOKE.CSharp_AkDiffractionPathInfo_GetNodes(swigCPtr, idx);
-    AkVector ret = (cPtr == global::System.IntPtr.Zero) ? null : new AkVector(cPtr, false);
-    return ret;
-  }
+  public UnityEngine.Vector3 GetNodes(uint idx) { return AkSoundEnginePINVOKE.CSharp_AkDiffractionPathInfo_GetNodes(swigCPtr, idx); }
 
   public float GetAngles(uint idx) { return AkSoundEnginePINVOKE.CSharp_AkDiffractionPathInfo_GetAngles(swigCPtr, idx); }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}" SchemaVersion="94">
+<WwiseDocument Type="WorkUnit" ID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}" SchemaVersion="97">
 	<Busses>
 		<WorkUnit Name="Default Work Unit" ID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}" PersistMode="Standalone">
 			<ChildrenList>
@@ -25,8 +25,8 @@
 								<Reference Name="Attenuation">
 									<ObjectRef Name="EarlyReflectionAttenuation" ID="{92B67E49-58B2-4FEB-B1AB-C19464827085}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
 								</Reference>
-								<Reference Name="Effect0" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
-									<ObjectRef Name="New_Wwise_Reflect" ID="{885C4CA4-C32F-4897-92CA-6B424AF71F90}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
+								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+									<ObjectRef Name="WwiseReflection" ID="{DC2B6BB0-C86F-4AF7-AF89-2B113FD6E1FC}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
 								</Reference>
 							</ReferenceList>
 							<PositioningInfo>

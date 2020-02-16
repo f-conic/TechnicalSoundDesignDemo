@@ -8,7 +8,8 @@
 public static class AkWwiseProjectInfo
 {
 	private const string DataFileName = "AkWwiseProjectData.asset";
-	private static string DataRelativeDirectory = System.IO.Path.Combine(System.IO.Path.Combine("Wwise", "Editor"), "ProjectData");
+	private static string WwiseEditorDirectory = System.IO.Path.Combine("Wwise", "Editor");
+	private static string DataRelativeDirectory = System.IO.Path.Combine(WwiseEditorDirectory, "ProjectData");
 	private static string DataRelativePath = System.IO.Path.Combine(DataRelativeDirectory, DataFileName);
 	private static string DataAssetPath = System.IO.Path.Combine("Assets", DataRelativePath);
 

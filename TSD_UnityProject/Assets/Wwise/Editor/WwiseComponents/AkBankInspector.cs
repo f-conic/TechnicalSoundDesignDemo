@@ -32,35 +32,28 @@ public class AkBankInspector : AkBaseInspector
 
 		using (new UnityEditor.EditorGUILayout.VerticalScope("box"))
 		{
-			var oldDecodeValue = decode.boolValue;
-			var oldSaveDecodedValue = saveDecoded.boolValue;
 			UnityEditor.EditorGUILayout.PropertyField(loadAsync, new UnityEngine.GUIContent("Asynchronous:"));
 			UnityEditor.EditorGUILayout.PropertyField(decode, new UnityEngine.GUIContent("Decode compressed data:"));
 
-			if (decode.boolValue)
+			if (!decode.boolValue)
+				return;
+
+			var oldSaveDecodedValue = saveDecoded.boolValue;
+			UnityEditor.EditorGUILayout.PropertyField(saveDecoded, new UnityEngine.GUIContent("Save decoded bank:"));
+			if (!oldSaveDecodedValue || saveDecoded.boolValue)
+				return;
+
+			var bank = target as AkBank;
+			AkBasePathGetter.EvaluateGamePaths();
+			var decodedBankPath = System.IO.Path.Combine(AkBasePathGetter.DecodedBankFullPath, bank.data.Name + ".bnk");
+
+			try
 			{
-				if (decode.boolValue != oldDecodeValue && AkWwiseInitializationSettings.ActivePlatformSettings.AkInitializationSettings.preparePoolSize == 0)
-				{
-					UnityEditor.EditorUtility.DisplayDialog("Warning",
-						"You will need to define a prepare pool size in the Wwise Initialization Settings.", "Ok");
-				}
-
-				UnityEditor.EditorGUILayout.PropertyField(saveDecoded, new UnityEngine.GUIContent("Save decoded bank:"));
-				if (oldSaveDecodedValue && saveDecoded.boolValue == false)
-				{
-					var bank = target as AkBank;
-					var decodedBankPath =
-						System.IO.Path.Combine(AkSoundEngineController.GetDecodedBankFullPath(), bank.data.Name + ".bnk");
-
-					try
-					{
-						System.IO.File.Delete(decodedBankPath);
-					}
-					catch (System.Exception e)
-					{
-						UnityEngine.Debug.Log("WwiseUnity: Could not delete existing decoded SoundBank. Please delete it manually. " + e);
-					}
-				}
+				System.IO.File.Delete(decodedBankPath);
+			}
+			catch (System.Exception e)
+			{
+				UnityEngine.Debug.Log("WwiseUnity: Could not delete existing decoded SoundBank. Please delete it manually. " + e);
 			}
 		}
 	}

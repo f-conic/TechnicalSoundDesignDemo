@@ -1,10 +1,12 @@
-﻿#if UNITY_EDITOR && UNITY_2017_1_OR_NEWER
+﻿#if UNITY_EDITOR
 
 //////////////////////////////////////////////////////////////////////
 //
 // Copyright (c) 2017 Audiokinetic Inc. / All Rights Reserved
 //
 //////////////////////////////////////////////////////////////////////
+
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 [UnityEditor.CustomEditor(typeof(AkRTPCPlayable))]
 public class AkRTPCPlayableInspector : UnityEditor.Editor
 {
@@ -29,6 +31,8 @@ public class AkRTPCPlayableInspector : UnityEditor.Editor
 
 	public override void OnInspectorGUI()
 	{
+		UnityEditor.EditorGUILayout.HelpBox(AkSoundEngine.Deprecation_2019_2_0, UnityEditor.MessageType.Warning);
+
 		serializedObject.Update();
 
 		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
@@ -64,4 +68,4 @@ public class AkRTPCPlayableInspector : UnityEditor.Editor
 	}
 }
 
-#endif //#if UNITY_EDITOR && UNITY_2017_1_OR_NEWER
+#endif //#if UNITY_EDITOR

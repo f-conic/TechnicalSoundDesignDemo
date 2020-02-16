@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
 		<ProjectRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
 		<SourceFilesRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
@@ -15,6 +15,11 @@
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="348022313" Name="Room01" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Room01"/>
+				<AuxBus Id="1819748220" Name="ER" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\ER"/>
+				<AuxBus Id="3161908922" Name="Main" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main"/>
+			</IncludedAuxBusses>
 		</SoundBank>
 		<SoundBank Id="1675065207" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\DefaultSoundBank</ObjectPath>
@@ -22,9 +27,9 @@
 			<Path>DefaultSoundBank.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2974935085" Name="grenade_explosion" ObjectPath="\Events\Default Work Unit\grenade_explosion" DurationType="OneShot" DurationMin="1.036500" DurationMax="9.107959"/>
-				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" MaxAttenuation="20.000000" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
-				<Event Id="2369597903" Name="Play_Incidental" ObjectPath="\Events\Default Work Unit\Play_Incidental" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.071208" DurationMax="1.953375"/>
-				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="20.000000" DurationType="Infinite"/>
+				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
+				<Event Id="2369597903" Name="Play_Incidental" ObjectPath="\Events\Default Work Unit\Play_Incidental" DurationType="OneShot" DurationMin="1.071208" DurationMax="1.953375"/>
+				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="68168911" Language="SFX">
@@ -120,6 +125,30 @@
 					<Path>SFX\grenade_explosion_outdoor_close_main_03_10C4C929.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
+			<GameParameters>
+				<GameParameter Id="957932202" Name="RTPC_Incidental_Delay" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Incidental_Delay"/>
+				<GameParameter Id="1113248574" Name="RTPC_Incidental" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Incidental"/>
+				<GameParameter Id="1781674381" Name="RTPC_Explosion_Close_Distance" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Explosion_Close_Distance"/>
+				<GameParameter Id="3326687027" Name="RTPC_Grenade_Explosion_Distance" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Grenade_Explosion_Distance"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="189681303" Name="SG_Explosion" ObjectPath="\Switches\Default Work Unit\SG_Explosion">
+					<Switches>
+						<Switch Id="1133794587" Name="Near" ObjectPath="\Switches\Default Work Unit\SG_Explosion\Near"/>
+						<Switch Id="1183803292" Name="Far" ObjectPath="\Switches\Default Work Unit\SG_Explosion\Far"/>
+						<Switch Id="1182670505" Name="Mid" ObjectPath="\Switches\Default Work Unit\SG_Explosion\Mid"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="3521844023" Name="Incidental_Switch_Group" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group">
+					<Switches>
+						<Switch Id="366150593" Name="Switch_01" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_01"/>
+						<Switch Id="366150594" Name="Switch_02" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_02"/>
+						<Switch Id="366150595" Name="Switch_03" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_03"/>
+						<Switch Id="366150596" Name="Switch_04" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_04"/>
+						<Switch Id="366150597" Name="Switch_05" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_05"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
