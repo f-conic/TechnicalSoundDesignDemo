@@ -14,9 +14,17 @@ Switch	ID	Name	Switch Group			Notes
 
 State Group	ID	Name			Wwise Object Path	Notes
 	1133794587	Near			\Default Work Unit\Near	
+	1400558101	CeilingState			\Default Work Unit\CeilingState	
 
 State	ID	Name	State Group			Notes
 	748895195	None	Near			
+	58138747	Active	CeilingState			
+	748895195	None	CeilingState			
+	3163453698	Inactive	CeilingState			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	527799216	Active	CeilingState	\Effects\Factory Effects\Wwise RoomVerb\Rooms\Room_Medium		
+	628272998	Inactive	CeilingState	\Effects\Factory Effects\Wwise RoomVerb\Rooms\Room_Medium		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
@@ -45,6 +53,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	602546716	Room_Large	Wwise RoomVerb			
 	1281733863	WwiseReflection	Wwise Reflect			
+	1990128658	Room_Medium	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

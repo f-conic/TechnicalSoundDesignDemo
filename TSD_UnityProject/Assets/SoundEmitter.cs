@@ -12,7 +12,7 @@ public class SoundEmitter : MonoBehaviour
 
 	void Start()
     {
-	    SoundEvent.Post(gameObject);
+		SoundEvent.Post(gameObject);
     }
 
 	private void OnDrawGizmos()

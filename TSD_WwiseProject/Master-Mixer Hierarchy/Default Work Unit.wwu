@@ -8,6 +8,9 @@
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{3E0D9162-853B-4279-8B65-3B19C9596338}" WorkUnitID="{2BDE66D4-D011-49E6-8820-0E40C53A4B44}"/>
 						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<AuxBus Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}">
@@ -55,6 +58,23 @@
 							</PropertyList>
 						</AuxBus>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="CeilingState" ID="{8BB43EF8-4CDF-40DA-98A2-BF98FC345044}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Active" ID="{E0213BBD-857A-4543-A230-E435F6DA778D}"/>
+								<CustomState Name="" ID="{6497F530-7118-473D-843B-2B5E3927804D}" ShortID="6652815"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Inactive" ID="{7ABDBEF3-4BD7-4A7E-9B9D-753CF4F26CA9}"/>
+								<CustomState Name="" ID="{2D1143BE-5A0D-498C-8AE3-8B4F7869FEB4}" ShortID="115864835"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

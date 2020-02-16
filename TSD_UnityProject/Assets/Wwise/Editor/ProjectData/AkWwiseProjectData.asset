@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586197521014466214
+    m_lastTime: -8586197374482614863
     List:
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -358,8 +358,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: e8c818db4a993940844db8aa714c5caa
     GuidInternal: 
-    m_lastTime: -8586198057573879116
+    m_lastTime: -8586197374482694880
     List:
+    - name: CeilingState
+      guid: f83eb48bdf4cda4098a2bf98fc345044
+      id: 1400558101
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: CeilingState
+        ObjectType: 9
+      Path: Default Work Unit\CeilingState
+      values:
+      - name: Active
+        guid: bd3b21e07a854345a230e435f6da778d
+        id: 58138747
+        PathAndIcons:
+        - ElementName: Active
+          ObjectType: 8
+      - name: Inactive
+        guid: f3bebd7ad74b7e4a9b9d753cf4f26ca9
+        id: 3163453698
+        PathAndIcons:
+        - ElementName: Inactive
+          ObjectType: 8
+      - name: None
+        guid: b48585eb05811043ba690662ad955d90
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Near
       guid: ac5273e4c37b454d93c06858d6ac7537
       id: 1133794587
@@ -488,7 +519,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Events
-  - /TSD_WwiseProject/Events/Default Work Unit
+  - /TSD_WwiseProject/Virtual Acoustics
+  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures
+  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures/Textures
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -8,6 +8,24 @@
 						<State Name="None" ID="{76D18584-2639-42DC-8C18-541F44016926}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="CeilingState" ID="{8BB43EF8-4CDF-40DA-98A2-BF98FC345044}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{EB8585B4-8105-4310-BA69-0662AD955D90}"/>
+						<State Name="Active" ID="{E0213BBD-857A-4543-A230-E435F6DA778D}"/>
+						<State Name="Inactive" ID="{7ABDBEF3-4BD7-4A7E-9B9D-753CF4F26CA9}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Active" ID="{E0213BBD-857A-4543-A230-E435F6DA778D}"/>
+							<EndState Name="Inactive" ID="{7ABDBEF3-4BD7-4A7E-9B9D-753CF4F26CA9}"/>
+							<Time>0.5</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
