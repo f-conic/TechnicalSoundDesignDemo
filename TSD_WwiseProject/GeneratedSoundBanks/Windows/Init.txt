@@ -44,7 +44,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	602546716	Room_Large	Wwise RoomVerb			
-	850534041	New_Wwise_Reflect	Wwise Reflect			
+	1281733863	WwiseReflection	Wwise Reflect			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
