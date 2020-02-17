@@ -33,6 +33,10 @@ public class AkWwisePicker : UnityEditor.EditorWindow
 			else
 				AkWwiseWWUBuilder.StopWWUWatcher();
 			UnityEngine.GUILayout.FlexibleSpace();
+			if (UnityEngine.GUILayout.Button("Connect to Prof.", UnityEngine.GUILayout.Width(120)))
+			{
+				ConnectToProfiler.Connect();
+			}
 			if (UnityEngine.GUILayout.Button("Refresh Project", UnityEngine.GUILayout.Width(200)))
 			{
 				treeView.SaveExpansionStatus();
