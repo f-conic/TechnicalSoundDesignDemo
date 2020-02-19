@@ -1549,6 +1549,38 @@
 						</SwitchContainer>
 					</ChildrenList>
 				</ActorMixer>
+				<Sound Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" ShortID="254154156">
+					<PropertyList>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Bus" ID="{DFB568EC-E796-4EC0-AC57-A08063A26232}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ambience_base_loop" ID="{ECF7994B-A4F8-4B79-A3B2-C9DA4A09381C}">
+							<Language>SFX</Language>
+							<AudioFile>ambience_base_loop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="83184489"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ambience_base_loop" ID="{ECF7994B-A4F8-4B79-A3B2-C9DA4A09381C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
