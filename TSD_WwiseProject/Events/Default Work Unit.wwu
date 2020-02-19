@@ -58,6 +58,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_AMB_base_loop" ID="{4BD635BC-5C51-4FE4-BF1F-8BC47C4F5BB9}">
+					<ChildrenList>
+						<Action Name="" ID="{D8244CCD-7B73-4D21-8BEA-615F9A964A55}" ShortID="893986505">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

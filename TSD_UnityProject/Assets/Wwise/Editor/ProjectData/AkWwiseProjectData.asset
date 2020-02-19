@@ -17,13 +17,13 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 244b65672e59b4489111c04a26c3e412
     GuidInternal: 
-    m_lastTime: -8586198057573939124
+    m_lastTime: -8586196863719631952
     List: []
   - PhysicalPath: Virtual Acoustics\Factory Reflect Acoustic Textures.wwu
     ParentPath: Factory Reflect Acoustic Textures
     guid: 6b663d46a83ca54f8b4a5fef12b883f6
     GuidInternal: 
-    m_lastTime: -8586198057574079164
+    m_lastTime: -8586196863719631952
     List:
     - name: Acoustic_Banner
       guid: f2532d2fccda8e408b8898b1b52a26d6
@@ -195,8 +195,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586197374482614863
+    m_lastTime: -8586194767054376700
     List:
+    - name: Bus
+      guid: ec68b5df96e7c04eac57a08063a26232
+      id: 714721605
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Bus
+        ObjectType: 2
+      Path: Default Work Unit\Bus
     - name: ER
       guid: 748cdbb146e58842b23b4321f0b61b40
       id: 1819748220
@@ -244,7 +253,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: ba903315152c14479b3774af2ebe7f91
     GuidInternal: 
-    m_lastTime: -8586198057573929130
+    m_lastTime: -8586196863719761610
     List:
     - name: DefaultSoundBank
       guid: 657cac6351f47742a950aa8f7ce5babe
@@ -260,7 +269,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586197226303063885
+    m_lastTime: -8586194767054296898
     List:
     - name: grenade_explosion
       guid: 6353da03e0b8b844958f367d2b8938d5
@@ -298,6 +307,18 @@ MonoBehaviour:
       maxAttenuation: 100
       maxDuration: 11.558437
       minDuration: 7.143667
+    - name: Play_AMB_base_loop
+      guid: bc35d64b515ce44fbf1f8bc47c4f5bb9
+      id: 892077403
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_AMB_base_loop
+        ObjectType: 3
+      Path: Default Work Unit\Play_AMB_base_loop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Discussion
       guid: 23a6421fb58d6d4ea50b89040ac830c3
       id: 1444333482
@@ -327,7 +348,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586197339194451769
+    m_lastTime: -8586196863720200149
     List:
     - name: RTPC_Explosion_Close_Distance
       guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
@@ -370,7 +391,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: e8c818db4a993940844db8aa714c5caa
     GuidInternal: 
-    m_lastTime: -8586197363049900154
+    m_lastTime: -8586196863719751636
     List:
     - name: CeilingState
       guid: f83eb48bdf4cda4098a2bf98fc345044
@@ -427,7 +448,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 24c4b447a58db14ba4f91ce583b21be8
     GuidInternal: 
-    m_lastTime: -8586198057582711103
+    m_lastTime: -8586196863719751636
     List:
     - name: Incidental_Switch_Group
       guid: 7f95aa530c6336499a17f8610f594ca9
@@ -527,12 +548,11 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a0060f2313d2464c865b07ca6dcc16ef
     GuidInternal: 
-    m_lastTime: -8586198057573749086
+    m_lastTime: -8586196863719631952
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Virtual Acoustics
-  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures
-  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures/Textures
+  - /TSD_WwiseProject/Events
+  - /TSD_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

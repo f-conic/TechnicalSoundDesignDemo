@@ -76,6 +76,13 @@
 						</CustomStateList>
 					</StateInfo>
 				</Bus>
+				<Bus Name="Bus" ID="{DFB568EC-E796-4EC0-AC57-A08063A26232}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{3E0D9162-853B-4279-8B65-3B19C9596338}" WorkUnitID="{2BDE66D4-D011-49E6-8820-0E40C53A4B44}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>
