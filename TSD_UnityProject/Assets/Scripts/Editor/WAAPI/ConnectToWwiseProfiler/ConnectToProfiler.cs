@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using UnityEngine;
 
-public class ConnectToProfiler
+public class ConnectToProfiler : MonoBehaviour
 {
 	public static void Connect()
 	{
