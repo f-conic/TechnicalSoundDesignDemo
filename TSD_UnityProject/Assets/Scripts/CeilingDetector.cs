@@ -19,6 +19,7 @@ public class CeilingDetector : MonoBehaviour
 		{
 			if (!isActive)
 			{
+				Debug.Log("<color=green>Detected a ceiling!</color>");
 				AkSoundEngine.SetState("CeilingState", "Active");
 				isActive = true;
 			}
