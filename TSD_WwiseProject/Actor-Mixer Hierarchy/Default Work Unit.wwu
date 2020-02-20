@@ -465,7 +465,9 @@
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
 								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
+								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -543,6 +545,9 @@
 								</Reference>
 								<Reference Name="ReflectionsAuxSend">
 									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>

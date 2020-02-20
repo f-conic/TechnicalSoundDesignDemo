@@ -17,6 +17,7 @@
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
 				<AuxBus Id="348022313" Name="Room01" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Room01"/>
+				<AuxBus Id="941753577" Name="MidBus" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MidBus"/>
 				<AuxBus Id="1819748220" Name="ER" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\ER"/>
 				<AuxBus Id="3161908922" Name="Main" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main"/>
 			</IncludedAuxBusses>

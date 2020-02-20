@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586194767054376700
+    m_lastTime: -8586193899181817057
     List:
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
@@ -237,6 +237,17 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: MidBus
+      guid: 4d668266fcdf6440b353567ae0415939
+      id: 941753577
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: MidBus
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\MidBus
     - name: Room01
       guid: 91d308564790ff409bbcf084ff2220ee
       id: 348022313
@@ -348,7 +359,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586196863720200149
+    m_lastTime: -8586193899181597644
     List:
     - name: RTPC_Explosion_Close_Distance
       guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
@@ -386,6 +397,15 @@ MonoBehaviour:
       - ElementName: RTPC_Incidental_Delay
         ObjectType: 13
       Path: Default Work Unit\RTPC_Incidental_Delay
+    - name: RTPC_SpectrumData
+      guid: 6e85c02dee29e14883661bf21373d632
+      id: 3602773598
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_SpectrumData
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_SpectrumData
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPath: Default Work Unit

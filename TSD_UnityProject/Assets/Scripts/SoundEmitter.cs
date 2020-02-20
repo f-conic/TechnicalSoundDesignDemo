@@ -15,6 +15,12 @@ public class SoundEmitter : MonoBehaviour
 		SoundEvent.Post(gameObject);
     }
 
+	void Update()
+	{
+		var query = (int) AkQueryRTPCValue.RTPCValue_GameObject;
+		AkSoundEngine.GetRTPCValue("RTPC_SpectrumData", gameObject, SoundEvent.Id, out var value, ref query);
+	}
+
 	private void OnDrawGizmos()
 	{
 		if (!UnityEngine.Application.isPlaying || !AkSoundEngine.IsInitialized())

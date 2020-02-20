@@ -1101,40 +1101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2856593542655702824, guid: eea79cf1b639448478fac821d175498f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5908
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856593542655702824, guid: eea79cf1b639448478fac821d175498f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5908
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856593542655702824, guid: eea79cf1b639448478fac821d175498f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5908
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856593542655702826, guid: eea79cf1b639448478fac821d175498f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6c85c6d26a2d7ab4287c8c6610c27977, type: 2}
-    - target: {fileID: 2856593542655702828, guid: eea79cf1b639448478fac821d175498f,
-        type: 3}
-      propertyPath: isStaticObject
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2856593542655702831, guid: eea79cf1b639448478fac821d175498f,
         type: 3}
       propertyPath: m_Name
       value: Radio
-      objectReference: {fileID: 0}
-    - target: {fileID: 2856593542655702831, guid: eea79cf1b639448478fac821d175498f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea79cf1b639448478fac821d175498f, type: 3}
