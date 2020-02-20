@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginInfo Project="TSD_WwiseProject" Platform="Windows" BasePlatform="Windows">
 	<Plugins>
+		<Plugin Name="Wwise Parametric EQ" ID="6881283" DLL="AkParametricEQ"/>
 		<Plugin Name="Wwise RoomVerb" ID="7733251" DLL="AkRoomVerb"/>
+		<Plugin Name="Wwise Meter" ID="8454147" DLL="AkSoundEngineDLL"/>
+		<Plugin Name="Wwise Gain" ID="9109507" DLL="AkGain"/>
 		<Plugin Name="Wwise Reflect" ID="11206659" DLL="AkReflect"/>
 		<Plugin Name="System" ID="11403271" DLL="DefaultSink"/>
 		<Plugin Name="No Output" ID="11862023" DLL="DefaultSink"/>

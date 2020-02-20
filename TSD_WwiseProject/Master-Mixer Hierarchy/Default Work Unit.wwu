@@ -57,6 +57,19 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 						</AuxBus>
+						<AuxBus Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+									<ObjectRef Name="FX_SpectrumData_EQ" ID="{8AAB7A62-F0F3-485B-B032-DDECF5A57C07}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+									<ObjectRef Name="New_Wwise_Meter" ID="{3373A022-D464-4289-B040-2D7DE83FC8C2}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
+								</Reference>
+								<Reference Name="Effect2" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+									<ObjectRef Name="New_Wwise_Gain" ID="{E27114FE-2531-431C-BE33-BF01C6AB8895}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
 					</ChildrenList>
 					<StateInfo>
 						<StateGroupList>

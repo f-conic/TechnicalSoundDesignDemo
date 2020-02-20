@@ -5,15 +5,7 @@ using UnityEngine;
 
 public class TestTrigger : MonoBehaviour
 {
-	public AK.Wwise.Event DialogEvent;
-
-	private void OnTriggerEnter(Collider other)
+	void Update()
 	{
-		var room = other.gameObject.GetComponent<AkRoom>();
-		
-		if (room != null)
-		{
-			
-		}
 	}
 }

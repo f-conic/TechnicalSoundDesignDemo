@@ -454,6 +454,25 @@
 	</ReflectData>
 </PluginData>
 				</Effect>
+				<Effect Name="FX_SpectrumData_EQ" ID="{8AAB7A62-F0F3-485B-B032-DDECF5A57C07}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FilterTypeBand1" Type="int32" Value="0"/>
+						<Property Name="FilterTypeBand2" Type="int32" Value="1"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="1000"/>
+						<Property Name="FrequencyBand2" Type="Real32" Value="200"/>
+						<Property Name="OnOffBand3" Type="bool" Value="False"/>
+						<Property Name="ProcessLFE" Type="bool" Value="False"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Wwise_Meter" ID="{3373A022-D464-4289-B040-2D7DE83FC8C2}" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">					<PluginData>
+	<GameParameter Name="RTPC_SpectrumData" ID="{2DC0856E-29EE-48E1-8366-1BF21373D632}"/>
+</PluginData>
+				</Effect>
+				<Effect Name="New_Wwise_Gain" ID="{E27114FE-2531-431C-BE33-BF01C6AB8895}" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+					<PropertyList>
+						<Property Name="FullBandGain" Type="Real32" Value="-96.3"/>
+					</PropertyList>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>

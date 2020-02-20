@@ -48,12 +48,16 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	348022313	Room01			\Default Work Unit\Master Audio Bus\Room01	
+	941753577	MidBus			\Default Work Unit\Master Audio Bus\MidBus	
 	1819748220	ER			\Default Work Unit\Master Audio Bus\ER	
 	3161908922	Main			\Default Work Unit\Master Audio Bus\Main	
 
 Effect plug-ins	ID	Name	Type				Notes
+	33756152	FX_SpectrumData_EQ	Wwise Parametric EQ			
 	602546716	Room_Large	Wwise RoomVerb			
+	780838069	New_Wwise_Meter	Wwise Meter			
 	1281733863	WwiseReflection	Wwise Reflect			
+	1865172355	New_Wwise_Gain	Wwise Gain			
 	1990128658	Room_Medium	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
