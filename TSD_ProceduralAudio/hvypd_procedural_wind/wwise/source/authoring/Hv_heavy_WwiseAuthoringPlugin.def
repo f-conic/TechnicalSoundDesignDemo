@@ -1,0 +1,6 @@
+; Hv_heavy_WwiseSourceAuthPlugin.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Hv_heavy_WwiseSourceAuthPlugin"
+
+EXPORTS
+    AkCreatePlugin
