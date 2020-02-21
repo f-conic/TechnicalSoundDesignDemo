@@ -9,6 +9,7 @@ public class SoundEmitter : MonoBehaviour
 	public bool drawSecondOrderReflections;
 	public bool drawHigherOrderReflections;
 	public bool drawDiffractionPaths;
+	public float RtpcData;
 
 	void Start()
     {
@@ -18,7 +19,7 @@ public class SoundEmitter : MonoBehaviour
 	void Update()
 	{
 		var query = (int) AkQueryRTPCValue.RTPCValue_GameObject;
-		AkSoundEngine.GetRTPCValue("RTPC_SpectrumData", gameObject, SoundEvent.Id, out var value, ref query);
+		AkSoundEngine.GetRTPCValue("RTPC_SpectrumData", gameObject, SoundEvent.Id, out RtpcData, ref query);
 	}
 
 	private void OnDrawGizmos()
