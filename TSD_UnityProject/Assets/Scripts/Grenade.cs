@@ -110,14 +110,19 @@ public class Grenade : MonoBehaviour
 
 	IEnumerator SphereDrawCooldown()
 	{
+		var rend = GetComponent<Renderer>();
+
 		if (isExploding)
 		{
+			rend.enabled = false;
+
 			Gizmos.color = Color.cyan;
 			Gizmos.DrawWireSphere(transform.position, SphereOverlapRadius);
 		}
 
 		yield return new WaitForSeconds(2f);
 
+		rend.enabled = true;
 		isExploding = false;
 	}
 }
