@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Grenade : MonoBehaviour
@@ -8,8 +9,10 @@ public class Grenade : MonoBehaviour
 	public float ExplosionForce = 1000f;
 	public LayerMask Layer;
     public GameObject GrenadeVFX;
-    private List<GameObject> instantiatedGrenadesVFX = new List<GameObject>();
+    public CinemachineVirtualCamera VirtualCamera;
 
+    private List<GameObject> instantiatedGrenadesVFX = new List<GameObject>();
+    private GameObject virtualCamera;
 	private bool isExploding;
 
 	private Collider[] CheckIncidental(Vector3 center, float radius)
@@ -23,6 +26,10 @@ public class Grenade : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.G))
 		{
+			// Get the active virtual camera because of Cinemachine.
+			virtualCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera
+				.VirtualCameraGameObject;
+
 			PlayGrenadeExplosion(gameObject);
 			var incidentalObjects = CheckIncidental(transform.position, SphereOverlapRadius);
 
@@ -65,12 +72,13 @@ public class Grenade : MonoBehaviour
 	private void PlayGrenadeExplosion(GameObject go)
 	{
         instantiatedGrenadesVFX.Add(Instantiate(GrenadeVFX, transform.position, transform.rotation));
-		var explosionDistanceToCamera = Vector3.Distance(go.transform.position, Camera.main.transform.position);
+		var explosionDistanceToCamera = Vector3.Distance(go.transform.position, virtualCamera.transform.position);
 
         // Don't shake when we're far away from the explosion.
         if (explosionDistanceToCamera < 20f)
         {
-            EZCameraShake.CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+	        //var shakeNoise = VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+	        //shakeNoise.m_AmplitudeGain = 3f;
         }
 
         AkSoundEngine.SetRTPCValue("RTPC_Grenade_Explosion_Distance", explosionDistanceToCamera, go);

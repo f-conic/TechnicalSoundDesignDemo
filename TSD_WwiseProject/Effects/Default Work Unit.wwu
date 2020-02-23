@@ -211,7 +211,7 @@
 				<Effect Name="WwiseReflection" ID="{DC2B6BB0-C86F-4AF7-AF89-2B113FD6E1FC}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
 					<PropertyList>
 						<Property Name="CenterPerc" Type="Real32" Value="35"/>
-						<Property Name="MaxDistance" Type="Real32" Value="130"/>
+						<Property Name="MaxDistance" Type="Real32" Value="170"/>
 					</PropertyList>
 					<PluginData>
 	<ReflectData>
@@ -224,22 +224,17 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>0</YPos>
+							<YPos>-0.98314</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>4.70254</XPos>
-							<YPos>-14.71566</YPos>
-							<Flags>0</Flags>
-						</Point>
-						<Point>
-							<XPos>14.4476</XPos>
-							<YPos>-22.90965</YPos>
+							<XPos>73.84615</XPos>
+							<YPos>-5.8005</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
 							<XPos>100</XPos>
-							<YPos>-200</YPos>
+							<YPos>-13.24906</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -253,12 +248,17 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>20</YPos>
+							<YPos>731.45547</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
+							<XPos>50.85974</XPos>
+							<YPos>1821.68251</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
 							<XPos>100</XPos>
-							<YPos>20</YPos>
+							<YPos>20000</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -272,18 +272,12 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>20000</YPos>
+							<YPos>1928.59272</YPos>
 							<Flags>5</Flags>
-							<SegmentShape>Log3</SegmentShape>
 						</Point>
 						<Point>
-							<XPos>8.33333333333333</XPos>
-							<YPos>1000</YPos>
-							<Flags>0</Flags>
-						</Point>
-						<Point>
-							<XPos>34.84419</XPos>
-							<YPos>20</YPos>
+							<XPos>35.47611</XPos>
+							<YPos>305.66135</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
@@ -306,29 +300,29 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>12.1529920792079</XPos>
-							<YPos>-4.26357</YPos>
+							<XPos>10.6616</XPos>
+							<YPos>-2.11915</YPos>
 							<Flags>0</Flags>
 							<SegmentShape>Log1</SegmentShape>
 						</Point>
 						<Point>
-							<XPos>27.620404950495</XPos>
-							<YPos>-10.08447</YPos>
+							<XPos>33.81128</XPos>
+							<YPos>-4.76293</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>39.0381247524752</XPos>
-							<YPos>-14.99472</YPos>
+							<XPos>56.12677</XPos>
+							<YPos>-10.16018</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>55.240797029703</XPos>
-							<YPos>-17.37846</YPos>
+							<XPos>80.23796</XPos>
+							<YPos>-12.27575</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>130</XPos>
-							<YPos>-21.3699</YPos>
+							<XPos>170</XPos>
+							<YPos>-13.94969</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -346,33 +340,33 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>9.55667326732673</XPos>
-							<YPos>-2.48845</YPos>
+							<XPos>13.42027</XPos>
+							<YPos>-1.09798</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>16.94051</XPos>
-							<YPos>-8.70472</YPos>
+							<XPos>26.92221</XPos>
+							<YPos>-2.66047</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>25.37397</XPos>
-							<YPos>-14.78313</YPos>
+							<XPos>39.3352</XPos>
+							<YPos>-4.88529</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>36.01699</XPos>
-							<YPos>-21.04521</YPos>
+							<XPos>52.63761</XPos>
+							<YPos>-9.24593</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>64.44759</XPos>
-							<YPos>-29.42057</YPos>
+							<XPos>84.58532</XPos>
+							<YPos>-12.50809</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>130</XPos>
-							<YPos>-34.99473</YPos>
+							<XPos>170</XPos>
+							<YPos>-19.20616</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -390,12 +384,12 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>35.354104950495</XPos>
-							<YPos>43.92047</YPos>
+							<XPos>54.38614</XPos>
+							<YPos>1422.962</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>130</XPos>
+							<XPos>170</XPos>
 							<YPos>20</YPos>
 							<Flags>37</Flags>
 						</Point>
@@ -414,12 +408,12 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>34.249298019802</XPos>
-							<YPos>1780.33708</YPos>
+							<XPos>32.17216</XPos>
+							<YPos>2926.11719</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>130</XPos>
+							<XPos>170</XPos>
 							<YPos>20</YPos>
 							<Flags>37</Flags>
 						</Point>
@@ -434,17 +428,22 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>37.80918</YPos>
+							<YPos>100</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>38.66855</XPos>
-							<YPos>50.86738</YPos>
+							<XPos>36.30772</XPos>
+							<YPos>65.78947</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>130</XPos>
-							<YPos>100</YPos>
+							<XPos>68.41272</XPos>
+							<YPos>34.36337</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>170</XPos>
+							<YPos>27.16628</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
