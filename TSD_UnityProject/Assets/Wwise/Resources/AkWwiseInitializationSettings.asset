@@ -45,7 +45,7 @@ MonoBehaviour:
     m_SpatialAudioSettings:
       m_MaxSoundPropagationDepth: 8
       m_DiffractionFlags: -1
-      m_MovementThreshold: 1
+      m_MovementThreshold: 0.47
       m_NumberOfPrimaryRays: 100
       m_MaxReflectionOrder: 4
       m_MaxPathLength: 10000
@@ -59,7 +59,7 @@ MonoBehaviour:
     m_MaximumPinnedBytesInCache: 4294967295
     m_EnableGameSyncPreparation: 0
     m_ContinuousPlaybackLookAhead: 1
-    m_MonitorQueuePoolSize: 65536
+    m_MonitorQueuePoolSize: 153450
     m_MaximumHardwareTimeoutMs: 1000
     m_DebugOutOfRangeCheckEnabled: 0
     m_DebugOutOfRangeLimit: 16

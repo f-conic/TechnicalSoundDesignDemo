@@ -11,9 +11,10 @@ public class WorldGeometryBuilder : MonoBehaviour
 	    if (Input.GetKeyDown(KeyCode.B))
 	    {
 		    cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-			cube.transform.position = transform.position + (transform.forward * 2);
+			cube.transform.position = transform.position + (transform.forward * 20);
 		    var surfaceReflector = cube.AddComponent<AkSurfaceReflector>();
 		    var aKGameObject = cube.AddComponent<AkGameObj>();
+		    cube.AddComponent<Rigidbody>();
 	    }
 
 	    if (cube != null)

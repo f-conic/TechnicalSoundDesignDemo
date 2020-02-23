@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Make sure to run python -m pip install waapi-client before running this.
+
 from waapi import WaapiClient, CannotConnectToWaapiException
 from pprint import pprint
 

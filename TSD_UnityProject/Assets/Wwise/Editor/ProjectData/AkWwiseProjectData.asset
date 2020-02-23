@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586193899181817057
+    m_lastTime: -8586191280142678403
     List:
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
@@ -280,7 +280,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586194767054296898
+    m_lastTime: -8586191548193633222
     List:
     - name: grenade_explosion
       guid: 6353da03e0b8b844958f367d2b8938d5
@@ -339,7 +339,7 @@ MonoBehaviour:
       - ElementName: Play_Discussion
         ObjectType: 3
       Path: Default Work Unit\Play_Discussion
-      maxAttenuation: 60
+      maxAttenuation: 75
       maxDuration: 905.9827
       minDuration: 905.9827
     - name: Play_Kit014Break014
@@ -359,7 +359,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586193899181597644
+    m_lastTime: -8586191548193633222
     List:
     - name: RTPC_Explosion_Close_Distance
       guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
@@ -572,7 +572,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Events
-  - /TSD_WwiseProject/Events/Default Work Unit
+  - /TSD_WwiseProject/Virtual Acoustics
+  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures
+  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures/Textures
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
