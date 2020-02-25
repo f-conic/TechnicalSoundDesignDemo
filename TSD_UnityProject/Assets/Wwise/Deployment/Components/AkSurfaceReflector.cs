@@ -181,7 +181,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 		if (Mesh == null)
 		{
-			//UnityEngine.Debug.LogFormat("SetGeometry({0}): No mesh found!", gameObject.name);
+			UnityEngine.Debug.LogFormat("SetGeometry({0}): No mesh found!", gameObject.name);
 			return;
 		}
 

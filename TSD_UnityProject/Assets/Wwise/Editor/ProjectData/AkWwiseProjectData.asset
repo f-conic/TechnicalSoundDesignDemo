@@ -572,8 +572,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Virtual Acoustics
-  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures
-  - /TSD_WwiseProject/Virtual Acoustics/Factory Reflect Acoustic Textures/Textures
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
