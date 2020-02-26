@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using UnityEngine;
 
@@ -8,11 +9,11 @@ public class Grenade : MonoBehaviour
 	public float SphereOverlapRadius;
 	public float ExplosionForce = 1000f;
 	public LayerMask Layer;
-    public GameObject GrenadeVFX;
-    public CinemachineVirtualCamera VirtualCamera;
+	public GameObject GrenadeVFX;
+	public GameObject[] objectsToIgnore;
 
-    private List<GameObject> instantiatedGrenadesVFX = new List<GameObject>();
-    private GameObject virtualCamera;
+	private List<GameObject> instantiatedGrenadesVFX = new List<GameObject>();
+	private GameObject virtualCamera;
 	private bool isExploding;
 
 	private Collider[] CheckIncidental(Vector3 center, float radius)
@@ -30,7 +31,10 @@ public class Grenade : MonoBehaviour
 			virtualCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera
 				.VirtualCameraGameObject;
 
-			PlayGrenadeExplosion(gameObject);
+			var obstructionState = GetObstructionState();
+
+			PlayGrenadeExplosion(gameObject, !obstructionState);
+
 			var incidentalObjects = CheckIncidental(transform.position, SphereOverlapRadius);
 
 			foreach (var i in incidentalObjects)
@@ -69,20 +73,26 @@ public class Grenade : MonoBehaviour
 		return force;
 	}
 
-	private void PlayGrenadeExplosion(GameObject go)
+	private void PlayGrenadeExplosion(GameObject go, bool isObstructed)
 	{
         instantiatedGrenadesVFX.Add(Instantiate(GrenadeVFX, transform.position, transform.rotation));
 		var explosionDistanceToCamera = Vector3.Distance(go.transform.position, virtualCamera.transform.position);
 
-        // Don't shake when we're far away from the explosion.
         if (explosionDistanceToCamera < 20f)
         {
-	        //var shakeNoise = VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-	        //shakeNoise.m_AmplitudeGain = 3f;
-        }
+	        // Don't shake when we're far away from the explosion.
+		}
 
-        AkSoundEngine.SetRTPCValue("RTPC_Grenade_Explosion_Distance", explosionDistanceToCamera, go);
-		AkSoundEngine.PostEvent("grenade_explosion", go, (uint)AkCallbackType.AK_EndOfEvent, OnCallback, null);
+		if (isObstructed)
+        {
+	        AkSoundEngine.SetRTPCValue("RTPC_Grenade_Explosion_Distance", explosionDistanceToCamera, go);
+	        AkSoundEngine.PostEvent("grenade_explosion", go, (uint)AkCallbackType.AK_EndOfEvent, OnCallback, null);
+		}
+        else
+        {
+	        AkSoundEngine.SetRTPCValue("RTPC_Grenade_Explosion_Distance", 50f, go);
+	        AkSoundEngine.PostEvent("grenade_explosion", go, (uint)AkCallbackType.AK_EndOfEvent, OnCallback, null);
+		}
 
 		isExploding = true;
 	}
@@ -132,5 +142,19 @@ public class Grenade : MonoBehaviour
 
 		rend.enabled = true;
 		isExploding = false;
+	}
+
+	private bool GetObstructionState()
+	{
+		if (Physics.Linecast(transform.position, virtualCamera.transform.position, out var hit))
+		{
+			// Horrible check. But temporary testing.
+			if (objectsToIgnore.Contains(hit.transform.gameObject))
+			{
+				return false;
+			}
+			return true;
+		}
+		return false;
 	}
 }
