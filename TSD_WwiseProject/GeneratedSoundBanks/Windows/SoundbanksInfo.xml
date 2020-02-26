@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -32,13 +32,9 @@
 				<Event Id="2717289804" Name="Incidental_Metal" ObjectPath="\Events\Default Work Unit\Incidental_Metal" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="7.143667" DurationMax="11.558437"/>
 				<Event Id="892077403" Name="Play_AMB_base_loop" ObjectPath="\Events\Default Work Unit\Play_AMB_base_loop" DurationType="Infinite"/>
 				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" MaxAttenuation="75.000000" DurationType="OneShot" DurationMin="905.982727" DurationMax="905.982727"/>
-				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" DurationType="Infinite"/>
+				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="20.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="68168911" Language="SFX">
-					<ShortName>Kit014Break014.wav</ShortName>
-					<Path>SFX\Kit014Break014_D79FB2B7.wem</Path>
-				</File>
 				<File Id="83184489" Language="SFX">
 					<ShortName>ambience_base_loop.wav</ShortName>
 					<Path>SFX\ambience_base_loop_D79FB2B7.wem</Path>
@@ -122,6 +118,10 @@
 				<File Id="871310215" Language="SFX">
 					<ShortName>incidental_metal_rumble_01.wav</ShortName>
 					<Path>SFX\incidental_metal_rumble_01_10C4C929.wem</Path>
+				</File>
+				<File Id="927844465" Language="SFX">
+					<ShortName>jazz_loop.wav</ShortName>
+					<Path>SFX\jazz_loop_D79FB2B7.wem</Path>
 				</File>
 				<File Id="928291044" Language="SFX">
 					<ShortName>grenade_explosion_outdoor_far_tail_01.wav</ShortName>

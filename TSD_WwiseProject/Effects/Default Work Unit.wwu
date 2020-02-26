@@ -210,8 +210,8 @@
 				</Effect>
 				<Effect Name="WwiseReflection" ID="{DC2B6BB0-C86F-4AF7-AF89-2B113FD6E1FC}" PluginName="Wwise Reflect" CompanyID="0" PluginID="171" PluginType="3">
 					<PropertyList>
-						<Property Name="CenterPerc" Type="Real32" Value="35"/>
 						<Property Name="MaxDistance" Type="Real32" Value="170"/>
+						<Property Name="ParamFilterCutoff" Type="Real32" Value="0.4"/>
 					</PropertyList>
 					<PluginData>
 	<ReflectData>
@@ -300,29 +300,34 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>10.6616</XPos>
-							<YPos>-2.11915</YPos>
+							<XPos>22.87154</XPos>
+							<YPos>-3.84408</YPos>
 							<Flags>0</Flags>
 							<SegmentShape>Log1</SegmentShape>
 						</Point>
 						<Point>
-							<XPos>33.81128</XPos>
-							<YPos>-4.76293</YPos>
+							<XPos>36.31588</XPos>
+							<YPos>-5.07129</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>56.12677</XPos>
-							<YPos>-10.16018</YPos>
+							<XPos>55.81368</XPos>
+							<YPos>-6.25506</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>80.23796</XPos>
-							<YPos>-12.27575</YPos>
+							<XPos>77.73335</XPos>
+							<YPos>-9.45476</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>87.34806</XPos>
+							<YPos>-11.57074</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
 							<XPos>170</XPos>
-							<YPos>-13.94969</YPos>
+							<YPos>-200</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -345,28 +350,28 @@
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>26.92221</XPos>
-							<YPos>-2.66047</YPos>
+							<XPos>23.47838</XPos>
+							<YPos>-4.02139</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>39.3352</XPos>
-							<YPos>-4.88529</YPos>
+							<XPos>40.90057</XPos>
+							<YPos>-8.68934</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>52.63761</XPos>
-							<YPos>-9.24593</YPos>
+							<XPos>59.83834</XPos>
+							<YPos>-11.13628</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>84.58532</XPos>
-							<YPos>-12.50809</YPos>
+							<XPos>85.83762</XPos>
+							<YPos>-12.08614</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
 							<XPos>170</XPos>
-							<YPos>-19.20616</YPos>
+							<YPos>-15.38753</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>
@@ -380,12 +385,12 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>20000</YPos>
+							<YPos>500.73334</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>54.38614</XPos>
-							<YPos>1422.962</YPos>
+							<XPos>31.21855</XPos>
+							<YPos>79.23093</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
@@ -408,8 +413,8 @@
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>32.17216</XPos>
-							<YPos>2926.11719</YPos>
+							<XPos>54.71359</XPos>
+							<YPos>20000</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
@@ -428,22 +433,27 @@
 					<PointList>
 						<Point>
 							<XPos>0</XPos>
-							<YPos>100</YPos>
+							<YPos>0</YPos>
 							<Flags>5</Flags>
 						</Point>
 						<Point>
-							<XPos>36.30772</XPos>
-							<YPos>65.78947</YPos>
+							<XPos>28.48084</XPos>
+							<YPos>0</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
-							<XPos>68.41272</XPos>
-							<YPos>34.36337</YPos>
+							<XPos>58.54512</XPos>
+							<YPos>0</YPos>
+							<Flags>0</Flags>
+						</Point>
+						<Point>
+							<XPos>92.51953</XPos>
+							<YPos>0</YPos>
 							<Flags>0</Flags>
 						</Point>
 						<Point>
 							<XPos>170</XPos>
-							<YPos>27.16628</YPos>
+							<YPos>100</YPos>
 							<Flags>37</Flags>
 						</Point>
 					</PointList>

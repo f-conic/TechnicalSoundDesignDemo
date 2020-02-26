@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586191280142678403
+    m_lastTime: -8586188804486327687
     List:
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
@@ -351,7 +351,7 @@ MonoBehaviour:
       - ElementName: Play_Kit014Break014
         ObjectType: 3
       Path: Default Work Unit\Play_Kit014Break014
-      maxAttenuation: 0
+      maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -572,5 +572,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
+  - /TSD_WwiseProject/Events
+  - /TSD_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

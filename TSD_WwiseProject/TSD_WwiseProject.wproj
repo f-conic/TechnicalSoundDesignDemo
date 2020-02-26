@@ -9208,6 +9208,30 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
+				<SharedPropertyList ClassName="heavy" PluginType="2" CompanyID="64" PluginID="31998">
+					<PropertyList>
+						<Property Name="branches" Type="Real32">
+							<ValueList>
+								<Value>5</Value>
+							</ValueList>
+						</Property>
+						<Property Name="buildings" Type="Real32">
+							<ValueList>
+								<Value>0.7</Value>
+							</ValueList>
+						</Property>
+						<Property Name="doorways" Type="Real32">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+						<Property Name="leaves" Type="Real32">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+				</SharedPropertyList>
 			</SharedValues>
 			<EnvironmentalSettings>
 				<ObsOccCurves>
@@ -9221,12 +9245,12 @@
 								<PointList>
 									<Point>
 										<XPos>0</XPos>
-										<YPos>-0</YPos>
+										<YPos>-16.47816</YPos>
 										<Flags>5</Flags>
 									</Point>
 									<Point>
 										<XPos>100</XPos>
-										<YPos>-2.45435</YPos>
+										<YPos>-8.47494</YPos>
 										<Flags>37</Flags>
 									</Point>
 								</PointList>
@@ -9242,12 +9266,12 @@
 								<PointList>
 									<Point>
 										<XPos>0</XPos>
-										<YPos>0</YPos>
+										<YPos>27.30769</YPos>
 										<Flags>5</Flags>
 									</Point>
 									<Point>
 										<XPos>100</XPos>
-										<YPos>57.30769</YPos>
+										<YPos>80.38462</YPos>
 										<Flags>37</Flags>
 									</Point>
 								</PointList>
@@ -9268,7 +9292,7 @@
 									</Point>
 									<Point>
 										<XPos>100</XPos>
-										<YPos>100</YPos>
+										<YPos>0</YPos>
 										<Flags>37</Flags>
 									</Point>
 								</PointList>
@@ -9284,7 +9308,7 @@
 								<PointList>
 									<Point>
 										<XPos>0</XPos>
-										<YPos>-1.37241</YPos>
+										<YPos>-1.53033</YPos>
 										<Flags>5</Flags>
 										<SegmentShape>Log2</SegmentShape>
 									</Point>
@@ -9306,17 +9330,12 @@
 								<PointList>
 									<Point>
 										<XPos>0</XPos>
-										<YPos>15.76923</YPos>
+										<YPos>30.76923</YPos>
 										<Flags>5</Flags>
 									</Point>
 									<Point>
-										<XPos>24.63053</XPos>
-										<YPos>27.50095</YPos>
-										<Flags>0</Flags>
-									</Point>
-									<Point>
 										<XPos>100</XPos>
-										<YPos>100</YPos>
+										<YPos>49.23077</YPos>
 										<Flags>37</Flags>
 									</Point>
 								</PointList>
@@ -9337,7 +9356,7 @@
 									</Point>
 									<Point>
 										<XPos>100</XPos>
-										<YPos>100</YPos>
+										<YPos>45</YPos>
 										<Flags>37</Flags>
 									</Point>
 								</PointList>

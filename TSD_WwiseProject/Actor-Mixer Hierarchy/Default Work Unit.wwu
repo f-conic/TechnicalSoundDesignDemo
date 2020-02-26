@@ -571,16 +571,26 @@
 						<Sound Name="Kit014Break014" ID="{143921E9-9693-4085-80D8-D3301FD73B3D}" ShortID="89964159">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>1</Value>
 									</ValueList>
 								</Property>
+								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
+								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -655,6 +665,12 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
+								<Reference Name="ReflectionsAuxSend">
+									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}">
@@ -671,12 +687,19 @@
 										<MediaID ID="532335442"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="jazz_loop" ID="{473996F1-5715-400C-BDCE-9F95B7DD6815}">
+									<Language>SFX</Language>
+									<AudioFile>jazz_loop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="927844465"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<PositioningInfo>
 								<Position Name="" ID="{9AAC274D-0BE3-4A1C-8603-BDEC769FE1D3}"/>
 							</PositioningInfo>
 							<ActiveSourceList>
-								<ActiveSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}" Platform="Linked"/>
+								<ActiveSource Name="jazz_loop" ID="{473996F1-5715-400C-BDCE-9F95B7DD6815}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<SwitchContainer Name="Explosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" ShortID="8737914">
