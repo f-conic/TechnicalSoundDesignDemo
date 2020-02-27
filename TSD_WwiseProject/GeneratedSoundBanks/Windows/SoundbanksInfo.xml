@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>H:\00_Projects\Unity\00_TEMP\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

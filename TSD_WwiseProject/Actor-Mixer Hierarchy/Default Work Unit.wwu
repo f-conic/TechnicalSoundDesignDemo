@@ -1584,12 +1584,15 @@
 				</ActorMixer>
 				<Sound Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" ShortID="254154156">
 					<PropertyList>
+						<Property Name="3DPosition" Type="int16" Value="2"/>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+						<Property Name="HoldListenerOrientation" Type="bool" Value="True"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-17</Value>
+								<Value>-28</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1610,6 +1613,54 @@
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{195BC6E5-66D0-40F6-A174-5F8BC7AA1BE9}">
+							<PropertyList>
+								<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="PlayMechanismTransitionTime" Type="Real64" Value="3.5"/>
+							</PropertyList>
+							<ChildrenList>
+								<Path2D Name="AMB_base_loop_Path" ID="{162454A6-C94B-4684-AED2-E0927CBF0C71}">
+									<PropertyList>
+										<Property Name="LinearTime" Type="bool" Value="False"/>
+									</PropertyList>
+									<PointList>
+										<Point>
+											<XPos>-72.78481</XPos>
+											<YPos>57.64332</YPos>
+											<Flags>12</Flags>
+											<Time>0</Time>
+										</Point>
+										<Point>
+											<XPos>76.58227</XPos>
+											<YPos>55.41401</YPos>
+											<Flags>0</Flags>
+											<Time>1250</Time>
+										</Point>
+										<Point>
+											<XPos>79.11392</XPos>
+											<YPos>-70.06369</YPos>
+											<Flags>0</Flags>
+											<Time>2500</Time>
+										</Point>
+										<Point>
+											<XPos>-67.08861</XPos>
+											<YPos>-68.15286</YPos>
+											<Flags>0</Flags>
+											<Time>3750</Time>
+										</Point>
+										<Point>
+											<XPos>-82.91139</XPos>
+											<YPos>31.21019</YPos>
+											<Flags>0</Flags>
+											<Time>5000</Time>
+										</Point>
+									</PointList>
+								</Path2D>
+							</ChildrenList>
+						</Position>
+					</PositioningInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="ambience_base_loop" ID="{ECF7994B-A4F8-4B79-A3B2-C9DA4A09381C}" Platform="Linked"/>
 					</ActiveSourceList>
