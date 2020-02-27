@@ -1,4 +1,4 @@
-#N canvas -1928 -8 1920 1117 10;
+#N canvas 336 98 1920 1117 10;
 #X obj 1024 25 cnv 15 200 200 empty empty GLOBAL_VARS 20 12 0 14 -191407
 -66577 0;
 #X obj 1063 195 dac~;
@@ -324,17 +324,17 @@
 #X obj 1013 446 cnv 15 300 100 empty empty DOORWAYS 20 12 0 14 -262130
 -66577 0;
 #X obj 1037 477 hsl 128 15 0 30 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 800 1;
 #X obj 266 657 r vol_doorways;
 #X obj 1012 556 cnv 15 330 100 empty empty BUILDINGS 20 12 0 14 -261234
 -66577 0;
 #X obj 1034 584 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 900 1;
 #X obj 141 223 r vol_buildings;
 #X obj 1014 684 cnv 15 300 100 empty empty BRANCHES 20 12 0 14 -204800
 -66577 0;
 #X obj 1033 712 hsl 128 15 0 40 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2900 1;
+-1 -1 400 1;
 #X obj 1030 729 s vol_branches;
 #X obj 681 219 r vol_branches;
 #X obj 267 633 r vol_doorways @hv_param 0 10 3;
@@ -342,12 +342,12 @@
 #X obj 682 198 r vol_branches @hv_param 0 15 5;
 #X obj 141 200 r vol_buildings @hv_param 0 3 0.7;
 #X obj 1172 711 hsl 128 15 0 1500 0 0 empty empty q_branches_whistle
--2 -8 0 10 -262144 -1 -1 6200 1;
+-2 -8 0 10 -262144 -1 -1 800 1;
 #X obj 1169 728 s q_branches_whistle;
 #X obj 688 125 r q_branches_whistle;
 #X obj 688 104 r q_branches_whistle @hv_param 0 1500 400;
 #X obj 1031 822 hsl 128 15 0 2 0 0 empty empty wind_intensity -2 -8
-0 10 -262144 -1 -1 4200 1;
+0 10 -262144 -1 -1 2000 1;
 #X obj 1027 840 s wind_intensity;
 #X obj 1031 607 s vol_buildings;
 #X obj 1034 499 s vol_doorways;
@@ -355,7 +355,7 @@
 #X obj 117 403 vd~ a 100;
 #X obj 1038 85 delwrite~ a 3000;
 #X obj 1207 824 hsl 128 15 0 0.45 0 0 empty empty vol_master -2 -8
-0 10 -262144 -1 -1 8500 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 1203 844 s vol_master;
 #X obj 1116 142 r vol_master;
 #X obj 1367 782 bng 40 250 50 0 empty empty PANIC! 0 -10 0 10 -258113
