@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Boo.Lang;
 using Cinemachine;
 using UnityEngine;
 
@@ -9,12 +8,25 @@ public class CeilingDetector : MonoBehaviour
 	private bool isActive;
 	private Camera mainCam;
 	private GameObject virtualCamera;
+	private Transform hitTransform;
 
 	private void Start()
 	{
 		mainCam = Camera.main;
 	}
 
+	private Vector3 GetGeometryData(Vector3 pos, Color color)
+	{
+		// Do raycasting only when needed.
+		if (Physics.Raycast(transform.position, pos, out hit, 50f))
+		{
+			hitTransform = hit.transform;
+			return pos;
+		}
+
+		return new Vector3(0,0,0);
+	}
+	
 	private void Update()
 	{
 		// There's probably a better way of doing this.
@@ -37,46 +49,44 @@ public class CeilingDetector : MonoBehaviour
 			}
 		}
 
-		// Up
-		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 10f))
+		var rayCasts = new List<Vector3>()
 		{
-			Debug.Log("Up");
-			AddCeilingReverb(true);
-		}
-		else
-		{
-			AddCeilingReverb(false);
-		}
+			GetGeometryData(transform.TransformDirection(Vector3.up), Color.green),
+			GetGeometryData(transform.TransformDirection(Vector3.forward), Color.blue),
+			GetGeometryData(transform.TransformDirection(Vector3.back), Color.cyan),
+			GetGeometryData(transform.TransformDirection(Vector3.left), Color.yellow),
+			GetGeometryData(transform.TransformDirection(Vector3.right), Color.red),
+		};
 
-		// Left
-		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, 10f))
-		{
-			Debug.Log("Left");
-		}
-
-		// Right
-		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 10f))
-		{
-			Debug.Log("Right");
-		}
-
-		DrawRays();
+		ProcessRaycastData(rayCasts);
 	}
 
-	private void DrawRays()
+	private void ProcessRaycastData(List<Vector3> rays)
 	{
-		Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 50, Color.blue);
-		Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.back) * 50, Color.blue);
-		Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * 50, Color.green);
-		Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 50, Color.red);
-		Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * 50, Color.red);
+		foreach (var ray in rays)
+		{
+			if (ray != Vector3.zero)
+			{
+				Debug.DrawRay(transform.position, ray * 50, Color.blue);
+
+				if (ray == Vector3.up)
+				{
+					AddCeilingReverb(true, hitTransform);
+				}
+				else
+				{
+					AddCeilingReverb(false, null);
+				}
+			}
+		}
 	}
 
-	private void AddCeilingReverb(bool isCeiling)
+	private void AddCeilingReverb(bool isCeiling, Transform hitTransform)
 	{
-		if (isCeiling)
+		if (isCeiling && hitTransform != null)
 		{
-			if (!isActive && hit.transform.gameObject != gameObject && hit.transform.gameObject != mainCam.transform.gameObject)
+			if (!isActive && hitTransform.transform.gameObject != gameObject && 
+			    hitTransform.transform.gameObject != mainCam.transform.gameObject)
 			{
 				Debug.Log("<color=green>Detected a ceiling!</color>");
 				AkSoundEngine.SetState("CeilingState", "Active");
@@ -84,7 +94,7 @@ public class CeilingDetector : MonoBehaviour
 				isActive = true;
 			}
 		}
-		else
+		else if (!isCeiling)
 		{
 			AkSoundEngine.SetState("CeilingState", "Inactive");
 			isActive = false;
