@@ -23,6 +23,16 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{E27F81A2-900B-4B63-9152-78BA5F453974}" ShortID="457644144">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Radio_Drums" ID="{5B7C0DA5-67C9-4134-9C56-EE83BD7E709F}" WorkUnitID="{8290D5A5-C4FE-422F-8815-86C871947E66}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Incidental_Glass" ID="{FA961038-3CD2-4DE5-A2CA-53FAB8749442}">
@@ -64,6 +74,70 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="AMB_main" ID="{8635057A-049C-403F-B0DB-3916C70C62A9}">
+					<ChildrenList>
+						<Action Name="" ID="{05E8119D-2317-4A11-A5F2-E1114C268E7F}" ShortID="791682870">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="amb_base" ID="{F5983CE2-0CC5-45E6-94FB-A5934D62692C}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{97426A0A-7B4E-48E3-8FAB-E89486B89D68}" ShortID="124101943">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="amb_birds" ID="{52D0194A-304F-4E62-AE71-527CF563E0E2}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F90FFAFE-EFB4-46BE-9B6A-91D4A15500C2}" ShortID="389074550">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="amb_rustle" ID="{651AA0EF-4391-4DC8-B8DA-EA378A318834}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EF5A6E4C-B7C5-4669-AF15-A5763A3E86D1}" ShortID="804655050">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_DirectionalWind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}" WorkUnitID="{8290D5A5-C4FE-422F-8815-86C871947E66}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="AMB_DirectionalWind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}">
+					<ChildrenList>
+						<Action Name="" ID="{4BF708F9-627B-474B-AC59-8C0F0A247977}" ShortID="898540681">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="amb_wind_02" ID="{33E114D9-DC3C-4115-BA07-66A410AAFD7F}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BE73736A-1668-480F-A7C7-4A5B3F4B72FC}" ShortID="86663010">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="amb_wind_01" ID="{054F105D-2CD1-4DBC-80D1-0D8B1B227723}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Radio_Drums" ID="{5B7C0DA5-67C9-4134-9C56-EE83BD7E709F}">
+					<ChildrenList>
+						<Action Name="" ID="{6164F5A6-DB11-4833-AAE7-4EAD7CBBFDFA}" ShortID="564700358">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Radio_Drums" ID="{0E75B2EA-4B5B-43BF-901D-D39FEC18B84B}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

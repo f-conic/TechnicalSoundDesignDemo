@@ -22,7 +22,7 @@
 								</Property>
 								<Property Name="BusVolume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 								<Property Name="EnableAttenuation" Type="bool" Value="False"/>

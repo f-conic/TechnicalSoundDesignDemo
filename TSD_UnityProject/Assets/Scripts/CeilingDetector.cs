@@ -49,6 +49,12 @@ public class CeilingDetector : MonoBehaviour
 		}
 
 		// Left
+		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 50f))
+		{
+			AkSoundEngine.SetRTPCValue("RTPC_Amb_Height", hit.distance);
+		}
+
+		// Left
 		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, 10f))
 		{
 			Debug.Log("Left");
