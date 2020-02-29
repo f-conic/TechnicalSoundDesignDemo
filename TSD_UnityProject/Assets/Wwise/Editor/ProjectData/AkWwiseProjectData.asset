@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586188804486327687
+    m_lastTime: -8586186097107630597
     List:
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
@@ -280,8 +280,32 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586191548193633222
+    m_lastTime: -8586186097107550580
     List:
+    - name: AMB_DirectionalWind
+      guid: af0d80c0356d7148ab86fca1fdac45b0
+      id: 2049558012
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB_DirectionalWind
+        ObjectType: 3
+      Path: Default Work Unit\AMB_DirectionalWind
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: AMB_main
+      guid: 7a0535869c043f40b0db3916c70c62a9
+      id: 3004847309
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AMB_main
+        ObjectType: 3
+      Path: Default Work Unit\AMB_main
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: grenade_explosion
       guid: 6353da03e0b8b844958f367d2b8938d5
       id: 2974935085
@@ -340,8 +364,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_Discussion
       maxAttenuation: 75
-      maxDuration: 905.9827
-      minDuration: 905.9827
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Kit014Break014
       guid: 8c299c3b09121043bfe9619164191b19
       id: 713469781
@@ -354,13 +378,43 @@ MonoBehaviour:
       maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
+    - name: Radio_Drums
+      guid: a50d7c5bc96734419c56ee83bd7e709f
+      id: 2352049368
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Radio_Drums
+        ObjectType: 3
+      Path: Default Work Unit\Radio_Drums
+      maxAttenuation: 75
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586191548193633222
+    m_lastTime: -8586186192216045539
     List:
+    - name: RTPC_Amb_DirectionalWind_Vol
+      guid: 12c8ed9dcff7f84895b2c57bdbf1a735
+      id: 1154568204
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Amb_DirectionalWind_Vol
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Amb_DirectionalWind_Vol
+    - name: RTPC_Amb_Height
+      guid: 227afe5d0fe5fd4c8f548455c39b0495
+      id: 4060993181
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_Amb_Height
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_Amb_Height
     - name: RTPC_Explosion_Close_Distance
       guid: dcdcb3d0d7d74b4f8b4562d3aa0c0fcb
       id: 1781674381
@@ -406,6 +460,15 @@ MonoBehaviour:
       - ElementName: RTPC_SpectrumData
         ObjectType: 13
       Path: Default Work Unit\RTPC_SpectrumData
+    - name: RTPC_WindDirection
+      guid: f7d9518a2284b64e8aa28502185f1677
+      id: 1620104880
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_WindDirection
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_WindDirection
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -572,7 +635,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Events
-  - /TSD_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
