@@ -4636,6 +4636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
         type: 3}
+      propertyPath: objectsToIgnore.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
       propertyPath: VirtualCamera
       value: 
       objectReference: {fileID: 924254769}
@@ -4643,10 +4648,20 @@ PrefabInstance:
         type: 3}
       propertyPath: objectsToIgnore.Array.data[0]
       value: 
-      objectReference: {fileID: 5873545493665739763}
+      objectReference: {fileID: 5873545494098907321}
     - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
         type: 3}
       propertyPath: objectsToIgnore.Array.data[1]
+      value: 
+      objectReference: {fileID: 924254767}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: objectsToIgnore.Array.data[2]
+      value: 
+      objectReference: {fileID: 5873545493665739763}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: objectsToIgnore.Array.data[3]
       value: 
       objectReference: {fileID: 5873545493776002336}
     - target: {fileID: 148006188183128895, guid: 187cebe1b0f043d47be44e812369dc8a,
@@ -5776,7 +5791,7 @@ MonoBehaviour:
     WwiseObjectReference: {fileID: 11400000, guid: 83c60dbb0aa184c42966bd603d5d416b,
       type: 2}
   GroundObject: {fileID: 390645039}
-  showWindDirection: 1
+  showWindDirection: 0
 --- !u!135 &1001693736
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6562,7 +6577,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16002
+  m_Name: pb_Mesh21928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

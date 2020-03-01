@@ -33,7 +33,7 @@ public class Grenade : MonoBehaviour
 
 			var obstructionState = GetObstructionState();
 
-			PlayGrenadeExplosion(gameObject, !obstructionState);
+			PlayGrenadeExplosion(gameObject, obstructionState);
 
 			var incidentalObjects = CheckIncidental(transform.position, SphereOverlapRadius);
 
@@ -83,7 +83,7 @@ public class Grenade : MonoBehaviour
 	        // Don't shake when we're far away from the explosion.
 		}
 
-		if (isObstructed)
+		if (!isObstructed)
         {
 	        AkSoundEngine.SetRTPCValue("RTPC_Grenade_Explosion_Distance", explosionDistanceToCamera, go);
 	        AkSoundEngine.PostEvent("grenade_explosion", go, (uint)AkCallbackType.AK_EndOfEvent, OnCallback, null);
