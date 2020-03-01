@@ -53,6 +53,13 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="78"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}">
+					<PropertyList>
+						<Property Name="BindToBuiltInParam" Type="int16" Value="1"/>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="50"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

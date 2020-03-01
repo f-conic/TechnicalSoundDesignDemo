@@ -28,6 +28,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1113248574	RTPC_Incidental			\Default Work Unit\RTPC_Incidental	
 	1154568204	RTPC_Amb_DirectionalWind_Vol			\Default Work Unit\RTPC_Amb_DirectionalWind_Vol	
 	1781674381	RTPC_Explosion_Close_Distance			\Default Work Unit\RTPC_Explosion_Close_Distance	
+	2351799150	RTPC_SoundEmitter_GlobalReverb_Vol			\Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol	
 	3326687027	RTPC_Grenade_Explosion_Distance			\Default Work Unit\RTPC_Grenade_Explosion_Distance	
 	4060993181	RTPC_Amb_Height			\Default Work Unit\RTPC_Amb_Height	
 
@@ -44,7 +45,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	287003259	grenade_explosion_outdoor_far_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_far_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Main_Far\grenade_explosion_outdoor_far_main_01		282128
 	326482332	incidental_metal_rumble_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Metal\incidental_metal_rumble_03		1109674
 	368084949	amb_wind_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_wind_02_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\DirectionalWind\amb_wind_02		5761740
-	415827580	Radio_Drums	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\radio_drums_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Radio_Drums		2565882
 	513441474	grenade_explosion_tinnitus_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_tinnitus_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\FX\grenade_explosion_tinnitus_01		631996
 	564786833	amb_base	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_base_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\Base\amb_base		27104276
 	575368629	grenade_explosion_outdoor_close_debris_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Debris\grenade_explosion_outdoor_close_debris_02		498184
@@ -56,6 +56,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	784987366	Discussion	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\speech_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Discussion		3602388
 	820830402	incidental_generic_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Glass\incidental_generic_02		102900
 	858623284	Hand Mortar Small Close	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Hand Mortar Small Close_15D1A401.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Hand Mortar Small Close		542560
+	858772751	Radio_Drums	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\drum_loop_normalized_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Radio_Drums		2443700
 	866248490	incidental_metal_rumble_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Metal\incidental_metal_rumble_02		909888
 	871310215	incidental_metal_rumble_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Metal\incidental_metal_rumble_01		685856
 	891330969	amb_birds	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_birds_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\Base\amb_birds		27104276

@@ -16,11 +16,15 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
+				<AuxBus Id="17995648" Name="GlobalReverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\GlobalReverb"/>
 				<AuxBus Id="348022313" Name="Room01" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Room01"/>
 				<AuxBus Id="941753577" Name="MidBus" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MidBus"/>
 				<AuxBus Id="1819748220" Name="ER" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\ER"/>
 				<AuxBus Id="3161908922" Name="Main" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main"/>
 			</IncludedAuxBusses>
+			<GameParameters>
+				<GameParameter Id="2351799150" Name="RTPC_SoundEmitter_GlobalReverb_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol"/>
+			</GameParameters>
 		</SoundBank>
 		<SoundBank Id="1675065207" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\DefaultSoundBank</ObjectPath>
@@ -86,10 +90,6 @@
 					<ShortName>amb_wind_02.wav</ShortName>
 					<Path>SFX\amb_wind_02_D79FB2B7.wem</Path>
 				</File>
-				<File Id="415827580" Language="SFX">
-					<ShortName>radio_drums.wav</ShortName>
-					<Path>SFX\radio_drums_D79FB2B7.wem</Path>
-				</File>
 				<File Id="513441474" Language="SFX">
 					<ShortName>grenade_explosion_tinnitus_01.wav</ShortName>
 					<Path>SFX\grenade_explosion_tinnitus_01_10C4C929.wem</Path>
@@ -134,6 +134,10 @@
 					<ShortName>Hand Mortar Small Close.wav</ShortName>
 					<Path>SFX\Hand Mortar Small Close_15D1A401.wem</Path>
 				</File>
+				<File Id="858772751" Language="SFX">
+					<ShortName>drum_loop_normalized.wav</ShortName>
+					<Path>SFX\drum_loop_normalized_D79FB2B7.wem</Path>
+				</File>
 				<File Id="866248490" Language="SFX">
 					<ShortName>incidental_metal_rumble_02.wav</ShortName>
 					<Path>SFX\incidental_metal_rumble_02_10C4C929.wem</Path>
@@ -176,6 +180,7 @@
 				<GameParameter Id="1113248574" Name="RTPC_Incidental" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Incidental"/>
 				<GameParameter Id="1154568204" Name="RTPC_Amb_DirectionalWind_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Amb_DirectionalWind_Vol"/>
 				<GameParameter Id="1781674381" Name="RTPC_Explosion_Close_Distance" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Explosion_Close_Distance"/>
+				<GameParameter Id="2351799150" Name="RTPC_SoundEmitter_GlobalReverb_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol"/>
 				<GameParameter Id="3326687027" Name="RTPC_Grenade_Explosion_Distance" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Grenade_Explosion_Distance"/>
 				<GameParameter Id="4060993181" Name="RTPC_Amb_Height" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Amb_Height"/>
 			</GameParameters>

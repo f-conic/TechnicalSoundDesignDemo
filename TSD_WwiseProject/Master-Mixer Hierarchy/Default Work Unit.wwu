@@ -4,12 +4,22 @@
 		<WorkUnit Name="Default Work Unit" ID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<PropertyList>
+						<Property Name="BypassEffect1" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{3E0D9162-853B-4279-8B65-3B19C9596338}" WorkUnitID="{2BDE66D4-D011-49E6-8820-0E40C53A4B44}"/>
 						</Reference>
 						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 							<ObjectRef Name="Room_Medium" ID="{F5C06EC1-E4A4-4332-A7D3-A89E2986B74F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+						</Reference>
+						<Reference Name="Effect1" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+							<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -72,6 +82,13 @@
 								</Reference>
 								<Reference Name="Effect2" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
 									<ObjectRef Name="New_Wwise_Gain" ID="{E27114FE-2531-431C-BE33-BF01C6AB8895}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
+						<AuxBus Name="GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}">
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 								</Reference>
 							</ReferenceList>
 						</AuxBus>
