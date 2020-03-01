@@ -23,7 +23,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AuxBus Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}">
+						<AuxBus Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}">
 							<PropertyList>
 								<Property Name="BusChannelConfig" Type="int32">
 									<ValueList>
@@ -72,7 +72,7 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 						</AuxBus>
-						<AuxBus Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}">
+						<AuxBus Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}">
 							<ReferenceList>
 								<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 									<ObjectRef Name="FX_SpectrumData_EQ" ID="{8AAB7A62-F0F3-485B-B032-DDECF5A57C07}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>
@@ -85,7 +85,7 @@
 								</Reference>
 							</ReferenceList>
 						</AuxBus>
-						<AuxBus Name="GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}">
+						<AuxBus Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}">
 							<ReferenceList>
 								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 									<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>

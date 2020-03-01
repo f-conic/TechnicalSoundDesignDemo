@@ -195,8 +195,41 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586185457662678269
+    m_lastTime: -8586185171742148254
     List:
+    - name: AUX_EarlyReflections
+      guid: 748cdbb146e58842b23b4321f0b61b40
+      id: 3665378617
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: AUX_EarlyReflections
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\AUX_EarlyReflections
+    - name: AUX_GlobalReverb
+      guid: 7d8be0e3e4d122418f6d02ef4423621b
+      id: 3941844621
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: AUX_GlobalReverb
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\AUX_GlobalReverb
+    - name: AUX_SpectrumData
+      guid: 4d668266fcdf6440b353567ae0415939
+      id: 2215942509
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: AUX_SpectrumData
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\AUX_SpectrumData
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
       id: 714721605
@@ -206,28 +239,6 @@ MonoBehaviour:
       - ElementName: Bus
         ObjectType: 2
       Path: Default Work Unit\Bus
-    - name: ER
-      guid: 748cdbb146e58842b23b4321f0b61b40
-      id: 1819748220
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: ER
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\ER
-    - name: GlobalReverb
-      guid: 7d8be0e3e4d122418f6d02ef4423621b
-      id: 17995648
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: GlobalReverb
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\GlobalReverb
     - name: Main
       guid: 7eaec343dc79e147bd18f135ee8fe3ab
       id: 3161908922
@@ -248,17 +259,6 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
-    - name: MidBus
-      guid: 4d668266fcdf6440b353567ae0415939
-      id: 941753577
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: MidBus
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\MidBus
     - name: Room01
       guid: 91d308564790ff409bbcf084ff2220ee
       id: 348022313
@@ -291,7 +291,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586186097107550580
+    m_lastTime: -8586185159628099260
     List:
     - name: AMB_DirectionalWind
       guid: af0d80c0356d7148ab86fca1fdac45b0
@@ -375,8 +375,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Play_Discussion
       maxAttenuation: 75
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 13.784667
+      minDuration: 2.995958
     - name: Play_Kit014Break014
       guid: 8c299c3b09121043bfe9619164191b19
       id: 713469781
@@ -406,7 +406,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586185469361979544
+    m_lastTime: -8586185281966781416
     List:
     - name: RTPC_Amb_DirectionalWind_Vol
       guid: 12c8ed9dcff7f84895b2c57bdbf1a735
@@ -655,8 +655,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
-  - /TSD_WwiseProject/Auxiliary Busses
-  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit
-  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit/Master Audio Bus
+  - /TSD_WwiseProject/Events
+  - /TSD_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
