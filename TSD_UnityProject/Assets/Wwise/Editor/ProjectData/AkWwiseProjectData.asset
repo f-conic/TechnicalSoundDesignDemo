@@ -655,5 +655,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /TSD_WwiseProject
+  - /TSD_WwiseProject/Auxiliary Busses
+  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit
+  - /TSD_WwiseProject/Auxiliary Busses/Default Work Unit/Master Audio Bus
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

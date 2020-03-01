@@ -760,7 +760,7 @@
 						</Sound>
 						<SwitchContainer Name="Explosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" ShortID="8737914">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="58"/>
 							</PropertyList>
@@ -1675,7 +1675,93 @@
 										<Sound Name="amb_base" ID="{F5983CE2-0CC5-45E6-94FB-A5934D62692C}" ShortID="100344570">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<RTPCList>
+														<RTPC Name="" ID="{CED7C9FE-2A74-463C-9456-0E04A0A003E6}" ShortID="176066159">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_Amb_Height" ID="{5DFE7A22-E50F-4CFD-8F54-8455C39B0495}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{A6DB0135-7E1E-49E2-97DD-AA35F4677C94}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="65537"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>0.001</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>17.19269</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>37.04319</XPos>
+																		<YPos>5</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>50</XPos>
+																		<YPos>30</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
 												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<RTPCList>
+														<RTPC Name="" ID="{EB12E027-4601-498A-AAD6-1AEE126381D7}" ShortID="760789114">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_Amb_Height" ID="{5DFE7A22-E50F-4CFD-8F54-8455C39B0495}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{57852026-2D0E-46BE-B2D9-F50DA66E5539}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>27.57475</XPos>
+																		<YPos>0</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>35.79734</XPos>
+																		<YPos>3.4182</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>41.61129</XPos>
+																		<YPos>4.70173</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>50</XPos>
+																		<YPos>15.20437</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -1832,6 +1918,30 @@
 												<Value>1</Value>
 											</ValueList>
 											<RTPCList>
+												<RTPC Name="" ID="{EF57E611-FD17-4F4C-B059-9CFD205F9CE3}" ShortID="922283505">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Amb_Height" ID="{5DFE7A22-E50F-4CFD-8F54-8455C39B0495}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{49DB76F6-5273-4392-A237-DCAF71C44DD5}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>50</XPos>
+																<YPos>4.80601</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
 												<RTPC Name="" ID="{7CC9EEF7-B8EF-4B20-B49E-A62E201C5708}" ShortID="482006771">
 													<ReferenceList>
 														<Reference Name="ControlInput">
