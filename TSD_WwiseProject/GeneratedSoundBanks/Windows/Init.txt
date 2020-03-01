@@ -48,11 +48,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	17995648	GlobalReverb			\Default Work Unit\Master Audio Bus\GlobalReverb	
 	348022313	Room01			\Default Work Unit\Master Audio Bus\Room01	
-	941753577	MidBus			\Default Work Unit\Master Audio Bus\MidBus	
-	1819748220	ER			\Default Work Unit\Master Audio Bus\ER	
+	2215942509	AUX_SpectrumData			\Default Work Unit\Master Audio Bus\AUX_SpectrumData	
 	3161908922	Main			\Default Work Unit\Master Audio Bus\Main	
+	3665378617	AUX_EarlyReflections			\Default Work Unit\Master Audio Bus\AUX_EarlyReflections	
+	3941844621	AUX_GlobalReverb			\Default Work Unit\Master Audio Bus\AUX_GlobalReverb	
 
 Effect plug-ins	ID	Name	Type				Notes
 	33756152	FX_SpectrumData_EQ	Wwise Parametric EQ			

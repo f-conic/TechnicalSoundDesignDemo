@@ -19,17 +19,7 @@
 						<Action Name="" ID="{C888A0A6-5223-4A15-936A-BD53CD5E9DA9}" ShortID="721748617">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{E27F81A2-900B-4B63-9152-78BA5F453974}" ShortID="457644144">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="41"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Radio_Drums" ID="{5B7C0DA5-67C9-4134-9C56-EE83BD7E709F}" WorkUnitID="{8290D5A5-C4FE-422F-8815-86C871947E66}"/>
+									<ObjectRef Name="VO_Monologue" ID="{40942CC2-0480-4D75-A9F8-CBB9E4E1A4B8}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

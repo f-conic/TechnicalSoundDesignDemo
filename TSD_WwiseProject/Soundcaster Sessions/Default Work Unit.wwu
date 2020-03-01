@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{31AE1033-F9CD-4C1C-9664-260D6E784E7E}" SchemaVersion="97">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{31AE1033-F9CD-4C1C-9664-260D6E784E7E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{31AE1033-F9CD-4C1C-9664-260D6E784E7E}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="DefaultSoundcasterSession" ID="{C87EF7C2-F198-482C-813B-2DBD00D7FD37}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="VO_Monologue" ID="{40942CC2-0480-4D75-A9F8-CBB9E4E1A4B8}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_SpectrumData" ID="{2DC0856E-29EE-48E1-8366-1BF21373D632}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Amb_DirectionalWind_Vol" ID="{9DEDC812-F7CF-48F8-95B2-C57BDBF1A735}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Incidental" ID="{190B8174-9BD1-4BBC-BBF1-0D682F1501B5}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Amb_Height" ID="{5DFE7A22-E50F-4CFD-8F54-8455C39B0495}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_WindDirection" ID="{8A51D9F7-8422-4EB6-8AA2-8502185F1677}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Explosion_Close_Distance" ID="{D0B3DCDC-D7D7-4F4B-8B45-62D3AA0C0FCB}"/>
+							<Value>27.7182235834609</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Inactive" ID="{7ABDBEF3-4BD7-4A7E-9B9D-753CF4F26CA9}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
+						<CurrentSwitchRef Name="Test32" ID="{0902AC09-AF71-4302-A704-3EE8B3688689}"/>
+						<CurrentSwitchRef Name="Far" ID="{DB62DD6D-5FC6-4543-A461-86532BA18103}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

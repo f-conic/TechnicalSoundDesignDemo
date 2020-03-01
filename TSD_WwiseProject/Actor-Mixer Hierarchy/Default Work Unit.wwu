@@ -126,7 +126,7 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -588,13 +588,13 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend1">
-									<ObjectRef Name="GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -722,10 +722,10 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -778,7 +778,7 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="SwitchGroupOrStateGroup">
 									<ObjectRef Name="SG_Explosion" ID="{FD6D450D-23A5-4D2C-8BBD-E66E34BE1C36}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
@@ -1789,6 +1789,9 @@
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
 													<RTPCList>
 														<RTPC Name="" ID="{EED7A0F4-095A-4774-BF3D-786C47B39D90}" ShortID="159939466">
 															<ReferenceList>
@@ -2079,7 +2082,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2162,13 +2165,13 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="ER" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend1">
-									<ObjectRef Name="GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2191,6 +2194,336 @@
 								<ActiveSource Name="drum_loop_normalized" ID="{70F17C2E-D360-4297-9F24-1B70903573DF}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="VO_Monologue" ID="{40942CC2-0480-4D75-A9F8-CBB9E4E1A4B8}" ShortID="456097792">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
+								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismResetPlaylistEachPlay" Type="bool" Value="False"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="ReflectionsVolume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{C63CBF24-43FB-49FF-A78E-BF4FFAFCA458}" ShortID="738273832">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F93AB28B-F9E0-4932-8A4F-31B32860091B}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-26.08949</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>50</XPos>
+														<YPos>-12</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<Custom>
+										<Attenuation Name="Attenuation (Custom)" ID="{E050BEF3-2EB1-4329-8A15-D080634CA946}" ShortID="291391666">
+											<PropertyList>
+												<Property Name="RadiusMax" Type="Real64" Value="75"/>
+											</PropertyList>
+											<CurveUsageInfoList>
+												<VolumeDryUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+														<Curve Name="VolumeDry" ID="{C979956B-0466-4C3F-8E84-2574C1BE9046}">
+															<PropertyList>
+																<Property Name="Flags" Type="int32" Value="3"/>
+															</PropertyList>
+															<PointList>
+																<Point>
+																	<XPos>0</XPos>
+																	<YPos>0</YPos>
+																	<Flags>5</Flags>
+																</Point>
+																<Point>
+																	<XPos>22.3607</XPos>
+																	<YPos>-5.005</YPos>
+																	<Flags>0</Flags>
+																</Point>
+																<Point>
+																	<XPos>34.89736</XPos>
+																	<YPos>-8.858</YPos>
+																	<Flags>0</Flags>
+																</Point>
+																<Point>
+																	<XPos>45.60117</XPos>
+																	<YPos>-14.91232</YPos>
+																	<Flags>0</Flags>
+																</Point>
+																<Point>
+																	<XPos>54.98534</XPos>
+																	<YPos>-27.187</YPos>
+																	<Flags>0</Flags>
+																</Point>
+																<Point>
+																	<XPos>75</XPos>
+																	<YPos>-200</YPos>
+																	<Flags>37</Flags>
+																</Point>
+															</PointList>
+														</Curve>
+													</CurveUsageInfo>
+												</VolumeDryUsage>
+												<VolumeWetGameUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetGameUsage>
+												<VolumeWetUserUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+												</VolumeWetUserUsage>
+												<LowPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</LowPassFilterUsage>
+												<HighPassFilterUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</HighPassFilterUsage>
+												<SpreadUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</SpreadUsage>
+												<FocusUsage>
+													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+												</FocusUsage>
+											</CurveUsageInfoList>
+										</Attenuation>
+									</Custom>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="ReflectionsAuxSend">
+									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="VO_Monologue_01" ID="{2FCA513E-7645-4B29-AE03-3B9A6F1D68E6}" ShortID="817002662">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_01" ID="{0BF8131A-EEFF-4FC9-A3E8-D9A4A1AB50AE}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1016358054"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_01" ID="{0BF8131A-EEFF-4FC9-A3E8-D9A4A1AB50AE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_02" ID="{F5B1A6AC-ED38-49FB-B539-52183064CA5F}" ShortID="436649104">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_02" ID="{63C1F518-67D4-4875-B032-8828360E5A5B}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="940115870"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_02" ID="{63C1F518-67D4-4875-B032-8828360E5A5B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_03" ID="{3247C4FE-CF76-44FD-9052-CAF21896D34F}" ShortID="986382669">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_03" ID="{69FFE9B1-A289-447A-A4EB-F29754F96A11}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="699095822"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_03" ID="{69FFE9B1-A289-447A-A4EB-F29754F96A11}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_04" ID="{D8E06041-C99E-4763-8383-943DB892F06A}" ShortID="286715291">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_04" ID="{EC02058C-F94B-46BF-8314-FDB82BE48A72}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="47675849"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_04" ID="{EC02058C-F94B-46BF-8314-FDB82BE48A72}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_05" ID="{2AB6C3F4-73A9-421B-B775-6123C5434FB6}" ShortID="815507436">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_05" ID="{57715105-D65B-4DE5-8D00-431F70C89BF0}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="678969568"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_05" ID="{57715105-D65B-4DE5-8D00-431F70C89BF0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_06" ID="{9C490095-152D-4373-B748-627FE089F00A}" ShortID="467825000">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_06" ID="{25985E5A-602B-4EF1-9697-C6B4ACBAFD9E}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="127579209"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_06" ID="{25985E5A-602B-4EF1-9697-C6B4ACBAFD9E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_07" ID="{3959E841-D765-4701-9BDF-01C61B85286A}" ShortID="836620716">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_07" ID="{E738A8E4-2F44-46B7-87D6-51BFF8851531}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="770032080"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_07" ID="{E738A8E4-2F44-46B7-87D6-51BFF8851531}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VO_Monologue_08" ID="{BF6B6B07-B1FB-4142-B117-3795DAC1CB75}" ShortID="358655446">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VO_Monologue_08" ID="{D8007F01-82A3-4621-AB41-600055BFC71C}">
+											<Language>SFX</Language>
+											<AudioFile>VO_Monologue_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="618692327"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VO_Monologue_08" ID="{D8007F01-82A3-4621-AB41-600055BFC71C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<Playlist>
+								<ItemRef Name="VO_Monologue_01" ID="{2FCA513E-7645-4B29-AE03-3B9A6F1D68E6}"/>
+								<ItemRef Name="VO_Monologue_02" ID="{F5B1A6AC-ED38-49FB-B539-52183064CA5F}"/>
+								<ItemRef Name="VO_Monologue_03" ID="{3247C4FE-CF76-44FD-9052-CAF21896D34F}"/>
+								<ItemRef Name="VO_Monologue_08" ID="{BF6B6B07-B1FB-4142-B117-3795DAC1CB75}"/>
+								<ItemRef Name="VO_Monologue_04" ID="{D8E06041-C99E-4763-8383-943DB892F06A}"/>
+								<ItemRef Name="VO_Monologue_05" ID="{2AB6C3F4-73A9-421B-B775-6123C5434FB6}"/>
+								<ItemRef Name="VO_Monologue_06" ID="{9C490095-152D-4373-B748-627FE089F00A}"/>
+								<ItemRef Name="VO_Monologue_07" ID="{3959E841-D765-4701-9BDF-01C61B85286A}"/>
+							</Playlist>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<Sound Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" ShortID="254154156">

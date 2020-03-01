@@ -17,6 +17,8 @@ public class WorldGeometryBuilder : MonoBehaviour
 		    var aKGameObject = cube.AddComponent<AkGameObj>();
 		    cube.AddComponent<Rigidbody>();
 			cubeList.Add(cube);
+
+			surfaceReflector.OcclusionValues[0] = 0.34f;
 	    }
 
 	    if (cube != null)
