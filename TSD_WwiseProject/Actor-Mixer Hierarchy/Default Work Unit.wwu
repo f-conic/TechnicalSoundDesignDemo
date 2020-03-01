@@ -475,6 +475,34 @@
 									</ValueList>
 								</Property>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{C595EEAD-2EC5-493F-9F3D-5B5ACC701D57}" ShortID="411336376">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{202D6505-6304-4116-B534-CF1E6D02F5AC}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-26.08949</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>50</XPos>
+														<YPos>-12</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-3</Value>
@@ -564,6 +592,9 @@
 								</Reference>
 								<Reference Name="UserAuxSend0">
 									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1609,7 +1640,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>10</Value>
+										<Value>7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1746,7 +1777,7 @@
 																<PointList>
 																	<Point>
 																		<XPos>0</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>5</Flags>
 																		<SegmentShape>Log2</SegmentShape>
 																	</Point>
@@ -1797,6 +1828,9 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="82"/>
 										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
 											<RTPCList>
 												<RTPC Name="" ID="{7CC9EEF7-B8EF-4B20-B49E-A62E201C5708}" ShortID="482006771">
 													<ReferenceList>
@@ -1905,9 +1939,37 @@
 									</ValueList>
 								</Property>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{1398D16C-85E6-442C-9525-1295A902BAA3}" ShortID="1068187552">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F64B09E7-2059-4450-98A1-7079F9BCC617}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-21.48169</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>50</XPos>
+														<YPos>-12</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>6</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1995,6 +2057,9 @@
 								<Reference Name="UserAuxSend0">
 									<ObjectRef Name="MidBus" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="radio_drums" ID="{A7171950-CC90-4E79-A28D-515A6E491606}">
@@ -2004,9 +2069,16 @@
 										<MediaID ID="415827580"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="drum_loop_normalized" ID="{70F17C2E-D360-4297-9F24-1B70903573DF}">
+									<Language>SFX</Language>
+									<AudioFile>drum_loop_normalized.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="858772751"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="radio_drums" ID="{A7171950-CC90-4E79-A28D-515A6E491606}" Platform="Linked"/>
+								<ActiveSource Name="drum_loop_normalized" ID="{70F17C2E-D360-4297-9F24-1B70903573DF}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

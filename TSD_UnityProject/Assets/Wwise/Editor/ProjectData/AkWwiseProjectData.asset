@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586186097107630597
+    m_lastTime: -8586185457662678269
     List:
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
@@ -217,6 +217,17 @@ MonoBehaviour:
       - ElementName: ER
         ObjectType: 1
       Path: Default Work Unit\Master Audio Bus\ER
+    - name: GlobalReverb
+      guid: 7d8be0e3e4d122418f6d02ef4423621b
+      id: 17995648
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: GlobalReverb
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\GlobalReverb
     - name: Main
       guid: 7eaec343dc79e147bd18f135ee8fe3ab
       id: 3161908922
@@ -395,7 +406,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 87069df8813005449780d042e7e2ca09
     GuidInternal: 
-    m_lastTime: -8586186192216045539
+    m_lastTime: -8586185469361979544
     List:
     - name: RTPC_Amb_DirectionalWind_Vol
       guid: 12c8ed9dcff7f84895b2c57bdbf1a735
@@ -451,6 +462,15 @@ MonoBehaviour:
       - ElementName: RTPC_Incidental_Delay
         ObjectType: 13
       Path: Default Work Unit\RTPC_Incidental_Delay
+    - name: RTPC_SoundEmitter_GlobalReverb_Vol
+      guid: 38f6036d3617f44aa54d43d9462f744e
+      id: 2351799150
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: RTPC_SoundEmitter_GlobalReverb_Vol
+        ObjectType: 13
+      Path: Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol
     - name: RTPC_SpectrumData
       guid: 6e85c02dee29e14883661bf21373d632
       id: 3602773598

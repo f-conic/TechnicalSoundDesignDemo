@@ -34,6 +34,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1873957695	Anechoic			\Factory Reflect Acoustic Textures\Textures\Anechoic	
 	1970351858	Fabric			\Factory Reflect Acoustic Textures\Textures\Fabric	
 	2058049674	Wood			\Factory Reflect Acoustic Textures\Textures\Wood	
+	2351799150	RTPC_SoundEmitter_GlobalReverb_Vol			\Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol	
 	2412606308	Carpet			\Factory Reflect Acoustic Textures\Textures\Carpet	
 	2637588553	Tile			\Factory Reflect Acoustic Textures\Textures\Tile	
 	2928161104	Curtains			\Factory Reflect Acoustic Textures\Textures\Curtains	
@@ -47,6 +48,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	17995648	GlobalReverb			\Default Work Unit\Master Audio Bus\GlobalReverb	
 	348022313	Room01			\Default Work Unit\Master Audio Bus\Room01	
 	941753577	MidBus			\Default Work Unit\Master Audio Bus\MidBus	
 	1819748220	ER			\Default Work Unit\Master Audio Bus\ER	
@@ -54,6 +56,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	33756152	FX_SpectrumData_EQ	Wwise Parametric EQ			
+	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
 	602546716	Room_Large	Wwise RoomVerb			
 	780838069	New_Wwise_Meter	Wwise Meter			
 	1281733863	WwiseReflection	Wwise Reflect			
