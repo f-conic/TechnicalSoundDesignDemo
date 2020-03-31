@@ -4681,6 +4681,61 @@ PrefabInstance:
       propertyPath: objectsToIgnore.Array.data[3]
       value: 
       objectReference: {fileID: 5873545493776002336}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: ShakeAmplitude
+      value: 4.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: ShakeFrequency
+      value: 4.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: ShakeDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: gizmoColor.r
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: gizmoColor.g
+      value: 0.12517802
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: gizmoColor.b
+      value: 0.12517802
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: gizmoColor.a
+      value: 0.34117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: DebugSphereColor.r
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: DebugSphereColor.g
+      value: 0.12517802
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: DebugSphereColor.b
+      value: 0.12517802
+      objectReference: {fileID: 0}
+    - target: {fileID: 148006188183128894, guid: 187cebe1b0f043d47be44e812369dc8a,
+        type: 3}
+      propertyPath: DebugSphereColor.a
+      value: 0.34117648
+      objectReference: {fileID: 0}
     - target: {fileID: 148006188183128895, guid: 187cebe1b0f043d47be44e812369dc8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5723,7 +5778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924254767}
   m_LocalRotation: {x: -0.00034630427, y: 0.9996351, z: 0.015805272, w: 0.021902345}
-  m_LocalPosition: {x: 25.7, y: 33.4, z: 50.4}
+  m_LocalPosition: {x: 20.28, y: 29.49, z: 174.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1155034823}
@@ -12835,8 +12890,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5873545493665739763}
-  m_LocalRotation: {x: -0.0063683647, y: 0.9151606, z: 0.0144696385, w: 0.4027793}
-  m_LocalPosition: {x: 97.29707, y: 5.8732758, z: -60.777855}
+  m_LocalRotation: {x: -0.004147888, y: 0.9780738, z: -0.01957078, w: -0.20729563}
+  m_LocalPosition: {x: 116.213066, y: 3.3999996, z: -43.225346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5873545494098907322}

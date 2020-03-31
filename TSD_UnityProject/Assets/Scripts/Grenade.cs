@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class Grenade : MonoBehaviour
 {
@@ -12,9 +13,16 @@ public class Grenade : MonoBehaviour
 	public GameObject GrenadeVFX;
 	public GameObject[] objectsToIgnore;
 
+	[Header("Camera Shaker")]
+	public float ShakeAmplitude;
+	public float ShakeFrequency;
+	public float ShakeDuration;
+	private float ShakeElapsedTime;
+
 	private List<GameObject> instantiatedGrenadesVFX = new List<GameObject>();
 	private GameObject virtualCamera;
 	private bool isExploding;
+	private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
 
 	private Collider[] CheckIncidental(Vector3 center, float radius)
 	{
@@ -22,7 +30,7 @@ public class Grenade : MonoBehaviour
 
 		return hitColliders;
 	}
-	
+
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.G))
@@ -30,6 +38,12 @@ public class Grenade : MonoBehaviour
 			// Get the active virtual camera because of Cinemachine.
 			virtualCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera
 				.VirtualCameraGameObject;
+
+			if (virtualCamera != null)
+			{
+				var cinemachineVirtualCamera = virtualCamera.GetComponent<CinemachineVirtualCamera>();
+				virtualCameraNoise = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+			}
 
 			var obstructionState = GetObstructionState();
 
@@ -78,9 +92,10 @@ public class Grenade : MonoBehaviour
         instantiatedGrenadesVFX.Add(Instantiate(GrenadeVFX, transform.position, transform.rotation));
 		var explosionDistanceToCamera = Vector3.Distance(go.transform.position, virtualCamera.transform.position);
 
-        if (explosionDistanceToCamera < 20f)
-        {
-	        // Don't shake when we're far away from the explosion.
+		// Only shake when we're close to the explosion.
+		if (explosionDistanceToCamera < 20f)
+		{
+			StartCoroutine(ShakeCamera(ShakeDuration));
 		}
 
 		if (!isObstructed)
@@ -126,6 +141,18 @@ public class Grenade : MonoBehaviour
 		}
 	}
 
+	IEnumerator ShakeCamera(float shakeDuration)
+	{
+		virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
+		virtualCameraNoise.m_FrequencyGain = ShakeFrequency;
+
+		yield return new WaitForSeconds(shakeDuration);
+
+		virtualCameraNoise.m_AmplitudeGain = 0f;
+		ShakeElapsedTime = 0f;
+	}
+
+	public Color DebugSphereColor;
 	IEnumerator SphereDrawCooldown()
 	{
 		var rend = GetComponent<Renderer>();
@@ -134,11 +161,11 @@ public class Grenade : MonoBehaviour
 		{
 			rend.enabled = false;
 
-			Gizmos.color = Color.cyan;
-			Gizmos.DrawWireSphere(transform.position, SphereOverlapRadius);
+			Gizmos.color = DebugSphereColor;
+			Gizmos.DrawSphere(transform.position, SphereOverlapRadius);
 		}
 
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(4f);
 
 		rend.enabled = true;
 		isExploding = false;
