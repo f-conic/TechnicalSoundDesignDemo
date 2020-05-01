@@ -3,18 +3,7 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{8290D5A5-C4FE-422F-8815-86C871947E66}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Kit014Break014" ID="{3B9C298C-1209-4310-BFE9-619164191B19}">
-					<ChildrenList>
-						<Action Name="" ID="{2219090D-3D31-4D0A-A2B0-AABCC8700E89}" ShortID="151797102">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Kit014Break014" ID="{143921E9-9693-4085-80D8-D3301FD73B3D}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Play_Discussion" ID="{1F42A623-8DB5-4E6D-A50B-89040AC830C3}">
+				<Event Name="vo_narrator" ID="{1F42A623-8DB5-4E6D-A50B-89040AC830C3}">
 					<ChildrenList>
 						<Action Name="" ID="{C888A0A6-5223-4A15-936A-BD53CD5E9DA9}" ShortID="721748617">
 							<ReferenceList>
@@ -25,7 +14,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Incidental_Glass" ID="{FA961038-3CD2-4DE5-A2CA-53FAB8749442}">
+				<Event Name="incidental_glass" ID="{FA961038-3CD2-4DE5-A2CA-53FAB8749442}">
 					<ChildrenList>
 						<Action Name="" ID="{AA07FD47-8C64-4599-80E9-EEB54D5E0698}" ShortID="718913697">
 							<ReferenceList>
@@ -41,13 +30,13 @@
 						<Action Name="" ID="{C03F49D0-CFBD-4561-8F38-EC1C3B877808}" ShortID="420151916">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Explosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+									<ObjectRef Name="GrenadeExplosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Incidental_Metal" ID="{6527D714-EE36-4A0C-AB47-9DB933E9C58D}">
+				<Event Name="incidental_metal" ID="{6527D714-EE36-4A0C-AB47-9DB933E9C58D}">
 					<ChildrenList>
 						<Action Name="" ID="{D28C0397-1F45-4990-926F-056050293522}" ShortID="127250645">
 							<ReferenceList>
@@ -58,18 +47,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_AMB_base_loop" ID="{4BD635BC-5C51-4FE4-BF1F-8BC47C4F5BB9}">
-					<ChildrenList>
-						<Action Name="" ID="{D8244CCD-7B73-4D21-8BEA-615F9A964A55}" ShortID="893986505">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="AMB_main" ID="{8635057A-049C-403F-B0DB-3916C70C62A9}">
+				<Event Name="amb_main" ID="{8635057A-049C-403F-B0DB-3916C70C62A9}">
 					<ChildrenList>
 						<Action Name="" ID="{05E8119D-2317-4A11-A5F2-E1114C268E7F}" ShortID="791682870">
 							<ReferenceList>
@@ -98,13 +76,13 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="AMB_DirectionalWind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}" WorkUnitID="{8290D5A5-C4FE-422F-8815-86C871947E66}"/>
+									<ObjectRef Name="amb_directional_wind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}" WorkUnitID="{8290D5A5-C4FE-422F-8815-86C871947E66}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="AMB_DirectionalWind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}">
+				<Event Name="amb_directional_wind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}">
 					<ChildrenList>
 						<Action Name="" ID="{4BF708F9-627B-474B-AC59-8C0F0A247977}" ShortID="898540681">
 							<ReferenceList>
@@ -122,7 +100,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Radio_Drums" ID="{5B7C0DA5-67C9-4134-9C56-EE83BD7E709F}">
+				<Event Name="radio_drums" ID="{5B7C0DA5-67C9-4134-9C56-EE83BD7E709F}">
 					<ChildrenList>
 						<Action Name="" ID="{6164F5A6-DB11-4833-AAE7-4EAD7CBBFDFA}" ShortID="564700358">
 							<ReferenceList>

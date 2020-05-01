@@ -195,7 +195,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 27772bff316cb7428453f32723e3bde3
     GuidInternal: 
-    m_lastTime: -8586185171742148254
+    m_lastTime: -8586132605953258056
     List:
     - name: AUX_EarlyReflections
       guid: 748cdbb146e58842b23b4321f0b61b40
@@ -219,17 +219,17 @@ MonoBehaviour:
       - ElementName: AUX_GlobalReverb
         ObjectType: 1
       Path: Default Work Unit\Master Audio Bus\AUX_GlobalReverb
-    - name: AUX_SpectrumData
+    - name: AUX_SpectralData
       guid: 4d668266fcdf6440b353567ae0415939
-      id: 2215942509
+      id: 2195416432
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Master Audio Bus
         ObjectType: 2
-      - ElementName: AUX_SpectrumData
+      - ElementName: AUX_SpectralData
         ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\AUX_SpectrumData
+      Path: Default Work Unit\Master Audio Bus\AUX_SpectralData
     - name: Bus
       guid: ec68b5df96e7c04eac57a08063a26232
       id: 714721605
@@ -259,17 +259,6 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
-    - name: Room01
-      guid: 91d308564790ff409bbcf084ff2220ee
-      id: 348022313
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Master Audio Bus
-        ObjectType: 2
-      - ElementName: Room01
-        ObjectType: 1
-      Path: Default Work Unit\Master Audio Bus\Room01
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -291,29 +280,29 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a5d59082fec42f42881586c871947e66
     GuidInternal: 
-    m_lastTime: -8586185159628099260
+    m_lastTime: -8586132604542404816
     List:
-    - name: AMB_DirectionalWind
+    - name: amb_directional_wind
       guid: af0d80c0356d7148ab86fca1fdac45b0
-      id: 2049558012
+      id: 3148777447
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: AMB_DirectionalWind
+      - ElementName: amb_directional_wind
         ObjectType: 3
-      Path: Default Work Unit\AMB_DirectionalWind
+      Path: Default Work Unit\amb_directional_wind
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: AMB_main
+    - name: amb_main
       guid: 7a0535869c043f40b0db3916c70c62a9
       id: 3004847309
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: AMB_main
+      - ElementName: amb_main
         ObjectType: 3
-      Path: Default Work Unit\AMB_main
+      Path: Default Work Unit\amb_main
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -329,78 +318,54 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 9.107959
       minDuration: 1.0365
-    - name: Incidental_Glass
+    - name: incidental_glass
       guid: 381096fad23ce54da2ca53fab8749442
       id: 976947025
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Incidental_Glass
+      - ElementName: incidental_glass
         ObjectType: 3
-      Path: Default Work Unit\Incidental_Glass
+      Path: Default Work Unit\incidental_glass
       maxAttenuation: 100
       maxDuration: 1.953375
       minDuration: 1.071208
-    - name: Incidental_Metal
+    - name: incidental_metal
       guid: 14d7276536ee0c4aab479db933e9c58d
       id: 2717289804
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Incidental_Metal
+      - ElementName: incidental_metal
         ObjectType: 3
-      Path: Default Work Unit\Incidental_Metal
+      Path: Default Work Unit\incidental_metal
       maxAttenuation: 100
       maxDuration: 11.558437
       minDuration: 7.143667
-    - name: Play_AMB_base_loop
-      guid: bc35d64b515ce44fbf1f8bc47c4f5bb9
-      id: 892077403
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_AMB_base_loop
-        ObjectType: 3
-      Path: Default Work Unit\Play_AMB_base_loop
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Discussion
-      guid: 23a6421fb58d6d4ea50b89040ac830c3
-      id: 1444333482
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_Discussion
-        ObjectType: 3
-      Path: Default Work Unit\Play_Discussion
-      maxAttenuation: 75
-      maxDuration: 13.784667
-      minDuration: 2.995958
-    - name: Play_Kit014Break014
-      guid: 8c299c3b09121043bfe9619164191b19
-      id: 713469781
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Play_Kit014Break014
-        ObjectType: 3
-      Path: Default Work Unit\Play_Kit014Break014
-      maxAttenuation: 20
-      maxDuration: -1
-      minDuration: -1
-    - name: Radio_Drums
+    - name: radio_drums
       guid: a50d7c5bc96734419c56ee83bd7e709f
       id: 2352049368
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Radio_Drums
+      - ElementName: radio_drums
         ObjectType: 3
-      Path: Default Work Unit\Radio_Drums
+      Path: Default Work Unit\radio_drums
       maxAttenuation: 75
       maxDuration: -1
       minDuration: -1
+    - name: vo_narrator
+      guid: 23a6421fb58d6d4ea50b89040ac830c3
+      id: 1473084324
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: vo_narrator
+        ObjectType: 3
+      Path: Default Work Unit\vo_narrator
+      maxAttenuation: 75
+      maxDuration: 13.784667
+      minDuration: 2.995958
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -551,51 +516,8 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 24c4b447a58db14ba4f91ce583b21be8
     GuidInternal: 
-    m_lastTime: -8586196863719751636
+    m_lastTime: -8586132605953037998
     List:
-    - name: Incidental_Switch_Group
-      guid: 7f95aa530c6336499a17f8610f594ca9
-      id: 3521844023
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Incidental_Switch_Group
-        ObjectType: 11
-      Path: Default Work Unit\Incidental_Switch_Group
-      values:
-      - name: Switch_01
-        guid: 7d4c5d52b3e4cf49bfa6ccd32aa009f4
-        id: 366150593
-        PathAndIcons:
-        - ElementName: Switch_01
-          ObjectType: 10
-      - name: Switch_02
-        guid: 6fe97acbd6057741a5482b410631663c
-        id: 366150594
-        PathAndIcons:
-        - ElementName: Switch_02
-          ObjectType: 10
-      - name: Switch_03
-        guid: 5216fc3a6a6de244b4cbbe9bb3eb2866
-        id: 366150595
-        PathAndIcons:
-        - ElementName: Switch_03
-          ObjectType: 10
-      - name: Switch_04
-        guid: 3bfdcfae53fa874f96764993276e5329
-        id: 366150596
-        PathAndIcons:
-        - ElementName: Switch_04
-          ObjectType: 10
-      - name: Switch_05
-        guid: 66785b6b4bf0f0429948be7ee26c6b72
-        id: 366150597
-        PathAndIcons:
-        - ElementName: Switch_05
-          ObjectType: 10
-      ValueGuids: []
-      ValueIcons: []
-      valuesInternal: []
     - name: SG_Explosion
       guid: 0d456dfda5232c4d8bbde66e34be1c36
       id: 189681303
@@ -627,21 +549,45 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
-    - name: TEst
-      guid: 75f8c99ed40df04ab223990b8c57fad3
-      id: 3157003241
+    - name: SG_Incidentals
+      guid: 7f95aa530c6336499a17f8610f594ca9
+      id: 2063362250
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: TEst
+      - ElementName: SG_Incidentals
         ObjectType: 11
-      Path: Default Work Unit\TEst
+      Path: Default Work Unit\SG_Incidentals
       values:
-      - name: Test32
-        guid: 09ac020971af0243a7043ee8b3688689
-        id: 110113626
+      - name: Switch_01
+        guid: 7d4c5d52b3e4cf49bfa6ccd32aa009f4
+        id: 366150593
         PathAndIcons:
-        - ElementName: Test32
+        - ElementName: Switch_01
+          ObjectType: 10
+      - name: Switch_02
+        guid: 6fe97acbd6057741a5482b410631663c
+        id: 366150594
+        PathAndIcons:
+        - ElementName: Switch_02
+          ObjectType: 10
+      - name: Switch_03
+        guid: 5216fc3a6a6de244b4cbbe9bb3eb2866
+        id: 366150595
+        PathAndIcons:
+        - ElementName: Switch_03
+          ObjectType: 10
+      - name: Switch_04
+        guid: 3bfdcfae53fa874f96764993276e5329
+        id: 366150596
+        PathAndIcons:
+        - ElementName: Switch_04
+          ObjectType: 10
+      - name: Switch_05
+        guid: 66785b6b4bf0f0429948be7ee26c6b72
+        id: 366150597
+        PathAndIcons:
+        - ElementName: Switch_05
           ObjectType: 10
       ValueGuids: []
       ValueIcons: []

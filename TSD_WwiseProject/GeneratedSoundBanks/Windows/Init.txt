@@ -1,16 +1,16 @@
 Switch Group	ID	Name			Wwise Object Path	Notes
 	189681303	SG_Explosion			\Default Work Unit\SG_Explosion	
-	3521844023	Incidental_Switch_Group			\Default Work Unit\Incidental_Switch_Group	
+	2063362250	SG_Incidentals			\Default Work Unit\SG_Incidentals	
 
 Switch	ID	Name	Switch Group			Notes
 	1133794587	Near	SG_Explosion			
 	1182670505	Mid	SG_Explosion			
 	1183803292	Far	SG_Explosion			
-	366150593	Switch_01	Incidental_Switch_Group			
-	366150594	Switch_02	Incidental_Switch_Group			
-	366150595	Switch_03	Incidental_Switch_Group			
-	366150596	Switch_04	Incidental_Switch_Group			
-	366150597	Switch_05	Incidental_Switch_Group			
+	366150593	Switch_01	SG_Incidentals			
+	366150594	Switch_02	SG_Incidentals			
+	366150595	Switch_03	SG_Incidentals			
+	366150596	Switch_04	SG_Incidentals			
+	366150597	Switch_05	SG_Incidentals			
 
 State Group	ID	Name			Wwise Object Path	Notes
 	1133794587	Near			\Default Work Unit\Near	
@@ -48,8 +48,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	348022313	Room01			\Default Work Unit\Master Audio Bus\Room01	
-	2215942509	AUX_SpectrumData			\Default Work Unit\Master Audio Bus\AUX_SpectrumData	
+	2195416432	AUX_SpectralData			\Default Work Unit\Master Audio Bus\AUX_SpectralData	
 	3161908922	Main			\Default Work Unit\Master Audio Bus\Main	
 	3665378617	AUX_EarlyReflections			\Default Work Unit\Master Audio Bus\AUX_EarlyReflections	
 	3941844621	AUX_GlobalReverb			\Default Work Unit\Master Audio Bus\AUX_GlobalReverb	
@@ -57,7 +56,6 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	33756152	FX_SpectrumData_EQ	Wwise Parametric EQ			
 	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
-	602546716	Room_Large	Wwise RoomVerb			
 	780838069	New_Wwise_Meter	Wwise Meter			
 	1281733863	WwiseReflection	Wwise Reflect			
 	1865172355	New_Wwise_Gain	Wwise Gain			

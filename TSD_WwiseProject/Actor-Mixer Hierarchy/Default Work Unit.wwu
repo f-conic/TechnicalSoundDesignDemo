@@ -16,749 +16,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<BlendContainer Name="Outdoor" ID="{9FAEEDB7-FE1A-466A-9F8F-C3794062BC2C}" ShortID="361805585">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<SwitchContainer Name="Near" ID="{818CCEBC-8C92-40FF-A8A1-CED3B8D1FC1A}" ShortID="925705259">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<GroupingInfo/>
-								</SwitchContainer>
-							</ChildrenList>
-							<BlendTrackList>
-								<BlendTrack Name="Main" ID="{E8EBB1B4-D427-4938-A866-A1E7DC1E7803}" ShortID="166863753">
-									<PropertyList>
-										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="LayerCrossFadeControlInput">
-											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-										</Reference>
-									</ReferenceList>
-								</BlendTrack>
-								<BlendTrack Name="Debris" ID="{E2F821F1-A455-4DD4-BF0E-304E5D597507}" ShortID="423153269">
-									<PropertyList>
-										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<RTPCList>
-												<RTPC Name="" ID="{B3E61E43-1682-46E9-B2E7-BE7E868974C7}" ShortID="786288676">
-													<ReferenceList>
-														<Reference Name="ControlInput">
-															<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-														</Reference>
-													</ReferenceList>
-													<Curve Name="" ID="{413DAA59-E939-44DD-B9F4-E71BC024F572}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>0</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>47.85479</XPos>
-																<YPos>-200</YPos>
-																<Flags>0</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>-200</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</RTPC>
-											</RTPCList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="LayerCrossFadeControlInput">
-											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-										</Reference>
-									</ReferenceList>
-								</BlendTrack>
-								<BlendTrack Name="FX" ID="{08A9CA09-AB0B-47AA-8D8C-0958D87B6857}" ShortID="912655839">
-									<PropertyList>
-										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="LayerCrossFadeControlInput">
-											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-										</Reference>
-									</ReferenceList>
-								</BlendTrack>
-								<BlendTrack Name="Tail" ID="{BAA4B5EC-D4B9-471B-85BC-528417A041D8}" ShortID="374626645">
-									<PropertyList>
-										<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="LayerCrossFadeControlInput">
-											<ObjectRef Name="RTPC_Grenade_Explosion_Distance" ID="{1A4B55B0-AA90-4C00-8193-B0FC1488EC66}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-										</Reference>
-									</ReferenceList>
-								</BlendTrack>
-							</BlendTrackList>
-						</BlendContainer>
-						<SwitchContainer Name="Grenade_Explosion" ID="{5289B99C-9B80-4CC1-8FB0-76813A34168B}" ShortID="356578839">
-							<PropertyList>
-								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<BlendContainer Name="Indoor" ID="{692266C4-9F9E-41AF-B422-E0C2DE6693E7}" ShortID="465559693">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-								</BlendContainer>
-							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="Indoor" ID="{692266C4-9F9E-41AF-B422-E0C2DE6693E7}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-							</GroupingInfo>
-						</SwitchContainer>
-						<SwitchContainer Name="Incidentals_Glass" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" ShortID="444020363">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="InitialDelay" Type="Real64">
-									<RTPCList>
-										<RTPC Name="" ID="{1ECA6487-63D0-4669-86D8-8D6B9C74A816}" ShortID="103660936">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{8EC06B35-0362-4BDF-AD21-6A836BE6A424}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="1"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>0</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>1</XPos>
-														<YPos>1</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-									</RTPCList>
-								</Property>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>20</Value>
-									</ValueList>
-								</Property>
-								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}" ShortID="848570435">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_generic_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="621160400"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}" ShortID="942504018">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_generic_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="820830402"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}" ShortID="479966419">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_generic_03.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="591728996"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}" ShortID="196683254">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_generic_04.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="657504781"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}" ShortID="751592815">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_generic_05.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="92003061"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
-										<ItemList>
-											<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
-										<ItemList>
-											<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
-										<ItemList>
-											<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
-										<ItemList>
-											<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
-										<ItemList>
-											<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
-						<Sound Name="Hand Mortar Small Close" ID="{74F863A4-62B6-4777-A828-388A572B3DE1}" ShortID="609391094">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-7</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
-										<Attenuation Name="New Attenuation (Custom)" ID="{061A1FE0-1CBA-4553-8DDA-0FDB275EA93B}" ShortID="1019417098">
-											<PropertyList>
-												<Property Name="RadiusMax" Type="Real64" Value="20"/>
-											</PropertyList>
-											<CurveUsageInfoList>
-												<VolumeDryUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-														<Curve Name="VolumeDry" ID="{C30EA7DE-AA4F-4965-B6E8-EDB22EAC0508}">
-															<PropertyList>
-																<Property Name="Flags" Type="int32" Value="3"/>
-															</PropertyList>
-															<PointList>
-																<Point>
-																	<XPos>0</XPos>
-																	<YPos>0</YPos>
-																	<Flags>5</Flags>
-																</Point>
-																<Point>
-																	<XPos>20</XPos>
-																	<YPos>-45.24902</YPos>
-																	<Flags>37</Flags>
-																</Point>
-															</PointList>
-														</Curve>
-													</CurveUsageInfo>
-												</VolumeDryUsage>
-												<VolumeWetGameUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-												</VolumeWetGameUsage>
-												<VolumeWetUserUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-												</VolumeWetUserUsage>
-												<LowPassFilterUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</LowPassFilterUsage>
-												<HighPassFilterUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</HighPassFilterUsage>
-												<SpreadUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</SpreadUsage>
-												<FocusUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</FocusUsage>
-											</CurveUsageInfoList>
-										</Attenuation>
-									</Custom>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.014875379807481"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.983983840487806"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.80948137842467"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Hand Mortar Small Close.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="858623284"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Hand Mortar Small Close" ID="{60BF2FB9-58AE-4E57-9621-17F743B9DA7F}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Discussion" ID="{C8097501-901A-4798-83C3-B15D0E30E644}" ShortID="466059799">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
-								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
-								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
-								<Property Name="ReflectionsVolume" Type="Real64">
-									<ValueList>
-										<Value>-5</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-								<Property Name="UserAuxSendVolume1" Type="Real64">
-									<RTPCList>
-										<RTPC Name="" ID="{C595EEAD-2EC5-493F-9F3D-5B5ACC701D57}" ShortID="411336376">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{202D6505-6304-4116-B534-CF1E6D02F5AC}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="3"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>-26.08949</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>50</XPos>
-														<YPos>-12</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-									</RTPCList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-3</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
-										<Attenuation Name="New Attenuation (Custom)" ID="{5FD871C7-DBFB-4A14-8831-C3A5B5C61E82}" ShortID="1066233423">
-											<PropertyList>
-												<Property Name="RadiusMax" Type="Real64" Value="75"/>
-											</PropertyList>
-											<CurveUsageInfoList>
-												<VolumeDryUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-														<Curve Name="VolumeDry" ID="{FB290F9C-D410-4C54-9C9B-B3EDFA8A1DE0}">
-															<PropertyList>
-																<Property Name="Flags" Type="int32" Value="3"/>
-															</PropertyList>
-															<PointList>
-																<Point>
-																	<XPos>0</XPos>
-																	<YPos>0</YPos>
-																	<Flags>5</Flags>
-																	<SegmentShape>Log1</SegmentShape>
-																</Point>
-																<Point>
-																	<XPos>23.0321426470588</XPos>
-																	<YPos>-5.00479</YPos>
-																	<Flags>0</Flags>
-																</Point>
-																<Point>
-																	<XPos>35.4265411764706</XPos>
-																	<YPos>-8.85814</YPos>
-																	<Flags>0</Flags>
-																</Point>
-																<Point>
-																	<XPos>45.8530808823529</XPos>
-																	<YPos>-16.21374</YPos>
-																	<Flags>0</Flags>
-																</Point>
-																<Point>
-																	<XPos>54.2654117647059</XPos>
-																	<YPos>-27.18721</YPos>
-																	<Flags>0</Flags>
-																</Point>
-																<Point>
-																	<XPos>75</XPos>
-																	<YPos>-200</YPos>
-																	<Flags>37</Flags>
-																</Point>
-															</PointList>
-														</Curve>
-													</CurveUsageInfo>
-												</VolumeDryUsage>
-												<VolumeWetGameUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-												</VolumeWetGameUsage>
-												<VolumeWetUserUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-												</VolumeWetUserUsage>
-												<LowPassFilterUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</LowPassFilterUsage>
-												<HighPassFilterUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</HighPassFilterUsage>
-												<SpreadUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</SpreadUsage>
-												<FocusUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</FocusUsage>
-											</CurveUsageInfoList>
-										</Attenuation>
-									</Custom>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="UserAuxSend1">
-									<ObjectRef Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Discussion" ID="{7B2A2DD2-35CA-4C26-ACFC-EF6A00A1211F}">
-									<Language>SFX</Language>
-									<AudioFile>Discussion.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="532335442"/>
-									</MediaIDList>
-								</AudioFileSource>
-								<AudioFileSource Name="test_discussion" ID="{4394664F-E069-40A1-AAD1-F0058F5ACA8C}">
-									<Language>SFX</Language>
-									<AudioFile>test_discussion.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="675560949"/>
-									</MediaIDList>
-								</AudioFileSource>
-								<AudioFileSource Name="speech" ID="{F92814F0-E6D0-4B85-AB92-A8ACB516D85E}">
-									<Language>SFX</Language>
-									<AudioFile>speech.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="784987366"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="speech" ID="{F92814F0-E6D0-4B85-AB92-A8ACB516D85E}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Kit014Break014" ID="{143921E9-9693-4085-80D8-D3301FD73B3D}" ShortID="89964159">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="EnableDiffraction" Type="bool" Value="True"/>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
-								<Property Name="OverrideEarlyReflections" Type="bool" Value="True"/>
-								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
-								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
-								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>6</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<Custom CreatedFrom="{D9F59600-44F2-4888-BBDC-0F58BF8850CA}">
-										<Attenuation Name="New Attenuation (Custom)" ID="{5EEA1A89-A502-4932-9E7F-3DF2F6ED077A}" ShortID="461634576">
-											<PropertyList>
-												<Property Name="ConeInnerAngle" Type="int32" Value="125"/>
-												<Property Name="ConeOuterAngle" Type="int32" Value="230"/>
-												<Property Name="ConeUse" Type="bool">
-													<ValueList>
-														<Value>True</Value>
-													</ValueList>
-												</Property>
-												<Property Name="RadiusMax" Type="Real64" Value="20"/>
-											</PropertyList>
-											<CurveUsageInfoList>
-												<VolumeDryUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-														<Curve Name="VolumeDry" ID="{FA58A39C-A89E-409E-AE02-BBD256A4BE03}">
-															<PropertyList>
-																<Property Name="Flags" Type="int32" Value="3"/>
-															</PropertyList>
-															<PointList>
-																<Point>
-																	<XPos>0</XPos>
-																	<YPos>0</YPos>
-																	<Flags>5</Flags>
-																	<SegmentShape>Exp1</SegmentShape>
-																</Point>
-																<Point>
-																	<XPos>9.93730270270271</XPos>
-																	<YPos>-7.63275</YPos>
-																	<Flags>0</Flags>
-																	<SegmentShape>Log1</SegmentShape>
-																</Point>
-																<Point>
-																	<XPos>20</XPos>
-																	<YPos>-45.24902</YPos>
-																	<Flags>37</Flags>
-																</Point>
-															</PointList>
-														</Curve>
-													</CurveUsageInfo>
-												</VolumeDryUsage>
-												<VolumeWetGameUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-												</VolumeWetGameUsage>
-												<VolumeWetUserUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
-												</VolumeWetUserUsage>
-												<LowPassFilterUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</LowPassFilterUsage>
-												<HighPassFilterUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</HighPassFilterUsage>
-												<SpreadUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</SpreadUsage>
-												<FocusUsage>
-													<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
-												</FocusUsage>
-											</CurveUsageInfoList>
-										</Attenuation>
-									</Custom>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="ReflectionsAuxSend">
-									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Kit014Break014" ID="{B27E3266-4433-4CDA-9C67-4042B6979E06}">
-									<Language>SFX</Language>
-									<AudioFile>Kit014Break014.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="68168911"/>
-									</MediaIDList>
-								</AudioFileSource>
-								<AudioFileSource Name="Discussion" ID="{CA37E942-16A4-42EE-B56E-761718609340}">
-									<Language>SFX</Language>
-									<AudioFile>Discussion.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="532335442"/>
-									</MediaIDList>
-								</AudioFileSource>
-								<AudioFileSource Name="jazz_loop" ID="{473996F1-5715-400C-BDCE-9F95B7DD6815}">
-									<Language>SFX</Language>
-									<AudioFile>jazz_loop.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="927844465"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<PositioningInfo>
-								<Position Name="" ID="{9AAC274D-0BE3-4A1C-8603-BDEC769FE1D3}"/>
-							</PositioningInfo>
-							<ActiveSourceList>
-								<ActiveSource Name="jazz_loop" ID="{473996F1-5715-400C-BDCE-9F95B7DD6815}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<SwitchContainer Name="Explosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" ShortID="8737914">
+						<SwitchContainer Name="GrenadeExplosion" ID="{CAD4DEDD-A2D0-44E2-B8EE-4C93EF34BEFA}" ShortID="8737914">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="EnableAttenuation" Type="bool" Value="False"/>
@@ -1456,186 +714,6 @@
 								</GroupingList>
 							</GroupingInfo>
 						</SwitchContainer>
-						<SwitchContainer Name="Incidentals_Metal" ID="{529A8E6F-6476-41DC-BD7A-013F5B8F24EF}" ShortID="948156587">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="2"/>
-								<Property Name="InitialDelay" Type="Real64">
-									<RTPCList>
-										<RTPC Name="" ID="{BD2753E7-83F3-4634-B26A-9127FE7CAE12}" ShortID="570031376">
-											<ReferenceList>
-												<Reference Name="ControlInput">
-													<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
-												</Reference>
-											</ReferenceList>
-											<Curve Name="" ID="{D9ADC1BD-F3CB-4862-8942-D9D7EC01758C}">
-												<PropertyList>
-													<Property Name="Flags" Type="int32" Value="1"/>
-												</PropertyList>
-												<PointList>
-													<Point>
-														<XPos>0</XPos>
-														<YPos>0</YPos>
-														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>1</XPos>
-														<YPos>1</YPos>
-														<Flags>37</Flags>
-													</Point>
-												</PointList>
-											</Curve>
-										</RTPC>
-									</RTPCList>
-								</Property>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>20</Value>
-									</ValueList>
-								</Property>
-								<Property Name="OverridePositioning" Type="bool" Value="True"/>
-								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}" ShortID="843905793">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_metal_rumble_01" ID="{FDC23B65-FF6F-4149-A5D8-E6464054D8BD}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_metal_rumble_01.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="871310215"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_metal_rumble_01" ID="{FDC23B65-FF6F-4149-A5D8-E6464054D8BD}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="incidental_metal_rumble_02" ID="{EBD59848-C26B-4572-B984-B1FBD830D705}" ShortID="506350478">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_metal_rumble_02" ID="{F1072E05-AB1F-477B-A82C-035AA79D24F4}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_metal_rumble_02.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="866248490"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_metal_rumble_02" ID="{F1072E05-AB1F-477B-A82C-035AA79D24F4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}" ShortID="82713739">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="incidental_metal_rumble_03" ID="{69436D3C-4739-4285-9061-300529C7139E}">
-											<Language>SFX</Language>
-											<AudioFile>incidental_metal_rumble_03.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="326482332"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="incidental_metal_rumble_03" ID="{69436D3C-4739-4285-9061-300529C7139E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_metal_rumble_02" ID="{EBD59848-C26B-4572-B984-B1FBD830D705}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
-										<ItemList>
-											<ItemRef Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
-										<ItemList>
-											<ItemRef Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
-										<ItemList>
-											<ItemRef Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
-										<ItemList>
-											<ItemRef Name="incidental_metal_rumble_02" ID="{EBD59848-C26B-4572-B984-B1FBD830D705}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
-										<ItemList>
-											<ItemRef Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
 						<ActorMixer Name="AMB" ID="{2CD805A0-4380-47CB-A7D9-C684288B8685}" ShortID="863459735">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
@@ -2168,7 +1246,7 @@
 									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_SpectralData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend1">
 									<ObjectRef Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
@@ -2329,7 +1407,7 @@
 									<ObjectRef Name="AUX_EarlyReflections" ID="{B1DB8C74-E546-4288-B23B-4321F0B61B40}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+									<ObjectRef Name="AUX_SpectralData" ID="{6682664D-DFFC-4064-B353-567AE0415939}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
 								</Reference>
 								<Reference Name="UserAuxSend1">
 									<ObjectRef Name="AUX_GlobalReverb" ID="{E3E08B7D-D1E4-4122-8F6D-02EF4423621B}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
@@ -2524,92 +1602,425 @@
 								<ItemRef Name="VO_Monologue_07" ID="{3959E841-D765-4701-9BDF-01C61B85286A}"/>
 							</Playlist>
 						</RandomSequenceContainer>
+						<ActorMixer Name="Incidentals" ID="{9F0FB6A0-8699-4268-9AAB-913E919BBA32}" ShortID="522643917">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SwitchContainer Name="Incidentals_Glass" ID="{D9979EB1-198D-44D9-837F-CDCCC587E09A}" ShortID="444020363">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<RTPCList>
+												<RTPC Name="" ID="{1ECA6487-63D0-4669-86D8-8D6B9C74A816}" ShortID="103660936">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{8EC06B35-0362-4BDF-AD21-6A836BE6A424}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="1"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>1</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>20</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+										<Reference Name="SwitchGroupOrStateGroup">
+											<ObjectRef Name="SG_Incidentals" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}" ShortID="848570435">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_generic_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="621160400"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_generic_01" ID="{A9352E42-9096-45F5-978D-5B69532D16BE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}" ShortID="942504018">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_generic_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="820830402"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_generic_02" ID="{F98027E3-9477-49AB-A7FE-5672FFCA2FE9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}" ShortID="479966419">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_generic_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="591728996"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_generic_03" ID="{013DA3F4-C270-47B2-B1B8-9113BB54D97C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}" ShortID="196683254">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_generic_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="657504781"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_generic_04" ID="{A985E001-BCAA-4D43-8EFE-C5BE4774612F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}" ShortID="751592815">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_generic_05.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="92003061"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_generic_05" ID="{8001B5CF-0EA0-4855-8D42-7265ED781396}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<GroupingInfo>
+										<GroupingBehaviorList>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
+											</GroupingBehavior>
+										</GroupingBehaviorList>
+										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
+												<ItemList>
+													<ItemRef Name="incidental_generic_04" ID="{DE168AF1-D3EA-4CFD-900C-24FBD99D1354}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
+												<ItemList>
+													<ItemRef Name="incidental_generic_03" ID="{1E4DD97B-7D27-4585-91D8-33619F0A27BA}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
+												<ItemList>
+													<ItemRef Name="incidental_generic_05" ID="{44FC05BC-5476-44C9-9613-4F92F73F3EF7}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
+												<ItemList>
+													<ItemRef Name="incidental_generic_02" ID="{FEFF6D8A-E6EA-4556-8E91-3B10CB4AC0C1}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
+												<ItemList>
+													<ItemRef Name="incidental_generic_01" ID="{3F8F1700-21AF-4E79-8EA0-5082E6CF44E5}"/>
+												</ItemList>
+											</Grouping>
+										</GroupingList>
+									</GroupingInfo>
+								</SwitchContainer>
+								<SwitchContainer Name="Incidentals_Metal" ID="{529A8E6F-6476-41DC-BD7A-013F5B8F24EF}" ShortID="948156587">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="InitialDelay" Type="Real64">
+											<RTPCList>
+												<RTPC Name="" ID="{BD2753E7-83F3-4634-B26A-9127FE7CAE12}" ShortID="570031376">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{D9ADC1BD-F3CB-4862-8942-D9D7EC01758C}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="1"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>1</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>20</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverridePositioning" Type="bool" Value="True"/>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="ATTN_Incidental" ID="{91482374-CEE8-4223-A8FC-9339864119F4}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="DefaultSwitchOrState">
+											<ObjectRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+										<Reference Name="SwitchGroupOrStateGroup">
+											<ObjectRef Name="SG_Incidentals" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}" WorkUnitID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}" ShortID="843905793">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_metal_rumble_01" ID="{FDC23B65-FF6F-4149-A5D8-E6464054D8BD}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_metal_rumble_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="871310215"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_metal_rumble_01" ID="{FDC23B65-FF6F-4149-A5D8-E6464054D8BD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="incidental_metal_rumble_02" ID="{EBD59848-C26B-4572-B984-B1FBD830D705}" ShortID="506350478">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_metal_rumble_02" ID="{F1072E05-AB1F-477B-A82C-035AA79D24F4}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_metal_rumble_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="866248490"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_metal_rumble_02" ID="{F1072E05-AB1F-477B-A82C-035AA79D24F4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}" ShortID="82713739">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="incidental_metal_rumble_03" ID="{69436D3C-4739-4285-9061-300529C7139E}">
+													<Language>SFX</Language>
+													<AudioFile>incidental_metal_rumble_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="326482332"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="incidental_metal_rumble_03" ID="{69436D3C-4739-4285-9061-300529C7139E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<GroupingInfo>
+										<GroupingBehaviorList>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_metal_rumble_02" ID="{EBD59848-C26B-4572-B984-B1FBD830D705}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}"/>
+											</GroupingBehavior>
+											<GroupingBehavior>
+												<ItemRef Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}"/>
+											</GroupingBehavior>
+										</GroupingBehaviorList>
+										<GroupingList>
+											<Grouping>
+												<SwitchRef Name="Switch_04" ID="{AECFFD3B-FA53-4F87-9676-4993276E5329}"/>
+												<ItemList>
+													<ItemRef Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_03" ID="{3AFC1652-6D6A-44E2-B4CB-BE9BB3EB2866}"/>
+												<ItemList>
+													<ItemRef Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_05" ID="{6B5B7866-F04B-42F0-9948-BE7EE26C6B72}"/>
+												<ItemList>
+													<ItemRef Name="incidental_metal_rumble_03" ID="{7CFE0662-9892-408A-9814-C3090BC2AA7B}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_02" ID="{CB7AE96F-05D6-4177-A548-2B410631663C}"/>
+												<ItemList>
+													<ItemRef Name="incidental_metal_rumble_02" ID="{EBD59848-C26B-4572-B984-B1FBD830D705}"/>
+												</ItemList>
+											</Grouping>
+											<Grouping>
+												<SwitchRef Name="Switch_01" ID="{525D4C7D-E4B3-49CF-BFA6-CCD32AA009F4}"/>
+												<ItemList>
+													<ItemRef Name="incidental_metal_rumble_01" ID="{2C41AA5C-E2EE-4CAA-BE5E-CB682BA4782F}"/>
+												</ItemList>
+											</Grouping>
+										</GroupingList>
+									</GroupingInfo>
+								</SwitchContainer>
+							</ChildrenList>
+						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
-				<Sound Name="AMB_base_loop" ID="{33418FC0-CBF0-4FA0-950E-DC448ADFB2B1}" ShortID="254154156">
-					<PropertyList>
-						<Property Name="3DPosition" Type="int16" Value="2"/>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-						<Property Name="HoldListenerOrientation" Type="bool" Value="True"/>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="ListenerRelativeRouting" Type="bool" Value="False"/>
-						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="64"/>
-						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-28</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Wind_Ambience" ID="{68184ADE-818C-414F-8454-C5F9254CDF34}" WorkUnitID="{1247B9B5-C281-41DF-87B9-84A8AC19A68A}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Bus" ID="{DFB568EC-E796-4EC0-AC57-A08063A26232}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="ambience_base_loop" ID="{ECF7994B-A4F8-4B79-A3B2-C9DA4A09381C}">
-							<Language>SFX</Language>
-							<AudioFile>ambience_base_loop.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="83184489"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<PositioningInfo>
-						<Panner Name="" ID="{F02DA0D7-2E4C-4227-B1BC-527AD7C7DD65}"/>
-						<Position Name="" ID="{195BC6E5-66D0-40F6-A174-5F8BC7AA1BE9}">
-							<PropertyList>
-								<Property Name="PlayMechanismRandomOrSequence" Type="int16" Value="1"/>
-								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-								<Property Name="PlayMechanismTransitionTime" Type="Real64" Value="30"/>
-							</PropertyList>
-							<ChildrenList>
-								<Path2D Name="AMB_base_loop_Path" ID="{162454A6-C94B-4684-AED2-E0927CBF0C71}">
-									<PropertyList>
-										<Property Name="Duration" Type="Uint32" Value="2738"/>
-										<Property Name="LinearTime" Type="bool" Value="False"/>
-									</PropertyList>
-									<PointList>
-										<Point>
-											<XPos>-67.08861</XPos>
-											<YPos>50</YPos>
-											<Flags>12</Flags>
-											<Time>0</Time>
-										</Point>
-										<Point>
-											<XPos>46.20253</XPos>
-											<YPos>45.85987</YPos>
-											<Flags>0</Flags>
-											<Time>912</Time>
-										</Point>
-										<Point>
-											<XPos>62.65823</XPos>
-											<YPos>-68.15287</YPos>
-											<Flags>0</Flags>
-											<Time>1825</Time>
-										</Point>
-										<Point>
-											<XPos>-65.82278</XPos>
-											<YPos>-64.96815</YPos>
-											<Flags>0</Flags>
-											<Time>2738</Time>
-										</Point>
-									</PointList>
-								</Path2D>
-							</ChildrenList>
-						</Position>
-					</PositioningInfo>
-					<ActiveSourceList>
-						<ActiveSource Name="ambience_base_loop" ID="{ECF7994B-A4F8-4B79-A3B2-C9DA4A09381C}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

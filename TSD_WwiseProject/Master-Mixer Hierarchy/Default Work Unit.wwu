@@ -52,16 +52,6 @@
 								<Position Name="" ID="{1B6E7429-74A1-4952-BF86-4FC6B8061EDC}"/>
 							</PositioningInfo>
 						</AuxBus>
-						<AuxBus Name="Room01" ID="{5608D391-9047-40FF-9BBC-F084FF2220EE}">
-							<PropertyList>
-								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
-									<ObjectRef Name="Room_Large" ID="{AD8EFAFC-7121-4D5F-BE4D-B13FBD6CEBAE}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-								</Reference>
-							</ReferenceList>
-						</AuxBus>
 						<AuxBus Name="Main" ID="{43C3AE7E-79DC-47E1-BD18-F135EE8FE3AB}">
 							<PropertyList>
 								<Property Name="BusVolume" Type="Real64">
@@ -72,7 +62,7 @@
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 						</AuxBus>
-						<AuxBus Name="AUX_SpectrumData" ID="{6682664D-DFFC-4064-B353-567AE0415939}">
+						<AuxBus Name="AUX_SpectralData" ID="{6682664D-DFFC-4064-B353-567AE0415939}">
 							<ReferenceList>
 								<Reference Name="Effect0" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
 									<ObjectRef Name="FX_SpectrumData_EQ" ID="{8AAB7A62-F0F3-485B-B032-DDECF5A57C07}" WorkUnitID="{DB9D8E2B-B2EB-49A3-A4E6-05ADE1884B27}"/>

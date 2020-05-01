@@ -3,7 +3,7 @@
 	<Switches>
 		<WorkUnit Name="Default Work Unit" ID="{47B4C424-8DA5-4BB1-A4F9-1CE583B21BE8}" PersistMode="Standalone">
 			<ChildrenList>
-				<SwitchGroup Name="Incidental_Switch_Group" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}">
+				<SwitchGroup Name="SG_Incidentals" ID="{53AA957F-630C-4936-9A17-F8610F594CA9}">
 					<PropertyList>
 						<Property Name="UseGameParameter" Type="bool" Value="True"/>
 					</PropertyList>
@@ -94,11 +94,6 @@
 							</PointList>
 						</Curve>
 					</SwitchOnRTPC>
-				</SwitchGroup>
-				<SwitchGroup Name="TEst" ID="{9EC9F875-0DD4-4AF0-B223-990B8C57FAD3}">
-					<ChildrenList>
-						<Switch Name="Test32" ID="{0902AC09-AF71-4302-A704-3EE8B3688689}"/>
-					</ChildrenList>
 				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
