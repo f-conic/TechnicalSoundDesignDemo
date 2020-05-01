@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b75932099c0241a15da6a5f0643ce, type: 3}
   m_Name: 1F42A623-8DB5-4E6D-A50B-89040AC830C3
   m_EditorClassIdentifier: 
-  objectName: Play_Discussion
-  id: 1444333482
+  objectName: vo_narrator
+  id: 1473084324
   guid: 1F42A623-8DB5-4E6D-A50B-89040AC830C3

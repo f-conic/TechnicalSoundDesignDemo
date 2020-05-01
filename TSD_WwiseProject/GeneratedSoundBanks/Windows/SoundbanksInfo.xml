@@ -16,8 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<IncludedAuxBusses>
-				<AuxBus Id="348022313" Name="Room01" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Room01"/>
-				<AuxBus Id="2215942509" Name="AUX_SpectrumData" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\AUX_SpectrumData"/>
+				<AuxBus Id="2195416432" Name="AUX_SpectralData" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\AUX_SpectralData"/>
 				<AuxBus Id="3161908922" Name="Main" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main"/>
 				<AuxBus Id="3665378617" Name="AUX_EarlyReflections" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\AUX_EarlyReflections"/>
 				<AuxBus Id="3941844621" Name="AUX_GlobalReverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\AUX_GlobalReverb"/>
@@ -31,15 +30,13 @@
 			<ShortName>DefaultSoundBank</ShortName>
 			<Path>DefaultSoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2049558012" Name="AMB_DirectionalWind" ObjectPath="\Events\Default Work Unit\AMB_DirectionalWind" DurationType="Infinite"/>
-				<Event Id="3004847309" Name="AMB_main" ObjectPath="\Events\Default Work Unit\AMB_main" DurationType="Infinite"/>
+				<Event Id="3148777447" Name="amb_directional_wind" ObjectPath="\Events\Default Work Unit\amb_directional_wind" DurationType="Infinite"/>
+				<Event Id="3004847309" Name="amb_main" ObjectPath="\Events\Default Work Unit\amb_main" DurationType="Infinite"/>
 				<Event Id="2974935085" Name="grenade_explosion" ObjectPath="\Events\Default Work Unit\grenade_explosion" DurationType="OneShot" DurationMin="1.036500" DurationMax="9.107959"/>
-				<Event Id="976947025" Name="Incidental_Glass" ObjectPath="\Events\Default Work Unit\Incidental_Glass" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.071208" DurationMax="1.953375"/>
-				<Event Id="2717289804" Name="Incidental_Metal" ObjectPath="\Events\Default Work Unit\Incidental_Metal" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="7.143667" DurationMax="11.558437"/>
-				<Event Id="892077403" Name="Play_AMB_base_loop" ObjectPath="\Events\Default Work Unit\Play_AMB_base_loop" DurationType="Infinite"/>
-				<Event Id="1444333482" Name="Play_Discussion" ObjectPath="\Events\Default Work Unit\Play_Discussion" MaxAttenuation="75.000000" DurationType="OneShot" DurationMin="2.995958" DurationMax="13.784667"/>
-				<Event Id="713469781" Name="Play_Kit014Break014" ObjectPath="\Events\Default Work Unit\Play_Kit014Break014" MaxAttenuation="20.000000" DurationType="Infinite"/>
-				<Event Id="2352049368" Name="Radio_Drums" ObjectPath="\Events\Default Work Unit\Radio_Drums" MaxAttenuation="75.000000" DurationType="Infinite"/>
+				<Event Id="976947025" Name="incidental_glass" ObjectPath="\Events\Default Work Unit\incidental_glass" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.071208" DurationMax="1.953375"/>
+				<Event Id="2717289804" Name="incidental_metal" ObjectPath="\Events\Default Work Unit\incidental_metal" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="7.143667" DurationMax="11.558437"/>
+				<Event Id="2352049368" Name="radio_drums" ObjectPath="\Events\Default Work Unit\radio_drums" MaxAttenuation="75.000000" DurationType="Infinite"/>
+				<Event Id="1473084324" Name="vo_narrator" ObjectPath="\Events\Default Work Unit\vo_narrator" MaxAttenuation="75.000000" DurationType="OneShot" DurationMin="2.995958" DurationMax="13.784667"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="47675849" Language="SFX">
@@ -49,10 +46,6 @@
 				<File Id="48732135" Language="SFX">
 					<ShortName>amb_wind_01.wav</ShortName>
 					<Path>SFX\amb_wind_01_D79FB2B7.wem</Path>
-				</File>
-				<File Id="83184489" Language="SFX">
-					<ShortName>ambience_base_loop.wav</ShortName>
-					<Path>SFX\ambience_base_loop_D79FB2B7.wem</Path>
 				</File>
 				<File Id="92003061" Language="SFX">
 					<ShortName>incidental_generic_05.wav</ShortName>
@@ -146,17 +139,9 @@
 					<ShortName>VO_Monologue_07.wav</ShortName>
 					<Path>SFX\VO_Monologue_07_10C4C929.wem</Path>
 				</File>
-				<File Id="784987366" Language="SFX">
-					<ShortName>speech.wav</ShortName>
-					<Path>SFX\speech_D79FB2B7.wem</Path>
-				</File>
 				<File Id="820830402" Language="SFX">
 					<ShortName>incidental_generic_02.wav</ShortName>
 					<Path>SFX\incidental_generic_02_10C4C929.wem</Path>
-				</File>
-				<File Id="858623284" Language="SFX">
-					<ShortName>Hand Mortar Small Close.wav</ShortName>
-					<Path>SFX\Hand Mortar Small Close_15D1A401.wem</Path>
 				</File>
 				<File Id="858772751" Language="SFX">
 					<ShortName>drum_loop_normalized.wav</ShortName>
@@ -173,10 +158,6 @@
 				<File Id="891330969" Language="SFX">
 					<ShortName>amb_birds.wav</ShortName>
 					<Path>SFX\amb_birds_D79FB2B7.wem</Path>
-				</File>
-				<File Id="927844465" Language="SFX">
-					<ShortName>jazz_loop.wav</ShortName>
-					<Path>SFX\jazz_loop_D79FB2B7.wem</Path>
 				</File>
 				<File Id="928291044" Language="SFX">
 					<ShortName>grenade_explosion_outdoor_far_tail_01.wav</ShortName>
@@ -224,13 +205,13 @@
 						<Switch Id="1182670505" Name="Mid" ObjectPath="\Switches\Default Work Unit\SG_Explosion\Mid"/>
 					</Switches>
 				</SwitchGroup>
-				<SwitchGroup Id="3521844023" Name="Incidental_Switch_Group" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group">
+				<SwitchGroup Id="2063362250" Name="SG_Incidentals" ObjectPath="\Switches\Default Work Unit\SG_Incidentals">
 					<Switches>
-						<Switch Id="366150593" Name="Switch_01" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_01"/>
-						<Switch Id="366150594" Name="Switch_02" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_02"/>
-						<Switch Id="366150595" Name="Switch_03" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_03"/>
-						<Switch Id="366150596" Name="Switch_04" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_04"/>
-						<Switch Id="366150597" Name="Switch_05" ObjectPath="\Switches\Default Work Unit\Incidental_Switch_Group\Switch_05"/>
+						<Switch Id="366150593" Name="Switch_01" ObjectPath="\Switches\Default Work Unit\SG_Incidentals\Switch_01"/>
+						<Switch Id="366150594" Name="Switch_02" ObjectPath="\Switches\Default Work Unit\SG_Incidentals\Switch_02"/>
+						<Switch Id="366150595" Name="Switch_03" ObjectPath="\Switches\Default Work Unit\SG_Incidentals\Switch_03"/>
+						<Switch Id="366150596" Name="Switch_04" ObjectPath="\Switches\Default Work Unit\SG_Incidentals\Switch_04"/>
+						<Switch Id="366150597" Name="Switch_05" ObjectPath="\Switches\Default Work Unit\SG_Incidentals\Switch_05"/>
 					</Switches>
 				</SwitchGroup>
 			</SwitchGroups>

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b75932099c0241a15da6a5f0643ce, type: 3}
   m_Name: 5B7C0DA5-67C9-4134-9C56-EE83BD7E709F
   m_EditorClassIdentifier: 
-  objectName: Radio_Drums
+  objectName: radio_drums
   id: 2352049368
   guid: 5B7C0DA5-67C9-4134-9C56-EE83BD7E709F

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b75932099c0241a15da6a5f0643ce, type: 3}
   m_Name: C0800DAF-6D35-4871-AB86-FCA1FDAC45B0
   m_EditorClassIdentifier: 
-  objectName: AMB_DirectionalWind
-  id: 2049558012
+  objectName: amb_directional_wind
+  id: 3148777447
   guid: C0800DAF-6D35-4871-AB86-FCA1FDAC45B0

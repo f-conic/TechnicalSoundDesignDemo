@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b75932099c0241a15da6a5f0643ce, type: 3}
   m_Name: 8635057A-049C-403F-B0DB-3916C70C62A9
   m_EditorClassIdentifier: 
-  objectName: AMB_main
+  objectName: amb_main
   id: 3004847309
   guid: 8635057A-049C-403F-B0DB-3916C70C62A9

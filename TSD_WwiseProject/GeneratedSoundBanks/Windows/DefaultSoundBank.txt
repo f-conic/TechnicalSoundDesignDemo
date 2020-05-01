@@ -1,27 +1,25 @@
 Event	ID	Name			Wwise Object Path	Notes
-	713469781	Play_Kit014Break014			\Default Work Unit\Play_Kit014Break014	
-	892077403	Play_AMB_base_loop			\Default Work Unit\Play_AMB_base_loop	
-	976947025	Incidental_Glass			\Default Work Unit\Incidental_Glass	
-	1444333482	Play_Discussion			\Default Work Unit\Play_Discussion	
-	2049558012	AMB_DirectionalWind			\Default Work Unit\AMB_DirectionalWind	
-	2352049368	Radio_Drums			\Default Work Unit\Radio_Drums	
-	2717289804	Incidental_Metal			\Default Work Unit\Incidental_Metal	
+	976947025	incidental_glass			\Default Work Unit\incidental_glass	
+	1473084324	vo_narrator			\Default Work Unit\vo_narrator	
+	2352049368	radio_drums			\Default Work Unit\radio_drums	
+	2717289804	incidental_metal			\Default Work Unit\incidental_metal	
 	2974935085	grenade_explosion			\Default Work Unit\grenade_explosion	
-	3004847309	AMB_main			\Default Work Unit\AMB_main	
+	3004847309	amb_main			\Default Work Unit\amb_main	
+	3148777447	amb_directional_wind			\Default Work Unit\amb_directional_wind	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
 	189681303	SG_Explosion			\Default Work Unit\SG_Explosion	
-	3521844023	Incidental_Switch_Group			\Default Work Unit\Incidental_Switch_Group	
+	2063362250	SG_Incidentals			\Default Work Unit\SG_Incidentals	
 
 Switch	ID	Name	Switch Group			Notes
 	1133794587	Near	SG_Explosion			
 	1182670505	Mid	SG_Explosion			
 	1183803292	Far	SG_Explosion			
-	366150593	Switch_01	Incidental_Switch_Group			
-	366150594	Switch_02	Incidental_Switch_Group			
-	366150595	Switch_03	Incidental_Switch_Group			
-	366150596	Switch_04	Incidental_Switch_Group			
-	366150597	Switch_05	Incidental_Switch_Group			
+	366150593	Switch_01	SG_Incidentals			
+	366150594	Switch_02	SG_Incidentals			
+	366150595	Switch_03	SG_Incidentals			
+	366150596	Switch_04	SG_Incidentals			
+	366150597	Switch_05	SG_Incidentals			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	957932202	RTPC_Incidental_Delay			\Default Work Unit\RTPC_Incidental_Delay	
@@ -35,43 +33,39 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	47675849	VO_Monologue_04	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_04		760720
 	48732135	amb_wind_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_wind_01_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\DirectionalWind\amb_wind_01		12886970
-	83184489	AMB_base_loop	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\ambience_base_loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB_base_loop		7233680
-	92003061	incidental_generic_05	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Glass\incidental_generic_05		186706
+	92003061	incidental_generic_05	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Glass\incidental_generic_05		186706
 	127579209	VO_Monologue_06	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_06		780976
-	133659364	grenade_explosion_outdoor_mid_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_mid_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Main_Mid\grenade_explosion_outdoor_mid_main_01		236172
+	133659364	grenade_explosion_outdoor_mid_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_mid_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Main_Mid\grenade_explosion_outdoor_mid_main_01		236172
 	172322429	amb_rustle	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_rustle_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\Base\amb_rustle		27104276
-	199993520	grenade_explosion_outdoor_mid_debris_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_mid_debris_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Debris_Mid\grenade_explosion_outdoor_mid_debris_01		713492
-	237141208	grenade_explosion_outdoor_close_main_02-001	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_main_02-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Main\grenade_explosion_outdoor_close_main_02-001		218552
-	248592523	grenade_explosion_outdoor_mid_tail_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_mid_tail_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Tail_Mid\grenade_explosion_outdoor_mid_tail_01		1464140
-	276802975	grenade_explosion_outdoor_close_debris_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Debris\grenade_explosion_outdoor_close_debris_01		572128
-	287003259	grenade_explosion_outdoor_far_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_far_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Main_Far\grenade_explosion_outdoor_far_main_01		282128
-	326482332	incidental_metal_rumble_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Metal\incidental_metal_rumble_03		1109674
+	199993520	grenade_explosion_outdoor_mid_debris_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_mid_debris_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Debris_Mid\grenade_explosion_outdoor_mid_debris_01		713492
+	237141208	grenade_explosion_outdoor_close_main_02-001	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_main_02-001_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Main\grenade_explosion_outdoor_close_main_02-001		218552
+	248592523	grenade_explosion_outdoor_mid_tail_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_mid_tail_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Tail_Mid\grenade_explosion_outdoor_mid_tail_01		1464140
+	276802975	grenade_explosion_outdoor_close_debris_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Debris\grenade_explosion_outdoor_close_debris_01		572128
+	287003259	grenade_explosion_outdoor_far_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_far_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Main_Far\grenade_explosion_outdoor_far_main_01		282128
+	326482332	incidental_metal_rumble_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Metal\incidental_metal_rumble_03		1109674
 	368084949	amb_wind_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_wind_02_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\DirectionalWind\amb_wind_02		5761740
-	513441474	grenade_explosion_tinnitus_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_tinnitus_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\FX\grenade_explosion_tinnitus_01		631996
+	513441474	grenade_explosion_tinnitus_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_tinnitus_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\FX\grenade_explosion_tinnitus_01		631996
 	564786833	amb_base	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_base_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\Base\amb_base		27104276
-	575368629	grenade_explosion_outdoor_close_debris_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Debris\grenade_explosion_outdoor_close_debris_02		498184
-	591728996	incidental_generic_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Glass\incidental_generic_03		187588
+	575368629	grenade_explosion_outdoor_close_debris_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Debris\grenade_explosion_outdoor_close_debris_02		498184
+	591728996	incidental_generic_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Glass\incidental_generic_03		187588
 	618692327	VO_Monologue_08	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_08		391792
-	621160400	incidental_generic_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Glass\incidental_generic_01		114024
-	626671817	grenade_explosion_outdoor_close_tail_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_tail_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Tail\grenade_explosion_outdoor_close_tail_01		794192
-	657504781	incidental_generic_04	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Glass\incidental_generic_04		148980
+	621160400	incidental_generic_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Glass\incidental_generic_01		114024
+	626671817	grenade_explosion_outdoor_close_tail_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_tail_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Tail\grenade_explosion_outdoor_close_tail_01		794192
+	657504781	incidental_generic_04	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Glass\incidental_generic_04		148980
 	678969568	VO_Monologue_05	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_05		875190
 	699095822	VO_Monologue_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_03		1249330
-	766010581	grenade_explosion_outdoor_close_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Main\grenade_explosion_outdoor_close_main_01		217764
+	766010581	grenade_explosion_outdoor_close_main_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_main_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Main\grenade_explosion_outdoor_close_main_01		217764
 	770032080	VO_Monologue_07	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_07		287676
-	784987366	Discussion	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\speech_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Discussion		3602388
-	820830402	incidental_generic_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Glass\incidental_generic_02		102900
-	858623284	Hand Mortar Small Close	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\Hand Mortar Small Close_15D1A401.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Hand Mortar Small Close		542560
+	820830402	incidental_generic_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_generic_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Glass\incidental_generic_02		102900
 	858772751	Radio_Drums	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\drum_loop_normalized_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Radio_Drums		2443700
-	866248490	incidental_metal_rumble_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Metal\incidental_metal_rumble_02		909888
-	871310215	incidental_metal_rumble_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals_Metal\incidental_metal_rumble_01		685856
+	866248490	incidental_metal_rumble_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Metal\incidental_metal_rumble_02		909888
+	871310215	incidental_metal_rumble_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\incidental_metal_rumble_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Incidentals\Incidentals_Metal\incidental_metal_rumble_01		685856
 	891330969	amb_birds	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_birds_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\Base\amb_birds		27104276
-	927844465	Kit014Break014	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\jazz_loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Kit014Break014		3215424
-	928291044	grenade_explosion_outdoor_far_tail_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_far_tail_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Tail_Far\grenade_explosion_outdoor_far_tail_01		1748792
+	928291044	grenade_explosion_outdoor_far_tail_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_far_tail_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Tail_Far\grenade_explosion_outdoor_far_tail_01		1748792
 	940115870	VO_Monologue_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_02		1323392
-	1003542365	grenade_explosion_outdoor_close_debris_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Debris\grenade_explosion_outdoor_close_debris_03		503416
-	1008827774	grenade_explosion_outdoor_close_tail_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_tail_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Tail\grenade_explosion_outdoor_close_tail_02		993272
+	1003542365	grenade_explosion_outdoor_close_debris_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_debris_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Debris\grenade_explosion_outdoor_close_debris_03		503416
+	1008827774	grenade_explosion_outdoor_close_tail_02	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_tail_02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Tail\grenade_explosion_outdoor_close_tail_02		993272
 	1016358054	VO_Monologue_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_01		1085522
-	1017057852	grenade_explosion_outdoor_close_tail_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_tail_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Tail\grenade_explosion_outdoor_close_tail_03		824968
-	1041255031	grenade_explosion_outdoor_close_main_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_main_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\Explosion\Main\grenade_explosion_outdoor_close_main_03		199072
+	1017057852	grenade_explosion_outdoor_close_tail_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_tail_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Tail\grenade_explosion_outdoor_close_tail_03		824968
+	1041255031	grenade_explosion_outdoor_close_main_03	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\grenade_explosion_outdoor_close_main_03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\GrenadeExplosion\Main\grenade_explosion_outdoor_close_main_03		199072
 
