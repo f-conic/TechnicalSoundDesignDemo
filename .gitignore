@@ -1,4 +1,8 @@
 
+# Jetbrain Rider Cache
+.idea/
+Assets/Plugins/Editor/JetBrains*
+
 # Wwise project stuff
 .cache
 *.validationcache
