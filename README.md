@@ -2,7 +2,7 @@
 
 ## Introduction
 Hi!
-Welcome to my Technical Sound Design Demo Project. The purpose of this project is to showcase some techniques and systems that I've used to implement audio and making it even more immersive. I'll be mainly focusing on 3 different types of sound phenomenons which are; Acoustics and realtime reflections, ambiences and explosions. 
+Welcome to my Technical Sound Design Demo Project. The purpose of this project is to showcase some techniques and systems that I've used to implement audio and making it even more immersive. I'll be mainly focusing on 3 different types of sound phenomenons which are; Acoustics, realtime reflections, ambiences and explosions. 
 
 Feel free to download the project and play around with it. Or you can watch the video below where I'm explaining the different implementations.
 
