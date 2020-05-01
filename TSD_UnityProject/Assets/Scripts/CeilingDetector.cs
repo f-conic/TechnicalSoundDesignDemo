@@ -40,7 +40,6 @@ public class CeilingDetector : MonoBehaviour
 		// Up
 		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 10f))
 		{
-			Debug.Log("Up");
 			AddCeilingReverb(true);
 		}
 		else
@@ -48,7 +47,7 @@ public class CeilingDetector : MonoBehaviour
 			AddCeilingReverb(false);
 		}
 
-		// Left
+		// Down
 		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 50f))
 		{
 			AkSoundEngine.SetRTPCValue("RTPC_Amb_Height", hit.distance);
@@ -57,13 +56,15 @@ public class CeilingDetector : MonoBehaviour
 		// Left
 		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, 10f))
 		{
-			Debug.Log("Left");
+			// Not used currently. I'll probably find a use case for this.
+			return;
 		}
 
 		// Right
 		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 10f))
 		{
-			Debug.Log("Right");
+			// Not used currently. I'll probably find a use case for this.
+			return;
 		}
 
 		DrawRays();

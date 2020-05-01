@@ -17,7 +17,7 @@ public class Grenade : MonoBehaviour
 	public float ShakeAmplitude;
 	public float ShakeFrequency;
 	public float ShakeDuration;
-	private float ShakeElapsedTime;
+	// private float ShakeElapsedTime;
 
 	private List<GameObject> instantiatedGrenadesVFX = new List<GameObject>();
 	private GameObject virtualCamera;
@@ -26,43 +26,45 @@ public class Grenade : MonoBehaviour
 
 	private Collider[] CheckIncidental(Vector3 center, float radius)
 	{
-		Collider[] hitColliders = Physics.OverlapSphere(center, radius, Layer.value);
+		var hitColliders = Physics.OverlapSphere(center, radius, Layer.value);
 
 		return hitColliders;
 	}
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.G))
+		if (!Input.GetKeyDown(KeyCode.G))
 		{
-			// Get the active virtual camera because of Cinemachine.
-			virtualCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera
-				.VirtualCameraGameObject;
+			return;
+		}
+		
+		// Get the active virtual camera because of Cinemachine.
+		virtualCamera = Camera.main.gameObject.GetComponent<CinemachineBrain>().ActiveVirtualCamera
+			.VirtualCameraGameObject;
 
-			if (virtualCamera != null)
+		if (virtualCamera != null)
+		{
+			var cinemachineVirtualCamera = virtualCamera.GetComponent<CinemachineVirtualCamera>();
+			virtualCameraNoise = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+		}
+
+		var obstructionState = GetObstructionState();
+
+		PlayGrenadeExplosion(gameObject, obstructionState);
+
+		var incidentalObjects = CheckIncidental(transform.position, SphereOverlapRadius);
+
+		foreach (var i in incidentalObjects)
+		{
+			var rb = i.GetComponent<Rigidbody>();
+
+			if (rb != null)
 			{
-				var cinemachineVirtualCamera = virtualCamera.GetComponent<CinemachineVirtualCamera>();
-				virtualCameraNoise = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-			}
+				rb.AddExplosionForce(ExplosionForce, transform.position, SphereOverlapRadius);
 
-			var obstructionState = GetObstructionState();
-
-			PlayGrenadeExplosion(gameObject, obstructionState);
-
-			var incidentalObjects = CheckIncidental(transform.position, SphereOverlapRadius);
-
-			foreach (var i in incidentalObjects)
-			{
-				var rb = i.GetComponent<Rigidbody>();
-
-				if (rb != null)
-				{
-					rb.AddExplosionForce(ExplosionForce, transform.position, SphereOverlapRadius);
-
-					// Linearly assume the force on an object. Ie. closer to the edge of the radius = less force.
-					var force = GetBlastForce(i);
-					PlayIncidental(force, i);
-				}
+				// Linearly assume the force on an object. Ie. closer to the edge of the radius = less force.
+				var force = GetBlastForce(i);
+				PlayIncidental(force, i);
 			}
 		}
 	}
@@ -127,8 +129,8 @@ public class Grenade : MonoBehaviour
 		// using the formula t = d/s where we assume that s is a constant of 345m/s. 
 		// Note that this isn't completely accurate as the sync will be dependent on the main thread. Ie. FPS.
 		
-		float incidentalDistanceToExplosion = Vector3.Distance(incidentalObject.transform.position, gameObject.transform.position);
-		float time = incidentalDistanceToExplosion / 345;
+		var incidentalDistanceToExplosion = Vector3.Distance(incidentalObject.transform.position, gameObject.transform.position);
+		var time = incidentalDistanceToExplosion / 345;
 
 		return (time, incidentalDistanceToExplosion);
 	}
@@ -141,7 +143,7 @@ public class Grenade : MonoBehaviour
 		}
 	}
 
-	IEnumerator ShakeCamera(float shakeDuration)
+	private IEnumerator ShakeCamera(float shakeDuration)
 	{
 		virtualCameraNoise.m_AmplitudeGain = ShakeAmplitude;
 		virtualCameraNoise.m_FrequencyGain = ShakeFrequency;
@@ -149,11 +151,11 @@ public class Grenade : MonoBehaviour
 		yield return new WaitForSeconds(shakeDuration);
 
 		virtualCameraNoise.m_AmplitudeGain = 0f;
-		ShakeElapsedTime = 0f;
+		// ShakeElapsedTime = 0f;
 	}
 
 	public Color DebugSphereColor;
-	IEnumerator SphereDrawCooldown()
+	private IEnumerator SphereDrawCooldown()
 	{
 		var rend = GetComponent<Renderer>();
 
@@ -173,15 +175,12 @@ public class Grenade : MonoBehaviour
 
 	private bool GetObstructionState()
 	{
-		if (Physics.Linecast(transform.position, virtualCamera.transform.position, out var hit))
+		if (!Physics.Linecast(transform.position, virtualCamera.transform.position, out var hit))
 		{
-			// Horrible check. But temporary testing.
-			if (objectsToIgnore.Contains(hit.transform.gameObject))
-			{
-				return false;
-			}
-			return true;
+			return false;
 		}
-		return false;
+		
+		// Horrible check. But temporary testing.
+		return !objectsToIgnore.Contains(hit.transform.gameObject);
 	}
 }
