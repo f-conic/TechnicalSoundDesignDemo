@@ -6,6 +6,8 @@ Welcome to my Technical Sound Design Demo Project. The purpose of this project i
 
 Feel free to download the project and play around with it. Or you can watch the video below where I'm explaining the different implementations.
 
+<p align="center"><img src="Screenshots/demo_intro.gif" width="75%"></p>
+
 ## Acoustics & Realtime Reflections
 
 For the realtime reflections I’m using Audiokinetics Wwise and their reflect plugin. This is a geometry informed plugin which simulates realtime early reflections. I've added a couple of helper tools to speed up the workflow slightly. I’ve for example, created a one click solution to create reflective surfaces in the scene. Wwise requires all objects to have a SurfaceReflector component on them as well as a MeshCollider. (In newer versions of wwise you don't have to do this anymore.) The problem with this is that you might have a very complex object with a lot of mesh triangles, which will make the reflections bounce around sporadically. So my script simply estimates the shape of the mesh and creates a sub collider as a child of that object, which has far less triangles. Most of the geometry that I'm using is already very simple, but I've noticed that Wwise sometimes gets confused with ProBuilder's generated meshes.
