@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2020 Enzien Audio, Ltd.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions, and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the phrase "powered by heavy",
+   the heavy logo, and a hyperlink to https://enzienaudio.com, all in a visible
+   form.
+
+  2.1 If the Application is distributed in a store system (for example,
+      the Apple "App Store" or "Google Play"), the phrase "powered by heavy"
+      shall be included in the app description or the copyright text as well as
+      the in the app itself. The heavy logo will shall be visible in the app
+      itself as well.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<PluginModule>
+  <SourcePlugin Name="windGen" CompanyID="64" PluginID="25151" EngineDllName="Hv_windGen_WwiseSourcePlugin">
+    <PluginInfo CanUnlink="true">
+      <PlatformSupport>
+        <Platform Name="Android"></Platform>
+        <Platform Name="iOS"></Platform>
+        <Platform Name="PS4"></Platform>
+        <Platform Name="Linux"></Platform>
+        <Platform Name="Mac"></Platform>
+        <Platform Name="Windows"></Platform>
+        <Platform Name="XboxOne"></Platform>
+        </PlatformSupport>
+    </PluginInfo>
+    <Properties>
+      <Property Name="q_branches_whistle" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="q_branches_whistle" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>637.7</DefaultValue>
+        <AudioEnginePropertyID>0</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>1500.0</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+      <Property Name="vol_branches" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="vol_branches" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>2.519</DefaultValue>
+        <AudioEnginePropertyID>1</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>40.0</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+      <Property Name="vol_buildings" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="vol_buildings" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>0.283</DefaultValue>
+        <AudioEnginePropertyID>2</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>1.0</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+      <Property Name="vol_doorways" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="vol_doorways" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>8.267</DefaultValue>
+        <AudioEnginePropertyID>3</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>30.0</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+      <Property Name="vol_leaves" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="vol_leaves" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>0.6</DefaultValue>
+        <AudioEnginePropertyID>4</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>1.0</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+      <Property Name="vol_master" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="vol_master" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>0.209</DefaultValue>
+        <AudioEnginePropertyID>5</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>0.45</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+      <Property Name="wind_intensity" Type="Real32" SupportRTPCType="Exclusive">
+        <UserInterface DisplayName="wind_intensity" Step="0.01" Fine="0.001" Decimals="2" />
+        <DefaultValue>1.165</DefaultValue>
+        <AudioEnginePropertyID>6</AudioEnginePropertyID>
+        <Restrictions>
+          <ValueRestriction>
+            <Range Type="Real32">
+              <Min>0.0</Min>
+              <Max>2.0</Max>
+            </Range>
+          </ValueRestriction>
+        </Restrictions>
+      </Property>
+    </Properties>
+  </SourcePlugin>
+</PluginModule>

@@ -8,5 +8,6 @@
 		<Plugin Name="Wwise Reflect" ID="11206659" DLL="AkReflect"/>
 		<Plugin Name="System" ID="11403271" DLL="DefaultSink"/>
 		<Plugin Name="No Output" ID="11862023" DLL="DefaultSink"/>
+		<Plugin Name="windGen" ID="1648296962" DLL="Hv_windGen_WwiseSourcePlugin"/>
 	</Plugins>
 </PluginInfo>

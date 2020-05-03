@@ -1,0 +1,30 @@
+﻿  HvControlBinop.c
+  HvControlCast.c
+  HvControlDelay.c
+  HvControlIf.c
+  HvControlRandom.c
+  HvControlSlice.c
+  HvControlSystem.c
+  HvControlUnop.c
+  HvControlVar.c
+  HvLightPipe.c
+  HvMessage.c
+  HvMessagePool.c
+  HvMessageQueue.c
+  HvSignalBiquad.c
+  HvSignalCPole.c
+  HvSignalDel1.c
+  HvSignalPhasor.c
+  HvSignalRPole.c
+  HvSignalTabread.c
+  HvSignalTabwrite.c
+  HvSignalVar.c
+  HvTable.c
+  HvUtils.c
+  HeavyContext.cpp
+  Heavy_windGen.cpp
+  HvHeavy.cpp
+  Hv_windGen_WwiseSourcePluginEngine.cpp
+  Hv_windGen_WwisePluginEngineParams.cpp
+  Hv_windGen_WwiseSourceEngine.vcxproj -> E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\..\build\win\x64\release\Hv_windGen_WwiseSourceEngine.lib
+          1 file(s) copied.

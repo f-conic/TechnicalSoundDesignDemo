@@ -1,0 +1,840 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19FDA05B41EBCC958EAC7B19 /* HeavyContext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2F46D6B6040C8190E879860D /* HeavyContext.hpp */; };
+		B6809A57D32CF957084F272D /* HeavyContextInterface.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 9868A1195820CA643BAA0A1B /* HeavyContextInterface.hpp */; };
+		483AE62B8294898A021FCA7D /* Heavy_windGen.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A15B1ED1569E82963DDED6A /* Heavy_windGen.h */; };
+		8B0802A2BEB7AB51DE551091 /* Heavy_windGen.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 70DE856D855193B40D7C11A3 /* Heavy_windGen.hpp */; };
+		0F1F125CC9BC1E02A2BD7CCF /* HvControlBinop.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CEE016E2E54AD96E1A4AFE3 /* HvControlBinop.h */; };
+		61F71CE39B996E3CD8CCECC3 /* HvControlCast.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D9F11479DC81FD5A48D9271 /* HvControlCast.h */; };
+		F8D2C0CBEBDD2E5ED6BAA4E5 /* HvControlDelay.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1AF3CDE4215E05419DE020 /* HvControlDelay.h */; };
+		0430CB2CABBBC5CA401BF40C /* HvControlIf.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C66CF4638902203AB85F8A /* HvControlIf.h */; };
+		C7CAE496668733F34774FEF9 /* HvControlRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 8924236237C7C33335A510DC /* HvControlRandom.h */; };
+		320507C955A8703E75682207 /* HvControlSlice.h in Headers */ = {isa = PBXBuildFile; fileRef = E78DF993C8820E0C6CB4517D /* HvControlSlice.h */; };
+		E0AF212E573E3CC9291CAAEB /* HvControlSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = AB57CCCE8AE6EE15F8174895 /* HvControlSystem.h */; };
+		3D289DE631CBCFA926566D85 /* HvControlUnop.h in Headers */ = {isa = PBXBuildFile; fileRef = EF0041F378CCA61B6923287C /* HvControlUnop.h */; };
+		8CBA64CD23D93DAD1F4A060A /* HvControlVar.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C3C4B80CBBF279A145D0B1 /* HvControlVar.h */; };
+		19BD47B5DDCD1E91A3649303 /* HvHeavy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E51038C91C7F8C29605C495 /* HvHeavy.h */; };
+		813EE65E7CA18891C8D9D64A /* HvHeavyInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7963EBCFC2E67A7AE088404D /* HvHeavyInternal.h */; };
+		709A6E198CEC214B1A27C4A9 /* HvLightPipe.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C5E368FBAF2E54D2BDDA6D /* HvLightPipe.h */; };
+		6A8C225F215710AC9A6FF722 /* HvMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 53B042FA05782FFAEC50D58B /* HvMath.h */; };
+		18AF9605CEA7209B70AF7541 /* HvMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8F016157E2CF82D7EF7F46 /* HvMessage.h */; };
+		24598882CDD8A1D2C8D79B2A /* HvMessagePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E6A392ADBFF734344F7AF4 /* HvMessagePool.h */; };
+		BCE2EABB7332BF60E656F1BF /* HvMessageQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C1606A40698F6734119AB3 /* HvMessageQueue.h */; };
+		EF8F638CA6FB1C1DF9BD44A4 /* HvSignalBiquad.h in Headers */ = {isa = PBXBuildFile; fileRef = C27B9453F8FC965583451719 /* HvSignalBiquad.h */; };
+		436F403C429E5999C8BDDACC /* HvSignalCPole.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CEE4F683D0F05EBB1A20190 /* HvSignalCPole.h */; };
+		9CD7BF93D3BC073AE06D35BF /* HvSignalDel1.h in Headers */ = {isa = PBXBuildFile; fileRef = D4861C4A16A1566FA36D5689 /* HvSignalDel1.h */; };
+		157B5DD91FEE3B73D1282D70 /* HvSignalPhasor.h in Headers */ = {isa = PBXBuildFile; fileRef = B65F2DD48DFDCE09FFC595F1 /* HvSignalPhasor.h */; };
+		C30AA744D8358DBD40BD8C20 /* HvSignalRPole.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E9434488D375100622B8DA /* HvSignalRPole.h */; };
+		05B5CD76E2B1438D9F9027B6 /* HvSignalTabread.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C47BDBD9A81ACCE39E2A3BC /* HvSignalTabread.h */; };
+		7C4ADBC4B7BE081FFF0C714D /* HvSignalTabwrite.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD0C8FFC0D6005F004CC5CF /* HvSignalTabwrite.h */; };
+		CA50596153ACC314C4DB50DF /* HvSignalVar.h in Headers */ = {isa = PBXBuildFile; fileRef = 46069C17EFFDDA5A07BEB49B /* HvSignalVar.h */; };
+		1F6116C7B485E8EC7F74C9B0 /* HvTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 67577C344160AFF1A98BE611 /* HvTable.h */; };
+		D6FE1C8AAEC28B6FE64FC1AE /* HvUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F451E6A957A3ECB3F8AC0B8 /* HvUtils.h */; };
+		24F229193A03DB2B4E885766 /* HeavyContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2DE4D8563F16DBE030529A9 /* HeavyContext.cpp */; };
+		9DB09340BBE6027BA3A6BB77 /* Heavy_windGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94F7F37E1B5D58A2092F8BC3 /* Heavy_windGen.cpp */; };
+		D93E61C60382DE636916E741 /* HvControlBinop.c in Sources */ = {isa = PBXBuildFile; fileRef = 9E4958191AF8A9364B0A8BDD /* HvControlBinop.c */; };
+		7871CE173FE09349B703ACC9 /* HvControlCast.c in Sources */ = {isa = PBXBuildFile; fileRef = CE8C319C6B070F22AF896D3D /* HvControlCast.c */; };
+		76930517BE8FF04810682B10 /* HvControlDelay.c in Sources */ = {isa = PBXBuildFile; fileRef = EEBE43C111A94FD2BF4A64B6 /* HvControlDelay.c */; };
+		7314E3463FFC6F915AB98767 /* HvControlIf.c in Sources */ = {isa = PBXBuildFile; fileRef = 23EABC56A4A5EFC8525EAFE1 /* HvControlIf.c */; };
+		1A14D759C5B1D1AC8F8129CD /* HvControlRandom.c in Sources */ = {isa = PBXBuildFile; fileRef = FE0CDE141A0086C0DCE77CC2 /* HvControlRandom.c */; };
+		A468DB7832130C4B9FD58185 /* HvControlSlice.c in Sources */ = {isa = PBXBuildFile; fileRef = 9ECDB82E48CDD05997E1B004 /* HvControlSlice.c */; };
+		9C00605BEAC64AB259BF7601 /* HvControlSystem.c in Sources */ = {isa = PBXBuildFile; fileRef = 8B32EDEF188DEC66F0C521D6 /* HvControlSystem.c */; };
+		BE14D238724569589B22F69F /* HvControlUnop.c in Sources */ = {isa = PBXBuildFile; fileRef = 3F64D733D40AF05E19D2FF0F /* HvControlUnop.c */; };
+		4003D81DCFA9CFAEABC4924F /* HvControlVar.c in Sources */ = {isa = PBXBuildFile; fileRef = 56737F77C1D31D9834298CFD /* HvControlVar.c */; };
+		F57B380CD7FFB60906DD3362 /* HvHeavy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 454F7F6845208EC973180730 /* HvHeavy.cpp */; };
+		D39C4FCDBA5685538D4FCDDE /* HvLightPipe.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CE58FA2A811A9BF79964921 /* HvLightPipe.c */; };
+		52B75B1393CD6DE1FD4F5F0E /* HvMessage.c in Sources */ = {isa = PBXBuildFile; fileRef = 4A8714BD23361ACEE6EE4DF6 /* HvMessage.c */; };
+		8ECE86CAD107E301AA67CCF8 /* HvMessagePool.c in Sources */ = {isa = PBXBuildFile; fileRef = 574479009B5B2ACBE6E2E90F /* HvMessagePool.c */; };
+		CE9FFA524C763F79CC694150 /* HvMessageQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 8C05428563C8ED0D3C748B5F /* HvMessageQueue.c */; };
+		5C5D249E5A9E3EEB705D62FF /* HvSignalBiquad.c in Sources */ = {isa = PBXBuildFile; fileRef = 3ED35C0FD1D4B40EEE86E2E0 /* HvSignalBiquad.c */; };
+		07A19113950953EAC61B08A1 /* HvSignalCPole.c in Sources */ = {isa = PBXBuildFile; fileRef = F8276109B4B7058F6A57755D /* HvSignalCPole.c */; };
+		C83E84C88F5211A89A205E60 /* HvSignalDel1.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F321A3035D48261DF283DBD /* HvSignalDel1.c */; };
+		25D90D61EA7B5157046EDD5A /* HvSignalPhasor.c in Sources */ = {isa = PBXBuildFile; fileRef = 7FC2753A001FA5BD0EC207E4 /* HvSignalPhasor.c */; };
+		DC3BFF73C7F6A3835D60A209 /* HvSignalRPole.c in Sources */ = {isa = PBXBuildFile; fileRef = 04A1EAEEAAF93579F0A519F1 /* HvSignalRPole.c */; };
+		2890BFB75770285F4357600A /* HvSignalTabread.c in Sources */ = {isa = PBXBuildFile; fileRef = 29A4C90903E8BB56D9B9B82F /* HvSignalTabread.c */; };
+		00E85BE24D802213048EEB57 /* HvSignalTabwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = 9EF02C4B8495BC346F66A26B /* HvSignalTabwrite.c */; };
+		E272CCC8BB4D1CAFDD035CA6 /* HvSignalVar.c in Sources */ = {isa = PBXBuildFile; fileRef = 0EB97D280EAED44B8F57DFF1 /* HvSignalVar.c */; };
+		7764B9BACD53B060CE745576 /* HvTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 02C1E89B88741268A29EE503 /* HvTable.c */; };
+		A10531700F5D24DC88D0720E /* HvUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 64AFFCE0BD07CDFB3EB5CF06 /* HvUtils.c */; };
+		D8331EF81CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = D8331ED01CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginFactory.h */; };
+		D8331EF91CE128BD003BFBA7 /* Hv_windGen_WwisePluginIDs.h in Headers */ = {isa = PBXBuildFile; fileRef = D8331ED11CE128BD003BFBA7 /* Hv_windGen_WwisePluginIDs.h */; };
+		D8331F1C1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = D8331EEC1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.h */; };
+		D8331F201CE1295C003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8331EEB1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.cpp */; };
+		D8331F1F1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.h in Headers */ = {isa = PBXBuildFile; fileRef = D8331EEE1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.h */; };
+		D8331F1E1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8331EED1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.cpp */; };
+		D8857DFD1CE1576C00A7B30F /* Hv_windGen_WwisePluginRegister.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8331EE91CE128BD003BFBA7 /* Hv_windGen_WwisePluginRegister.cpp */; };
+		D8857DF31CE1525C00A7B30F /* Hv_windGen_WwiseSourcePluginFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8331ED01CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginFactory.h */; };
+		D8857DFE1CE1578D00A7B30F /* libHv_windGen_WwiseSourceEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C486EF1CDCD6B9000B3BCC /* libHv_windGen_WwiseSourceEngine.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8857DFF1CE1595E00A7B30F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8C486DA1CDCD5C1000B3BCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8C486EE1CDCD6B9000B3BCC;
+			remoteInfo = Hv_windGen_WwiseSourceEngine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8857DF21CE1524800A7B30F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				D8857DF31CE1525C00A7B30F /* Hv_windGen_WwiseSourcePluginFactory.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8857E071CE15D4900A7B30F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				D8857DF31CE1525C00A7B30F /* Hv_windGen_WwiseSourcePluginFactory.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F46D6B6040C8190E879860D /* HeavyContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeavyContext.hpp; path = ../source/heavy/HeavyContext.hpp; sourceTree = SOURCE_ROOT; };
+		9868A1195820CA643BAA0A1B /* HeavyContextInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeavyContextInterface.hpp; path = ../source/heavy/HeavyContextInterface.hpp; sourceTree = SOURCE_ROOT; };
+		4A15B1ED1569E82963DDED6A /* Heavy_windGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Heavy_windGen.h; path = ../source/heavy/Heavy_windGen.h; sourceTree = SOURCE_ROOT; };
+		70DE856D855193B40D7C11A3 /* Heavy_windGen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Heavy_windGen.hpp; path = ../source/heavy/Heavy_windGen.hpp; sourceTree = SOURCE_ROOT; };
+		7CEE016E2E54AD96E1A4AFE3 /* HvControlBinop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlBinop.h; path = ../source/heavy/HvControlBinop.h; sourceTree = SOURCE_ROOT; };
+		6D9F11479DC81FD5A48D9271 /* HvControlCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlCast.h; path = ../source/heavy/HvControlCast.h; sourceTree = SOURCE_ROOT; };
+		ED1AF3CDE4215E05419DE020 /* HvControlDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlDelay.h; path = ../source/heavy/HvControlDelay.h; sourceTree = SOURCE_ROOT; };
+		88C66CF4638902203AB85F8A /* HvControlIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlIf.h; path = ../source/heavy/HvControlIf.h; sourceTree = SOURCE_ROOT; };
+		8924236237C7C33335A510DC /* HvControlRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlRandom.h; path = ../source/heavy/HvControlRandom.h; sourceTree = SOURCE_ROOT; };
+		E78DF993C8820E0C6CB4517D /* HvControlSlice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlSlice.h; path = ../source/heavy/HvControlSlice.h; sourceTree = SOURCE_ROOT; };
+		AB57CCCE8AE6EE15F8174895 /* HvControlSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlSystem.h; path = ../source/heavy/HvControlSystem.h; sourceTree = SOURCE_ROOT; };
+		EF0041F378CCA61B6923287C /* HvControlUnop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlUnop.h; path = ../source/heavy/HvControlUnop.h; sourceTree = SOURCE_ROOT; };
+		D7C3C4B80CBBF279A145D0B1 /* HvControlVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvControlVar.h; path = ../source/heavy/HvControlVar.h; sourceTree = SOURCE_ROOT; };
+		0E51038C91C7F8C29605C495 /* HvHeavy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvHeavy.h; path = ../source/heavy/HvHeavy.h; sourceTree = SOURCE_ROOT; };
+		7963EBCFC2E67A7AE088404D /* HvHeavyInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvHeavyInternal.h; path = ../source/heavy/HvHeavyInternal.h; sourceTree = SOURCE_ROOT; };
+		48C5E368FBAF2E54D2BDDA6D /* HvLightPipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvLightPipe.h; path = ../source/heavy/HvLightPipe.h; sourceTree = SOURCE_ROOT; };
+		53B042FA05782FFAEC50D58B /* HvMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvMath.h; path = ../source/heavy/HvMath.h; sourceTree = SOURCE_ROOT; };
+		3B8F016157E2CF82D7EF7F46 /* HvMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvMessage.h; path = ../source/heavy/HvMessage.h; sourceTree = SOURCE_ROOT; };
+		23E6A392ADBFF734344F7AF4 /* HvMessagePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvMessagePool.h; path = ../source/heavy/HvMessagePool.h; sourceTree = SOURCE_ROOT; };
+		99C1606A40698F6734119AB3 /* HvMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvMessageQueue.h; path = ../source/heavy/HvMessageQueue.h; sourceTree = SOURCE_ROOT; };
+		C27B9453F8FC965583451719 /* HvSignalBiquad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalBiquad.h; path = ../source/heavy/HvSignalBiquad.h; sourceTree = SOURCE_ROOT; };
+		6CEE4F683D0F05EBB1A20190 /* HvSignalCPole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalCPole.h; path = ../source/heavy/HvSignalCPole.h; sourceTree = SOURCE_ROOT; };
+		D4861C4A16A1566FA36D5689 /* HvSignalDel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalDel1.h; path = ../source/heavy/HvSignalDel1.h; sourceTree = SOURCE_ROOT; };
+		B65F2DD48DFDCE09FFC595F1 /* HvSignalPhasor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalPhasor.h; path = ../source/heavy/HvSignalPhasor.h; sourceTree = SOURCE_ROOT; };
+		34E9434488D375100622B8DA /* HvSignalRPole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalRPole.h; path = ../source/heavy/HvSignalRPole.h; sourceTree = SOURCE_ROOT; };
+		1C47BDBD9A81ACCE39E2A3BC /* HvSignalTabread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalTabread.h; path = ../source/heavy/HvSignalTabread.h; sourceTree = SOURCE_ROOT; };
+		5FD0C8FFC0D6005F004CC5CF /* HvSignalTabwrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalTabwrite.h; path = ../source/heavy/HvSignalTabwrite.h; sourceTree = SOURCE_ROOT; };
+		46069C17EFFDDA5A07BEB49B /* HvSignalVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvSignalVar.h; path = ../source/heavy/HvSignalVar.h; sourceTree = SOURCE_ROOT; };
+		67577C344160AFF1A98BE611 /* HvTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvTable.h; path = ../source/heavy/HvTable.h; sourceTree = SOURCE_ROOT; };
+		0F451E6A957A3ECB3F8AC0B8 /* HvUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HvUtils.h; path = ../source/heavy/HvUtils.h; sourceTree = SOURCE_ROOT; };
+		9E4958191AF8A9364B0A8BDD /* HvControlBinop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlBinop.c; path = ../source/heavy/HvControlBinop.c; sourceTree = SOURCE_ROOT; };
+		CE8C319C6B070F22AF896D3D /* HvControlCast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlCast.c; path = ../source/heavy/HvControlCast.c; sourceTree = SOURCE_ROOT; };
+		EEBE43C111A94FD2BF4A64B6 /* HvControlDelay.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlDelay.c; path = ../source/heavy/HvControlDelay.c; sourceTree = SOURCE_ROOT; };
+		23EABC56A4A5EFC8525EAFE1 /* HvControlIf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlIf.c; path = ../source/heavy/HvControlIf.c; sourceTree = SOURCE_ROOT; };
+		FE0CDE141A0086C0DCE77CC2 /* HvControlRandom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlRandom.c; path = ../source/heavy/HvControlRandom.c; sourceTree = SOURCE_ROOT; };
+		9ECDB82E48CDD05997E1B004 /* HvControlSlice.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlSlice.c; path = ../source/heavy/HvControlSlice.c; sourceTree = SOURCE_ROOT; };
+		8B32EDEF188DEC66F0C521D6 /* HvControlSystem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlSystem.c; path = ../source/heavy/HvControlSystem.c; sourceTree = SOURCE_ROOT; };
+		3F64D733D40AF05E19D2FF0F /* HvControlUnop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlUnop.c; path = ../source/heavy/HvControlUnop.c; sourceTree = SOURCE_ROOT; };
+		56737F77C1D31D9834298CFD /* HvControlVar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvControlVar.c; path = ../source/heavy/HvControlVar.c; sourceTree = SOURCE_ROOT; };
+		5CE58FA2A811A9BF79964921 /* HvLightPipe.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvLightPipe.c; path = ../source/heavy/HvLightPipe.c; sourceTree = SOURCE_ROOT; };
+		4A8714BD23361ACEE6EE4DF6 /* HvMessage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvMessage.c; path = ../source/heavy/HvMessage.c; sourceTree = SOURCE_ROOT; };
+		574479009B5B2ACBE6E2E90F /* HvMessagePool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvMessagePool.c; path = ../source/heavy/HvMessagePool.c; sourceTree = SOURCE_ROOT; };
+		8C05428563C8ED0D3C748B5F /* HvMessageQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvMessageQueue.c; path = ../source/heavy/HvMessageQueue.c; sourceTree = SOURCE_ROOT; };
+		3ED35C0FD1D4B40EEE86E2E0 /* HvSignalBiquad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalBiquad.c; path = ../source/heavy/HvSignalBiquad.c; sourceTree = SOURCE_ROOT; };
+		F8276109B4B7058F6A57755D /* HvSignalCPole.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalCPole.c; path = ../source/heavy/HvSignalCPole.c; sourceTree = SOURCE_ROOT; };
+		6F321A3035D48261DF283DBD /* HvSignalDel1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalDel1.c; path = ../source/heavy/HvSignalDel1.c; sourceTree = SOURCE_ROOT; };
+		7FC2753A001FA5BD0EC207E4 /* HvSignalPhasor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalPhasor.c; path = ../source/heavy/HvSignalPhasor.c; sourceTree = SOURCE_ROOT; };
+		04A1EAEEAAF93579F0A519F1 /* HvSignalRPole.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalRPole.c; path = ../source/heavy/HvSignalRPole.c; sourceTree = SOURCE_ROOT; };
+		29A4C90903E8BB56D9B9B82F /* HvSignalTabread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalTabread.c; path = ../source/heavy/HvSignalTabread.c; sourceTree = SOURCE_ROOT; };
+		9EF02C4B8495BC346F66A26B /* HvSignalTabwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalTabwrite.c; path = ../source/heavy/HvSignalTabwrite.c; sourceTree = SOURCE_ROOT; };
+		0EB97D280EAED44B8F57DFF1 /* HvSignalVar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvSignalVar.c; path = ../source/heavy/HvSignalVar.c; sourceTree = SOURCE_ROOT; };
+		02C1E89B88741268A29EE503 /* HvTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvTable.c; path = ../source/heavy/HvTable.c; sourceTree = SOURCE_ROOT; };
+		64AFFCE0BD07CDFB3EB5CF06 /* HvUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HvUtils.c; path = ../source/heavy/HvUtils.c; sourceTree = SOURCE_ROOT; };
+		C2DE4D8563F16DBE030529A9 /* HeavyContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HeavyContext.cpp; path = ../source/heavy/HeavyContext.cpp; sourceTree = SOURCE_ROOT; };
+		94F7F37E1B5D58A2092F8BC3 /* Heavy_windGen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Heavy_windGen.cpp; path = ../source/heavy/Heavy_windGen.cpp; sourceTree = SOURCE_ROOT; };
+		454F7F6845208EC973180730 /* HvHeavy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HvHeavy.cpp; path = ../source/heavy/HvHeavy.cpp; sourceTree = SOURCE_ROOT; };
+		D8331ED01CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hv_windGen_WwiseSourcePluginFactory.h; path = ../source/include/Hv_windGen_WwiseSourcePluginFactory.h; sourceTree = SOURCE_ROOT; };
+		D8331ED11CE128BD003BFBA7 /* Hv_windGen_WwisePluginIDs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hv_windGen_WwisePluginIDs.h; path = ../source/include/Hv_windGen_WwisePluginIDs.h; sourceTree = SOURCE_ROOT; };
+		D8331EEC1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hv_windGen_WwiseSourcePluginEngine.h; sourceTree = "<group>"; };
+		D8331EEE1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hv_windGen_WwisePluginEngineParams.h; sourceTree = "<group>"; };
+		D8331EED1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hv_windGen_WwisePluginEngineParams.cpp; sourceTree = "<group>"; };
+		D8331EEB1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hv_windGen_WwiseSourcePluginEngine.cpp; sourceTree = "<group>"; };
+		D8331EE91CE128BD003BFBA7 /* Hv_windGen_WwisePluginRegister.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hv_windGen_WwisePluginRegister.cpp; sourceTree = "<group>"; };
+		D8857DF91CE1554F00A7B30F /* Hv_windGen_WwiseSourcePlugin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Hv_windGen_WwiseSourcePlugin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8857E091CE15D4900A7B30F /* libHv_windGen_WwiseSourcePlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHv_windGen_WwiseSourcePlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C486EF1CDCD6B9000B3BCC /* libHv_windGen_WwiseSourceEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHv_windGen_WwiseSourceEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C486E51CDCD5C1000B3BCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8851B631CE1271600D6BE37 /* wwise.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = wwise.xcconfig; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8857DF61CE1554F00A7B30F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8857DFE1CE1578D00A7B30F /* libHv_windGenwindGen_WwiseSourceEngine.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8857E061CE15D4900A7B30F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8C486EC1CDCD6B9000B3BCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8331EC61CE128BD003BFBA7 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				D8331ECF1CE128BD003BFBA7 /* include */,
+				D8331ED31CE128BD003BFBA7 /* heavy */,
+				D8331EE81CE128BD003BFBA7 /* runtime */,
+				D8331EEA1CE128BD003BFBA7 /* source_engine */,
+			);
+			name = source;
+			path = ../source;
+			sourceTree = SOURCE_ROOT;
+		};
+		D8331ECF1CE128BD003BFBA7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D8331ED01CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginFactory.h */,
+				D8331ED11CE128BD003BFBA7 /* Hv_windGen_WwisePluginIDs.h */,
+			);
+			name = include;
+			path = ../source/include;
+			sourceTree = SOURCE_ROOT;
+		};
+		D8331ED31CE128BD003BFBA7 /* heavy */ = {
+			isa = PBXGroup;
+			children = (
+				C2DE4D8563F16DBE030529A9 /* HeavyContext.cpp */,
+				2F46D6B6040C8190E879860D /* HeavyContext.hpp */,
+				9868A1195820CA643BAA0A1B /* HeavyContextInterface.hpp */,
+				94F7F37E1B5D58A2092F8BC3 /* Heavy_windGen.cpp */,
+				4A15B1ED1569E82963DDED6A /* Heavy_windGen.h */,
+				70DE856D855193B40D7C11A3 /* Heavy_windGen.hpp */,
+				9E4958191AF8A9364B0A8BDD /* HvControlBinop.c */,
+				7CEE016E2E54AD96E1A4AFE3 /* HvControlBinop.h */,
+				CE8C319C6B070F22AF896D3D /* HvControlCast.c */,
+				6D9F11479DC81FD5A48D9271 /* HvControlCast.h */,
+				EEBE43C111A94FD2BF4A64B6 /* HvControlDelay.c */,
+				ED1AF3CDE4215E05419DE020 /* HvControlDelay.h */,
+				23EABC56A4A5EFC8525EAFE1 /* HvControlIf.c */,
+				88C66CF4638902203AB85F8A /* HvControlIf.h */,
+				FE0CDE141A0086C0DCE77CC2 /* HvControlRandom.c */,
+				8924236237C7C33335A510DC /* HvControlRandom.h */,
+				9ECDB82E48CDD05997E1B004 /* HvControlSlice.c */,
+				E78DF993C8820E0C6CB4517D /* HvControlSlice.h */,
+				8B32EDEF188DEC66F0C521D6 /* HvControlSystem.c */,
+				AB57CCCE8AE6EE15F8174895 /* HvControlSystem.h */,
+				3F64D733D40AF05E19D2FF0F /* HvControlUnop.c */,
+				EF0041F378CCA61B6923287C /* HvControlUnop.h */,
+				56737F77C1D31D9834298CFD /* HvControlVar.c */,
+				D7C3C4B80CBBF279A145D0B1 /* HvControlVar.h */,
+				454F7F6845208EC973180730 /* HvHeavy.cpp */,
+				0E51038C91C7F8C29605C495 /* HvHeavy.h */,
+				7963EBCFC2E67A7AE088404D /* HvHeavyInternal.h */,
+				5CE58FA2A811A9BF79964921 /* HvLightPipe.c */,
+				48C5E368FBAF2E54D2BDDA6D /* HvLightPipe.h */,
+				53B042FA05782FFAEC50D58B /* HvMath.h */,
+				4A8714BD23361ACEE6EE4DF6 /* HvMessage.c */,
+				3B8F016157E2CF82D7EF7F46 /* HvMessage.h */,
+				574479009B5B2ACBE6E2E90F /* HvMessagePool.c */,
+				23E6A392ADBFF734344F7AF4 /* HvMessagePool.h */,
+				8C05428563C8ED0D3C748B5F /* HvMessageQueue.c */,
+				99C1606A40698F6734119AB3 /* HvMessageQueue.h */,
+				3ED35C0FD1D4B40EEE86E2E0 /* HvSignalBiquad.c */,
+				C27B9453F8FC965583451719 /* HvSignalBiquad.h */,
+				F8276109B4B7058F6A57755D /* HvSignalCPole.c */,
+				6CEE4F683D0F05EBB1A20190 /* HvSignalCPole.h */,
+				6F321A3035D48261DF283DBD /* HvSignalDel1.c */,
+				D4861C4A16A1566FA36D5689 /* HvSignalDel1.h */,
+				7FC2753A001FA5BD0EC207E4 /* HvSignalPhasor.c */,
+				B65F2DD48DFDCE09FFC595F1 /* HvSignalPhasor.h */,
+				04A1EAEEAAF93579F0A519F1 /* HvSignalRPole.c */,
+				34E9434488D375100622B8DA /* HvSignalRPole.h */,
+				29A4C90903E8BB56D9B9B82F /* HvSignalTabread.c */,
+				1C47BDBD9A81ACCE39E2A3BC /* HvSignalTabread.h */,
+				9EF02C4B8495BC346F66A26B /* HvSignalTabwrite.c */,
+				5FD0C8FFC0D6005F004CC5CF /* HvSignalTabwrite.h */,
+				0EB97D280EAED44B8F57DFF1 /* HvSignalVar.c */,
+				46069C17EFFDDA5A07BEB49B /* HvSignalVar.h */,
+				02C1E89B88741268A29EE503 /* HvTable.c */,
+				67577C344160AFF1A98BE611 /* HvTable.h */,
+				64AFFCE0BD07CDFB3EB5CF06 /* HvUtils.c */,
+				0F451E6A957A3ECB3F8AC0B8 /* HvUtils.h */,
+			);
+			name = heavy;
+			path = ../source/heavy;
+			sourceTree = SOURCE_ROOT;
+		};
+		D8331EE81CE128BD003BFBA7 /* runtime */ = {
+			isa = PBXGroup;
+			children = (
+				D8331EE91CE128BD003BFBA7 /* Hv_windGen_WwisePluginRegister.cpp */,
+			);
+			path = runtime;
+			sourceTree = "<group>";
+		};
+		D8331EEA1CE128BD003BFBA7 /* source_engine */ = {
+			isa = PBXGroup;
+			children = (
+				D8331EEB1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.cpp */,
+				D8331EEC1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.h */,
+				D8331EED1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.cpp */,
+				D8331EEE1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.h */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
+		D8C486D91CDCD5C1000B3BCC = {
+			isa = PBXGroup;
+			children = (
+				D8331EC61CE128BD003BFBA7 /* source */,
+				D8C486E51CDCD5C1000B3BCC /* Info.plist */,
+				D8851B631CE1271600D6BE37 /* wwise.xcconfig */,
+				D8C486E31CDCD5C1000B3BCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8C486E31CDCD5C1000B3BCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8C486EF1CDCD6B9000B3BCC /* libHv_windGen_WwiseSourceEngine.a */,
+				D8857DF91CE1554F00A7B30F /* Hv_windGen_WwiseSourcePlugin.dylib */,
+				D8857E091CE15D4900A7B30F /* libHv_windGen_WwiseSourcePlugin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D8857DF71CE1554F00A7B30F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8C486ED1CDCD6B9000B3BCC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19FDA05B41EBCC958EAC7B19 /* HeavyContext.hpp in Headers */,
+				B6809A57D32CF957084F272D /* HeavyContextInterface.hpp in Headers */,
+				483AE62B8294898A021FCA7D /* Heavy_windGen.h in Headers */,
+				8B0802A2BEB7AB51DE551091 /* Heavy_windGen.hpp in Headers */,
+				0F1F125CC9BC1E02A2BD7CCF /* HvControlBinop.h in Headers */,
+				61F71CE39B996E3CD8CCECC3 /* HvControlCast.h in Headers */,
+				F8D2C0CBEBDD2E5ED6BAA4E5 /* HvControlDelay.h in Headers */,
+				0430CB2CABBBC5CA401BF40C /* HvControlIf.h in Headers */,
+				C7CAE496668733F34774FEF9 /* HvControlRandom.h in Headers */,
+				320507C955A8703E75682207 /* HvControlSlice.h in Headers */,
+				E0AF212E573E3CC9291CAAEB /* HvControlSystem.h in Headers */,
+				3D289DE631CBCFA926566D85 /* HvControlUnop.h in Headers */,
+				8CBA64CD23D93DAD1F4A060A /* HvControlVar.h in Headers */,
+				19BD47B5DDCD1E91A3649303 /* HvHeavy.h in Headers */,
+				813EE65E7CA18891C8D9D64A /* HvHeavyInternal.h in Headers */,
+				709A6E198CEC214B1A27C4A9 /* HvLightPipe.h in Headers */,
+				6A8C225F215710AC9A6FF722 /* HvMath.h in Headers */,
+				18AF9605CEA7209B70AF7541 /* HvMessage.h in Headers */,
+				24598882CDD8A1D2C8D79B2A /* HvMessagePool.h in Headers */,
+				BCE2EABB7332BF60E656F1BF /* HvMessageQueue.h in Headers */,
+				EF8F638CA6FB1C1DF9BD44A4 /* HvSignalBiquad.h in Headers */,
+				436F403C429E5999C8BDDACC /* HvSignalCPole.h in Headers */,
+				9CD7BF93D3BC073AE06D35BF /* HvSignalDel1.h in Headers */,
+				157B5DD91FEE3B73D1282D70 /* HvSignalPhasor.h in Headers */,
+				C30AA744D8358DBD40BD8C20 /* HvSignalRPole.h in Headers */,
+				05B5CD76E2B1438D9F9027B6 /* HvSignalTabread.h in Headers */,
+				7C4ADBC4B7BE081FFF0C714D /* HvSignalTabwrite.h in Headers */,
+				CA50596153ACC314C4DB50DF /* HvSignalVar.h in Headers */,
+				1F6116C7B485E8EC7F74C9B0 /* HvTable.h in Headers */,
+				D6FE1C8AAEC28B6FE64FC1AE /* HvUtils.h in Headers */,
+				D8331EF81CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginFactory.h in Headers */,
+				D8331EF91CE128BD003BFBA7 /* Hv_windGen_WwisePluginIDs.h in Headers */,
+				D8331F1C1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.h in Headers */,
+				D8331F1F1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D8857DF81CE1554F00A7B30F /* Hv_windGen_WwiseSourcePlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8857DFC1CE1554F00A7B30F /* Build configuration list for PBXNativeTarget "Hv_windGen_WwiseSourcePlugin" */;
+			buildPhases = (
+				D8857DF51CE1554F00A7B30F /* Sources */,
+				D8857DF61CE1554F00A7B30F /* Frameworks */,
+				D8857DF71CE1554F00A7B30F /* Headers */,
+				D8857E041CE15A3400A7B30F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8857E001CE1595E00A7B30F /* PBXTargetDependency */,
+			);
+			name = Hv_windGen_WwiseSourcePlugin;
+			productName = Hv_windGen_WwiseSourcePlugin;
+			productReference = D8857DF91CE1554F00A7B30F /* Hv_windGen_WwiseSourcePlugin.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		D8857E081CE15D4900A7B30F /* Hv_windGen_WwiseSourcePlugin_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8857E0F1CE15D4A00A7B30F /* Build configuration list for PBXNativeTarget "Hv_windGen_WwiseSourcePlugin_iOS" */;
+			buildPhases = (
+				D8857E051CE15D4900A7B30F /* Sources */,
+				D8857E061CE15D4900A7B30F /* Frameworks */,
+				D8857E071CE15D4900A7B30F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hv_windGen_WwiseSourcePlugin_iOS;
+			productName = Hv_windGen_WwiseSourcePlugin_iOS;
+			productReference = D8857E091CE15D4900A7B30F /* libHv_windGen_WwiseSourcePlugin.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D8C486EE1CDCD6B9000B3BCC /* Hv_windGen_WwiseSourceEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8C486F21CDCD6B9000B3BCC /* Build configuration list for PBXNativeTarget "Hv_windGen_WwiseSourceEngine" */;
+			buildPhases = (
+				D8C486EB1CDCD6B9000B3BCC /* Sources */,
+				D8C486EC1CDCD6B9000B3BCC /* Frameworks */,
+				D8C486ED1CDCD6B9000B3BCC /* Headers */,
+				D8857DF21CE1524800A7B30F /* CopyFiles */,
+				D8857DF41CE152A100A7B30F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hv_windGen_WwiseSourceEngine;
+			productName = Hv_windGen_WwiseSourceEngine;
+			productReference = D8C486EF1CDCD6B9000B3BCC /* libHv_windGen_WwiseSourceEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8C486DA1CDCD5C1000B3BCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Enzien Audio";
+				TargetAttributes = {
+					D8857DF81CE1554F00A7B30F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D8857E081CE15D4900A7B30F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					D8C486EE1CDCD6B9000B3BCC = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = D8C486DD1CDCD5C1000B3BCC /* Build configuration list for PBXProject "Hv_windGen_WwisePlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D8C486D91CDCD5C1000B3BCC;
+			productRefGroup = D8C486E31CDCD5C1000B3BCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8C486EE1CDCD6B9000B3BCC /* Hv_windGen_WwiseSourceEngine */,
+				D8857DF81CE1554F00A7B30F /* Hv_windGen_WwiseSourcePlugin */,
+				D8857E081CE15D4900A7B30F /* Hv_windGen_WwiseSourcePlugin_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8857DF41CE152A100A7B30F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		D8857E041CE15A3400A7B30F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(CONFIGURATION_BUILD_DIR)/libHv_windGen_WwiseSourcePlugin.dylib",
+			);
+			outputPaths = (
+				"$(CONFIGURATION_BUILD_DIR)/libHv_windGen_WwiseSourcePlugin.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Copying ${SCRIPT_INPUT_FILE_0} to ${SCRIPT_OUTPUT_FILE_0}\"\ncp ${SCRIPT_INPUT_FILE_0} ${SCRIPT_OUTPUT_FILE_0}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8857DF51CE1554F00A7B30F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8857DFD1CE1576C00A7B30F /* Hv_windGen_WwisePluginRegister.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8857E051CE15D4900A7B30F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24F229193A03DB2B4E885766 /* HeavyContext.cpp in Sources */,
+				9DB09340BBE6027BA3A6BB77 /* Heavy_windGen.cpp in Sources */,
+				D93E61C60382DE636916E741 /* HvControlBinop.c in Sources */,
+				7871CE173FE09349B703ACC9 /* HvControlCast.c in Sources */,
+				76930517BE8FF04810682B10 /* HvControlDelay.c in Sources */,
+				7314E3463FFC6F915AB98767 /* HvControlIf.c in Sources */,
+				1A14D759C5B1D1AC8F8129CD /* HvControlRandom.c in Sources */,
+				A468DB7832130C4B9FD58185 /* HvControlSlice.c in Sources */,
+				9C00605BEAC64AB259BF7601 /* HvControlSystem.c in Sources */,
+				BE14D238724569589B22F69F /* HvControlUnop.c in Sources */,
+				4003D81DCFA9CFAEABC4924F /* HvControlVar.c in Sources */,
+				F57B380CD7FFB60906DD3362 /* HvHeavy.cpp in Sources */,
+				D39C4FCDBA5685538D4FCDDE /* HvLightPipe.c in Sources */,
+				52B75B1393CD6DE1FD4F5F0E /* HvMessage.c in Sources */,
+				8ECE86CAD107E301AA67CCF8 /* HvMessagePool.c in Sources */,
+				CE9FFA524C763F79CC694150 /* HvMessageQueue.c in Sources */,
+				5C5D249E5A9E3EEB705D62FF /* HvSignalBiquad.c in Sources */,
+				07A19113950953EAC61B08A1 /* HvSignalCPole.c in Sources */,
+				C83E84C88F5211A89A205E60 /* HvSignalDel1.c in Sources */,
+				25D90D61EA7B5157046EDD5A /* HvSignalPhasor.c in Sources */,
+				DC3BFF73C7F6A3835D60A209 /* HvSignalRPole.c in Sources */,
+				2890BFB75770285F4357600A /* HvSignalTabread.c in Sources */,
+				00E85BE24D802213048EEB57 /* HvSignalTabwrite.c in Sources */,
+				E272CCC8BB4D1CAFDD035CA6 /* HvSignalVar.c in Sources */,
+				7764B9BACD53B060CE745576 /* HvTable.c in Sources */,
+				A10531700F5D24DC88D0720E /* HvUtils.c in Sources */,
+				D8331F1E1CE128BD003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.cpp in Sources */,
+				D8331F201CE1295C003BFBA7 /* Hv_windGen_WwisePluginEngineParams.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8C486EB1CDCD6B9000B3BCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24F229193A03DB2B4E885766 /* HeavyContext.cpp in Sources */,
+				9DB09340BBE6027BA3A6BB77 /* Heavy_windGen.cpp in Sources */,
+				D93E61C60382DE636916E741 /* HvControlBinop.c in Sources */,
+				7871CE173FE09349B703ACC9 /* HvControlCast.c in Sources */,
+				76930517BE8FF04810682B10 /* HvControlDelay.c in Sources */,
+				7314E3463FFC6F915AB98767 /* HvControlIf.c in Sources */,
+				1A14D759C5B1D1AC8F8129CD /* HvControlRandom.c in Sources */,
+				A468DB7832130C4B9FD58185 /* HvControlSlice.c in Sources */,
+				9C00605BEAC64AB259BF7601 /* HvControlSystem.c in Sources */,
+				BE14D238724569589B22F69F /* HvControlUnop.c in Sources */,
+				4003D81DCFA9CFAEABC4924F /* HvControlVar.c in Sources */,
+				F57B380CD7FFB60906DD3362 /* HvHeavy.cpp in Sources */,
+				D39C4FCDBA5685538D4FCDDE /* HvLightPipe.c in Sources */,
+				52B75B1393CD6DE1FD4F5F0E /* HvMessage.c in Sources */,
+				8ECE86CAD107E301AA67CCF8 /* HvMessagePool.c in Sources */,
+				CE9FFA524C763F79CC694150 /* HvMessageQueue.c in Sources */,
+				5C5D249E5A9E3EEB705D62FF /* HvSignalBiquad.c in Sources */,
+				07A19113950953EAC61B08A1 /* HvSignalCPole.c in Sources */,
+				C83E84C88F5211A89A205E60 /* HvSignalDel1.c in Sources */,
+				25D90D61EA7B5157046EDD5A /* HvSignalPhasor.c in Sources */,
+				DC3BFF73C7F6A3835D60A209 /* HvSignalRPole.c in Sources */,
+				2890BFB75770285F4357600A /* HvSignalTabread.c in Sources */,
+				00E85BE24D802213048EEB57 /* HvSignalTabwrite.c in Sources */,
+				E272CCC8BB4D1CAFDD035CA6 /* HvSignalVar.c in Sources */,
+				7764B9BACD53B060CE745576 /* HvTable.c in Sources */,
+				A10531700F5D24DC88D0720E /* HvUtils.c in Sources */,
+				D8331F1E1CE128BD003BFBA7 /* Hv_windGen_WwisePluginEngineParams.cpp in Sources */,
+				D8331F201CE1295C003BFBA7 /* Hv_windGen_WwiseSourcePluginEngine.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8857E001CE1595E00A7B30F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8C486EE1CDCD6B9000B3BCC /* Hv_windGen_WwiseSourceEngine */;
+			targetProxy = D8857DFF1CE1595E00A7B30F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D8857DFA1CE1554F00A7B30F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../build/macos/$(ARCHS)/$(CONFIGURATION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = "lib";
+				HEADER_SEARCH_PATHS = "$(WWISE_SDK_PATH)";
+				LIBRARY_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/";
+				OTHER_CFLAGS = (
+					"-msse4.1",
+					"-ffast-math",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D8857DFB1CE1554F00A7B30F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../build/macos/$(ARCHS)/$(CONFIGURATION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = "lib";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				HEADER_SEARCH_PATHS = "$(WWISE_SDK_PATH)";
+				LIBRARY_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-msse4.1",
+					"-ffast-math",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D8857E101CE15D4A00A7B30F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../build/ios/$(ARCHS)/$(CONFIGURATION)";
+				ENABLE_BITCODE = YES;
+				HEADER_SEARCH_PATHS = "$(WWISE_SDK_PATH)";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Hv_windGen_WwiseSourcePlugin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D8857E111CE15D4A00A7B30F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../build/ios/$(ARCHS)/$(CONFIGURATION)";
+				ENABLE_BITCODE = YES;
+				HEADER_SEARCH_PATHS = "$(WWISE_SDK_PATH)";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Hv_windGen_WwiseSourcePlugin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8C486E61CDCD5C1000B3BCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8851B631CE1271600D6BE37 /* wwise.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D8C486E71CDCD5C1000B3BCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8851B631CE1271600D6BE37 /* wwise.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D8C486F01CDCD6B9000B3BCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8851B631CE1271600D6BE37 /* wwise.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../build/macos/$(ARCHS)/$(CONFIGURATION)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = "$(WWISE_SDK_PATH)";
+				OBJROOT = "$(SYMROOT)";
+				OTHER_CFLAGS = (
+					"-msse4.1",
+					"-ffast-math",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = build;
+			};
+			name = Debug;
+		};
+		D8C486F11CDCD6B9000B3BCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8851B631CE1271600D6BE37 /* wwise.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/../build/macos/$(ARCHS)/$(CONFIGURATION)";
+				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = "$(WWISE_SDK_PATH)";
+				OBJROOT = "$(SYMROOT)";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-msse4.1",
+					"-ffast-math",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = build;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8857DFC1CE1554F00A7B30F /* Build configuration list for PBXNativeTarget "Hv_windGen_WwiseSourcePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8857DFA1CE1554F00A7B30F /* Debug */,
+				D8857DFB1CE1554F00A7B30F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8857E0F1CE15D4A00A7B30F /* Build configuration list for PBXNativeTarget "Hv_windGen_WwiseSourcePlugin_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8857E101CE15D4A00A7B30F /* Debug */,
+				D8857E111CE15D4A00A7B30F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8C486DD1CDCD5C1000B3BCC /* Build configuration list for PBXProject "Hv_windGen_WwisePlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8C486E61CDCD5C1000B3BCC /* Debug */,
+				D8C486E71CDCD5C1000B3BCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8C486F21CDCD6B9000B3BCC /* Build configuration list for PBXNativeTarget "Hv_windGen_WwiseSourceEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8C486F01CDCD6B9000B3BCC /* Debug */,
+				D8C486F11CDCD6B9000B3BCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8C486DA1CDCD5C1000B3BCC /* Project object */;
+}
