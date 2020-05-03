@@ -30,6 +30,9 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3326687027	RTPC_Grenade_Explosion_Distance			\Default Work Unit\RTPC_Grenade_Explosion_Distance	
 	4060993181	RTPC_Amb_Height			\Default Work Unit\RTPC_Amb_Height	
 
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	427079701	windGen	windGen		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\ProceduralWind\windGen	
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	47675849	VO_Monologue_04	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\VO_Monologue_04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\VO_Monologue\VO_Monologue_04		760720
 	48732135	amb_wind_01	G:\04_Unity\00_Repos\TechnicalSoundDesignDemo\TSD_WwiseProject\.cache\Windows\SFX\amb_wind_01_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\World\AMB\DirectionalWind\amb_wind_01		12886970

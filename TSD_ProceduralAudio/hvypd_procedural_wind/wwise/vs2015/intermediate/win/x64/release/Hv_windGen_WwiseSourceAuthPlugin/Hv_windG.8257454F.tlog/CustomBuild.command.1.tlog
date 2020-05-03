@@ -1,0 +1,3 @@
+^E:\03_PROJECTS\00_OTHER\ENZIEN_HVY_COMPILER\MYPROJECT\WWISE\RESOURCES\HV_WINDGEN_WWISESOURCEAUTHPLUGIN.XML
+if exist "E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\..\build\win\x64\release\Hv_windGen_WwiseSourceAuthPlugin.xml" attrib -r "E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\..\build\win\x64\release\Hv_windGen_WwiseSourceAuthPlugin.xml"
+        copy /Y "E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\resources\Hv_windGen_WwiseSourceAuthPlugin.xml" "E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\..\build\win\x64\release\"

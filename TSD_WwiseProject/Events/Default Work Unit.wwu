@@ -80,6 +80,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{3000C989-1961-4C58-B42E-25324556711C}" ShortID="726120650">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ProceduralWind" ID="{CE216406-9A3D-49E0-8E81-D7145E0ED341}" WorkUnitID="{C77CD1E3-4BA9-46AB-B62E-E48E3943E82E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="amb_directional_wind" ID="{C0800DAF-6D35-4871-AB86-FCA1FDAC45B0}">

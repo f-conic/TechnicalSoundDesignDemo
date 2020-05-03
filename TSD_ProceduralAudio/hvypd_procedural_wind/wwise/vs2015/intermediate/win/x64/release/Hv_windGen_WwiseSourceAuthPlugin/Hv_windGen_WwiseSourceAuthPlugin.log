@@ -1,0 +1,11 @@
+﻿  Copying "Hv_windGen_WwiseSourceAuthPlugin.xml..."
+          1 file(s) copied.
+  Hv_windGen_WwiseAuthoringPlugin.cpp
+  Hv_windGen_WwiseAuthoringPluginApp.cpp
+  AudioDecoder.cpp
+  Common.cpp
+  RiffUtils.cpp
+  WavDecoder.cpp
+  WavEncoder.cpp
+     Creating library E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\intermediate\win\x64\release\Hv_windGen_WwiseSourceAuthPlugin\Hv_windGen_WwiseSourceAuthPlugin.lib and object E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\intermediate\win\x64\release\Hv_windGen_WwiseSourceAuthPlugin\Hv_windGen_WwiseSourceAuthPlugin.exp
+  Hv_windGen_WwiseSourceAuthPlugin.vcxproj -> E:\03_Projects\00_Other\enzien_hvy_compiler\myProject\wwise\vs2015\..\build\win\x64\release\Hv_windGen_WwiseSourceAuthPlugin.dll

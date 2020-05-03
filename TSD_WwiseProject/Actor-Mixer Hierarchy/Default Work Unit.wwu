@@ -1113,6 +1113,31 @@
 										</Sound>
 									</ChildrenList>
 								</ActorMixer>
+								<Sound Name="ProceduralWind" ID="{CE216406-9A3D-49E0-8E81-D7145E0ED341}" ShortID="363279229">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-33</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B503974D-9434-4103-84FB-9083BBEB1335}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FF2B7727-6C31-42B7-8453-F32723E3BDE3}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="windGen" ID="{E90D68D3-2131-43E7-9460-447503A77C5E}" ShortID="427079701" PluginName="windGen" CompanyID="64" PluginID="25151">
+											<Language>SFX</Language>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="windGen" ID="{E90D68D3-2131-43E7-9460-447503A77C5E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<Sound Name="Radio_Drums" ID="{0E75B2EA-4B5B-43BF-901D-D39FEC18B84B}" ShortID="332451079">

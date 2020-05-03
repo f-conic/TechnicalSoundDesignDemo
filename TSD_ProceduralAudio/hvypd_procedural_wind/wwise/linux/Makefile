@@ -2,8 +2,8 @@ CC = clang
 CXX = clang++
 MKDIR = mkdir -p
 SRC_DIR = ../source
-WWISE_SDK_DIR = ../sdks/wwise_2019.2.0.7216/SDK/include/
-PATCH_NAME = heavy
+WWISE_SDK_DIR = ../sdks/wwise_2017.2.2.6553/SDK/include/
+PATCH_NAME = windGen
 OUT_DIR = ../build/linux/x64/release
 BASEFLAGS = -I$(WWISE_SDK_DIR) -I$(SRC_DIR) -I$(SRC_DIR)/include -I$(SRC_DIR)/heavy -DNDEBUG -msse4.1 -O3 -ffast-math -fPIC -Werror -Wno-unused-function -Wno-\#warnings
 CFLAGS = $(BASEFLAGS) -std=c11
