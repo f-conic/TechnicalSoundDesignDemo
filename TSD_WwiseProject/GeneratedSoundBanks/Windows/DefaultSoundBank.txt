@@ -22,11 +22,18 @@ Switch	ID	Name	Switch Group			Notes
 	366150597	Switch_05	SG_Incidentals			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	204521369	RTPC_pWind_Branches_Whistle_Q			\Default Work Unit\RTPC_pWind_Branches_Whistle_Q	
 	957932202	RTPC_Incidental_Delay			\Default Work Unit\RTPC_Incidental_Delay	
 	1113248574	RTPC_Incidental			\Default Work Unit\RTPC_Incidental	
 	1154568204	RTPC_Amb_DirectionalWind_Vol			\Default Work Unit\RTPC_Amb_DirectionalWind_Vol	
+	1538852283	RTPC_pWind_Buildings_Vol			\Default Work Unit\RTPC_pWind_Buildings_Vol	
+	1763903542	RTPC_pWind_Master_Vol			\Default Work Unit\RTPC_pWind_Master_Vol	
 	1781674381	RTPC_Explosion_Close_Distance			\Default Work Unit\RTPC_Explosion_Close_Distance	
+	2157195104	RTPC_pWind_Branches_Vol			\Default Work Unit\RTPC_pWind_Branches_Vol	
 	2351799150	RTPC_SoundEmitter_GlobalReverb_Vol			\Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol	
+	2546604856	RTPC_pWind_Doorways_Vol			\Default Work Unit\RTPC_pWind_Doorways_Vol	
+	2708932876	RTPC_pWind_Leaves_Vol			\Default Work Unit\RTPC_pWind_Leaves_Vol	
+	2830623974	RTPC_pWind_Wind_Intensity			\Default Work Unit\RTPC_pWind_Wind_Intensity	
 	3326687027	RTPC_Grenade_Explosion_Distance			\Default Work Unit\RTPC_Grenade_Explosion_Distance	
 	4060993181	RTPC_Amb_Height			\Default Work Unit\RTPC_Amb_Height	
 

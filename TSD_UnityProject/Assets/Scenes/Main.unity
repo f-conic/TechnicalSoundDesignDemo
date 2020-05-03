@@ -1935,12 +1935,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379831550}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &390645039 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2633672453869094619, guid: ec8b8b5e744d8f041a813d59553c04f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1161812800}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455267763
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,8 +5856,13 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 83c60dbb0aa184c42966bd603d5d416b,
       type: 2}
-  GroundObject: {fileID: 390645039}
   showWindDirection: 0
+  masterVolume: 2
+  windIntensity: 79.8
+  branchesVolume: 22.7
+  branchesWhistleQ: 21
+  buildingsVolume: 17
+  leavesVolume: 29.1
 --- !u!135 &1001693736
 SphereCollider:
   m_ObjectHideFlags: 0
