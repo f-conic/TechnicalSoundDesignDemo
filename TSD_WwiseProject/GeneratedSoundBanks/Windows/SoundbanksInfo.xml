@@ -189,11 +189,18 @@
 				</File>
 			</IncludedMemoryFiles>
 			<GameParameters>
+				<GameParameter Id="204521369" Name="RTPC_pWind_Branches_Whistle_Q" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Branches_Whistle_Q"/>
 				<GameParameter Id="957932202" Name="RTPC_Incidental_Delay" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Incidental_Delay"/>
 				<GameParameter Id="1113248574" Name="RTPC_Incidental" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Incidental"/>
 				<GameParameter Id="1154568204" Name="RTPC_Amb_DirectionalWind_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Amb_DirectionalWind_Vol"/>
+				<GameParameter Id="1538852283" Name="RTPC_pWind_Buildings_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Buildings_Vol"/>
+				<GameParameter Id="1763903542" Name="RTPC_pWind_Master_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Master_Vol"/>
 				<GameParameter Id="1781674381" Name="RTPC_Explosion_Close_Distance" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Explosion_Close_Distance"/>
+				<GameParameter Id="2157195104" Name="RTPC_pWind_Branches_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Branches_Vol"/>
 				<GameParameter Id="2351799150" Name="RTPC_SoundEmitter_GlobalReverb_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_SoundEmitter_GlobalReverb_Vol"/>
+				<GameParameter Id="2546604856" Name="RTPC_pWind_Doorways_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Doorways_Vol"/>
+				<GameParameter Id="2708932876" Name="RTPC_pWind_Leaves_Vol" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Leaves_Vol"/>
+				<GameParameter Id="2830623974" Name="RTPC_pWind_Wind_Intensity" ObjectPath="\Game Parameters\Default Work Unit\RTPC_pWind_Wind_Intensity"/>
 				<GameParameter Id="3326687027" Name="RTPC_Grenade_Explosion_Distance" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Grenade_Explosion_Distance"/>
 				<GameParameter Id="4060993181" Name="RTPC_Amb_Height" ObjectPath="\Game Parameters\Default Work Unit\RTPC_Amb_Height"/>
 			</GameParameters>

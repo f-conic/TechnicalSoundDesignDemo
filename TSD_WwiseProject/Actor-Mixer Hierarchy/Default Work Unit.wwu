@@ -1131,6 +1131,204 @@
 									</ReferenceList>
 									<ChildrenList>
 										<SourcePlugin Name="windGen" ID="{E90D68D3-2131-43E7-9460-447503A77C5E}" ShortID="427079701" PluginName="windGen" CompanyID="64" PluginID="25151">
+											<PropertyList>
+												<Property Name="q_branches_whistle" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{722CBF90-3382-4DB8-8A91-2CD01939D4E1}" ShortID="638872523">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Branches_Whistle_Q" ID="{323E5B53-448E-44BA-BCDE-61F9BB375AE2}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{BCC6BB6D-343F-4D79-91C7-85AE8A516345}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>1500</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="vol_branches" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{17455BFA-E78E-40A5-92FB-431DD3D69206}" ShortID="635315165">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Branches_Vol" ID="{9C4299CB-AAD3-4D2C-99E2-299D29FB496A}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{3979C75A-B18D-4D88-B3BD-6BD5653C2191}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>40</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="vol_buildings" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{0F3698D2-998A-4CE6-B456-58FA5223E0AA}" ShortID="266261097">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Buildings_Vol" ID="{8097D8AC-4753-447A-9004-31ADB5F9B6BF}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{C39DC735-CFF5-418D-8E7C-F7B4419CDF72}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>1</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="vol_doorways" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{0D08F6A3-0BB1-4FDE-9ECB-3CE30B1360BD}" ShortID="611693510">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Doorways_Vol" ID="{F514B0D0-6F3D-4FAB-84B9-AC5217F5FF46}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{7E743115-57B7-48C5-A34B-0AD841F8D5F6}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>30</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="vol_leaves" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{53CCC228-76C8-4A46-9C19-BC0BC48FB7F6}" ShortID="689972610">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Leaves_Vol" ID="{25D9280E-C0CD-4D0A-B553-08BD37242A36}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{DDCAC615-E9B0-4E3A-A398-26965A010D20}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>1</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="vol_master" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{B62593FB-C2FD-4DBF-B47F-F48A5531EA24}" ShortID="456519055">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Master_Vol" ID="{45C110BB-1C77-4B1C-A5C9-1785BA3F0923}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{9BBC8880-AF1E-4D62-BF9F-EB2842CF9D01}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0.45</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+												<Property Name="wind_intensity" Type="Real32">
+													<RTPCList>
+														<RTPC Name="" ID="{F0F99AB3-4A58-4DFB-89DB-4D1B4D8CDCFB}" ShortID="103654761">
+															<ReferenceList>
+																<Reference Name="ControlInput">
+																	<ObjectRef Name="RTPC_pWind_Wind_Intensity" ID="{67C90490-5685-43D3-AB6A-80CE21AB8A0A}" WorkUnitID="{F89D0687-3081-4405-9780-D042E7E2CA09}"/>
+																</Reference>
+															</ReferenceList>
+															<Curve Name="" ID="{30987D59-F4E4-4FC6-8730-BCE4399B0470}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="1"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>2</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</RTPC>
+													</RTPCList>
+												</Property>
+											</PropertyList>
 											<Language>SFX</Language>
 										</SourcePlugin>
 									</ChildrenList>

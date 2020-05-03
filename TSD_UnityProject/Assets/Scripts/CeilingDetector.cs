@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
+﻿using Cinemachine;
 using UnityEngine;
 
+//TODO: Create a constructor that handles raycasts instead.
 public class CeilingDetector : MonoBehaviour
 {
 	private RaycastHit hit;
 	private bool isActive;
 	private Camera mainCam;
 	private GameObject virtualCamera;
-
+	
 	private void Start()
 	{
 		mainCam = Camera.main;

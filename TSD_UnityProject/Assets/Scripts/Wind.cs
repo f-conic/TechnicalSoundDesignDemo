@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Wind : MonoBehaviour
 {
@@ -11,8 +12,21 @@ public class Wind : MonoBehaviour
 	public float distance;
 	public AK.Wwise.Event WindEvent;
 	public AK.Wwise.RTPC DirectionalWindVol;
-	public GameObject GroundObject;
 	public bool showWindDirection;
+
+	[Header("Procedural Wind")]
+	[Range(0f, 100f)]
+	public float masterVolume;
+	[Range(0f, 100f)]
+	public float windIntensity;
+	[Range(0f, 100f)]
+	public float branchesVolume;
+	[Range(0f, 100f)]
+	public float branchesWhistleQ;
+	[Range(0f, 100f)]
+	public float buildingsVolume;
+	[Range(0f, 100f)]
+	public float leavesVolume;
 
 	void Start()
 	{
@@ -21,6 +35,16 @@ public class Wind : MonoBehaviour
 		meshRenderer = GetComponent<Renderer>();
 
 		StartCoroutine(SetNewWindPosition(3));
+	}
+
+	private void Update()
+	{
+		AkSoundEngine.SetRTPCValue("RTPC_pWind_Master_Vol", masterVolume, gameObject);
+		AkSoundEngine.SetRTPCValue("RTPC_pWind_Wind_Intensity", windIntensity, gameObject);
+		AkSoundEngine.SetRTPCValue("RTPC_pWind_Branches_Vol", branchesVolume, gameObject);
+		AkSoundEngine.SetRTPCValue("RTPC_pWind_Branches_Whistle_Q", branchesWhistleQ, gameObject);
+		AkSoundEngine.SetRTPCValue("RTPC_pWind_Buildings_Vol", buildingsVolume, gameObject);
+		AkSoundEngine.SetRTPCValue("RTPC_pWind_Leaves_Vol", leavesVolume, gameObject);
 	}
 
 	void LateUpdate()

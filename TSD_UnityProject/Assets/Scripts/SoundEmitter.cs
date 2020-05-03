@@ -35,7 +35,6 @@ public class SoundEmitter : MonoBehaviour
 		// Used for demo.
 		if (Input.GetKeyDown(KeyCode.Keypad1))
 		{
-			Debug.Log(SoundEvent[0].Name);
 			SoundEvent[0].Post(gameObject);
 		}
 	}

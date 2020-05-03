@@ -12,6 +12,18 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Wind_Intensity" ID="{67C90490-5685-43D3-AB6A-80CE21AB8A0A}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Buildings_Vol" ID="{8097D8AC-4753-447A-9004-31ADB5F9B6BF}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Branches_Whistle_Q" ID="{323E5B53-448E-44BA-BCDE-61F9BB375AE2}"/>
+							<Value>18.7837837837838</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_SpectrumData" ID="{2DC0856E-29EE-48E1-8366-1BF21373D632}"/>
 							<Value>0</Value>
 						</RTPCValue>
@@ -22,6 +34,10 @@
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_SoundEmitter_GlobalReverb_Vol" ID="{6D03F638-1736-4AF4-A54D-43D9462F744E}"/>
 							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Master_Vol" ID="{45C110BB-1C77-4B1C-A5C9-1785BA3F0923}"/>
+							<Value>15.5405405405405</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Incidental" ID="{190B8174-9BD1-4BBC-BBF1-0D682F1501B5}"/>
@@ -36,6 +52,14 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Leaves_Vol" ID="{25D9280E-C0CD-4D0A-B553-08BD37242A36}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Branches_Vol" ID="{9C4299CB-AAD3-4D2C-99E2-299D29FB496A}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="RTPC_WindDirection" ID="{8A51D9F7-8422-4EB6-8AA2-8502185F1677}"/>
 							<Value>0</Value>
 						</RTPCValue>
@@ -46,6 +70,10 @@
 						<RTPCValue>
 							<GameParameterRef Name="RTPC_Incidental_Delay" ID="{1882A9CB-FE98-4FA4-AE98-770D7477EECD}"/>
 							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="RTPC_pWind_Doorways_Vol" ID="{F514B0D0-6F3D-4FAB-84B9-AC5217F5FF46}"/>
+							<Value>50</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
