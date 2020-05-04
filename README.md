@@ -4,7 +4,7 @@
 Hi!
 Welcome to my Technical Sound Design Demo Project. The purpose of this project is to showcase some techniques and systems that I've used to implement audio and making it even more immersive. I'll be mainly focusing on 3 different types of sound phenomenons which are; Acoustics, realtime reflections, ambiences and explosions. 
 
-Feel free to download the project and play around with it. Or you can watch the video below where I'm explaining the different implementations.
+Feel free to download the project and play around with it. Or you can watch the video [here](https://youtu.be/0515GWw_YaI) - where I'm explaining the different implementations.
 
 <p align="center"><img src="Screenshots/demo_intro.gif" width="75%"></p>
 
@@ -16,7 +16,7 @@ For the realtime reflections I’m using Audiokinetics Wwise and their reflect p
 
 ## Ambiences
 
-I wanted to approach the ambience design from a more simplistic perspective. Honestly, it wasn’t anything that I was planning on including in the presentation; but it was just a happy accident that it sounded pretty good and it was an interesting approach to the system design. You can see the full presentation of the ambience system from 2:54 in the video. One addition that I’m talking about in the video is the procedural wind simulation. I’ve spent a lot of time researching procedural audio and ways that it can be applied in games. If you’d like to read my dissertation (BSc) on procedural audio; You can find a link to it here.
+I wanted to approach the ambience design from a more simplistic perspective. Honestly, it wasn’t anything that I was planning on including in the presentation; but it was just a happy accident that it sounded pretty good and it was an interesting approach to the system design. You can see the full presentation of the ambience system from 2:54 in the video. One addition that I’m talking about in the video is the procedural wind simulation.
 
 Without going into too much detail, I think the place for procedural audio as it is today, is a combination of sample based audio and procedural models. What I mean by this is that certain elements of a sound can be physically modelled; such as the wind in my example, while it is feeding a parameter which controls a dynamic sample based implementation. So procedurally you could define the wind speed and model the whistle, gust and howl elements, while at the same time feeding a sample based model in your middleware, such as wwise in my case. This would utilize the quality of a sample based domain, but with the added flexibility of a procedural model. You could of course take this even further as well where you affect objects in the scene, such as swaying trees which are based on the wind speed and intensity.
 
